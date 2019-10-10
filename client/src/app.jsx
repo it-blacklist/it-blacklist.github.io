@@ -1,19 +1,25 @@
 import Taro, { Component } from '@tarojs/taro'
-import Index from './pages/index'
-
+import '@tarojs/async-await'
+import 'taro-ui/dist/style/index.scss' // 全局引入一次即可
+import { Provider } from '@tarojs/redux'
+import Index from './components/tabbar'
 import './app.scss'
+import dva from './utils/dva'
+import models from './models'
 
-// 如果需要在 h5 环境中开启 React Devtools
-// 取消以下注释：
-// if (process.env.NODE_ENV !== 'production' && process.env.TARO_ENV === 'h5')  {
-//   require('nerv-devtools')
-// }
+const dvaApp = dva.createApp({
+  initialState: {},
+  models: models,
+})
+const store = dvaApp.getStore()
 
 class App extends Component {
-
+  
   config = {
     pages: [
-      'pages/index/index'
+      'pages/black/index',
+      'pages/white/index',
+      'pages/about/index'
     ],
     window: {
       backgroundTextStyle: 'light',
@@ -21,28 +27,45 @@ class App extends Component {
       navigationBarTitleText: 'WeChat',
       navigationBarTextStyle: 'black'
     },
-    cloud: true
+    cloud: true,
+    tabBar: {
+      list: [
+        {
+          pagePath: 'pages/black/index',
+          text: '黑名单',
+        },
+        {
+          pagePath: 'pages/white/index',
+          text: '白名单',
+        },
+        {
+          pagePath: 'pages/about/index',
+          text: '关于',
+        },
+      ],
+      color: '#333',
+      selectedColor: '#333',
+      backgroundColor: '#fff',
+      borderStyle: 'white',
+    },
   }
-
+  
   componentDidMount () {
     if (process.env.TARO_ENV === 'weapp') {
       Taro.cloud.init()
+      Taro.hideTabBar()
     }
   }
-
-  componentDidShow () {}
-
-  componentDidHide () {}
-
-  componentDidCatchError () {}
-
+  
   // 在 App 类中的 render() 函数没有实际作用
   // 请勿修改此函数
   render () {
     return (
-      <Index />
+      <Provider store={store}>
+        <Index/>
+      </Provider>
     )
   }
 }
 
-Taro.render(<App />, document.getElementById('app'))
+Taro.render(<App/>, document.getElementById('app'))
