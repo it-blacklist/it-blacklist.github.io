@@ -19,7 +19,8 @@ class App extends Component {
     pages: [
       'pages/black/index',
       'pages/white/index',
-      'pages/about/index'
+      'pages/about/index',
+      'pages/blackDetail/index'
     ],
     window: {
       backgroundTextStyle: 'light',
@@ -29,6 +30,7 @@ class App extends Component {
     },
     cloud: true,
     tabBar: {
+      custom: true,
       list: [
         {
           pagePath: 'pages/black/index',
@@ -53,7 +55,7 @@ class App extends Component {
   componentDidMount () {
     if (process.env.TARO_ENV === 'weapp') {
       Taro.cloud.init()
-      Taro.hideTabBar()
+      //Taro.hideTabBar()
     }
   }
   

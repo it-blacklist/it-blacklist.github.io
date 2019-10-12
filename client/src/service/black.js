@@ -9,5 +9,9 @@ export const fetchApi = data =>
     .limit(10)
     .get()
 
+export const SearchApi = data =>
+  db.collection('blacklist').where({ name: data.name })
+    .get()
+
 export const getCountApi = () =>
   db.collection('blacklist').count()

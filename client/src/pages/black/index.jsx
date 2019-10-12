@@ -2,10 +2,11 @@ import Taro, { Component } from '@tarojs/taro'
 import { connect } from '@tarojs/redux'
 import { View } from '@tarojs/components'
 import TabBar from '../../components/tabbar'
-import { AtButton, AtList, AtListItem, AtSearchBar, AtPagination } from 'taro-ui'
+import { AtLoadMore, AtList, AtListItem, AtSearchBar, AtPagination } from 'taro-ui'
 
-@connect(({ black }) => ({
-  ...black
+@connect(({ black, loading }) => ({
+  ...black,
+  loading
 }), (dispatch) => ({
   onPageChange (payload) {
     Taro.pageScrollTo({ scrollTop: 0, duration: 300 })
@@ -13,12 +14,23 @@ import { AtButton, AtList, AtListItem, AtSearchBar, AtPagination } from 'taro-ui
   },
   getCount () {
     dispatch({ type: 'black/getCount' })
+  },
+  handleClickDetail (payload) {
+    dispatch({ type: 'black_detail/fetch', payload })
+    Taro.navigateTo({ url: '/pages/blackDetail/index' })
+  },
+  onChangeSearch (searchVal) {
+    dispatch({ type: 'black/saveSearchVal', payload: { searchVal } })
+  },
+  onActionClick (name) {
+    dispatch({ type: 'black/Search', payload: { name } })
   }
 }))
 export default class Black extends Component {
   
   config = {
-    navigationBarTitleText: '首页'
+    navigationBarTitleText: '首页',
+    enablePullDownRefresh: true
   }
   
   componentDidMount () {
@@ -26,43 +38,37 @@ export default class Black extends Component {
     this.props.onPageChange({ current: 1 })
   }
   
-  constructor () {
-    super(...arguments)
-    this.state = {
-      value: ''
-    }
-  }
-  
-  onChange (value) {
-    this.setState({
-      value: value
-    })
-  }
-  
-  onActionClick () {
-    console.log('开始搜索')
+  onPullDownRefresh () {
+    this.props.getCount()
+    this.props.onPageChange({ current: 1 })
+    setTimeout(() => {
+      Taro.stopPullDownRefresh()
+    }, 500)
   }
   
   render () {
-    const { total, pageSize, currentPage, blackList, onPageChange } = this.props
+    const { searchVal, loading, total, pageSize, currentPage, blackList, onPageChange, handleClickDetail, onChangeSearch, onActionClick } = this.props
     return (
       <View className='index'>
-        <div>
+        <View>
           <AtSearchBar
             actionName='搜一下'
-            placeholder='搜索功能暂未实现'
-            value={this.state.value}
-            onChange={this.onChange.bind(this)}
-            onActionClick={this.onActionClick.bind(this)}
+            placeholder='目前仅支持全名搜索'
+            value={searchVal}
+            onChange={onChangeSearch}
+            onActionClick={() => onActionClick(searchVal)}
           />
+          {(loading.effects['black/fetch'] || loading.effects['black/Search']) && <AtLoadMore status='loading'/>}
           <AtList>
             {blackList.map((item) => (
-              <AtListItem key={item._id} arrow='right' note={item.time} title={item.name}/>
+              <AtListItem key={item._id} arrow='right' note={item.time} title={item.name}
+                          onClick={() => handleClickDetail(item)}/>
             ))}
           </AtList>
-          <AtPagination total={total} pageSize={pageSize}
+          {(blackList.length === 0) && <AtLoadMore status='noMore'/>}
+          <AtPagination className='black-pagination' total={total} pageSize={pageSize}
                         current={currentPage} onPageChange={onPageChange}/>
-        </div>
+        </View>
         <TabBar/>
       </View>
     )
