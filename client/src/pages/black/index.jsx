@@ -1,7 +1,6 @@
 import Taro, { Component } from '@tarojs/taro'
 import { connect } from '@tarojs/redux'
 import { View } from '@tarojs/components'
-import TabBar from '../../components/tabbar'
 import { AtLoadMore, AtList, AtListItem, AtSearchBar, AtPagination } from 'taro-ui'
 
 @connect(({ black, loading }) => ({
@@ -53,7 +52,7 @@ export default class Black extends Component {
         <View>
           <AtSearchBar
             actionName='搜一下'
-            placeholder='目前仅支持全名搜索'
+            placeholder='输入公司名称搜索'
             value={searchVal}
             onChange={onChangeSearch}
             onActionClick={() => onActionClick(searchVal)}
@@ -69,7 +68,6 @@ export default class Black extends Component {
           <AtPagination className='black-pagination' total={total} pageSize={pageSize}
                         current={currentPage} onPageChange={onPageChange}/>
         </View>
-        <TabBar/>
       </View>
     )
   }

@@ -10,8 +10,12 @@ export const fetchApi = data =>
     .get()
 
 export const SearchApi = data =>
-  db.collection('blacklist').where({ name: data.name })
-    .get()
+  db.collection('blacklist').where({
+    name: db.RegExp({
+      regexp: data.name,
+      options: 'i'
+    })
+  }).get()
 
 export const getCountApi = () =>
   db.collection('blacklist').count()
