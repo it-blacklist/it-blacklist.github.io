@@ -1,7 +1,7 @@
 import Taro, { Component } from '@tarojs/taro'
 import { connect } from '@tarojs/redux'
 import { View } from '@tarojs/components'
-import { AtLoadMore, AtList, AtListItem, AtSearchBar, AtPagination } from 'taro-ui'
+import { AtLoadMore, AtList, AtListItem, AtSearchBar, AtPagination, AtButton } from 'taro-ui'
 
 @connect(({ black, loading }) => ({
   ...black,
@@ -67,6 +67,8 @@ export default class Black extends Component {
           {(blackList.length === 0) && <AtLoadMore status='noMore'/>}
           <AtPagination className='black-pagination' total={total} pageSize={pageSize}
                         current={currentPage} onPageChange={onPageChange}/>
+          <AtButton circle type='primary'
+                    onClick={() => Taro.navigateTo({ url: '/pages/blackNew/index' })}>贡献一条黑名单数据</AtButton>
         </View>
       </View>
     )

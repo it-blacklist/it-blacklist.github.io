@@ -20,7 +20,8 @@ class App extends Component {
       'pages/black/index',
       'pages/white/index',
       'pages/about/index',
-      'pages/blackDetail/index'
+      'pages/blackDetail/index',
+      'pages/blackNew/index',
     ],
     window: {
       backgroundTextStyle: 'light',
@@ -55,7 +56,6 @@ class App extends Component {
   componentDidMount () {
     if (process.env.TARO_ENV === 'weapp') {
       Taro.cloud.init()
-      //Taro.hideTabBar()
     }
   }
   

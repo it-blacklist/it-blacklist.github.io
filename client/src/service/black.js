@@ -19,3 +19,7 @@ export const SearchApi = data =>
 
 export const getCountApi = () =>
   db.collection('blacklist').count()
+
+export const addBlackApi = data =>
+  db.collection('blacklist').add({ data })
+
