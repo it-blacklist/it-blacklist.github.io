@@ -1,7 +1,6 @@
 import Taro, { Component } from '@tarojs/taro'
 import { View } from '@tarojs/components'
 import { AtTimeline } from 'taro-ui'
-import TabBar from '../../components/tabbar'
 
 export default class About extends Component {
   config = {
@@ -22,7 +21,6 @@ export default class About extends Component {
         <View className='about-content'>
           <AtTimeline pending items={items}/>
         </View>
-        <TabBar/>
       </View>
     )
   }
