@@ -13,7 +13,7 @@ export default class About extends Component {
       { title: '正在开发的有', content: ['增加回复'], icon: 'clock' },
       { title: '准备开发的有', content: ['小程序数据统计', '小程序信息', '特别鸣谢', '代码压缩打包',], icon: 'clock' },
       { title: '暂不开发但遥远的未来想做', content: ['白名单', '面试系统', '……'], icon: 'clock' },
-      { title: '求大佬赞助一个服务器', content: ['目前数据库在微信云开发', '感觉不太方便', '功能也不完善', 'CRUD太将就……'], icon: 'clock' },
+      { title: '求大佬赞助一个服务器', content: ['目前数据库在微信云开发', 'CRUD功能不太完善…'], icon: 'clock' },
       { title: '未来', content: ['走出石家庄', '走向全国', '冲出亚洲', '迈向全球', '(〃\'▽\'〃)'], icon: 'clock' },
     ]
     return (
