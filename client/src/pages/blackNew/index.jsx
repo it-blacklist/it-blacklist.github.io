@@ -49,7 +49,7 @@ export default class BlackNew extends Component {
           <View>目前黑名单数据仅限石家庄~</View>
           <View>请不要随意填写提交占用资源~</View>
         </View>
-        <AtForm onSubmit={() => onSubmit(name, info)}>
+        <AtForm className='page-content' onSubmit={() => onSubmit(name, info)}>
           <AtInput
             name='name'
             title='公司名称'
@@ -58,14 +58,13 @@ export default class BlackNew extends Component {
             value={name}
             onChange={handleChangeName}
           />
-          <AtTextarea
-            className='black-new-input'
-            value={info}
-            onChange={(e) => handleChangeInfo(e.target.value)}
-            maxLength={200}
-            placeholder='该公司不合理的地方...'
-          />
-          <AtButton loading={loading.effects['black/submit']} type='primary' formType='submit'>提交</AtButton>
+            <AtTextarea
+              value={info}
+              onChange={(e) => handleChangeInfo(e.target.value)}
+              maxLength={200}
+              placeholder='该公司不合理的地方...'
+            />
+          <AtButton className='submit-btn' loading={loading.effects['black/submit']} type='primary' formType='submit'>提交</AtButton>
         </AtForm>
         <AtModal title='提示'
                  content='是否确认提交？'

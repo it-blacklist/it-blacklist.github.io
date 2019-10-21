@@ -14,8 +14,8 @@ import { AtLoadMore, AtList, AtListItem, AtSearchBar, AtPagination, AtButton } f
   getCount () {
     dispatch({ type: 'black/getCount' })
   },
-  handleClickDetail (payload) {
-    dispatch({ type: 'black_detail/fetch', payload })
+  handleClickDetail (blackIndex) {
+    dispatch({ type: 'black_detail/saveFetch', payload:{blackIndex} })
     Taro.navigateTo({ url: '/pages/blackDetail/index' })
   },
   onChangeSearch (searchVal) {
@@ -59,9 +59,9 @@ export default class Black extends Component {
           />
           {(loading.effects['black/fetch'] || loading.effects['black/Search']) && <AtLoadMore status='loading'/>}
           <AtList>
-            {blackList.map((item) => (
+            {blackList.map((item,index) => (
               <AtListItem key={item._id} arrow='right' note={item.time} title={item.name}
-                          onClick={() => handleClickDetail(item)}/>
+                          onClick={() => handleClickDetail(index)}/>
             ))}
           </AtList>
           {(blackList.length === 0) && <AtLoadMore status='noMore'/>}

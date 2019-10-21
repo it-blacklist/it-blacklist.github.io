@@ -2,14 +2,13 @@ import Taro, { Component } from '@tarojs/taro'
 import '@tarojs/async-await'
 import 'taro-ui/dist/style/index.scss' // 全局引入一次即可
 import { Provider } from '@tarojs/redux'
-import Index from './components/tabbar'
 import './app.scss'
 import dva from './utils/dva'
 import models from './models'
 
 const dvaApp = dva.createApp({
   initialState: {},
-  models: models,
+  models,
 })
 const store = dvaApp.getStore()
 
@@ -18,7 +17,7 @@ class App extends Component {
   config = {
     pages: [
       'pages/black/index',
-      'pages/white/index',
+      'pages/find/index',
       'pages/about/index',
       'pages/blackDetail/index',
       'pages/blackNew/index',
@@ -38,8 +37,8 @@ class App extends Component {
           text: '黑名单',
         },
         {
-          pagePath: 'pages/white/index',
-          text: '白名单',
+          pagePath: 'pages/find/index',
+          text: '发现',
         },
         {
           pagePath: 'pages/about/index',
