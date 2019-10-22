@@ -18,12 +18,15 @@ import { AtDivider, AtTimeline, AtLoadMore, AtCard, AtTextarea, AtButton, AtForm
       dispatch({ type: 'black_detail/saveAction', payload: { actionShow: true } })
     }
   },
-  handleSubmit (rate,{_id},currentPage) {
-    dispatch({ type: 'black_detail/submit', payload: { rate,_id,currentPage } })
+  handleSubmit (rate,{_id}) {
+    dispatch({ type: 'black_detail/submit', payload:{father:_id,content:rate} })
   },
   handleClose () {
     dispatch({ type: 'black_detail/saveAction', payload: { actionShow: false } })
   },
+  getRateList(_id){
+    dispatch({ type: 'black_detail/getRateList', payload: { _id } })
+  }
 }))
 export default class BlackDetail extends Component {
 
@@ -31,13 +34,20 @@ export default class BlackDetail extends Component {
     navigationBarTitleText: '详细信息'
   }
 
-  componentDidShow () {
-    this.props.handleChangeRate('')
-    this.props.handleClose()
+  componentDidMount () {
+    const {getRateList,blackList,blackIndex}=this.props
+    getRateList(blackList[blackIndex]['_id'])
+  }
+
+  componentWillUnmount () {
+    const {handleChangeRate,handleClose,dispatch} = this.props
+    handleChangeRate('')
+    handleClose()
+    dispatch({type:'black_detail/saveState',payload:{rateList:[]}})
   }
 
   render () {
-    const {blackList,blackIndex,currentPage, rate,handleChangeRate,loading,onSubmit,actionShow,handleClose,handleSubmit } = this.props
+    const {blackList,blackIndex,rateList, rate,handleChangeRate,loading,onSubmit,actionShow,handleClose,handleSubmit } = this.props
     const detail = blackList[blackIndex]||{rate:[]}
     return (
       <View>
@@ -48,10 +58,11 @@ export default class BlackDetail extends Component {
         <View className='page-content'>
           <AtDivider content='网友点评' />
           <View>
-            {detail.rate.map((item, index) => (
-              <AtTimeline key={index} items={[{title: item}]}/>
+            {rateList.map((item, index) => (
+              <AtTimeline key={index} items={[{title: item.content}]}/>
             ))}
-            {detail.rate.length===0&&<AtLoadMore status='noMore'/>}
+            {loading.effects['black_detail/getRateList']&&<AtLoadMore status='loading'/>}
+            {rateList.length===0&&<AtLoadMore status='noMore'/>}
           </View>
           <AtForm onSubmit={() => onSubmit(rate)}>
             <AtTextarea
@@ -67,7 +78,7 @@ export default class BlackDetail extends Component {
                    isOpened={actionShow} cancelText='取消'
                    onClose={handleClose}
                    onCancel={handleClose}
-                   onConfirm={() => handleSubmit(rate,detail,currentPage)}
+                   onConfirm={() => handleSubmit(rate,detail)}
                    confirmText='确认'/>
         </View>
       </View>

@@ -38,6 +38,7 @@ export default class Black extends Component {
   }
   
   onPullDownRefresh () {
+    this.props.onChangeSearch('')
     this.props.getCount()
     this.props.onPageChange({ current: 1 })
     setTimeout(() => {

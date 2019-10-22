@@ -32,8 +32,8 @@ export default class BlackNew extends Component {
   config = {
     navigationBarTitleText: '添加黑名单'
   }
-  
-  componentDidShow () {
+
+  componentWillUnmount () {
     this.props.handleClose()
     this.props.handleChangeName('')
     this.props.handleChangeInfo('')

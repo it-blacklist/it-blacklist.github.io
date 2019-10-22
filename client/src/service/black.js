@@ -24,8 +24,10 @@ export const getCountApi = () =>/*查询总数量*/
 export const addBlackApi = data =>/*增加黑名单*/
   db.collection('blacklist').add({ data })
 
-export const updateBlackApi = data =>/*增加黑名单评论*/
-  db.collection('blacklist').doc(data._id).update({
-    data:{rate:_.push(data.rate)}
-  })
+export const updateRateApi = data =>/*增加黑名单评论*/
+  db.collection('blacklist_rate').add({data})
 
+export const getRateListApi = data =>/*查询黑名单评论*/
+  db.collection('blacklist_rate')
+    .where({father:data._id})
+    .get()
