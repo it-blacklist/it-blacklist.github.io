@@ -61,7 +61,7 @@ export default class Black extends Component {
           {(loading.effects['black/fetch'] || loading.effects['black/Search']) && <AtLoadMore status='loading'/>}
           <AtList>
             {blackList.map((item,index) => (
-              <AtListItem key={item._id} arrow='right' note={item.time} title={item.name}
+              item.checked&&<AtListItem key={item._id} arrow='right' note={item.time} title={item.name}
                           onClick={() => handleClickDetail(index)}/>
             ))}
           </AtList>

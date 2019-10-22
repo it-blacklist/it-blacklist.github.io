@@ -11,12 +11,11 @@ export default {
   },
   effects: {
     * submit ({ payload }, { call, put }) {
-      const response = yield call(api.updateRateApi, { ...payload })
+      const response = yield call(api.updateRateApi, { ...payload,checked:false })
       if (response.errMsg === 'collection.add:ok') {
-        Taro.atMessage({ message: '提交成功', type: 'success' })
+        Taro.atMessage({ message: '提交成功,审核通过后显示', type: 'success' })
         yield put({ type: 'saveAction', payload: { actionShow: false } })
         yield put({ type: 'saveRate', payload: { rate: '' } })
-        yield put({ type: 'getRateList', payload: { _id: payload.father } })
       }
     },
     * getRateList ({ payload }, { call, put }) {

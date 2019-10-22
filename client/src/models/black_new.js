@@ -11,7 +11,7 @@ export default {
   effects: {
     * submit ({ payload }, { call, put }) {
       const time = `${new Date().getFullYear()}/${new Date().getMonth() + 1}/${new Date().getDate()}`
-      const response = yield call(api.addBlackApi, { ...payload, time})
+      const response = yield call(api.addBlackApi, { ...payload, time,checked:false})
       if (response.errMsg === 'collection.add:ok') {
         yield put({ type: 'saveAction', payload: { actionShow: false } })
         Taro.atMessage({ message: '提交成功', type: 'success' })

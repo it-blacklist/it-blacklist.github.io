@@ -29,5 +29,5 @@ export const updateRateApi = data =>/*增加黑名单评论*/
 
 export const getRateListApi = data =>/*查询黑名单评论*/
   db.collection('blacklist_rate')
-    .where({father:data._id})
+    .where({father:data._id,checked:true})
     .get()
