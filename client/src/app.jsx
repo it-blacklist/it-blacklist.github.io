@@ -1,6 +1,5 @@
 import Taro, { Component } from '@tarojs/taro'
 import '@tarojs/async-await'
-import 'taro-ui/dist/style/index.scss' // 全局引入一次即可
 import { Provider } from '@tarojs/redux'
 import './app.scss'
 import dva from './utils/dva'

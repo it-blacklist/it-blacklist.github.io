@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="51625465-4efa-4ff6-ac5e-c58f12f3cfce" name="Default Changelist" comment="" />
+    <list default="true" id="51625465-4efa-4ff6-ac5e-c58f12f3cfce" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/models/black_new.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/models/black_new.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/pages/blackDetail/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/pages/blackDetail/index.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/pages/blackNew/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/pages/blackNew/index.jsx" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -19,6 +24,12 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/client" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="yarn" />
   </component>
   <component name="SvnConfiguration">
@@ -32,6 +43,8 @@
       <option name="presentableId" value="Default" />
       <updated>1571469667362</updated>
       <workItem from="1571469668511" duration="638000" />
+      <workItem from="1572059235254" duration="218000" />
+      <workItem from="1572059478195" duration="3174000" />
     </task>
     <servers />
   </component>
@@ -47,5 +60,9 @@
       <screen x="0" y="0" width="1440" height="860" />
     </state>
     <state x="626" y="242" key="FileChooserDialogImpl/0.0.1440.860@0.0.1440.860" timestamp="1571470520731" />
+    <state x="396" y="168" width="647" height="524" key="find.popup" timestamp="1572069777624">
+      <screen x="0" y="0" width="1440" height="860" />
+    </state>
+    <state x="396" y="168" width="647" height="524" key="find.popup/0.0.1440.860@0.0.1440.860" timestamp="1572069777624" />
   </component>
 </project>

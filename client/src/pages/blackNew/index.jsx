@@ -48,7 +48,7 @@ export default class BlackNew extends Component {
           <View><Text className='red'>*特别提示</Text>所有操作均为匿名，未记录任何个人信息，源码公布在GitHub，请放心提交。</View>
           <View>目前黑名单数据仅限石家庄~</View>
           <View>请勿发表任何违反<Text className='red'>微信小程序内容安全要求规范</Text>的内容</View>
-          <View>评论会由人工审核通过后发布~</View>
+          <View>稍后会由人工审核通过后发布~</View>
         </View>
         <AtForm className='page-content' onSubmit={() => onSubmit(name, info)}>
           <AtInput

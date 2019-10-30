@@ -14,7 +14,7 @@ export default {
       const response = yield call(api.addBlackApi, { ...payload, time,checked:false})
       if (response.errMsg === 'collection.add:ok') {
         yield put({ type: 'saveAction', payload: { actionShow: false } })
-        Taro.atMessage({ message: '提交成功', type: 'success' })
+        Taro.atMessage({ message: '提交成功,审核通过后显示', type: 'success' })
         setTimeout(() => {
           Taro.navigateBack({ delta: 0 })
         }, 2000)
