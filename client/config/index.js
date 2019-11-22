@@ -1,6 +1,6 @@
 const config = {
   projectName: 'sjz_it_blacklist',
-  date: '2019-9-29',
+  date: '2019-11-21',
   designWidth: 750,
   deviceRatio: {
     '640': 2.34 / 2,

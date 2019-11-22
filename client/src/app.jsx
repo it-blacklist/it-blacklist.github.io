@@ -1,6 +1,6 @@
-import Taro, { Component } from '@tarojs/taro'
+import Taro, {Component} from '@tarojs/taro'
 import '@tarojs/async-await'
-import { Provider } from '@tarojs/redux'
+import {Provider} from '@tarojs/redux'
 import './app.scss'
 import dva from './utils/dva'
 import models from './models'
@@ -12,11 +12,10 @@ const dvaApp = dva.createApp({
 const store = dvaApp.getStore()
 
 class App extends Component {
-  
+
   config = {
     pages: [
       'pages/black/index',
-      'pages/find/index',
       'pages/about/index',
       'pages/blackDetail/index',
       'pages/blackNew/index',
@@ -36,10 +35,6 @@ class App extends Component {
           text: '黑名单',
         },
         {
-          pagePath: 'pages/find/index',
-          text: '发现',
-        },
-        {
           pagePath: 'pages/about/index',
           text: '关于',
         },
@@ -50,18 +45,18 @@ class App extends Component {
       borderStyle: 'white',
     },
   }
-  
-  componentDidMount () {
+
+  componentDidMount() {
     if (process.env.TARO_ENV === 'weapp') {
       Taro.cloud.init()
     }
   }
-  
+
   // 在 App 类中的 render() 函数没有实际作用
   // 请勿修改此函数
-  render () {
+  render() {
     return (
-      <Provider store={store}>
+      <Provider store={store}>=
         <Index/>
       </Provider>
     )
