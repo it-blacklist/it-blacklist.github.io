@@ -24,10 +24,13 @@ const config = {
       ]
     }
   },
-  defineConstants: {
-  },
+  defineConstants: {},
   copy: {
     patterns: [
+      {
+        from: 'src/components/wxs/',
+        to: 'dist/components/wxs/'
+      }
     ],
     options: {
     }
@@ -46,10 +49,9 @@ const config = {
           }
         },
         pxtransform: {
-          enable: true,
-          config: {
-
-          }
+          selectorBlackList: [
+            /^.van-.*?$/
+          ]
         },
         url: {
           enable: true,

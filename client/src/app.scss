@@ -6,8 +6,12 @@
   padding: 20px;
 }
 
+page {
+  background: #f7f7f7;
+}
+
 .black-pagination {
-  margin: 20px!important;
+  margin: 20px !important;
 }
 
 .tip {
@@ -22,6 +26,33 @@
 
 .submit-btn {
   margin: 10px 0 0;
+}
+
+.about {
+  .top {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    height: 200px;
+    background: #fff;
+
+    .icon {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100px;
+      width: 100px;
+      border-radius: 50%;
+      background: #6190E8;
+    }
+
+    .info {
+      color: #6190E8;
+      font-size: 32px;
+      margin-left: 10px;
+    }
+  }
 }
 
 @import "~taro-ui/dist/style/components/button.scss";
@@ -43,3 +74,5 @@
 @import "~taro-ui/dist/style/components/badge.scss";
 @import "~taro-ui/dist/style/components/tabs.scss";
 @import "~taro-ui/dist/style/components/pagination.scss";
+@import "~taro-ui/dist/style/components/avatar.scss";
+
