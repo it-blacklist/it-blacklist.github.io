@@ -6,7 +6,7 @@
 
 扫描下方小程序二维码，体验小程序：
 
-<img src="https://liujiayii.github.com/sjz_it_blacklist/assets/wx.jpg" width="200" height="200" style="margin-top: 10px;" >
+<img src="https://github.com/liujiayii/sjz_it_blacklist/blob/master/assets/wx.jpg?raw=true" width="200" height="200" style="margin-top: 10px;" >
 
 ## 安装
 
@@ -22,7 +22,7 @@ yarn
 
 先放一个吧!
 
-<img src="https://liujiayii.github.com/sjz_it_blacklist/assets/qrcode.jpg" width="200" height="200" style="margin-top: 10px;" >
+<img src="https://github.com/liujiayii/sjz_it_blacklist/blob/master/assets/qrcode.jpg?raw=true" width="200" height="200" style="margin-top: 10px;" >
 
 ## 链接
 
