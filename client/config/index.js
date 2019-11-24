@@ -9,6 +9,9 @@ const config = {
   },
   sourceRoot: 'src',
   outputRoot: 'dist',
+  copy: {
+    patterns: [{ from: 'src/assets/', to: 'dist/assets/' }]
+  },
   plugins: {
     babel: {
       sourceMap: true,
@@ -25,16 +28,6 @@ const config = {
     }
   },
   defineConstants: {},
-  copy: {
-    patterns: [
-      {
-        from: 'src/components/wxs/',
-        to: 'dist/components/wxs/'
-      }
-    ],
-    options: {
-    }
-  },
   weapp: {
     module: {
       postcss: {

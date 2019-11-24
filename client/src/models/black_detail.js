@@ -4,7 +4,7 @@ import * as api from '../service/black'
 export default {
   namespace: 'black_detail',
   state: {
-    blackIndex: 0,
+    detail: {},
     rate: '',
     actionShow: false,
     rateList:[]

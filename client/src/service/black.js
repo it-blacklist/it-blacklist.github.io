@@ -6,8 +6,12 @@ const _ = db.command
 
 export const fetchApi = data =>/*黑名单列表*/
   db.collection('blacklist')
-    .skip((data.current - 1) * 10)
-    .limit(10)
+    .skip((data.current - 1) * 20)
+    .get()
+
+export const _fetchApi = (data) =>/*体验版黑名单列表*/
+  db.collection('blacklist')
+    .skip(data)
     .get()
 
 export const SearchApi = data =>/*黑名单搜索*/
@@ -25,9 +29,12 @@ export const addBlackApi = data =>/*增加黑名单*/
   db.collection('blacklist').add({ data })
 
 export const updateRateApi = data =>/*增加黑名单评论*/
-  db.collection('blacklist_rate').add({data})
+  db.collection('blacklist_rate').add({ data })
 
 export const getRateListApi = data =>/*查询黑名单评论*/
   db.collection('blacklist_rate')
-    .where({father:data._id,checked:true})
+    .where({ father: data._id, checked: true })
     .get()
+
+export const feedbackApi = data =>/*增加留言*/
+  db.collection('feedback').add({ data })

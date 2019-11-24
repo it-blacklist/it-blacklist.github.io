@@ -13,7 +13,7 @@
 	"compileType": "miniprogram",
 	"simulatorType": "wechat",
 	"simulatorPluginLibVersion": {},
-	"libVersion": "2.9.3",
+	"libVersion": "2.9.0",
 	"condition": {
 		"search": {
 			"current": -1,
@@ -38,9 +38,10 @@
 			"current": -1,
 			"list": [
 				{
-					"id": -1,
-					"name": "pages/about/index",
-					"pathName": "pages/about/index",
+					"id": 0,
+					"name": "pages/blackNew/index",
+					"pathName": "pages/index/index",
+					"query": "",
 					"scene": null
 				}
 			]

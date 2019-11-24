@@ -1,5 +1,5 @@
 import Taro, { Component } from '@tarojs/taro'
-import { View,Text } from '@tarojs/components'
+import { View, Text, Navigator } from '@tarojs/components'
 import { connect } from '@tarojs/redux'
 import { AtForm, AtInput, AtButton, AtTextarea, AtModal, AtMessage } from 'taro-ui'
 
@@ -32,7 +32,7 @@ export default class BlackNew extends Component {
   config = {
     navigationBarTitleText: '添加黑名单'
   }
-
+  
   componentWillUnmount () {
     this.props.handleClose()
     this.props.handleChangeName('')
@@ -42,30 +42,21 @@ export default class BlackNew extends Component {
   render () {
     const { loading, name, info, actionShow, onSubmit, handleChangeName, handleChangeInfo, handleClose, handleSubmit } = this.props
     return (
-      <View>
+      <View className='page-content'>
         <AtMessage/>
-        <View className='tip'>
-          <View><Text className='red'>*特别提示</Text>所有操作均为匿名，未记录任何个人信息，源码公布在GitHub，请放心提交。</View>
-          <View>目前黑名单数据仅限石家庄~</View>
-          <View>请勿发表任何违反<Text className='red'>微信小程序内容安全要求规范</Text>的内容</View>
-          <View>稍后会由人工审核通过后发布~</View>
-        </View>
-        <AtForm className='page-content' onSubmit={() => onSubmit(name, info)}>
-          <AtInput
-            name='name'
-            title='公司名称'
-            type='text'
-            placeholder='公司名称'
-            value={name}
-            onChange={handleChangeName}
-          />
-            <AtTextarea
-              value={info}
-              onChange={(e) => handleChangeInfo(e.target.value)}
-              maxLength={200}
-              placeholder='该公司不合理的地方...'
-            />
-          <AtButton className='submit-btn' loading={loading.effects['black/submit']} type='primary' formType='submit'>提交</AtButton>
+        <AtForm onSubmit={() => onSubmit(name, info)}>
+          <AtInput name='name' title='公司名称:' placeholder='请输入公司名称...' type='text' value={name}
+                   onChange={handleChangeName}/>
+          <View style={{ padding: '6px' }}/>
+          <AtTextarea value={info} onChange={(e) => handleChangeInfo(e.target.value)}
+                      maxLength={200}
+                      placeholder='该公司不合理的地方...'/>
+          <View className='tip'>
+            <View>
+              <Text className='red'>*特别提示</Text>
+              <Navigator className='navigator' url='/pages/statement/index'>请先阅读特别声明</Navigator></View>
+          </View>
+          <AtButton loading={loading.effects['black/submit']} type='primary' formType='submit'>提交</AtButton>
         </AtForm>
         <AtModal title='提示'
                  content='是否确认提交？'

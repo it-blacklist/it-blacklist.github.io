@@ -6,12 +6,13 @@ export default {
     blackList: [],
     searchVal: '',
     total: 0,
-    pageSize: 10,
+    pageSize: 20,
     currentPage: 1
   },
   effects: {
     * fetch ({ payload }, { call, put }) {
       const response = yield call(api.fetchApi, payload)
+      console.log(response)
       if (response.errMsg === 'collection.get:ok') {
         yield put({ type: 'saveFetch', payload: { blackList: response.data, currentPage: payload.current } })
       }

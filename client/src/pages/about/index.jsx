@@ -1,38 +1,101 @@
-import Taro, {Component} from '@tarojs/taro'
-import {View} from '@tarojs/components'
-import {AtList,AtListItem, AtIcon} from 'taro-ui'
+import Taro, { Component } from '@tarojs/taro'
+import { View } from '@tarojs/components'
+import { AtList, AtListItem, AtIcon, AtModal } from 'taro-ui'
+import { connect } from '@tarojs/redux'
+import { shareInfo } from '../../utils/utils'
 
+@connect(({ about, loading }) => ({
+  ...about,
+  loading
+}), (dispatch) => ({
+  handleOpen () {
+    dispatch({ type: 'about/switch', payload: { active: true } })
+  },
+  handleClose () {
+    dispatch({ type: 'about/switch', payload: { active: false } })
+  },
+  handleConfirm () {
+    Taro.setClipboardData({
+      data: 'https://github.com/liujiayii/',
+      success: (res) => {
+        Taro.getClipboardData({
+          success: (res) => {
+            Taro.showToast({ title: '复制成功' })
+            dispatch({ type: 'about/switch', payload: { active: false } })
+          }
+        })
+      }
+    })
+  }
+}))
 export default class About extends Component {
   config = {
     navigationBarTitleText: '关于',
   }
-
-  render() {
+  
+  clickImg () {
+    Taro.previewImage({
+      urls: ['/assets/qrcode.jpg'], //需要预览的图片http链接列表，注意是数组
+      current: '', // 当前显示图片的http链接，默认是第一个
+    })
+  }
+  onShareAppMessage () {
+    return shareInfo()
+  }
+  
+  render () {
+    const { handleClose, active, handleOpen, handleConfirm } = this.props
     return (
       <View className='index about'>
         <View className='top'>
-          <View className='icon'>
-            <AtIcon value='heart-2'color='#F00'/>
+          <View className='logo'>
+            <AtIcon className='iconfont' prefixClass='icon' value='bixin' color='#F00' size="40"/>
           </View>
-          <View className="info">如果你觉得不错，可以请作者喝杯茶。</View>
+          <View className='info'>如果你觉得小程序还不错，分享给你身边的IT从业者，或者请作者喝杯茶。</View>
         </View>
-        <AtList>
-          <AtListItem
-            title='标题文字'
-            arrow='right'
-            thumb='https://img12.360buyimg.com/jdphoto/s72x72_jfs/t6160/14/2008729947/2754/7d512a86/595c3aeeNa89ddf71.png'
+        <View style={{ marginTop: '10px' }}>
+          <AtList>
+            <AtListItem
+              title='贡献一条黑名单'
+              arrow='right'
+              iconInfo={{ value: 'ziyuan', prefixClass: 'icon', className: 'iconfont' }}
+              onClick={() => Taro.navigateTo({ url: '/pages/blackNew/index' })}
+            />
+            <AtListItem
+              title='留言'
+              arrow='right'
+              iconInfo={{ value: 'fankui-tianchong', prefixClass: 'icon', className: 'iconfont' }}
+              onClick={() => Taro.navigateTo({ url: '/pages/feedback/index' })}
+            />
+            <AtListItem
+              title='特别声明'
+              arrow='right'
+              iconInfo={{ value: 'jinggao', prefixClass: 'icon', className: 'iconfont' }}
+              onClick={() => Taro.navigateTo({ url: '/pages/statement/index' })}
+            />
+            <AtListItem
+              title='GitHub'
+              arrow='right'
+              iconInfo={{ value: 'github', prefixClass: 'icon', className: 'iconfont' }}
+              onClick={handleOpen}
+            />
+            <AtListItem
+              title='打赏'
+              arrow='right'
+              iconInfo={{ value: 'juanzeng', prefixClass: 'icon', className: 'iconfont' }}
+              onClick={this.clickImg}
+            />
+          </AtList>
+          <AtModal
+            isOpened={active}
+            cancelText='取消'
+            confirmText='确认'
+            onClose={handleClose}
+            onCancel={handleClose}
+            onConfirm={handleConfirm}
+            content={'Github:"https://github.com/liujiayii/" 点击确认按钮复制链接到浏览器中查看'}
           />
-          <AtListItem
-            title='标题文字'
-            arrow='right'
-            thumb='http://img10.360buyimg.com/jdphoto/s72x72_jfs/t5872/209/5240187906/2872/8fa98cd/595c3b2aN4155b931.png'
-          />
-          <AtListItem
-            title='标题文字'
-            arrow='right'
-            thumb='http://img12.360buyimg.com/jdphoto/s72x72_jfs/t10660/330/203667368/1672/801735d7/59c85643N31e68303.png'
-          />
-        </AtList>
+        </View>
       </View>
     )
   }

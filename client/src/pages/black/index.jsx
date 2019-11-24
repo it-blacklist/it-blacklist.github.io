@@ -1,28 +1,29 @@
-import Taro, {Component} from '@tarojs/taro'
-import {connect} from '@tarojs/redux'
-import {View} from '@tarojs/components'
-import {AtLoadMore, AtList, AtListItem, AtSearchBar, AtPagination, AtButton} from 'taro-ui'
+import Taro, { Component } from '@tarojs/taro'
+import { connect } from '@tarojs/redux'
+import { View } from '@tarojs/components'
+import { AtLoadMore, AtList, AtListItem, AtSearchBar, AtPagination, AtNoticebar } from 'taro-ui'
+import { shareInfo } from '../../utils/utils'
 
-@connect(({black, loading}) => ({
+@connect(({ black, loading }) => ({
   ...black,
   loading
 }), (dispatch) => ({
-  onPageChange(payload) {
-    Taro.pageScrollTo({scrollTop: 0, duration: 300})
-    dispatch({type: 'black/fetch', payload})
+  onPageChange (payload) {
+    Taro.pageScrollTo({ scrollTop: 0, duration: 300 })
+    dispatch({ type: 'black/fetch', payload })
   },
-  onGetCount() {
-    dispatch({type: 'black/getCount'})
+  onGetCount () {
+    dispatch({ type: 'black/getCount' })
   },
-  handleClickDetail(blackIndex) {
-    dispatch({type: 'black_detail/saveFetch', payload: {blackIndex}})
-    Taro.navigateTo({url: '/pages/blackDetail/index'})
+  handleClickDetail (detail) {
+    dispatch({ type: 'black_detail/saveFetch', payload: { detail } })
+    Taro.navigateTo({ url: '/pages/blackDetail/index' })
   },
-  onChangeSearch(searchVal) {
-    dispatch({type: 'black/saveSearchVal', payload: {searchVal}})
+  onChangeSearch (searchVal) {
+    dispatch({ type: 'black/saveSearchVal', payload: { searchVal } })
   },
-  onActionClick(name) {
-    dispatch({type: 'black/Search', payload: {name}})
+  onActionClick (name) {
+    dispatch({ type: 'black/Search', payload: { name } })
   }
 }))
 export default class Black extends Component {
@@ -30,26 +31,34 @@ export default class Black extends Component {
     navigationBarTitleText: '首页',
     enablePullDownRefresh: true
   }
-
-  componentDidMount() {
+  
+  componentDidMount () {
     console.log(this.props)
     this.props.onGetCount()
-    this.props.onPageChange({current: 1})
+    this.props.onPageChange({ current: 1 })
   }
-
-  onPullDownRefresh() {
+  
+  onPullDownRefresh () {
     this.props.onChangeSearch('')
     this.props.onGetCount()
-    this.props.onPageChange({current: 1})
+    this.props.onPageChange({ current: 1 })
     setTimeout(() => {
       Taro.stopPullDownRefresh()
     }, 500)
   }
-
-  render() {
-    const {searchVal, loading, total, pageSize, currentPage, blackList, onPageChange, handleClickDetail, onChangeSearch, onActionClick} = this.props
+  
+  onShareAppMessage () {
+    return shareInfo()
+  }
+  
+  render () {
+    const { searchVal, loading, total, pageSize, currentPage, blackList, onPageChange, handleClickDetail, onChangeSearch, onActionClick } = this.props
+    
     return (
       <View className='index'>
+        <AtNoticebar close>
+          如果你觉得小程序做的还不错，点击右上角的<View className='iconfont icon-more'/>按钮，添加到“我的小程序”，或者分享给你身边的IT从业者
+        </AtNoticebar>
         <View>
           <AtSearchBar
             actionName='搜一下'
@@ -62,14 +71,12 @@ export default class Black extends Component {
           <AtList>
             {blackList.map((item, index) => (
               item.checked && <AtListItem key={item._id} arrow='right' note={item.time} title={item.name}
-                onClick={() => handleClickDetail(index)}/>
+                                          onClick={() => handleClickDetail(item)}/>
             ))}
           </AtList>
           {(blackList.length === 0) && <AtLoadMore status='noMore'/>}
           <AtPagination className='black-pagination' total={total} pageSize={pageSize}
                         current={currentPage} onPageChange={onPageChange}/>
-          <AtButton circle type='primary'
-                    onClick={() => Taro.navigateTo({url: '/pages/blackNew/index'})}>贡献一条黑名单数据</AtButton>
         </View>
       </View>
     )
