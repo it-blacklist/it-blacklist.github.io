@@ -19,6 +19,7 @@
 git clone https://github.com/liujiayii/sjz_it_blacklist.git
 cd client
 yarn
+# vant组件库需要自行下载zip包并将dist目录解压到主项目根目录下的@vant目录
 ```
 ## 打赏
 
@@ -29,7 +30,7 @@ yarn
 ## 链接
 
 * [Taro:多端统一开发解决方案](https://taro.aotu.io/)
-* [Taro UI:基于taro框架开发的多端UI组件库](https://taro-ui.jd.com/)
+* [Vant Weapp:轻量、可靠的小程序 UI 组件库](https://github.com/youzan/vant-weapp)
 * [Dva.js:基于React和redux的轻量级elm风格框架。](https://dvajs.com/)
 
 ## 开源协议

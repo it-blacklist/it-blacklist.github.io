@@ -1,7 +1,7 @@
 import Taro, { Component } from '@tarojs/taro'
 import { connect } from '@tarojs/redux'
 import { View } from '@tarojs/components'
-import { AtLoadMore, AtList, AtListItem, AtSearchBar, AtPagination, AtNoticebar } from 'taro-ui'
+import { AtLoadMore, AtList, AtListItem, AtSearchBar, AtPagination } from 'taro-ui'
 import { shareInfo } from '../../utils/utils'
 
 @connect(({ black, loading }) => ({
@@ -29,7 +29,10 @@ import { shareInfo } from '../../utils/utils'
 export default class Black extends Component {
   config = {
     navigationBarTitleText: '首页',
-    enablePullDownRefresh: true
+    enablePullDownRefresh: true,
+    usingComponents: {
+      'van-notice-bar': '/@vant/notice-bar/index'
+    }
   }
   
   componentDidMount () {
@@ -56,9 +59,10 @@ export default class Black extends Component {
     
     return (
       <View className='index'>
-        <AtNoticebar close>
-          如果你觉得小程序做的还不错，点击右上角的<View className='iconfont icon-more'/>按钮，添加到“我的小程序”，或者分享给你身边的IT从业者
-        </AtNoticebar>
+        <van-notice-bar
+          mode='closeable'
+          text={'如果你觉得小程序做的还不错，点击右上角的按钮，添加到“我的小程序”，或者分享给你身边的IT从业者'}
+        />
         <View>
           <AtSearchBar
             actionName='搜一下'

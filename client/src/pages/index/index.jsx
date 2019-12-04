@@ -1,7 +1,7 @@
 import Taro, { Component } from '@tarojs/taro'
 import { connect } from '@tarojs/redux'
 import { View } from '@tarojs/components'
-import { AtActivityIndicator, AtNoticebar, AtIndexes } from 'taro-ui'
+import { AtActivityIndicator, AtIndexes } from 'taro-ui'
 import { shareInfo } from '../../utils/utils'
 
 @connect(({ home, loading }) => ({
@@ -16,7 +16,10 @@ import { shareInfo } from '../../utils/utils'
 export default class Black extends Component {
   config = {
     navigationBarTitleText: '新体验',
-    enablePullDownRefresh: true
+    enablePullDownRefresh: true,
+    usingComponents: {
+      'van-notice-bar': '/@vant/notice-bar/index'
+    }
   }
   
   componentDidMount () {
@@ -42,7 +45,7 @@ export default class Black extends Component {
     const { blackList, loading, handleClickDetail } = this.props
     return (
       <View className='index'>
-        <AtNoticebar icon='volume-plus'>这里的功能还不太稳定，从这里往下拉可以刷新列表~</AtNoticebar>
+        <van-notice-bar wrapable left-icon='volume' text='这里的功能还不太稳定，从这里往下拉可以刷新列表~'/>
         <View>
           <View style='height:100vh'>
             {loading.effects['home/fetch'] ?

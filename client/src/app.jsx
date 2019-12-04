@@ -50,7 +50,7 @@ class App extends Component {
       selectedColor: '#333',
       backgroundColor: '#fff',
       borderStyle: 'white',
-    },
+    }
   }
   
   componentDidMount () {
