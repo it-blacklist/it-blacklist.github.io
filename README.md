@@ -1,7 +1,7 @@
 ## 介绍
 
 + 诞生于石家庄的IT黑企小程序，记录有不良行为的黑心企业，目前黑名单数据仅限于石家庄。
-+ 小程序主要使用的技术有：Taro、Taro UI、Dva.js。可能会抛弃taro-ui切换到vant，也可能会换掉taro。
++ 小程序主要使用的技术有：Taro、Vant Weapp、Dva.js。
 + 跨端开发是否是一个伪命题？滴滴(chameleon)、蚂蚁金服(remmax)、京东(taro)、阿里(rax)、Dcloud(uni-app)等……开源了自己不同的解决方案，目前看来缺陷还是不少，希望能有一个大一统的完美方案出现！
 
 ## 预览
@@ -12,7 +12,7 @@
 
 ## 安装
 
-小程序主要使用的技术有：Taro、Taro UI、Dva.js。
+小程序主要使用的技术有：Taro、Vant Weapp、Dva.js。
 
 ```bash
 # yarn
