@@ -112,6 +112,20 @@
   }
 }
 
+.article {
+  padding: 20px;
+
+  .article__h1 {
+    font-size: 40px;
+    color: #6190E8;
+  }
+
+  .article__p {
+    margin: 12px 0;
+    color: #666;
+  }
+}
+
 @import "~taro-ui/dist/style/components/timeline.scss";
 @import "~taro-ui/dist/style/components/button.scss";
 @import "~taro-ui/dist/style/components/loading.scss";

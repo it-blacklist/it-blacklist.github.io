@@ -1,70 +1,72 @@
 import Taro, { Component } from '@tarojs/taro'
 import { View, Text, Navigator } from '@tarojs/components'
 import { connect } from '@tarojs/redux'
-import { AtForm, AtInput, AtButton, AtTextarea, AtModal, AtMessage } from 'taro-ui'
+import Notify from '../../@vant/notify/notify'
+import Dialog from '../../@vant/dialog/dialog'
 
 @connect(({ black_new, loading }) => ({
   ...black_new,
   loading
 }), (dispatch) => ({
-  onSubmit (name, info) {
-    if (name.length === 0 || info.length === 0) {
-      Taro.atMessage({ message: '请补全信息后再提交', type: 'warning' })
+  handleSubmit (name, info) {
+    if (!name || !info) {
+      Notify({ type: 'warning', message: '请补全信息后再提交' })
     } else {
-      dispatch({ type: 'black_new/saveAction', payload: { actionShow: true } })
+      Dialog.confirm({
+        title: '提示',
+        message: '是否确认提交？'
+      }).then(() => {
+        dispatch({ type: 'black_new/submit', payload: { name, info } })
+      }).catch(() => {
+        // on cancel
+      })
     }
   },
-  handleChangeName (name) {
-    dispatch({ type: 'black_new/saveName', payload: { name } })
+  handleChange (value, label) {
+    dispatch({ type: 'black_new/saveState', payload: { [label]: value } })
   },
-  handleChangeInfo (info) {
-    dispatch({ type: 'black_new/saveInfo', payload: { info } })
-  },
-  handleClose () {
-    dispatch({ type: 'black_new/saveAction', payload: { actionShow: false } })
-  },
-  handleSubmit (name, info) {
-    dispatch({ type: 'black_new/submit', payload: { name, info } })
-  }
 }))
 export default class BlackNew extends Component {
   
   config = {
-    navigationBarTitleText: '添加黑名单'
+    navigationBarTitleText: '添加黑名单',
+    usingComponents: {
+      'van-button': '/@vant/button/index',
+      'van-cell': '/@vant/cell/index',
+      'van-cell-group': '/@vant/cell-group/index',
+      'van-divider': '/@vant/divider/index',
+      'van-loading': '/@vant/loading/index',
+      'van-field': '/@vant/field/index',
+      'van-notify': '/@vant/notify/index',
+      'van-dialog': '/@vant/dialog/index'
+    }
   }
   
   componentWillUnmount () {
-    this.props.handleClose()
-    this.props.handleChangeName('')
-    this.props.handleChangeInfo('')
+    this.props.dispatch({ type: 'black_new/saveState', payload: { name: '' } })
+    this.props.dispatch({ type: 'black_new/saveState', payload: { info: '' } })
   }
   
   render () {
-    const { loading, name, info, actionShow, onSubmit, handleChangeName, handleChangeInfo, handleClose, handleSubmit } = this.props
+    const { loading, name, info, handleChange, handleSubmit } = this.props
     return (
       <View className='page-content'>
-        <AtMessage/>
-        <AtForm onSubmit={() => onSubmit(name, info)}>
-          <AtInput name='name' title='公司名称:' placeholder='请输入公司名称...' type='text' value={name}
-                   onChange={handleChangeName}/>
-          <View style={{ padding: '6px' }}/>
-          <AtTextarea value={info} onChange={(e) => handleChangeInfo(e.target.value)}
-                      maxLength={200}
-                      placeholder='该公司不合理的地方...'/>
+        <van-notify id='van-notify'/>
+        <van-dialog id='van-dialog'/>
+        <van-cell-group>
+          <van-field label='公司名称' value={name} type='text' placeholder='请输入公司名称...'
+                     onChange={e => handleChange(e.detail, 'name')}/>
+          <van-field value={info} type='textarea' placeholder='该公司不合理的地方...' autosize
+                     onChange={e => handleChange(e.detail, 'info')}/>
           <View className='tip'>
-            <View>
-              <Text className='red'>*特别提示</Text>
-              <Navigator className='navigator' url='/pages/statement/index'>请先阅读特别声明</Navigator></View>
+            <View><Text className='red'>*特别提示</Text>
+              <Navigator className='navigator' url='/pages/statement/index'>请先阅读特别声明</Navigator>
+            </View>
           </View>
-          <AtButton loading={loading.effects['black/submit']} type='primary' formType='submit'>提交</AtButton>
-        </AtForm>
-        <AtModal title='提示'
-                 content='是否确认提交？'
-                 isOpened={actionShow} cancelText='取消'
-                 onClose={handleClose}
-                 onCancel={handleClose}
-                 onConfirm={() => handleSubmit(name, info)}
-                 confirmText='确认'/>
+          <van-button loading={loading.effects['black/submit']} block type='info'
+                      onclick={() => handleSubmit(name, info)}>提交
+          </van-button>
+        </van-cell-group>
       </View>
     )
   }

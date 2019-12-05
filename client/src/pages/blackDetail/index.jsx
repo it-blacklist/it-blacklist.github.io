@@ -30,7 +30,16 @@ import { AtDivider, AtTimeline, AtLoadMore, AtCard, AtTextarea, AtButton, AtForm
 export default class BlackDetail extends Component {
   
   config = {
-    navigationBarTitleText: '详细信息'
+    navigationBarTitleText: '详细信息',
+    usingComponents: {
+      'van-button': '/@vant/button/index',
+      'van-cell-group': '/@vant/cell-group/index',
+      'van-divider': '/@vant/divider/index',
+      'van-field': '/@vant/field/index',
+      'van-notify': '/@vant/notify/index',
+      'van-dialog': '/@vant/dialog/index',
+      "van-panel": "/@vant/panel/index"
+    }
   }
   
   componentDidMount () {
@@ -53,6 +62,13 @@ export default class BlackDetail extends Component {
         <AtCard note={detail.time} title={detail.name}>
           {detail.info}
         </AtCard>
+        <van-panel title={detail.name} desc={detail.time} use-footer-slot>
+          <view>{detail.info}</view>
+          <view slot="footer">
+            <van-button size="small">按钮</van-button>
+            <van-button size="small" type="danger">按钮</van-button>
+          </view>
+        </van-panel>
         <View className='page-content'>
           <AtDivider content='网友点评'/>
           <View>

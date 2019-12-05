@@ -40,7 +40,7 @@
 				{
 					"id": 0,
 					"name": "pages/blackNew/index",
-					"pathName": "pages/feedback/index",
+					"pathName": "pages/blackDetail/index",
 					"query": "",
 					"scene": null
 				}
