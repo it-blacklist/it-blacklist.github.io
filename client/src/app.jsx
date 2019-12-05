@@ -12,7 +12,7 @@ const dvaApp = dva.createApp({
 const store = dvaApp.getStore()
 
 class App extends Component {
-  
+
   config = {
     pages: [
       'pages/black/index',
@@ -52,19 +52,19 @@ class App extends Component {
       borderStyle: 'white',
     }
   }
-  
+
   componentDidMount () {
     if (process.env.TARO_ENV === 'weapp') {
       Taro.cloud.init()
     }
   }
-  
+
   // 在 App 类中的 render() 函数没有实际作用
   // 请勿修改此函数
   render () {
     return (
       <Provider store={store}>=
-        <Index/>
+        <Index />
       </Provider>
     )
   }

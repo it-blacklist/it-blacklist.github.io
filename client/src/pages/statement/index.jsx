@@ -1,12 +1,11 @@
 import Taro, { Component } from '@tarojs/taro'
 import { View } from '@tarojs/components'
-import { AtTimeline } from 'taro-ui'
 
 export default class Statement extends Component {
   config = {
     navigationBarTitleText: '特别声明',
   }
-  
+
   render () {
     return (
       <View className='statement page-content'>

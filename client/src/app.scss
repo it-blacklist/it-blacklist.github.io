@@ -71,10 +71,6 @@
   display: inline-block;
 }
 
-.black-pagination {
-  margin: 20px !important;
-}
-
 .tip {
   padding: 10px;
   color: #6190E8;
@@ -105,21 +101,17 @@
     }
 
     .info {
-      //color: #6190E8;
       font-size: 32px;
       margin-left: 10px;
     }
   }
 
-  .item-icon { /*解决list中icon的高度问题*/
-    height: 48px;
-
-    .iconfont {
-      position: relative;
-      top: -16px;
-    }
+  .iconfont {
+    font-size: 40px;
+    padding-right: 20px;
   }
 }
+
 @import "~taro-ui/dist/style/components/timeline.scss";
 @import "~taro-ui/dist/style/components/button.scss";
 @import "~taro-ui/dist/style/components/loading.scss";

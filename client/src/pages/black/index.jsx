@@ -1,16 +1,15 @@
 import Taro, { Component } from '@tarojs/taro'
 import { connect } from '@tarojs/redux'
-import { View } from '@tarojs/components'
-import { AtLoadMore, AtList, AtListItem, AtSearchBar, AtPagination } from 'taro-ui'
+import { View, Text } from '@tarojs/components'
 import { shareInfo } from '../../utils/utils'
 
 @connect(({ black, loading }) => ({
   ...black,
   loading
 }), (dispatch) => ({
-  onPageChange (payload) {
+  onPageChange (current = 1) {
     Taro.pageScrollTo({ scrollTop: 0, duration: 300 })
-    dispatch({ type: 'black/fetch', payload })
+    dispatch({ type: 'black/fetch', payload: { current } })
   },
   onGetCount () {
     dispatch({ type: 'black/getCount' })
@@ -22,8 +21,8 @@ import { shareInfo } from '../../utils/utils'
   onChangeSearch (searchVal) {
     dispatch({ type: 'black/saveSearchVal', payload: { searchVal } })
   },
-  onActionClick (name) {
-    dispatch({ type: 'black/Search', payload: { name } })
+  onActionClick () {
+    dispatch({ type: 'black/Search' })
   }
 }))
 export default class Black extends Component {
@@ -31,56 +30,73 @@ export default class Black extends Component {
     navigationBarTitleText: '首页',
     enablePullDownRefresh: true,
     usingComponents: {
-      'van-notice-bar': '/@vant/notice-bar/index'
+      'van-notice-bar': '/@vant/notice-bar/index',
+      'van-search': '/@vant/search/index',
+      'van-button': '/@vant/button/index',
+      'van-cell': '/@vant/cell/index',
+      'van-cell-group': '/@vant/cell-group/index',
+      'van-divider': '/@vant/divider/index',
+      'van-loading': '/@vant/loading/index'
     }
   }
-  
+
   componentDidMount () {
-    console.log(this.props)
     this.props.onGetCount()
-    this.props.onPageChange({ current: 1 })
+    this.props.onPageChange()
   }
-  
+
   onPullDownRefresh () {
     this.props.onChangeSearch('')
     this.props.onGetCount()
-    this.props.onPageChange({ current: 1 })
-    setTimeout(() => {
-      Taro.stopPullDownRefresh()
-    }, 500)
+    this.props.onPageChange()
   }
-  
+
   onShareAppMessage () {
-    return shareInfo()
+    return shareInfo
   }
-  
+
   render () {
     const { searchVal, loading, total, pageSize, currentPage, blackList, onPageChange, handleClickDetail, onChangeSearch, onActionClick } = this.props
-    
+
     return (
       <View className='index'>
         <van-notice-bar
           mode='closeable'
-          text={'如果你觉得小程序做的还不错，点击右上角的按钮，添加到“我的小程序”，或者分享给你身边的IT从业者'}
+          text='如果你觉得小程序做的还不错，点击右上角的按钮，添加到“我的小程序”，或者分享给你身边的IT从业者'
         />
         <View>
-          <AtSearchBar
-            actionName='搜一下'
-            placeholder='输入公司名称搜索'
+          <van-search
             value={searchVal}
-            onChange={onChangeSearch}
-            onActionClick={() => onActionClick(searchVal)}
-          />
-          {(loading.effects['black/fetch'] || loading.effects['black/Search']) && <AtLoadMore status='loading'/>}
-          <AtList>
-            {blackList.map((item, index) => (
-              item.checked && <AtListItem key={item._id} arrow='right' note={item.time} title={item.name}
-                                          onClick={() => handleClickDetail(item)}/>
+            placeholder='输入公司名称搜索'
+            use-action-slot
+            onChange={e => onChangeSearch(e.detail)}
+            onSearch={() => onActionClick()}
+          >
+            <View slot='action' ontap={() => onActionClick()}>
+              <van-button type='info' size='small'>搜索</van-button>
+            </View>
+          </van-search>
+          {(loading.effects['black/fetch'] || loading.effects['black/Search']) &&
+          <View style={{ display: 'flex', justifyContent: 'center', padding: '20px 0' }}>
+            <van-loading size='24px' color='#1989fa'>加载中...</van-loading>
+          </View>
+          }
+          <van-cell-group>
+            {blackList.map(item => (
+              item.checked && <van-cell key={item._id} title={item.name} is-link label={item.time}
+                                        onClick={() => handleClickDetail(item)}/>
             ))}
-          </AtList>
-          {(blackList.length === 0) && <AtLoadMore status='noMore'/>}
-          <AtPagination className='black-pagination' total={total} pageSize={pageSize}
-                        current={currentPage} onPageChange={onPageChange}/>
+          </van-cell-group>
+          {(blackList.length === 0) && <van-divider contentPosition='center'>没有更多了</van-divider>}
+          <View style={{ margin: '20px', display: 'flex', justifyContent: 'space-between' }}>
+            <van-button type='info' size='small' onclick={() => onPageChange(currentPage - 1)}
+                        disabled={currentPage === 1}>上一页
+            </van-button>
+            <View><Text style={{ color: '#1989fa' }}>{currentPage}</Text>/{Math.ceil(total / pageSize)}</View>
+            <van-button type='info' size='small' onclick={() => onPageChange(currentPage + 1)}
+                        disabled={currentPage === Math.ceil(total / pageSize)}>下一页
+            </van-button>
+          </View>
         </View>
       </View>
     )

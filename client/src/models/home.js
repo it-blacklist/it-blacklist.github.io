@@ -5,7 +5,8 @@ import { generator } from '../utils/utils'
 export default {
   namespace: 'home',
   state: {
-    blackList: []
+    blackList: [],
+    scrollTop: 0,
   },
   effects: {
     * fetch (_, { call, put }) {
@@ -21,6 +22,7 @@ export default {
         const blackList = generator(List)
         Taro.setStorageSync('blackList', blackList)
         yield put({ type: 'saveState', payload: { blackList } })
+        Taro.stopPullDownRefresh()
       }
     },
   },

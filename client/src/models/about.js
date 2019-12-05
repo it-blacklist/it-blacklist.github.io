@@ -1,5 +1,3 @@
-import Taro from '@tarojs/taro'
-
 export default {
   namespace: 'about',
   state: {
