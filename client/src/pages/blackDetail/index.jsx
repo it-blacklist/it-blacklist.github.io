@@ -1,7 +1,8 @@
 import Taro, { Component } from '@tarojs/taro'
 import { View, Text, Navigator } from '@tarojs/components'
 import { connect } from '@tarojs/redux'
-import { AtDivider, AtTimeline, AtLoadMore, AtCard, AtTextarea, AtButton, AtForm, AtMessage, AtModal, } from 'taro-ui'
+import Notify from '../../@vant/notify/notify'
+import Dialog from '../../@vant/dialog/dialog'
 
 @connect(({ black_detail, loading }) => ({
   ...black_detail,
@@ -10,96 +11,88 @@ import { AtDivider, AtTimeline, AtLoadMore, AtCard, AtTextarea, AtButton, AtForm
   handleChangeRate (rate) {
     dispatch({ type: 'black_detail/saveRate', payload: { rate } })
   },
-  onSubmit (rate) {
-    if (rate.length === 0) {
-      Taro.atMessage({ message: '请补全信息后再提交', type: 'warning' })
-    } else {
-      dispatch({ type: 'black_detail/saveAction', payload: { actionShow: true } })
-    }
-  },
   handleSubmit (rate, { _id }) {
-    dispatch({ type: 'black_detail/submit', payload: { father: _id, content: rate } })
-  },
-  handleClose () {
-    dispatch({ type: 'black_detail/saveAction', payload: { actionShow: false } })
+    if (rate.length === 0) {
+      Notify({ type: 'warning', message: '请输入内容' })
+    } else {
+      Dialog.confirm({
+        title: '提示',
+        message: '是否确认提交？'
+      }).then(() => {
+        dispatch({ type: 'black_detail/submit', payload: { father: _id, content: rate } })
+      }).catch(() => {
+        // on cancel
+      })
+    }
   },
   getRateList (_id) {
     dispatch({ type: 'black_detail/getRateList', payload: { _id } })
   }
 }))
 export default class BlackDetail extends Component {
-  
+
   config = {
     navigationBarTitleText: '详细信息',
     usingComponents: {
       'van-button': '/@vant/button/index',
       'van-cell-group': '/@vant/cell-group/index',
+      'van-cell': '/@vant/cell/index',
       'van-divider': '/@vant/divider/index',
       'van-field': '/@vant/field/index',
       'van-notify': '/@vant/notify/index',
       'van-dialog': '/@vant/dialog/index',
-      "van-panel": "/@vant/panel/index"
+      'van-panel': '/@vant/panel/index',
     }
   }
-  
+
   componentDidMount () {
     const { getRateList, detail } = this.props
     getRateList(detail['_id'])
   }
-  
+
   componentWillUnmount () {
-    const { handleChangeRate, handleClose, dispatch } = this.props
+    const { handleChangeRate, dispatch } = this.props
     handleChangeRate('')
-    handleClose()
     dispatch({ type: 'black_detail/saveState', payload: { rateList: [] } })
   }
-  
+
   render () {
-    const { detail, rateList, rate, handleChangeRate, loading, onSubmit, actionShow, handleClose, handleSubmit } = this.props
+    const { detail, rateList, rate, handleChangeRate, loading, handleSubmit } = this.props
     return (
-      <View>
-        <AtMessage/>
-        <AtCard note={detail.time} title={detail.name}>
-          {detail.info}
-        </AtCard>
+      <View className='black-detail'>
+        <van-notify id='van-notify' />
+        <van-dialog id='van-dialog' />
         <van-panel title={detail.name} desc={detail.time} use-footer-slot>
-          <view>{detail.info}</view>
-          <view slot="footer">
-            <van-button size="small">按钮</van-button>
-            <van-button size="small" type="danger">按钮</van-button>
+          <View className='black-content'>{detail.info}</View>
+          <view slot='footer'>
+            <van-divider contentPosition='center' textColor='#1989fa'>网友点评</van-divider>
+            <View>
+              {rateList.map(item => (
+                <van-cell key={item._id} title={item.content} border={false} />
+              ))}
+              {loading.effects['black_detail/getRateList'] &&
+              <View style={{ display: 'flex', justifyContent: 'center', padding: '20px 0' }}>
+                <van-loading size='24px' color='#1989fa'>加载中...</van-loading>
+              </View>}
+              {rateList.length === 0 && <van-divider contentPosition='center'>没有更多了</van-divider>}
+            </View>
           </view>
         </van-panel>
         <View className='page-content'>
-          <AtDivider content='网友点评'/>
-          <View>
-            {rateList.map((item, index) => (
-              <AtTimeline key={index} items={[{ title: item.content }]}/>
-            ))}
-            {loading.effects['black_detail/getRateList'] && <AtLoadMore status='loading'/>}
-            {rateList.length === 0 && <AtLoadMore status='noMore'/>}
-          </View>
-          <AtForm onSubmit={() => onSubmit(rate)}>
-            <AtTextarea
-              value={rate}
-              onChange={(e) => handleChangeRate(e.target.value)}
-              maxLength={200}
-              placeholder='我要点评...'
+          <van-cell-group>
+            <van-field value={rate} type='textarea' placeholder='我要点评...'
+              autosize onChange={e => handleChangeRate(e.detail)}
             />
             <View className='tip'>
               <View><Text className='red'>*特别提示</Text>
                 <Navigator className='navigator' url='/pages/statement/index'>请先阅读特别声明</Navigator>
               </View>
             </View>
-            <AtButton loading={loading.effects['black_detail/submit']} type='primary'
-                      formType='submit'>提交</AtButton>
-          </AtForm>
-          <AtModal title='提示'
-                   content='是否确认提交？'
-                   isOpened={actionShow} cancelText='取消'
-                   onClose={handleClose}
-                   onCancel={handleClose}
-                   onConfirm={() => handleSubmit(rate, detail)}
-                   confirmText='确认'/>
+            <van-button loading={loading.effects['black_detail/submit']} block type='info'
+              onclick={() => handleSubmit(rate, detail)}
+            >提交
+            </van-button>
+          </van-cell-group>
         </View>
       </View>
     )

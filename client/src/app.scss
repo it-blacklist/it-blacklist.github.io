@@ -63,10 +63,6 @@
   background: #f7f7f7;
 }
 
-.at-input { /*对齐form表单*/
-  margin-left: 0 !important;
-}
-
 .navigator {
   display: inline-block;
 }
@@ -126,25 +122,29 @@
   }
 }
 
-@import "~taro-ui/dist/style/components/timeline.scss";
-@import "~taro-ui/dist/style/components/button.scss";
-@import "~taro-ui/dist/style/components/loading.scss";
-@import "~taro-ui/dist/style/components/load-more.scss";
-@import "~taro-ui/dist/style/components/icon.scss";
-@import "~taro-ui/dist/style/components/divider.scss";
-@import "~taro-ui/dist/style/components/modal.scss";
-@import "~taro-ui/dist/style/components/message.scss";
-@import "~taro-ui/dist/style/components/form.scss";
-@import "~taro-ui/dist/style/components/input.scss";
-@import "~taro-ui/dist/style/components/textarea.scss";
-@import "~taro-ui/dist/style/components/search-bar.scss";
-@import "~taro-ui/dist/style/components/list.scss";
-@import "~taro-ui/dist/style/components/card.scss";
-@import "~taro-ui/dist/style/components/badge.scss";
-@import "~taro-ui/dist/style/components/tabs.scss";
-@import "~taro-ui/dist/style/components/pagination.scss";
-@import "~taro-ui/dist/style/components/action-sheet.scss";
-@import "~taro-ui/dist/style/components/article.scss";
-@import "~taro-ui/dist/style/components/toast.scss";
-@import "~taro-ui/dist/style/components/indexes.scss";
-@import "~taro-ui/dist/style/components/activity-indicator.scss";
+.black-detail {
+  .black-content {
+    position: relative;
+    margin: 10px;
+    padding: 20px;
+    color: #333;
+    font-size: 36px;
+
+    &:after {
+      position: absolute;
+      box-sizing: border-box;
+      -webkit-transform-origin: center;
+      transform-origin: center;
+      content: " ";
+      pointer-events: none;
+      top: -50%;
+      right: -50%;
+      bottom: -50%;
+      left: -50%;
+      border: 1px solid #eee;
+      border-radius: 20px;
+      -webkit-transform: scale(.5);
+      transform: scale(.5);
+    }
+  }
+}
