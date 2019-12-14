@@ -30,13 +30,13 @@ export default class Black extends Component {
     navigationBarTitleText: '首页',
     enablePullDownRefresh: true,
     usingComponents: {
-      'van-notice-bar': '/@vant/notice-bar/index',
-      'van-search': '/@vant/search/index',
-      'van-button': '/@vant/button/index',
-      'van-cell': '/@vant/cell/index',
-      'van-cell-group': '/@vant/cell-group/index',
-      'van-divider': '/@vant/divider/index',
-      'van-loading': '/@vant/loading/index'
+      'van-notice-bar': '@vant/weapp/dist/notice-bar/index',
+      'van-search': '@vant/weapp/dist/search/index',
+      'van-button': '@vant/weapp/dist/button/index',
+      'van-cell': '@vant/weapp/dist/cell/index',
+      'van-cell-group': '@vant/weapp/dist/cell-group/index',
+      'van-divider': '@vant/weapp/dist/divider/index',
+      'van-loading': '@vant/weapp/dist/loading/index'
     }
   }
 

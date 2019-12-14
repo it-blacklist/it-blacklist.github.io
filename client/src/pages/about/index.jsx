@@ -1,25 +1,25 @@
 import Taro, { Component } from '@tarojs/taro'
 import { View } from '@tarojs/components'
-import Dialog from '../../@vant/dialog/dialog'
+import Dialog from '@vant/weapp/dist/dialog/dialog'
 import { shareInfo } from '../../utils/utils'
 
 export default class About extends Component {
   config = {
     navigationBarTitleText: '关于',
     usingComponents: {
-      'van-cell': '/@vant/cell/index',
-      'van-cell-group': '/@vant/cell-group/index',
-      'van-dialog': '/@vant/dialog/index'
+      'van-cell': '@vant/weapp/dist/cell/index',
+      'van-cell-group': '@vant/weapp/dist/cell-group/index',
+      'van-dialog': '@vant/weapp/dist/dialog/index'
     }
   }
-  
+
   clickImg () {
     Taro.previewImage({
       urls: ['/assets/qrcode.jpg'], //需要预览的图片http链接列表，注意是数组
       current: '', // 当前显示图片的http链接，默认是第一个
     })
   }
-  
+
   handleOpen () {
     Dialog.confirm({
       title: '提示',
@@ -39,11 +39,11 @@ export default class About extends Component {
       // on cancel
     })
   }
-  
+
   onShareAppMessage () {
     return shareInfo
   }
-  
+
   render () {
     return (
       <View className='index about'>
