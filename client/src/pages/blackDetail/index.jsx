@@ -1,8 +1,8 @@
 import Taro, { Component } from '@tarojs/taro'
 import { View, Text, Navigator } from '@tarojs/components'
 import { connect } from '@tarojs/redux'
-import Notify from '@vant/weapp/dist/notify/notify'
-import Dialog from '@vant/weapp/dist/dialog/dialog'
+import Notify from '../../@vant/notify/notify'
+import Dialog from '../../@vant/dialog/dialog'
 
 @connect(({ black_detail, loading }) => ({
   ...black_detail,
@@ -34,14 +34,14 @@ export default class BlackDetail extends Component {
   config = {
     navigationBarTitleText: '详细信息',
     usingComponents: {
-      'van-button': '@vant/weapp/dist/button/index',
-      'van-cell-group': '@vant/weapp/dist/cell-group/index',
-      'van-cell': '@vant/weapp/dist/cell/index',
-      'van-divider': '@vant/weapp/dist/divider/index',
-      'van-field': '@vant/weapp/dist/field/index',
-      'van-notify': '@vant/weapp/dist/notify/index',
-      'van-dialog': '@vant/weapp/dist/dialog/index',
-      'van-panel': '@vant/weapp/dist/panel/index',
+      'van-button': '/@vant/button/index',
+      'van-cell-group': '/@vant/cell-group/index',
+      'van-cell': '/@vant/cell/index',
+      'van-divider': '/@vant/divider/index',
+      'van-field': '/@vant/field/index',
+      'van-notify': '/@vant/notify/index',
+      'van-dialog': '/@vant/dialog/index',
+      'van-panel': '/@vant/panel/index',
     }
   }
 

@@ -17,11 +17,11 @@ const tabList = [
 export default class TabBar extends Taro.Component {
   config = {
     usingComponents: {
-      'van-tabbar': '@vant/weapp/dist/tabbar/index',
-      'van-tabbar-item': '@vant/weapp/dist/tabbar-item/index'
+      'van-tabbar': '/@vant/tabbar/index',
+      'van-tabbar-item': '/@vant/tabbar-item/index'
     }
   }
-
+  
   render () {
     const { currentIndex, handleClick } = this.props
     return (

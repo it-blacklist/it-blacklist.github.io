@@ -1,8 +1,8 @@
 import Taro, { Component } from '@tarojs/taro'
 import { View, Text, Navigator } from '@tarojs/components'
 import { connect } from '@tarojs/redux'
-import Notify from '@vant/weapp/dist/notify/notify'
-import Dialog from '@vant/weapp/dist/dialog/dialog'
+import Notify from '../../@vant/notify/notify'
+import Dialog from '../../@vant/dialog/dialog'
 
 @connect(({ black_new, loading }) => ({
   ...black_new,
@@ -27,26 +27,26 @@ import Dialog from '@vant/weapp/dist/dialog/dialog'
   },
 }))
 export default class BlackNew extends Component {
-
+  
   config = {
     navigationBarTitleText: '添加黑名单',
     usingComponents: {
-      'van-button': '@vant/weapp/dist/button/index',
-      'van-cell': '@vant/weapp/dist/cell/index',
-      'van-cell-group': '@vant/weapp/dist/cell-group/index',
-      'van-divider': '@vant/weapp/dist/divider/index',
-      'van-loading': '@vant/weapp/dist/loading/index',
-      'van-field': '@vant/weapp/dist/field/index',
-      'van-notify': '@vant/weapp/dist/notify/index',
-      'van-dialog': '@vant/weapp/dist/dialog/index'
+      'van-button': '/@vant/button/index',
+      'van-cell': '/@vant/cell/index',
+      'van-cell-group': '/@vant/cell-group/index',
+      'van-divider': '/@vant/divider/index',
+      'van-loading': '/@vant/loading/index',
+      'van-field': '/@vant/field/index',
+      'van-notify': '/@vant/notify/index',
+      'van-dialog': '/@vant/dialog/index'
     }
   }
-
+  
   componentWillUnmount () {
     this.props.dispatch({ type: 'black_new/saveState', payload: { name: '' } })
     this.props.dispatch({ type: 'black_new/saveState', payload: { info: '' } })
   }
-
+  
   render () {
     const { loading, name, info, handleChange, handleSubmit } = this.props
     return (

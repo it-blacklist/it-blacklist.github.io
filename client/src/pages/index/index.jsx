@@ -17,11 +17,11 @@ export default class Black extends Component {
     navigationBarTitleText: '新体验',
     enablePullDownRefresh: true,
     usingComponents: {
-      'van-notice-bar': '@vant/weapp/dist/notice-bar/index',
-      'van-index-bar': '@vant/weapp/dist/index-bar/index',
-      'van-index-anchor': '@vant/weapp/dist/index-anchor/index',
-      'van-cell': '@vant/weapp/dist/cell/index',
-      'van-loading': '@vant/weapp/dist/loading/index'
+      'van-notice-bar': '/@vant/notice-bar/index',
+      'van-index-bar': '/@vant/index-bar/index',
+      'van-index-anchor': '/@vant/index-anchor/index',
+      'van-cell': '/@vant/cell/index',
+      'van-loading': '/@vant/loading/index'
     }
   }
 

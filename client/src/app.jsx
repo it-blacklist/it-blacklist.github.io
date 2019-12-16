@@ -4,7 +4,6 @@ import { Provider } from '@tarojs/redux'
 import './app.scss'
 import dva from './utils/dva'
 import models from './models'
-import Index from './pages/black'
 
 const dvaApp = dva.createApp({
   initialState: {},
@@ -65,7 +64,7 @@ class App extends Component {
   render () {
     return (
       <Provider store={store}>=
-        <Index/>
+        <Index />
       </Provider>
     )
   }
