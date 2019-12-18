@@ -10,17 +10,35 @@
 
 <img src="https://github.com/liujiayii/sjz_it_blacklist/blob/master/assets/wx.jpg?raw=true" width="200" height="200" style="margin-top: 10px;" >
 
-## 安装
+## 开始开发
 
 小程序主要使用的技术有：Remax、Vant Weapp、Dva.js。
-
 ```bash
-# yarn
-git clone https://github.com/liujiayii/sjz_it_blacklist.git
-cd client
-yarn
+$ git clone https://github.com/liujiayii/sjz_it_blacklist.git
 # 可能clone的项目不能正常运行，需要有一定解决问题的能力，或者直接问我
 ```
+安装依赖
+
+```bash
+$ yarn
+```
+
+开始构建
+
+```bash
+$ yarn run dev
+```
+
+使用微信小程序开发者工具打开根目录。
+
+## 发布
+
+```bash
+$ yarn run build
+```
+
+使用微信小程序开发者工具上传版本。
+
 ## 打赏
 
 先放一个吧!
