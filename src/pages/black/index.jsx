@@ -9,8 +9,6 @@ import VanLoading from '@vant/weapp/dist/loading'
 import VanCellGroup from '@vant/weapp/dist/cell-group'
 import VanCell from '@vant/weapp/dist/cell'
 import VanDivider from '@vant/weapp/dist/divider'
-//import VanTabbar from '@vant/weapp/dist/tabbar'
-//import VanTabbarItem from '@vant/weapp/dist/tabbar-item'
 class Black extends Component {
   componentDidMount () {
     this.props.onGetCount()
