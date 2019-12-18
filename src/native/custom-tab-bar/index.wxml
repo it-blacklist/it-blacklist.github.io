@@ -1,0 +1,3 @@
+<van-tabbar active="{{currentIndex}}" onchange="handleClick">
+  <van-tabbar-item wx:for="{{tabList}}" icon="{{item.icon}}" wx:key="url">{{item.title}}</van-tabbar-item>
+</van-tabbar>

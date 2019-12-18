@@ -1,0 +1,7 @@
+{
+  "component": true,
+  "usingComponents":{
+    "van-tabbar": "/npm/_vant/weapp/dist/tabbar/index",
+    "van-tabbar-item": "/npm/_vant/weapp/dist/tabbar-item/index"
+  }
+}
