@@ -7,13 +7,14 @@ import VanLoading from '@vant/weapp/dist/loading'
 import VanCell from '@vant/weapp/dist/cell'
 import VanIndexBar from '@vant/weapp/dist/index-bar'
 import VanIndexAnchor from '@vant/weapp/dist/index-anchor'
+import CustomTabBar from '@/custom-tab-bar'
 
 class Index extends Component {
   constructor (props) {
     super(props)
     this.handleClickDetail = this.handleClickDetail.bind(this)
   }
-
+  
   componentDidMount () {
     const blackList = getStorageSync('blackList')
     blackList ? this.props.dispatch({
@@ -21,21 +22,21 @@ class Index extends Component {
       payload: { blackList }
     }) : this.props.dispatch({ type: 'home/fetch' })
   }
-
+  
   onPullDownRefresh () {
     this.props.dispatch({ type: 'home/fetch' })
   }
-
+  
   onShareAppMessage () {
     return shareInfo
   }
-
+  
   onPageScroll (event) {
     this.props.dispatch({
       type: 'home/saveState', payload: { scrollTop: event.scrollTop }
     })
   }
-
+  
   render () {
     const { blackList, loading, scrollTop } = this.props
     return (
@@ -57,10 +58,11 @@ class Index extends Component {
               ))}
             </VanIndexBar>}
         </View>
+        <CustomTabBar/>
       </View>
     )
   }
-
+  
   handleClickDetail (detail) {
     const { dispatch } = this.props
     dispatch({ type: 'black_detail/saveFetch', payload: { detail } })

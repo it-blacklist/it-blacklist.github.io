@@ -9,25 +9,27 @@ import VanLoading from '@vant/weapp/dist/loading'
 import VanCellGroup from '@vant/weapp/dist/cell-group'
 import VanCell from '@vant/weapp/dist/cell'
 import VanDivider from '@vant/weapp/dist/divider'
+import CustomTabBar from '@/custom-tab-bar'
+
 class Black extends Component {
   componentDidMount () {
     this.props.onGetCount()
     this.props.onPageChange()
   }
-
+  
   onPullDownRefresh () {
     this.props.onChangeSearch('')
     this.props.onGetCount()
     this.props.onPageChange()
   }
-
+  
   onShareAppMessage () {
     return shareInfo
   }
-
+  
   render () {
     const { searchVal, loading, total, pageSize, currentPage, blackList, onPageChange, handleClickDetail, onChangeSearch, onActionClick } = this.props
-
+    
     return (
       <View className='index'>
         <VanNoticeBar
@@ -68,6 +70,7 @@ class Black extends Component {
             </VanButton>
           </View>
         </View>
+        <CustomTabBar/>
       </View>
     )
   }

@@ -5,6 +5,7 @@ import { shareInfo } from '@/utils/utils'
 import VanCellGroup from '@vant/weapp/dist/cell-group'
 import VanCell from '@vant/weapp/dist/cell'
 import VanDialog from '@vant/weapp/dist/dialog'
+import CustomTabBar from '@/custom-tab-bar'
 import qrCode from '@/assets/qrcode.jpg'
 
 export default class About extends Component {
@@ -63,6 +64,7 @@ export default class About extends Component {
             </VanCell>
           </VanCellGroup>
         </View>
+        <CustomTabBar/>
       </View>
     )
   }

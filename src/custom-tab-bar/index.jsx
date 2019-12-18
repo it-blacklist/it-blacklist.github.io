@@ -1,6 +1,8 @@
 import { switchTab } from 'remax/wechat'
 import { connect } from 'remax-dva'
 import React, { Component } from 'react'
+import VanTabbar from '@vant/weapp/dist/tabbar'
+import VanTabbarItem from '@vant/weapp/dist/tabbar-item'
 
 const tabList = [
   { title: '黑名单', icon: 'wap-home-o', url: '/pages/black/index' },
@@ -12,11 +14,11 @@ class TabBar extends Component {
   render () {
     const { currentIndex, handleClick } = this.props
     return (
-      <van-tabbar active={currentIndex} onchange={e => handleClick(e.detail)}>
+      <VanTabbar active={currentIndex} onchange={e => handleClick(e.detail)}>
         {tabList.map(item => (
-          <van-tabbar-item icon={item.icon} key={item.url}>{item.title}</van-tabbar-item>
+          <VanTabbarItem icon={item.icon} key={item.url}>{item.title}</VanTabbarItem>
         ))}
-      </van-tabbar>
+      </VanTabbar>
     )
   }
 }
