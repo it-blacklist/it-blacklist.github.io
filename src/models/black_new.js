@@ -11,12 +11,14 @@ export default {
   effects: {
     * submit ({ payload }, { call }) {
       const time = `${new Date().getFullYear()}/${new Date().getMonth() + 1}/${new Date().getDate()}`
-      const response = yield call(api.addBlackApi, { ...payload, time, checked: false })
-      if (response.errMsg === 'collection.add:ok') {
+      const res = yield call(api.addBlackApi, { ...payload, time, checked: true })
+      if (res.result.errMsg === 'collection.add:ok') {
         Notify({
           type: 'success', message: '提交成功',
           onClose: () => {navigateBack({ delta: 0 })}
         })
+      } else if (res.result.errCode === 87014) {
+        Notify({ type: 'danger', message: '内容含有违法违规内容' })
       }
     },
   },

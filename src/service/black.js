@@ -2,17 +2,12 @@ import { cloud } from 'remax/wechat'
 
 cloud.init()
 const db = cloud.database()
-const _ = db.command
 
 export const fetchApi = data =>/*黑名单列表*/
-  db.collection('blacklist')
-    .skip((data.current - 1) * 20)
-    .get()
+  cloud.callFunction({ name: 'fetch', data })
 
-export const _fetchApi = (data) =>/*体验版黑名单列表*/
-  db.collection('blacklist')
-    .skip(data)
-    .get()
+export const _fetchAllApi = () =>/*体验版黑名单列表*/
+  cloud.callFunction({ name: 'fetchAll' })
 
 export const SearchApi = data =>/*黑名单搜索*/
   db.collection('blacklist').where({
@@ -22,14 +17,11 @@ export const SearchApi = data =>/*黑名单搜索*/
     })
   }).get()
 
-export const getCountApi = () =>/*查询总数量*/
-  db.collection('blacklist').count()
-
 export const addBlackApi = data =>/*增加黑名单*/
-  db.collection('blacklist').add({ data })
+  cloud.callFunction({ name: 'addBlack', data })
 
 export const updateRateApi = data =>/*增加黑名单评论*/
-  db.collection('blacklist_rate').add({ data })
+  cloud.callFunction({ name: 'updateRate', data })
 
 export const getRateListApi = data =>/*查询黑名单评论*/
   db.collection('blacklist_rate')

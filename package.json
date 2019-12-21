@@ -19,8 +19,8 @@
     "dva-loading": "^3.0.19",
     "node-sass": "^4.13.0",
     "react": "^16.8.6",
-    "remax": "^1.1.0",
-    "remax-cli": "^1.1.0",
+    "remax": "^1.10.6",
+    "remax-cli": "^1.10.6",
     "remax-dva": "^2.0.0",
     "rimraf": "^2.6.3",
     "sass": "^1.23.7"

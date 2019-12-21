@@ -13,23 +13,22 @@ import CustomTabBar from '@/custom-tab-bar'
 
 class Black extends Component {
   componentDidMount () {
-    this.props.onGetCount()
+    //this.props.onGetCount()
     this.props.onPageChange()
   }
-  
+
   onPullDownRefresh () {
     this.props.onChangeSearch('')
-    this.props.onGetCount()
+    //this.props.onGetCount()
     this.props.onPageChange()
   }
-  
+
   onShareAppMessage () {
     return shareInfo
   }
-  
+
   render () {
-    const { searchVal, loading, total, pageSize, currentPage, blackList, onPageChange, handleClickDetail, onChangeSearch, onActionClick } = this.props
-    
+    const { searchVal, loading, pagination, blackList, onPageChange, handleClickDetail, onChangeSearch, onActionClick } = this.props
     return (
       <View className='index'>
         <VanNoticeBar
@@ -60,20 +59,29 @@ class Black extends Component {
             ))}
           </VanCellGroup>
           {(blackList.length === 0) && <VanDivider contentPosition='center'>没有更多了</VanDivider>}
-          <View style={{ margin: '20px', display: 'flex', justifyContent: 'space-between' }}>
-            <VanButton type='info' size='small' onclick={() => onPageChange(currentPage - 1)}
-                       disabled={currentPage === 1}>上一页
-            </VanButton>
-            <View><Text style={{ color: '#1989fa' }}>{currentPage}</Text>/{Math.ceil(total / pageSize)}</View>
-            <VanButton type='info' size='small' onclick={() => onPageChange(currentPage + 1)}
-                       disabled={currentPage === Math.ceil(total / pageSize)}>下一页
-            </VanButton>
-          </View>
+          <Pagination pagination={pagination} onPageChange={onPageChange}/>
         </View>
         <CustomTabBar/>
       </View>
     )
   }
+}
+
+const Pagination = ({ pagination: { current, total, pageSize }, onPageChange }) => {
+  const totalPage = Math.ceil(total / pageSize)
+  return (
+    <View style={{ margin: '20px', display: 'flex', justifyContent: 'space-between' }}>
+      <VanButton type='info' size='small' onclick={() => onPageChange(current - 1)}
+                 disabled={current === 1}>上一页
+      </VanButton>
+      <View>
+        <Text style={{ color: '#1989fa' }}>{current}</Text>/{totalPage}
+      </View>
+      <VanButton type='info' size='small' onclick={() => onPageChange(current + 1)}
+                 disabled={current === totalPage}>下一页
+      </VanButton>
+    </View>
+  )
 }
 
 export default connect(({ black, loading }) => ({

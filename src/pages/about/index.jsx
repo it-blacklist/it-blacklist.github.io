@@ -6,12 +6,12 @@ import VanCellGroup from '@vant/weapp/dist/cell-group'
 import VanCell from '@vant/weapp/dist/cell'
 import VanDialog from '@vant/weapp/dist/dialog'
 import CustomTabBar from '@/custom-tab-bar'
-import qrCode from '@/assets/qrcode.jpg'
 
 export default class About extends Component {
   clickImg () {
     previewImage({
-      urls: [qrCode], //需要预览的图片http链接列表，注意是数组
+      urls: ['https://6974-itblacklist-1257941888.tcb.qcloud.la/qrcode.jpg?sign=a8a70c8edfa00f789149be669dce239f&t=1576917029',
+        'https://6974-itblacklist-1257941888.tcb.qcloud.la/wx.jpg?sign=00f84fae613588571776b4a3570f63f1&t=1576917059'], //需要预览的图片http链接列表，注意是数组
       current: '', // 当前显示图片的http链接，默认是第一个
     })
   }

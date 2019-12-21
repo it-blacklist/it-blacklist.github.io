@@ -6,22 +6,19 @@ export default {
   state: {
     blackList: [],
     searchVal: '',
-    total: 0,
-    pageSize: 20,
-    currentPage: 1
+    pagination: { total: 0, pageSize: 20, current: 1 }
   },
   effects: {
-    * fetch ({ payload }, { call, put }) {
-      const response = yield call(api.fetchApi, payload)
-      if (response.errMsg === 'collection.get:ok') {
-        yield put({ type: 'saveFetch', payload: { blackList: response.data, currentPage: payload.current } })
+    * fetch ({ payload }, { call, put, select }) {
+      const pageSize = yield select(state => state['black'].pagination.pageSize)
+      const res = yield call(api.fetchApi, { ...payload, pageSize })
+      if (res.errMsg === 'cloud.callFunction:ok') {
+        const { list, total } = res.result
+        yield put({
+          type: 'saveFetch',
+          payload: { blackList: list, pagination: { total: total, current: payload.current } }
+        })
         stopPullDownRefresh()
-      }
-    },
-    * getCount (_, { call, put }) {
-      const response = yield call(api.getCountApi)
-      if (response.errMsg === 'collection.count:ok') {
-        yield put({ type: 'saveCount', payload: { total: response.total } })
       }
     },
     * Search (_, { call, put, select }) {
@@ -33,11 +30,8 @@ export default {
     }
   },
   reducers: {
-    saveFetch (state, { payload }) {
-      return { ...state, ...payload }
-    },
-    saveCount (state, { payload }) {
-      return { ...state, ...payload }
+    saveFetch (state, { payload: { blackList = [], pagination = { total: 0, pageSize: 20, current: 1 } } }) {
+      return { ...state, blackList, pagination: { ...state.pagination, ...pagination } }
     },
     saveSearchVal (state, { payload }) {
       return { ...state, ...payload }

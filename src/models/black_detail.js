@@ -1,5 +1,6 @@
 import * as api from '../service/black'
 import Notify from '@vant/weapp/dist/notify/notify'
+import { navigateBack } from 'remax/wechat'
 
 export default {
   namespace: 'black_detail',
@@ -10,12 +11,14 @@ export default {
   },
   effects: {
     * submit ({ payload }, { call, put }) {
-      const response = yield call(api.updateRateApi, { ...payload, checked: false })
-      if (response.errMsg === 'collection.add:ok') {
+      const res = yield call(api.updateRateApi, { ...payload, checked: true })
+      if (res.result.errMsg === 'collection.add:ok') {
         Notify({
           type: 'success', message: '提交成功',
           onClose: yield put({ type: 'saveRate', payload: { rate: '' } })
         })
+      } else if (res.result.errCode === 87014) {
+        Notify({ type: 'danger', message: '内容含有违法违规内容' })
       }
     },
     * getRateList ({ payload }, { call, put }) {

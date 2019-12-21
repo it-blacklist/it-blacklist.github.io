@@ -30,7 +30,7 @@ class BlackNew extends Component {
               <Navigator className='navigator' url='/pages/statement/index'>请先阅读特别声明</Navigator>
             </View>
           </View>
-          <VanButton loading={loading.effects['black/submit']} block type='info'
+          <VanButton loading={loading.effects['black_new/submit']} block type='info'
                      onclick={() => handleSubmit(name, info)}>提交
           </VanButton>
         </VanCellGroup>

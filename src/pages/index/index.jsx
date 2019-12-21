@@ -14,29 +14,29 @@ class Index extends Component {
     super(props)
     this.handleClickDetail = this.handleClickDetail.bind(this)
   }
-  
+
   componentDidMount () {
     const blackList = getStorageSync('blackList')
     blackList ? this.props.dispatch({
       type: 'home/saveState',
       payload: { blackList }
-    }) : this.props.dispatch({ type: 'home/fetch' })
+    }) : this.props.dispatch({ type: 'home/fetchAll' })
   }
-  
+
   onPullDownRefresh () {
-    this.props.dispatch({ type: 'home/fetch' })
+    this.props.dispatch({ type: 'home/fetchAll' })
   }
-  
+
   onShareAppMessage () {
     return shareInfo
   }
-  
+
   onPageScroll (event) {
     this.props.dispatch({
-      type: 'home/saveState', payload: { scrollTop: event.scrollTop }
+      type: 'home/saveScrollTop', payload: { scrollTop: event.scrollTop }
     })
   }
-  
+
   render () {
     const { blackList, loading, scrollTop } = this.props
     return (
@@ -62,7 +62,7 @@ class Index extends Component {
       </View>
     )
   }
-  
+
   handleClickDetail (detail) {
     const { dispatch } = this.props
     dispatch({ type: 'black_detail/saveFetch', payload: { detail } })

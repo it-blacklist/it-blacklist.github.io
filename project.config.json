@@ -7,13 +7,12 @@
 		"urlCheck": true,
 		"es6": false,
 		"postcss": true,
-		"preloadBackgroundData": false,
 		"minified": true,
 		"newFeature": true,
 		"coverView": true,
 		"nodeModules": false,
 		"autoAudits": false,
-		"showShadowRootInWxmlPanel": true,
+		"showShadowRootInWxmlPanel": false,
 		"scopeDataCheck": false,
 		"checkInvalidKey": true,
 		"checkSiteMap": true,
@@ -22,13 +21,15 @@
 			"ignore": [],
 			"disablePlugins": [],
 			"outputPath": ""
-		}
+		},
+		"preloadBackgroundData": false
 	},
 	"compileType": "miniprogram",
 	"libVersion": "2.9.4",
 	"appid": "wx6fb9fed8d1dd41aa",
 	"projectname": "IT黑企",
-	"cloudfunctionTemplateRoot": "",
+	"cloudfunctionTemplateRoot": "./functions",
+	"cloudfunctionRoot": "src/cloud/",
 	"miniprogramRoot": "dist/",
 	"watchOptions": {
 		"ignore": []
@@ -61,7 +62,15 @@
 		},
 		"miniprogram": {
 			"current": -1,
-			"list": []
+			"list": [
+				{
+					"id": 0,
+					"name": "pages/blackNew/index",
+					"pathName": "pages/blackNew/index",
+					"query": "",
+					"scene": null
+				}
+			]
 		}
 	}
 }
