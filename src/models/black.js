@@ -23,9 +23,9 @@ export default {
     },
     * Search (_, { call, put, select }) {
       const name = yield select(state => state.black.searchVal)
-      const response = yield call(api.SearchApi, { name })
-      if (response.errMsg === 'collection.get:ok') {
-        yield put({ type: 'saveCount', payload: { blackList: response.data, currentPage: 1, total: 1 } })
+      const res= yield call(api.SearchApi, { name })
+      if (res.errMsg === 'collection.get:ok') {
+        yield put({ type: 'saveSearch', payload: { blackList: res.data,  pagination: { total: 1, pageSize: 20, current: 1 } } })
       }
     }
   },
