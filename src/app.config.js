@@ -2,8 +2,8 @@ module.exports = {
   pages: [
     'pages/black/index',
     'pages/about/index',
-    'pages/blackDetail/index',
-    'pages/blackNew/index',
+    'pages/black-detail/index',
+    'pages/black-new/index',
     'pages/statement/index',
     'pages/feedback/index',
     'pages/index/index'

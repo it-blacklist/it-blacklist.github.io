@@ -1,0 +1,13 @@
+.article {
+  padding: 20px;
+}
+
+.article_h1 {
+  font-size: 40px;
+  color: #6190E8;
+}
+
+.article_p {
+  margin: 12px 0;
+  color: #666;
+}

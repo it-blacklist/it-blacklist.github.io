@@ -1,6 +1,5 @@
 import * as api from '../service/black'
 import Notify from '@vant/weapp/dist/notify/notify'
-import { navigateBack } from 'remax/wechat'
 
 export default {
   namespace: 'black_detail',

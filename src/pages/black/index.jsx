@@ -97,7 +97,7 @@ export default connect(({ black, loading }) => ({
   },
   handleClickDetail (detail) {
     dispatch({ type: 'black_detail/saveFetch', payload: { detail } })
-    navigateTo({ url: '/pages/blackDetail/index' })
+    navigateTo({ url: '/pages/black-detail/index' })
   },
   onChangeSearch (searchVal) {
     dispatch({ type: 'black/saveSearchVal', payload: { searchVal } })

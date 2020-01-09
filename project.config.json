@@ -65,8 +65,8 @@
 			"list": [
 				{
 					"id": 0,
-					"name": "pages/blackNew/index",
-					"pathName": "pages/blackNew/index",
+					"name": "pages/about/index",
+					"pathName": "pages/about/index",
 					"query": "",
 					"scene": null
 				}

@@ -66,7 +66,7 @@ class Index extends Component {
   handleClickDetail (detail) {
     const { dispatch } = this.props
     dispatch({ type: 'black_detail/saveFetch', payload: { detail } })
-    navigateTo({ url: '/pages/blackDetail/index' })
+    navigateTo({ url: '/pages/black-detail/index' })
   }
 }
 

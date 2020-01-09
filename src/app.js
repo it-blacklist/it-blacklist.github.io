@@ -1,7 +1,7 @@
 import React from 'react'
 import dva from 'remax-dva'
 import createLoading from 'dva-loading'
-import './app.scss'
+import './app.css'
 import models from './models/index'
 
 const app = dva()
