@@ -57,46 +57,6 @@
   padding: 20px;
 }
 
-
-
-.navigator {
-  display: inline-block;
-}
-
-.tip {
-  padding: 10px;
-  color: #6190E8;
-}
-
-.tip .red {
-  padding-right: 10px;
-  color: #E93B3D;
-}
-
-
-
-.black-detail .black-content {
-  position: relative;
-  margin: 10px;
-  padding: 20px;
-  color: #333;
-  font-size: 36px;
-  line-height: 2;
-}
-
-.black-content :after {
-  position: absolute;
-  box-sizing: border-box;
-  -webkit-transform-origin: center;
-  transform-origin: center;
-  content: " ";
-  pointer-events: none;
-  top: -50%;
-  right: -50%;
-  bottom: -50%;
-  left: -50%;
-  border: 1px solid #eee;
-  border-radius: 20px;
-  -webkit-transform: scale(.5);
-  transform: scale(.5);
+textarea {
+  height: 200px !important;
 }

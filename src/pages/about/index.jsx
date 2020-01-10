@@ -17,7 +17,7 @@ export default function About () {
       current: '', // 当前显示图片的http链接，默认是第一个
     })
   }
-  
+
   const handleOpen = () => {
     Dialog.confirm({
       title: '提示',
@@ -32,11 +32,11 @@ export default function About () {
       }))
     }).catch(() => {})
   }
-  
+
   useShareAppMessage(() => {
     return shareInfo
   })
-  
+
   return (
     <View className={clsx('has-custom', styles.about)}>
       <View className={styles.top}>
