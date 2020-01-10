@@ -25,7 +25,7 @@
 		"preloadBackgroundData": false
 	},
 	"compileType": "miniprogram",
-	"libVersion": "2.9.4",
+	"libVersion": "2.10.0",
 	"appid": "wx6fb9fed8d1dd41aa",
 	"projectname": "IT黑企",
 	"cloudfunctionTemplateRoot": "./functions",
@@ -65,8 +65,8 @@
 			"list": [
 				{
 					"id": 0,
-					"name": "pages/about/index",
-					"pathName": "pages/about/index",
+					"name": "pages/feedback/index",
+					"pathName": "pages/feedback/index",
 					"query": "",
 					"scene": null
 				}

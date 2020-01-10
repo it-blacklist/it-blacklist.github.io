@@ -28,5 +28,6 @@ export const getRateListApi = data =>/*查询黑名单评论*/
     .where({ father: data._id, checked: true })
     .get()
 
-export const feedbackApi = data =>/*增加留言*/
-  db.collection('feedback').add({ data })
+export function feedbackApi (data) {/*增加留言*/
+  return db.collection('feedback').add({ data })
+}

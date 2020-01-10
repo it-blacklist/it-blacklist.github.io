@@ -1,6 +1,5 @@
-import React, { Component } from 'react'
-import { connect } from 'remax-dva'
-import { View, Text, pageScrollTo, navigateTo } from 'remax/wechat'
+import React, { useEffect } from 'react'
+import { View, navigateTo, usePullDownRefresh, useShareAppMessage } from 'remax/wechat'
 import { shareInfo } from '../../utils/utils'
 import VanNoticeBar from '@vant/weapp/dist/notice-bar'
 import VanSearch from '@vant/weapp/dist/search'
@@ -10,99 +9,59 @@ import VanCellGroup from '@vant/weapp/dist/cell-group'
 import VanCell from '@vant/weapp/dist/cell'
 import VanDivider from '@vant/weapp/dist/divider'
 import CustomTabBar from '@/custom-tab-bar'
+import Pagination from '@/components/pagination'
+import hooks from './hooks'
 
-class Black extends Component {
-  componentDidMount () {
-    //this.props.onGetCount()
-    this.props.onPageChange()
+export default function () {
+  const [state, setState, loading, fetch, search] = hooks()
+  const changeState = newState => {
+    setState({ ...state, ...newState })
   }
-
-  onPullDownRefresh () {
-    this.props.onChangeSearch('')
-    //this.props.onGetCount()
-    this.props.onPageChange()
-  }
-
-  onShareAppMessage () {
+  useEffect(() => {
+    fetch()
+  }, [])
+  usePullDownRefresh(() => {
+    fetch()
+  })
+  useShareAppMessage(() => {
     return shareInfo
+  })
+  const handleClickDetail = (detail) => {
+    navigateTo({ url: `/pages/black-detail/index?detail=${JSON.stringify(detail)}` })
   }
-
-  render () {
-    const { searchVal, loading, pagination, blackList, onPageChange, handleClickDetail, onChangeSearch, onActionClick } = this.props
-    return (
-      <View className='index'>
-        <VanNoticeBar
-          mode='closeable'
-          text='如果你觉得小程序做的还不错，点击右上角的按钮，添加到“我的小程序”，或者分享给你身边的IT从业者'
-        />
-        <View>
-          <VanSearch
-            value={searchVal}
-            placeholder='输入公司名称搜索'
-            use-action-slot
-            onchange={e => onChangeSearch(e.detail)}
-            onsearch={() => onActionClick()}
-          >
-            <View slot='action' ontap={() => onActionClick()}>
-              <VanButton type='info' size='small'>搜索</VanButton>
-            </View>
-          </VanSearch>
-          {(loading.effects['black/fetch'] || loading.effects['black/Search']) &&
-          <View style={{ display: 'flex', justifyContent: 'center', padding: '20px 0' }}>
-            <VanLoading size='24px' color='#1989fa'>加载中...</VanLoading>
-          </View>
-          }
-          <VanCellGroup>
-            {blackList.map(item => (
-              item.checked && <VanCell key={item._id} title={item.name} is-link label={item.time}
-                                       onclick={() => handleClickDetail(item)}/>
-            ))}
-          </VanCellGroup>
-          {(blackList.length === 0) && <VanDivider contentPosition='center'>没有更多了</VanDivider>}
-          <Pagination pagination={pagination} onPageChange={onPageChange}/>
-        </View>
-        <CustomTabBar/>
-      </View>
-    )
-  }
-}
-
-const Pagination = ({ pagination: { current, total, pageSize }, onPageChange }) => {
-  const totalPage = Math.ceil(total / pageSize)
   return (
-    <View style={{ margin: '20px', display: 'flex', justifyContent: 'space-between' }}>
-      <VanButton type='info' size='small' onclick={() => onPageChange(current - 1)}
-                 disabled={current === 1}>上一页
-      </VanButton>
+    <View className='has-custom'>
+      <VanNoticeBar
+        mode='closeable'
+        text='如果你觉得小程序做的还不错，点击右上角的按钮，添加到“我的小程序”，或者分享给你身边的IT从业者'
+      />
       <View>
-        <Text style={{ color: '#1989fa' }}>{current}</Text>/{totalPage}
+        <VanSearch
+          value={state.searchVal}
+          placeholder='输入公司名称搜索'
+          use-action-slot
+          onchange={e => changeState({ searchVal: e.detail })}
+          onsearch={() => search()}
+        >
+          <View slot='action' ontap={() => search()}>
+            <VanButton type='info' size='small'>搜索</VanButton>
+          </View>
+        </VanSearch>
+        {loading.fetch &&
+        <View style={{ display: 'flex', justifyContent: 'center', padding: '20px 0' }}>
+          <VanLoading size='24px' color='#1989fa'>加载中...</VanLoading>
+        </View>
+        }
+        <VanCellGroup>
+          {state.blackList.map(item => (
+            item.checked && <VanCell key={item._id} title={item.name} is-link label={item.time}
+                                     onclick={() => handleClickDetail(item)}/>
+          ))}
+        </VanCellGroup>
+        {(state.blackList.length === 0) && <VanDivider contentPosition='center'>没有更多了</VanDivider>}
+        <Pagination pagination={state.pagination} onPageChange={fetch}/>
       </View>
-      <VanButton type='info' size='small' onclick={() => onPageChange(current + 1)}
-                 disabled={current === totalPage}>下一页
-      </VanButton>
+      <CustomTabBar/>
     </View>
   )
 }
-
-export default connect(({ black, loading }) => ({
-  ...black,
-  loading
-}), (dispatch) => ({
-  onPageChange (current = 1) {
-    pageScrollTo({ scrollTop: 0, duration: 300 })
-    dispatch({ type: 'black/fetch', payload: { current } })
-  },
-  onGetCount () {
-    dispatch({ type: 'black/getCount' })
-  },
-  handleClickDetail (detail) {
-    dispatch({ type: 'black_detail/saveFetch', payload: { detail } })
-    navigateTo({ url: '/pages/black-detail/index' })
-  },
-  onChangeSearch (searchVal) {
-    dispatch({ type: 'black/saveSearchVal', payload: { searchVal } })
-  },
-  onActionClick () {
-    dispatch({ type: 'black/Search' })
-  }
-}), null, { forwardRef: true })(Black)

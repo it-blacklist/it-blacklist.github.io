@@ -1,12 +1,18 @@
-import React from 'react'
-import dva from 'remax-dva'
-import createLoading from 'dva-loading'
+import React, { useState } from 'react'
 import './app.css'
-import models from './models/index'
 
-const app = dva()
-app.use(createLoading({}))
-models.forEach(model => app.model(model))
-const App = app.start(({ children }) => children)
+export const AppContext = React.createContext({})
+
+const App = ({ children }) => {
+  const [globalData, setGlobalData] = useState({
+    tabBarIndex: 0
+  })
+
+  return (
+    <AppContext.Provider value={{ globalData, setGlobalData }}>
+      {children}
+    </AppContext.Provider>
+  )
+}
 
 export default App
