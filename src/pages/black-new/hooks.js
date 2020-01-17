@@ -1,6 +1,6 @@
 import React from 'react'
-import Notify from '@vant/weapp/dist/notify/notify'
 import Dialog from '@vant/weapp/dist/dialog/dialog'
+import Notify from '@vant/weapp/dist/notify/notify'
 import { addBlackApi } from '@/service/black'
 import { navigateBack } from 'remax/wechat'
 

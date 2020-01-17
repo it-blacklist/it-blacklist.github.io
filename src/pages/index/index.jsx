@@ -1,12 +1,12 @@
 import React, { useEffect } from 'react'
 import { View, navigateTo, getStorageSync, usePageScroll, useShareAppMessage, usePullDownRefresh } from 'remax/wechat'
 import { shareInfo } from '@/utils/utils'
+import { CustomTabBar } from '@/components'
+import VanCell from '@vant/weapp/dist/cell'
 import VanNoticeBar from '@vant/weapp/dist/notice-bar'
 import VanLoading from '@vant/weapp/dist/loading'
-import VanCell from '@vant/weapp/dist/cell'
 import VanIndexBar from '@vant/weapp/dist/index-bar'
 import VanIndexAnchor from '@vant/weapp/dist/index-anchor'
-import CustomTabBar from '@/custom-tab-bar'
 import hooks from './hooks'
 
 export default function () {
