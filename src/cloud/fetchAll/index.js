@@ -54,13 +54,14 @@ const generator = data => {
     const i = list.findIndex((key) => {
       return key.key === makePy(item.name)
     })
+    const { name, _id, time, info, checked } = item
     if (i === -1) {
       list.push({
         title: makePy(item.name), key: makePy(item.name),
-        items: [{ name: item.name, _id: item._id, time: item.time, info: item.info }]
+        items: [{ name, _id, time, info, checked }]
       })
     } else {
-      list[i].items.push({ name: item.name, _id: item._id, time: item.time, info: item.info })
+      list[i].items.push({ name, _id, time, info, checked })
     }
   })
   return list

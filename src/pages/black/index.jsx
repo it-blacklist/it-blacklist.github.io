@@ -42,8 +42,8 @@ export default function () {
           onchange={e => changeState({ searchVal: e.detail })}
           onsearch={() => search()}
         >
-          <View slot='action' ontap={() => search()}>
-            <VanButton type='info' size='small'>搜索</VanButton>
+          <View slot='action'>
+            <VanButton type='info' size='small' onclick={() => search()}>搜索</VanButton>
           </View>
         </VanSearch>
         {loading.fetch &&

@@ -30,17 +30,18 @@ export default function () {
 
   function search () {
     setLoading({ fetch: true })
-    SearchApi({ name: state.searchVal })
-      .then(res => {
-        setLoading({})
-        if (res.errMsg === 'collection.get:ok') {
-          setState({
-            ...state,
-            blackList: res.data,
-            pagination: { total: 1, pageSize: state.pagination.pageSize, current: 1 }
-          })
-        }
-      })
+    state.searchVal ?
+      SearchApi({ name: state.searchVal })
+        .then(res => {
+          setLoading({})
+          if (res.errMsg === 'collection.get:ok') {
+            setState({
+              ...state,
+              blackList: res.data,
+              pagination: { total: 1, pageSize: state.pagination.pageSize, current: 1 }
+            })
+          }
+        }) : fetch()
   }
 
   return [state, setState, loading, fetch, search]

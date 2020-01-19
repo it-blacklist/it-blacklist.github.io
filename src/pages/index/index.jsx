@@ -55,6 +55,7 @@ export default function () {
               <View key={item.key}>
                 <VanIndexAnchor index={item.title}/>
                 {item.items.map(_item => (
+                  _item.checked &&
                   <VanCell title={_item.name} key={_item._id} onclick={() => handleClickDetail(_item)}/>
                 ))}
               </View>

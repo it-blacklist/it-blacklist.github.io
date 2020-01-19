@@ -1,13 +1,11 @@
 import React from 'react'
 import { View } from 'remax/wechat'
-import {
-  SpecialTip,
-  VanDialog,
-  VanNotify,
-  VanCellGroup,
-  VanButton,
-  VanField
-} from '@/components'
+import { SpecialTip } from '@/components'
+import VanCellGroup from '@vant/weapp/dist/cell-group'
+import VanDialog from '@vant/weapp/dist/dialog'
+import VanButton from '@vant/weapp/dist/button'
+import VanNotify from '@vant/weapp/dist/notify'
+import VanField from '@vant/weapp/dist/field'
 
 import hooks from './hooks'
 
