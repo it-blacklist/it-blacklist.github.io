@@ -37,3 +37,7 @@ export function getRateListApi (data) {/*查询黑名单评论*/
 export function feedbackApi (data) {/*增加留言*/
   return db.collection('feedback').add({ data })
 }
+
+export function fetchNodeApi (data) {/*查询节点*/
+  return db.collection('system').doc(data).get()
+}

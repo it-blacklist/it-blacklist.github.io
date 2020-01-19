@@ -25,7 +25,7 @@
 		"preloadBackgroundData": false
 	},
 	"compileType": "miniprogram",
-	"libVersion": "2.10.0",
+	"libVersion": "2.10.1",
 	"appid": "wx6fb9fed8d1dd41aa",
 	"projectname": "IT黑企",
 	"cloudfunctionTemplateRoot": "./functions",

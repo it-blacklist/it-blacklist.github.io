@@ -5,8 +5,7 @@ module.exports = {
     'pages/black-detail/index',
     'pages/black-new/index',
     'pages/statement/index',
-    'pages/feedback/index',
-    'pages/index/index'
+    'pages/feedback/index'
   ],
   window: {
     navigationBarTitleText: 'Remax'
@@ -18,10 +17,6 @@ module.exports = {
       {
         pagePath: 'pages/black/index',
         text: '黑名单',
-      },
-      {
-        pagePath: 'pages/index/index',
-        text: '新体验',
       },
       {
         pagePath: 'pages/about/index',

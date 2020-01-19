@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useContext, useEffect } from 'react'
 import { View, previewImage, setClipboardData, getClipboardData, showToast, useShareAppMessage } from 'remax/wechat'
 import { shareInfo } from '@/utils/utils'
 import { CustomTabBar } from '@/components'
@@ -8,8 +8,11 @@ import VanDialog from '@vant/weapp/dist/dialog'
 import Dialog from '@vant/weapp/dist/dialog/dialog'
 import clsx from 'clsx'
 import styles from './index.module.css'
+import { AppContext } from '@/app'
+import { fetchNodeApi } from '@/service/black'
 
 export default function About () {
+  const App = useContext(AppContext)
   const clickImg = () => {
     previewImage({
       urls: ['https://6974-itblacklist-1257941888.tcb.qcloud.la/qrcode.jpg?sign=a8a70c8edfa00f789149be669dce239f&t=1576917029',
@@ -17,7 +20,6 @@ export default function About () {
       current: '', // 当前显示图片的http链接，默认是第一个
     })
   }
-
   const handleOpen = () => {
     Dialog.confirm({
       title: '提示',
@@ -32,7 +34,18 @@ export default function About () {
       }))
     }).catch(() => {})
   }
-
+  useEffect(() => {
+    fetchNodeApi('694cb712-ce24-4e26-9409-a980ecb04fac')
+      .then(res => {
+        console.log(res)
+        if (res.errMsg === 'document.get:ok') {
+          App.setGlobalData({
+            ...App.globalData,
+            about: res.data.about
+          })
+        }
+      }).catch(r => {})
+  }, [])
   useShareAppMessage(() => {
     return shareInfo
   })
@@ -48,9 +61,9 @@ export default function About () {
       <View style={{ marginTop: '10px' }}>
         <VanDialog id='van-dialog'/>
         <VanCellGroup>
-          <VanCell title='贡献一条黑名单' is-link url='/pages/black-new/index'>
+          {App.globalData.about && <VanCell title='贡献一条黑名单' is-link url='/pages/black-new/index'>
             <View slot='icon' className={clsx('iconfont icon-ziyuan', styles.iconfont)}/>
-          </VanCell>
+          </VanCell>}
           <VanCell title='留言' is-link url='/pages/feedback/index'>
             <View slot='icon' className={clsx('iconfont icon-fankui-tianchong', styles.iconfont)}/>
           </VanCell>

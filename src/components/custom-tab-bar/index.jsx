@@ -6,7 +6,6 @@ import { AppContext } from '@/app'
 
 const tabList = [
   { title: '黑名单', icon: 'wap-home-o', url: '/pages/black/index' },
-  { title: '新体验', icon: 'bulb-o', url: '/pages/index/index' },
   { title: '关于', icon: 'apps-o', url: '/pages/about/index' },
 ]
 export default function () {
