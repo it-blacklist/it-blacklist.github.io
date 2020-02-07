@@ -17,12 +17,12 @@
     "@vant/weapp": "^1.0.0",
     "clsx": "^1.0.4",
     "react": "^16.8.6",
-    "remax": "^1.10.6",
-    "remax-cli": "^1.10.6",
-    "rimraf": "^2.6.3"
+    "remax": "^1.10.6"
   },
   "devDependencies": {
-    "chokidar": "^2.1.8",
-    "cross-env": "^6.0.3"
+    "chokidar": "^3.0.0",
+    "cross-env": "^6.0.3",
+    "remax-cli": "^1.10.6",
+    "rimraf": "^3.0.0"
   }
 }
