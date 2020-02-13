@@ -1,11 +1,11 @@
 {
-  "name": "remax-template",
+  "name": "sjz_it_blacklist",
   "private": true,
   "version": "1.0.0",
-  "description": "Starter template for Remax apps",
-  "main": "index.js",
+  "description": "石家庄IT黑企小程序",
+  "main": "./src/app.tsx",
   "keywords": [],
-  "author": "Caihuanyu <eterlf41@gmail.com>",
+  "author": "liujiayii@foxmail.com",
   "license": "MIT",
   "scripts": {
     "dev": "remax build -t wechat -w",
@@ -14,15 +14,15 @@
     "build": "cross-env NODE_ENV=production remax build -t wechat"
   },
   "dependencies": {
-    "@vant/weapp": "^1.0.0",
-    "clsx": "^1.0.4",
     "react": "^16.8.6",
     "remax": "^1.10.6"
   },
   "devDependencies": {
-    "chokidar": "^3.0.0",
+    "@types/react": "^16.9.16",
+    "chokidar": "^3.3.0",
     "cross-env": "^6.0.3",
     "remax-cli": "^1.10.6",
-    "rimraf": "^3.0.0"
+    "rimraf": "^3.0.0",
+    "typescript": "^3.7.3"
   }
 }
