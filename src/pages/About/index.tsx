@@ -33,7 +33,9 @@ export default () => {
     fetchNodeApi('694cb712-ce24-4e26-9409-a980ecb04fac')
       .then(res => {
         if (res.errMsg === 'document.get:ok') {
-          setShow(true)
+          if (res.data.about) {
+            setShow(true)
+          }
         }
       })
   }, [])
