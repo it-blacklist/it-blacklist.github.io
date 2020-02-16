@@ -1,11 +1,12 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { View, Button, Textarea, navigateBack, showToast, showModal } from 'remax/wechat'
 import { SpecialTip } from '@/components'
 import { feedbackApi } from '@/service/black'
+import { SubmitResTypes } from '@/pages/BlackDetail'
 
 export default () => {
-  const [feedback, setFeedback] = React.useState('')
-  const [loading, setLoading] = React.useState(false)
+  const [feedback, setFeedback] = useState<string>('')
+  const [loading, setLoading] = useState<boolean>(false)
   
   const submit = () => {
     if (!feedback) {
@@ -18,12 +19,11 @@ export default () => {
         if (r.confirm) {
           setLoading(true)
           feedbackApi({ feedback })
-            .then(res => {
+            .then((res: SubmitResTypes) => {
               if (res.errMsg === 'collection.add:ok') {
                 setLoading(false)
-                showToast({
-                  icon: 'success', title: '提交成功'
-                }).then(() => navigateBack())
+                showToast({ icon: 'success', title: '提交成功', mask: true })
+                  .then(() => {setTimeout(() => {navigateBack()}, 1500)})
               } else {
                 showToast({ icon: 'none', title: '系统异常' })
               }

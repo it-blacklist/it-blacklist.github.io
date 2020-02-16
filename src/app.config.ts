@@ -1,8 +1,4 @@
 import { AppConfig } from 'remax/wechat'
-//import home from './assets/tabBar/home.svg'
-//import homeActive from './assets/tabBar/home-active.svg'
-//import app from './assets/tabBar/app.svg'
-//import appActive from './assets/tabBar/app-active.svg'
 
 const config: AppConfig = {
   pages: [

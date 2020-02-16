@@ -1,7 +1,8 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext } from 'react'
 import { View, previewImage, setClipboardData, showModal, useShareAppMessage, Navigator, Image } from 'remax/wechat'
 import { shareInfo } from '@/utils/utils'
-import { fetchNodeApi } from '@/service/black'
+import { GlobalContext, } from '@/app'
+import { GlobalContextTypes } from '@/app'
 
 const iconfont = [
   'https://6974-itblacklist-1257941888.tcb.qcloud.la/iconfont/%E6%AF%94%E5%BF%83.svg?sign=379605b4d7fcc21118bf1df4fa3a8904&t=1581571755',
@@ -27,18 +28,10 @@ const handleOpen = () => {
     }
   })
 }
+
 export default () => {
-  const [show, setShow] = useState(false)
-  useEffect(() => {
-    fetchNodeApi('694cb712-ce24-4e26-9409-a980ecb04fac')
-      .then(res => {
-        if (res.errMsg === 'document.get:ok') {
-          if (res.data.about) {
-            setShow(true)
-          }
-        }
-      })
-  }, [])
+  
+  const { globalShow }: GlobalContextTypes = useContext(GlobalContext)
   useShareAppMessage(() => {
     return shareInfo
   })
@@ -62,8 +55,8 @@ export default () => {
       </View>
       <View style={{ marginTop: '20px' }}>
         <View className="weui-cells weui-cells_after-title">
-          {show && <Navigator url="/pages/BlackNew/index" className="weui-cell weui-cell_example weui-cell_access"
-                              hover-class="weui-cell_active">
+          {globalShow && <Navigator url="/pages/BlackNew/index" className="weui-cell weui-cell_example weui-cell_access"
+                                    hover-class="weui-cell_active">
             <View className="weui-cell__hd">
               <Image src={iconfont[1]} className='about-icon'/>
             </View>

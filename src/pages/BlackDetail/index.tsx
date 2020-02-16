@@ -3,21 +3,52 @@ import { useQuery, View, Button, showToast, showModal, Textarea } from 'remax/we
 import { SpecialTip } from '@/components'
 import { getRateListApi, submitRateApi } from '@/service/black'
 
+export interface DetailTypes {
+  _id: string;
+  name: string;
+  info: string;
+  time: string;
+  checked: boolean;
+}
+
+export interface RateListTypes {
+  _id: string;
+  content: string;
+}
+
+export interface SubmitResTypes {
+  result: {
+    errMsg: 'collection.add:ok' | '';
+    errCode: number
+  };
+  errMsg: 'collection.add:ok' | '';
+}
+
+interface ResTypes {
+  errMsg: 'collection.get:ok';
+  result: {
+    list: Array<DetailTypes>;
+    total: number;
+  };
+  data: Array<RateListTypes>;
+}
+
 export default () => {
-  const [detail, setDetail] = useState({
-    _id: undefined,
-    name: undefined,
-    time: undefined,
-    info: undefined
+  const [detail, setDetail] = useState<DetailTypes>({
+    _id: '',
+    name: '',
+    info: '',
+    time: '',
+    checked: false,
   })
-  const [loading, setLoading] = React.useState(false)
-  const [submitLoading, setSubmitLoading] = React.useState(false)
-  const [rateList, setRateList] = useState([])
-  const [rateVal, setRateVal] = useState('')
-  const fetchRate = (detail: any) => {
+  const [loading, setLoading] = useState<boolean>(false)
+  const [submitLoading, setSubmitLoading] = useState<boolean>(false)
+  const [rateList, setRateList] = useState<Array<RateListTypes>>([])
+  const [rateVal, setRateVal] = useState<string>('')
+  const fetchRate = (detail: DetailTypes) => {
     setLoading(true)
     getRateListApi({ _id: detail._id })
-      .then((res: any) => {
+      .then((res: ResTypes) => {
         setLoading(false)
         if (res.errMsg === 'collection.get:ok') {
           setRateList(res.data)
@@ -36,7 +67,7 @@ export default () => {
         if (r.confirm) {
           setSubmitLoading(true)
           submitRateApi({ father: detail._id, content: rateVal, checked: true, name: detail.name })
-            .then((res: any) => {
+            .then((res: SubmitResTypes) => {
               setSubmitLoading(false)
               if (res.result.errMsg === 'collection.add:ok') {
                 setRateVal('')
@@ -73,7 +104,7 @@ export default () => {
             </view>
             <view className="weui-article__h2">网友点评</view>
             <view className="weui-article__section">
-              {rateList.length !== 0 ? rateList.map((item: any) =>
+              {rateList.length !== 0 ? rateList.map((item: RateListTypes) =>
                   <View key={item._id} className="weui-article__p">{item.content}</View>) :
                 <view className="weui-loadmore weui-loadmore_line">
                   <view className="weui-loadmore__tips weui-loadmore__tips_in-line">暂无数据</view>

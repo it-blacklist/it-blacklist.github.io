@@ -2,11 +2,12 @@ import React, { useState } from 'react'
 import { View, Button, navigateBack, showToast, showModal, Input, Textarea, Label, Navigator } from 'remax/wechat'
 import { SpecialTip } from '@/components'
 import { addBlackApi } from '@/service/black'
+import { SubmitResTypes } from '@/pages/BlackDetail'
 
 export default () => {
-  const [name, setName] = useState('')
-  const [info, setInfo] = useState('')
-  const [loading, setLoading] = React.useState(false)
+  const [name, setName] = useState<string>('')
+  const [info, setInfo] = useState<string>('')
+  const [loading, setLoading] = useState<boolean>(false)
   
   const submit = () => {
     if (!name || !info) {
@@ -20,10 +21,11 @@ export default () => {
           setLoading(true)
           const time = `${new Date().getFullYear()}/${new Date().getMonth() + 1}/${new Date().getDate()}`
           addBlackApi({ name, info, time, checked: true })
-            .then((res: any) => {
+            .then((res: SubmitResTypes) => {
               setLoading(false)
               if (res.result.errMsg === 'collection.add:ok') {
-                showToast({ icon: 'success', title: '提交成功' }).then(() => navigateBack())
+                showToast({ icon: 'success', title: '提交成功', mask: true })
+                  .then(() => {setTimeout(() => {navigateBack()}, 1500)})
               } else if (res.result.errCode === 87014) {
                 showToast({ icon: 'none', title: '内容含有违法违规内容' })
               } else {
