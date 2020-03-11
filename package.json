@@ -1,0 +1,28 @@
+{
+  "name": "sjz_it_blacklist",
+  "private": true,
+  "version": "1.0.0",
+  "description": "石家庄IT黑企小程序",
+  "main": "./src/app.tsx",
+  "keywords": [],
+  "author": "liujiayii@foxmail.com",
+  "license": "MIT",
+  "scripts": {
+    "dev": "remax build -t wechat -w",
+    "clean": "rimraf dist",
+    "prebuild": "npm run clean",
+    "build": "cross-env NODE_ENV=production remax build -t wechat"
+  },
+  "dependencies": {
+    "react": "^16.8.6",
+    "remax": "^1.10.6"
+  },
+  "devDependencies": {
+    "@types/react": "^16.9.16",
+    "chokidar": "^3.3.0",
+    "cross-env": "^6.0.3",
+    "remax-cli": "^1.10.6",
+    "rimraf": "^3.0.0",
+    "typescript": "^3.7.3"
+  }
+}
