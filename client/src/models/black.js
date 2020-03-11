@@ -1,4 +1,5 @@
 import * as api from '../service/black'
+import Taro from '@tarojs/taro'
 
 export default {
   namespace: 'black',
@@ -12,9 +13,9 @@ export default {
   effects: {
     * fetch ({ payload }, { call, put }) {
       const response = yield call(api.fetchApi, payload)
-      console.log(response)
       if (response.errMsg === 'collection.get:ok') {
         yield put({ type: 'saveFetch', payload: { blackList: response.data, currentPage: payload.current } })
+        Taro.stopPullDownRefresh()
       }
     },
     * getCount (_, { call, put }) {
@@ -23,8 +24,9 @@ export default {
         yield put({ type: 'saveCount', payload: { total: response.total } })
       }
     },
-    * Search ({ payload }, { call, put }) {
-      const response = yield call(api.SearchApi, payload)
+    * Search (_, { call, put, select }) {
+      const name = yield select(state => state.black.searchVal)
+      const response = yield call(api.SearchApi, { name })
       if (response.errMsg === 'collection.get:ok') {
         yield put({ type: 'saveCount', payload: { blackList: response.data, currentPage: 1, total: 1 } })
       }

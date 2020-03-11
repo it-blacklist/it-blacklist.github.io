@@ -10,7 +10,10 @@ const config = {
   sourceRoot: 'src',
   outputRoot: 'dist',
   copy: {
-    patterns: [{ from: 'src/assets/', to: 'dist/assets/' }]
+    patterns: [
+      { from: 'src/assets/', to: 'dist/assets/' },
+      { from: 'src/@vant/wxs/', to: 'dist/@vant/wxs' }
+    ]
   },
   plugins: {
     babel: {
