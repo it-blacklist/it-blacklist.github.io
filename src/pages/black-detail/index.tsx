@@ -1,37 +1,10 @@
 import React, { useEffect, useState } from 'react'
 import { useQuery, View, Button, showToast, showModal, Textarea } from 'remax/wechat'
-import { SpecialTip } from '@/components'
+import { SpecialTip, LoadingMore } from '@/components'
 import { getRateListApi, submitRateApi } from '@/service/black'
-
-export interface DetailTypes {
-  _id: string;
-  name: string;
-  info: string;
-  time: string;
-  checked: boolean;
-}
-
-export interface RateListTypes {
-  _id: string;
-  content: string;
-}
-
-export interface SubmitResTypes {
-  result: {
-    errMsg: 'collection.add:ok' | '';
-    errCode: number
-  };
-  errMsg: 'collection.add:ok' | '';
-}
-
-interface ResTypes {
-  errMsg: 'collection.get:ok';
-  result: {
-    list: Array<DetailTypes>;
-    total: number;
-  };
-  data: Array<RateListTypes>;
-}
+import { DetailTypes, RateListTypes, ResTypes, SubmitResTypes } from './data'
+import FormPage from 'weui-miniprogram/miniprogram_dist/form-page/form-page'
+import Form from 'weui-miniprogram/miniprogram_dist/form/form'
 
 export default () => {
   const [detail, setDetail] = useState<DetailTypes>({
@@ -45,6 +18,7 @@ export default () => {
   const [submitLoading, setSubmitLoading] = useState<boolean>(false)
   const [rateList, setRateList] = useState<Array<RateListTypes>>([])
   const [rateVal, setRateVal] = useState<string>('')
+  const [isAgree, setIsAgree] = useState(false)
   const fetchRate = (detail: DetailTypes) => {
     setLoading(true)
     getRateListApi({ _id: detail._id })
@@ -61,8 +35,7 @@ export default () => {
       showToast({ icon: 'none', title: '请输入内容' })
     } else {
       showModal({
-        title: '提示',
-        content: '是否确认提交？'
+        title: '是否确认提交？',
       }).then((r) => {
         if (r.confirm) {
           setSubmitLoading(true)
@@ -106,33 +79,30 @@ export default () => {
             <view className="weui-article__section">
               {rateList.length !== 0 ? rateList.map((item: RateListTypes) =>
                   <View key={item._id} className="weui-article__p">{item.content}</View>) :
-                <view className="weui-loadmore weui-loadmore_line">
-                  <view className="weui-loadmore__tips weui-loadmore__tips_in-line">暂无数据</view>
-                </view>}
-              {loading && <view className="weui-loadmore">
-                <view className="weui-loading"/>
-                <view className="weui-loadmore__tips">正在加载</view>
-              </view>}
+                <LoadingMore type='noMore'/>}
+              {loading && <LoadingMore type='loading'/>}
             </view>
           </view>
         </view>
       </view>
-      <View className="weui-form">
-        <View className="weui-cells__group weui-cells__group_form">
-          <View className="weui-cells weui-cells_form">
+      <FormPage>
+        <Form>
+          <View className="weui-cells weui-cells_after-title">
             <View className="weui-cell">
               <View className="weui-cell__bd">
-                <Textarea className="weui-textarea" value={rateVal} placeholder='我要点评...'
-                          onInput={e => setRateVal(e.detail.value)}/>
+                <Textarea value={rateVal} onInput={e => setRateVal(e.detail.value)} className="weui-textarea"
+                          placeholder="我要留言..." style={{ height: '3.3em' }}/>
               </View>
             </View>
           </View>
+        </Form>
+        <View className="weui-btn-area" slot='button'>
+          <Button className="weui-btn" type="primary" loading={submitLoading} onClick={() => submit()}>确定</Button>
         </View>
-        <View className="weui-form__opr-area">
-          <Button type="primary" loading={submitLoading} onClick={() => submit()}>提交</Button>
+        <View slot="tips">
+          <SpecialTip isAgree={isAgree} setIsAgree={setIsAgree}/>
         </View>
-        <SpecialTip/>
-      </View>
+      </FormPage>
     </View>
   )
 }

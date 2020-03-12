@@ -33,5 +33,8 @@ export default () => (
         </View>
       </View>
     </View>
+    <view className="weui-footer weui-footer_fixed-bottom">
+      <view className="weui-footer__text">Copyright © liujiayii@foxmail.com</view>
+    </view>
   </View>
 )

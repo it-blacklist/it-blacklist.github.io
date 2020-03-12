@@ -42,7 +42,7 @@ export default ({ pagination: { current, total, pageSize }, onPageChange }: Pagi
       <Picker mode="multiSelector" onChange={e => pickerConfirm(e)} onColumnChange={e => pickerChange(e)}
               value={multiIndex} range={multiArray}>
         <View className="picker">
-          <Text style={{ color: '#1989fa', lineHeight: '60px' }}>{current}</Text>/{totalPage}
+          <Text style={{ color: '#1989fa', lineHeight: '30px' }}>{current}</Text>/{totalPage}
         </View>
       </Picker>
       <Button type='primary' size='mini' onClick={() => onPageChange(++current)}

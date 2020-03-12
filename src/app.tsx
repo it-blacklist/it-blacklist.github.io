@@ -1,6 +1,6 @@
 import React, { createContext, useEffect, useState } from 'react'
 import './app.css'
-import './utils/weui.css'
+import 'weui-miniprogram/miniprogram_dist/weui-wxss/dist/style/weui.css'
 import { fetchNodeApi } from '@/service/black'
 
 export const GlobalContext = createContext({})

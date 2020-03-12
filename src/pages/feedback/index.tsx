@@ -2,19 +2,22 @@ import React, { useState } from 'react'
 import { View, Button, Textarea, navigateBack, showToast, showModal } from 'remax/wechat'
 import { SpecialTip } from '@/components'
 import { feedbackApi } from '@/service/black'
-import { SubmitResTypes } from '@/pages/BlackDetail'
+import { SubmitResTypes } from '@/pages/black-detail/data'
+import FormPage from 'weui-miniprogram/miniprogram_dist/form-page/form-page'
+import Form from 'weui-miniprogram/miniprogram_dist/form/form'
 
 export default () => {
   const [feedback, setFeedback] = useState<string>('')
   const [loading, setLoading] = useState<boolean>(false)
-  
+  const [isAgree, setIsAgree] = useState(false)
   const submit = () => {
     if (!feedback) {
       showToast({ icon: 'none', title: '请输入内容' })
+    } else if (!isAgree) {
+      showToast({ icon: 'none', title: '请勾选我同意' })
     } else {
       showModal({
-        title: '提示',
-        content: '是否确认提交？'
+        title: '是否确认提交？'
       }).then((r) => {
         if (r.confirm) {
           setLoading(true)
@@ -32,31 +35,23 @@ export default () => {
       })
     }
   }
-  
-  return (
-    <View className="weui-form">
-      <View className="weui-form__text-area">
-        <View className="weui-form__title">意见反馈</View>
-      </View>
-      <View className="weui-form__control-area">
-        <View className="weui-cells__group weui-cells__group_form">
-          <View className="weui-cells weui-cells_form">
-            <View className="weui-cell">
-              <View className="weui-cell__bd">
-                <Textarea className="weui-textarea" value={feedback} placeholder='我要留言...'
-                          onInput={e => setFeedback(e.detail.value)}/>
-              </View>
+  return (<FormPage title="意见反馈">
+      <Form>
+        <View className="weui-cells weui-cells_after-title">
+          <View className="weui-cell">
+            <View className="weui-cell__bd">
+              <Textarea value={feedback} onInput={e => setFeedback(e.detail.value)} className="weui-textarea"
+                        placeholder="我要留言..." style={{ height: '3.3em' }}/>
             </View>
           </View>
         </View>
+      </Form>
+      <View className="weui-btn-area" slot='button'>
+        <Button className="weui-btn" type="primary" loading={loading} onClick={() => submit()}>确定</Button>
       </View>
-      <View className="weui-form__opr-area">
-        <Button type="primary" loading={loading} onClick={() => submit()}>提交</Button>
+      <View slot="tips">
+        <SpecialTip isAgree={isAgree} setIsAgree={setIsAgree}/>
       </View>
-      <SpecialTip/>
-      <view className="weui-footer weui-footer_fixed-bottom">
-        <view className="weui-footer__text">Copyright © liujiayii@foxmail.com</view>
-      </view>
-    </View>
+    </FormPage>
   )
 }

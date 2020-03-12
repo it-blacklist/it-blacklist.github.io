@@ -14,15 +14,16 @@
     "build": "cross-env NODE_ENV=production remax build -t wechat"
   },
   "dependencies": {
-    "react": "^16.8.6",
-    "remax": "^1.10.6"
+    "react": "^16.13.0",
+    "remax": "^1.15.0",
+    "weui-miniprogram": "^0.2.2"
   },
   "devDependencies": {
-    "@types/react": "^16.9.16",
-    "chokidar": "^3.3.0",
+    "@types/react": "^16.9.22",
+    "chokidar": "^3.3.1",
     "cross-env": "^6.0.3",
-    "remax-cli": "^1.10.6",
+    "remax-cli": "^1.15.0",
     "rimraf": "^3.0.0",
-    "typescript": "^3.7.3"
+    "typescript": "^3.8.2"
   }
 }

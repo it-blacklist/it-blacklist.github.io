@@ -1,33 +1,17 @@
 import React, { useEffect, useState, useContext } from 'react'
 import {
-  View,
-  Button,
-  navigateTo,
-  usePullDownRefresh,
-  useShareAppMessage,
-  pageScrollTo,
-  stopPullDownRefresh,
-  showLoading,
+  View, Button, usePullDownRefresh, useShareAppMessage, pageScrollTo, stopPullDownRefresh, showLoading,
   hideLoading, Icon, Input
 } from 'remax/wechat'
 import { shareInfo } from '@/utils/utils'
-import { Pagination } from '@/components'
+import { Pagination, LoadingMore } from '@/components'
 import { fetchApi, SearchApi } from '@/service/black'
 import { GlobalContext, GlobalContextTypes } from '@/app'
-import { DetailTypes } from '@/pages/BlackDetail'
+import { DetailTypes } from '@/pages/black-detail/data'
+import { ResTypes } from './data'
+import Cell from 'weui-miniprogram/miniprogram_dist/cell/cell'
+import Cells from 'weui-miniprogram/miniprogram_dist/cells/cells'
 
-export interface ResTypes {
-  errMsg: 'collection.get:ok' | 'cloud.callFunction:ok';
-  result: {
-    list: Array<DetailTypes>;
-    total: number;
-  };
-  data: Array<DetailTypes>;
-}
-
-const handleClickDetail = (detail: DetailTypes) => {
-  navigateTo({ url: `/pages/BlackDetail/index?detail=${JSON.stringify(detail)}` })
-}
 export default () => {
   const [blackList, setBlackList] = useState<Array<DetailTypes>>([])
   const [searchVal, setSearchVal] = useState('')
@@ -47,7 +31,6 @@ export default () => {
         }
       })
   }
-  
   const search = () => {
     showLoading()
     searchVal ?
@@ -60,7 +43,6 @@ export default () => {
           }
         }) : fetch()
   }
-  
   useEffect(() => {
     fetch()
   }, [])
@@ -71,7 +53,6 @@ export default () => {
   useShareAppMessage(() => {
     return shareInfo
   })
-  
   return (
     <View>
       <View className="weui-search-bar">
@@ -89,23 +70,15 @@ export default () => {
           <Button style={{ display: 'block' }} type='primary' size='mini' onClick={() => search()}>搜索</Button>
         </View>
       </View>
-      <View className="weui-panel">
-        <View className="weui-panel__bd">
-          {blackList && blackList.length !== 0 ? blackList.map((item: DetailTypes) => (
-            item.checked &&
-            <View key={item._id} onClick={() => handleClickDetail(item)}
-                  className="weui-media-box weui-media-box_text">
-              <View className="weui-media-box__title weui-media-box__title_in-text">{item.name}</View>
-              {globalShow && <View className="weui-media-box__desc">{item.info}</View>}
-              <View className="weui-media-box__info">
-                <View className="weui-media-box__info__meta">{item.time}</View>
-              </View>
-            </View>
-          )) : <View className="weui-loadmore weui-loadmore_line">
-            <View className="weui-loadmore__tips weui-loadmore__tips_in-line">暂无数据</View>
-          </View>}
-        </View>
-      </View>
+      <Cells>
+        {blackList && blackList.length !== 0 ? blackList.map((item: DetailTypes) => (
+          item.checked &&
+          <Cell key={item._id} link url={`/pages/black-detail/index?detail=${JSON.stringify(item)}`}>
+            <View>{item.name}</View>
+            {globalShow && <View className="weui-media-box__desc">{item.info}</View>}
+          </Cell>
+        )) : <LoadingMore type='noMore'/>}
+      </Cells>
       <Pagination pagination={pagination} onPageChange={fetch}/>
     </View>
   )
