@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useContext } from 'react'
 import {
   View, Button, usePullDownRefresh, useShareAppMessage, pageScrollTo, stopPullDownRefresh, showLoading,
-  hideLoading, Icon, Input
+  hideLoading, Icon, Input, OpenData
 } from 'remax/wechat'
 import { shareInfo } from '@/utils/utils'
 import { Pagination, LoadingMore } from '@/components'

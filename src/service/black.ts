@@ -37,3 +37,13 @@ export function feedbackApi (data: { feedback: string }): Promise<any> {/*增加
 export function fetchNodeApi (data: string): Promise<any> {/*查询节点*/
   return db.collection('system').doc(data).get()
 }
+
+export function userInfoApi (): Promise<any> {/*查询节点*/
+  return cloud.callFunction({ name: 'userInfo' })
+}
+
+export function checkUserStateApi (data: { openid: string }): Promise<any> {/*查询黑名单评论*/
+  return db.collection('user_blacklist')
+    .where({ openid: data.openid })
+    .get()
+}

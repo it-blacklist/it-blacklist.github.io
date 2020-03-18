@@ -3,8 +3,8 @@ import { View, Button, navigateBack, showToast, showModal, Input, Textarea } fro
 import { SpecialTip } from '@/components'
 import { addBlackApi } from '@/service/black'
 import { SubmitResTypes } from '@/pages/black-detail/data'
-import Form from 'weui-miniprogram/miniprogram_dist/form-page/form-page'
-import FormPage from 'weui-miniprogram/miniprogram_dist/form/form'
+import FormPage from 'weui-miniprogram/miniprogram_dist/form-page/form-page'
+import Form from 'weui-miniprogram/miniprogram_dist/form/form'
 import Cell from 'weui-miniprogram/miniprogram_dist/cell/cell'
 import Cells from 'weui-miniprogram/miniprogram_dist/cells/cells'
 
@@ -41,7 +41,8 @@ export default () => {
       })
     }
   }
-  return (<FormPage title="贡献一条名单">
+  return (
+    <FormPage title="贡献一条名单">
       <Form>
         <Cells>
           <Cell title="公司名称">

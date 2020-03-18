@@ -7,7 +7,8 @@ const config: AppConfig = {
     'pages/black-detail/index',
     'pages/black-new/index',
     'pages/statement/index',
-    'pages/feedback/index'
+    'pages/feedback/index',
+    'pages/dark-room/index'
   ],
   window: {
     navigationBarTitleText: '石家庄IT黑企'

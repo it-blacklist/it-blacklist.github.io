@@ -1,5 +1,5 @@
 import React from 'react'
-import { View } from 'remax/wechat'
+import { OpenData, View } from 'remax/wechat'
 
 export default () => (
   <View className="page__bd">
@@ -8,7 +8,7 @@ export default () => (
       <View className="weui-article__section">
         <View className="weui-article__section">
           <View className="weui-article__p">
-            请勿提交任何违反微信小程序内容安全要求规范的内容，网络不是法外之地。
+            Dear <OpenData type="userNickName"/>, 请勿提交任何违反微信小程序内容安全要求规范的内容，网络不是法外之地。
           </View>
         </View>
         <View className="weui-article__section">

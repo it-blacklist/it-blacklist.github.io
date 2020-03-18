@@ -1,7 +1,8 @@
 import React, { createContext, useEffect, useState } from 'react'
+import { setStorage, getStorage, redirectTo } from 'remax/wechat'
 import './app.css'
 import 'weui-miniprogram/miniprogram_dist/weui-wxss/dist/style/weui.css'
-import { fetchNodeApi } from '@/service/black'
+import { fetchNodeApi, userInfoApi, checkUserStateApi } from '@/service/black'
 
 export const GlobalContext = createContext({})
 
@@ -11,6 +12,13 @@ export interface GlobalContextTypes {
 
 const App: React.FC = ({ children }) => {
   const [globalShow, setGlobalShow] = useState<boolean>(false)
+  const checkUserState = (openid: string) => {
+    checkUserStateApi({ openid }).then(res => {
+      if (res.data && res.data.length) {
+        redirectTo({url:'/pages/dark-room/index'})
+      }
+    })
+  }
   useEffect(() => {
     fetchNodeApi('694cb712-ce24-4e26-9409-a980ecb04fac')
       .then(res => {
@@ -20,6 +28,18 @@ const App: React.FC = ({ children }) => {
           }
         }
       })
+    getStorage({ key: 'openid' }).then(res => {
+      if (res.data) {
+        checkUserState(res.data)
+      }
+    }).catch(_ => {
+      userInfoApi().then(res => {
+        if (res.errMsg === 'cloud.callFunction:ok') {
+          checkUserState(res.result.OPENID)
+          setStorage({ key: 'openid', data: res.result.OPENID })
+        }
+      })
+    })
   }, [])
   return <GlobalContext.Provider value={{ globalShow }}>{children}</GlobalContext.Provider>
 }

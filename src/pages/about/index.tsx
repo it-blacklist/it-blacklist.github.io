@@ -1,5 +1,5 @@
 import React, { useContext } from 'react'
-import { View, previewImage, setClipboardData, showModal, useShareAppMessage, Image } from 'remax/wechat'
+import { View, previewImage, setClipboardData, showModal, useShareAppMessage, Image, OpenData } from 'remax/wechat'
 import { shareInfo } from '@/utils/utils'
 import { GlobalContext, } from '@/app'
 import { GlobalContextTypes } from '@/app'
@@ -23,7 +23,7 @@ const clickImg = () => {
 const handleOpen = () => {
   showModal({
     title: 'https://github.com/liujiayii/',
-    content: '" 点击确认按钮复制链接到浏览器中查看'
+    content: '点击确认按钮复制链接到浏览器中查看'
   }).then((r) => {
     if (r.confirm) {
       setClipboardData({ data: 'https://github.com/liujiayii/' })
@@ -40,7 +40,9 @@ export default () => {
     <View style={{ background: '#ededed' }}>
       <Cells>
         <Cell value="如果你觉得小程序还不错，分享给你身边的IT从业者，或者请作者喝杯茶。">
-          <View slot="title"><Image src={iconfont[0]} style={{ width: '60px', height: '60px' }}/></View>
+          <View slot="title" style={{ width: '60px', height: '60px', marginRight: '10px' }}>
+            <OpenData type="userAvatarUrl"/>
+          </View>
         </Cell>
       </Cells>
       <Cells title=' '>
