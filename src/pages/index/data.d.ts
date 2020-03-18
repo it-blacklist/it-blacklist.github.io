@@ -1,4 +1,4 @@
-import { DetailTypes } from '../black-detail'
+import { DetailTypes } from '../black-detail/data'
 
 export interface ResTypes {
   errMsg: 'collection.get:ok' | 'cloud.callFunction:ok';
