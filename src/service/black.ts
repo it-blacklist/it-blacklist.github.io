@@ -1,6 +1,9 @@
 import { cloud } from 'remax/wechat'
 
-cloud.init()
+cloud.init({
+  env: 'itblacklist',
+  traceUser: true
+})
 const db = cloud.database()
 
 export function fetchApi (data: { pageSize: number; current: number }): Promise<any> {/*黑名单列表*/
