@@ -15,14 +15,14 @@
   },
   "dependencies": {
     "react": "^16.13.0",
-    "remax": "^1.15.0",
+    "remax": "^1.19.0",
     "weui-miniprogram": "^0.2.2"
   },
   "devDependencies": {
     "@types/react": "^16.9.22",
     "chokidar": "^3.3.1",
     "cross-env": "^6.0.3",
-    "remax-cli": "^1.15.0",
+    "remax-cli": "^1.19.0",
     "rimraf": "^3.0.0",
     "typescript": "^3.8.2"
   }

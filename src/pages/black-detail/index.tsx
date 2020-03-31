@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { useQuery, View, Button, showToast, showModal, Textarea } from 'remax/wechat'
+import { useQuery, View, Button, showToast, showModal, Textarea, usePageEvent } from 'remax/wechat'
 import { SpecialTip, LoadingMore } from '@/components'
 import { getRateListApi, submitRateApi } from '@/service/black'
 import { DetailTypes, RateListTypes, ResTypes, SubmitResTypes } from './data'
@@ -29,7 +29,6 @@ export default () => {
         }
       })
   }
-  
   const submit = () => {
     if (!rateVal.length) {
       showToast({ icon: 'none', title: '请输入内容' })
@@ -56,13 +55,18 @@ export default () => {
       })
     }
   }
-  
   const query = useQuery()
   useEffect(() => {
     const detail = JSON.parse(query.detail)
     setDetail(detail)
     fetchRate(detail)
   }, [])
+  usePageEvent('onShareAppMessage', () => {
+    return {
+      title: '石家庄IT公司黑企',
+      path: `/pages/black-detail/index?detail=${query.detail}`
+    }
+  })
   return (
     <View>
       <view className="page__hd">

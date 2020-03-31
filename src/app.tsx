@@ -1,5 +1,5 @@
 import React, { createContext, useEffect, useState } from 'react'
-import { setStorage, getStorage, redirectTo } from 'remax/wechat'
+import { setStorage, getStorage, redirectTo, useAppEvent } from 'remax/wechat'
 import './app.css'
 import 'weui-miniprogram/miniprogram_dist/weui-wxss/dist/style/weui.css'
 import { fetchNodeApi, userInfoApi, checkUserStateApi } from '@/service/black'
@@ -15,7 +15,7 @@ const App: React.FC = ({ children }) => {
   const checkUserState = (openid: string) => {
     checkUserStateApi({ openid }).then(res => {
       if (res.data && res.data.length) {
-        redirectTo({url:'/pages/dark-room/index'})
+        redirectTo({ url: '/pages/dark-room/index' })
       }
     })
   }
@@ -41,6 +41,12 @@ const App: React.FC = ({ children }) => {
       })
     })
   }, [])
+  useAppEvent('onShareAppMessage', () => {
+    return {
+      title: '石家庄IT公司黑企',
+      path: '/pages/index/index'
+    }
+  })
   return <GlobalContext.Provider value={{ globalShow }}>{children}</GlobalContext.Provider>
 }
 

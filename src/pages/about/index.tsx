@@ -1,6 +1,5 @@
 import React, { useContext } from 'react'
-import { View, previewImage, setClipboardData, showModal, useShareAppMessage, Image, OpenData } from 'remax/wechat'
-import { shareInfo } from '@/utils/utils'
+import { View, previewImage, setClipboardData, showModal, Image, OpenData } from 'remax/wechat'
 import { GlobalContext, } from '@/app'
 import { GlobalContextTypes } from '@/app'
 import Cell from 'weui-miniprogram/miniprogram_dist/cell/cell'
@@ -33,9 +32,6 @@ const handleOpen = () => {
 
 export default () => {
   const { globalShow }: GlobalContextTypes = useContext(GlobalContext)
-  useShareAppMessage(() => {
-    return shareInfo
-  })
   return (
     <View style={{ background: '#ededed' }}>
       <Cells>

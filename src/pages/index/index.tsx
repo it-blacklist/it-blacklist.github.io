@@ -1,9 +1,6 @@
 import React, { useEffect, useState, useContext } from 'react'
-import {
-  View, Button, usePullDownRefresh, useShareAppMessage, pageScrollTo, stopPullDownRefresh, showLoading,
-  hideLoading, Icon, Input, OpenData
-} from 'remax/wechat'
-import { shareInfo } from '@/utils/utils'
+import { View, Button, pageScrollTo, stopPullDownRefresh,showLoading, hideLoading, Icon, Input } from 'remax/wechat'
+import { usePageEvent } from 'remax'
 import { Pagination, LoadingMore } from '@/components'
 import { fetchApi, SearchApi } from '@/service/black'
 import { GlobalContext, GlobalContextTypes } from '@/app'
@@ -46,12 +43,9 @@ export default () => {
   useEffect(() => {
     fetch()
   }, [])
-  usePullDownRefresh(() => {
+  usePageEvent('onPullDownRefresh', () => {
     setSearchVal('')
     fetch()
-  })
-  useShareAppMessage(() => {
-    return shareInfo
   })
   return (
     <View>
