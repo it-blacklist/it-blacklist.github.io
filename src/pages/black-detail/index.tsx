@@ -1,10 +1,11 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { useQuery, View, Button, showToast, showModal, Textarea, usePageEvent } from 'remax/wechat'
 import { SpecialTip, LoadingMore } from '@/components'
 import { getRateListApi, submitRateApi } from '@/service/black'
 import { DetailTypes, RateListTypes, ResTypes, SubmitResTypes } from './data'
 import FormPage from 'weui-miniprogram/miniprogram_dist/form-page/form-page'
 import Form from 'weui-miniprogram/miniprogram_dist/form/form'
+import { GlobalContext, GlobalContextTypes } from '@/app'
 
 export default () => {
   const [detail, setDetail] = useState<DetailTypes>({
@@ -14,6 +15,7 @@ export default () => {
     time: '',
     checked: false,
   })
+  const { globalShow }: GlobalContextTypes = useContext(GlobalContext)
   const [loading, setLoading] = useState<boolean>(false)
   const [submitLoading, setSubmitLoading] = useState<boolean>(false)
   const [rateList, setRateList] = useState<Array<RateListTypes>>([])
@@ -79,17 +81,19 @@ export default () => {
             <view className="weui-article__section">
               <view className="weui-article__p">{detail.info}</view>
             </view>
-            <view className="weui-article__h2">网友点评</view>
-            <view className="weui-article__section">
-              {rateList.length !== 0 ? rateList.map((item: RateListTypes) =>
-                  <View key={item._id} className="weui-article__p">{item.content}</View>) :
-                <LoadingMore type='noMore'/>}
-              {loading && <LoadingMore type='loading'/>}
-            </view>
+            {globalShow && <>
+              <view className="weui-article__h2">网友点评</view>
+              <view className="weui-article__section">
+                {rateList.length !== 0 ? rateList.map((item: RateListTypes) =>
+                    <View key={item._id} className="weui-article__p">{item.content}</View>) :
+                  <LoadingMore type='noMore'/>}
+                {loading && <LoadingMore type='loading'/>}
+              </view>
+            </>}
           </view>
         </view>
       </view>
-      <FormPage>
+      {globalShow && <FormPage>
         <Form>
           <View className="weui-cells weui-cells_after-title">
             <View className="weui-cell">
@@ -106,7 +110,7 @@ export default () => {
         <View slot="tips">
           <SpecialTip isAgree={isAgree} setIsAgree={setIsAgree}/>
         </View>
-      </FormPage>
+      </FormPage>}
     </View>
   )
 }
