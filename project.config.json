@@ -65,8 +65,8 @@
 			"list": [
 				{
 					"id": 0,
-					"name": "pages/dark-room/index",
-					"pathName": "pages/dark-room/index",
+					"name": "pages/black-new/index",
+					"pathName": "pages/black-new/index",
 					"query": "detail=%7B%22_id%22%3A%2213dba11c5d31e27b0b2d8fcf10a48d6a%22%2C%22_openid%22%3A%22oXkDm5Zg0yX0EX4O9Vgb80paxV_M%22%2C%22checked%22%3Atrue%2C%22info%22%3A%22%E6%8B%96%E6%AC%A0%E5%B7%A5%E8%B5%84%E4%B8%80%E7%9B%B4%E6%9C%AA%E7%BB%99%EF%BC%8C%E8%80%81%E6%9D%BF%E6%B2%A1%E4%BA%BA%E6%83%85%E5%91%B3%EF%BC%8C%E5%9B%A2%E9%98%9F%E6%84%8F%E8%AF%86%E4%B8%8D%E5%BC%BA%22%2C%22name%22%3A%22%E7%9F%B3%E5%AE%B6%E5%BA%84%E4%BC%9F%E6%B9%83%E7%A7%91%E6%8A%80%22%2C%22time%22%3A%222019%2F7%2F19%22%7D",
 					"scene": 1001
 				}

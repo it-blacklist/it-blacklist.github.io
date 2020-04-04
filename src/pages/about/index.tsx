@@ -1,7 +1,5 @@
-import React, { useContext } from 'react'
+import React from 'react'
 import { View, previewImage, setClipboardData, showModal, Image, OpenData } from 'remax/wechat'
-import { GlobalContext, } from '@/app'
-import { GlobalContextTypes } from '@/app'
 import Cell from 'weui-miniprogram/miniprogram_dist/cell/cell'
 import Cells from 'weui-miniprogram/miniprogram_dist/cells/cells'
 
@@ -31,7 +29,6 @@ const handleOpen = () => {
 }
 
 export default () => {
-  const { globalShow }: GlobalContextTypes = useContext(GlobalContext)
   return (
     <View style={{ background: '#ededed' }}>
       <Cells>
@@ -42,9 +39,9 @@ export default () => {
         </Cell>
       </Cells>
       <Cells title=' '>
-        {globalShow && <Cell link hover url="/pages/black-new/index" value="贡献一条黑名单">
+        <Cell link hover url="/pages/black-new/index" value="贡献一条黑名单">
           <View slot="title"><Image src={iconfont[1]} className='about-icon'/></View>
-        </Cell>}
+        </Cell>
         <Cell link hover url="/pages/feedback/index" value="留言">
           <View slot="title"><Image src={iconfont[2]} className='about-icon'/></View>
         </Cell>
