@@ -14,6 +14,8 @@
     "build": "cross-env NODE_ENV=production remax build -t wechat"
   },
   "dependencies": {
+    "anna-remax-ui": "^1.3.8",
+    "node-sass": "^4.13.1",
     "react": "^16.13.0",
     "remax": "^1.19.0",
     "weui-miniprogram": "^0.2.2"
