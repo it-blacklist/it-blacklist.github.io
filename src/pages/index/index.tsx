@@ -1,7 +1,8 @@
 import React, { useEffect, useState, useContext } from 'react'
 import {
-  View, Button, pageScrollTo, stopPullDownRefresh, showLoading, hideLoading, Icon, Input, usePageEvent
+  View, Button, pageScrollTo, stopPullDownRefresh, showLoading, hideLoading, Icon, Input,
 } from 'remax/wechat'
+import { usePageEvent } from 'remax/macro'
 import { Pagination, LoadingMore } from '@/components'
 import { fetchApi, SearchApi } from '@/service/black'
 import { GlobalContext, GlobalContextTypes } from '@/app'

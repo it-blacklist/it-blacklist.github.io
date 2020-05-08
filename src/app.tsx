@@ -1,5 +1,6 @@
 import React, { createContext, useEffect, useState } from 'react'
-import { setStorage, getStorage, redirectTo, useAppEvent } from 'remax/wechat'
+import { setStorage, getStorage, redirectTo } from 'remax/wechat'
+import { useAppEvent } from 'remax/macro'
 import './app.css'
 import 'weui-miniprogram/miniprogram_dist/weui-wxss/dist/style/weui.css'
 import { fetchNodeApi, userInfoApi, checkUserStateApi } from '@/service/black'

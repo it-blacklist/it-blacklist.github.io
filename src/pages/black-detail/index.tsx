@@ -1,5 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react'
-import { useQuery, View, Button, showToast, showModal, Textarea, usePageEvent } from 'remax/wechat'
+import { View, Button, showToast, showModal, Textarea, } from 'remax/wechat'
+import {  usePageEvent } from 'remax/macro'
+import {useQuery,} from 'remax'
 import { SpecialTip, LoadingMore } from '@/components'
 import { getRateListApi, submitRateApi } from '@/service/black'
 import { DetailTypes, RateListTypes, ResTypes, SubmitResTypes } from './data'
