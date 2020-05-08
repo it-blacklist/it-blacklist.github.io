@@ -9,6 +9,7 @@ import Cell from 'weui-miniprogram/miniprogram_dist/cell/cell'
 import Cells from 'weui-miniprogram/miniprogram_dist/cells/cells'
 import Msg from "weui-miniprogram/miniprogram_dist/msg/msg"
 import { GlobalContext, GlobalContextTypes } from '@/app'
+import format from 'dayjs'
 
 export default () => {
   const { globalShow }: GlobalContextTypes = useContext(GlobalContext)
@@ -27,7 +28,7 @@ export default () => {
       }).then((r) => {
         if (r.confirm) {
           setLoading(true)
-          const time = `${new Date().getFullYear()}/${new Date().getMonth() + 1}/${new Date().getDate()}`
+          const time = format().valueOf()
           addBlackApi({ name, info, time, checked: true })
             .then((res: SubmitResTypes) => {
               setLoading(false)

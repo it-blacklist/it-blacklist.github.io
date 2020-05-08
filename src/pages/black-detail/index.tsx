@@ -1,13 +1,14 @@
 import React, { useContext, useEffect, useState } from 'react'
 import { View, Button, showToast, showModal, Textarea, } from 'remax/wechat'
-import {  usePageEvent } from 'remax/macro'
-import {useQuery,} from 'remax'
+import { usePageEvent } from 'remax/macro'
+import { useQuery, } from 'remax'
 import { SpecialTip, LoadingMore } from '@/components'
 import { getRateListApi, submitRateApi } from '@/service/black'
 import { DetailTypes, RateListTypes, ResTypes, SubmitResTypes } from './data'
 import FormPage from 'weui-miniprogram/miniprogram_dist/form-page/form-page'
 import Form from 'weui-miniprogram/miniprogram_dist/form/form'
 import { GlobalContext, GlobalContextTypes } from '@/app'
+import format from 'dayjs'
 
 export default () => {
   const [detail, setDetail] = useState<DetailTypes>({
@@ -75,7 +76,7 @@ export default () => {
     <View>
       <view className="page__hd">
         <view className="page__title">{detail.name}</view>
-        <view className="page__desc">{detail.time}</view>
+        <view className="page__desc">{format(detail.time).format('YYYY/MM/DD')}</view>
       </view>
       <view className="page__bd">
         <view className="weui-article">

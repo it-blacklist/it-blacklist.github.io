@@ -6,7 +6,8 @@
 	"setting": {
 		"urlCheck": true,
 		"es6": false,
-		"postcss": true,
+		"postcss": false,
+		"preloadBackgroundData": false,
 		"minified": true,
 		"newFeature": true,
 		"coverView": true,
@@ -22,10 +23,11 @@
 			"disablePlugins": [],
 			"outputPath": ""
 		},
-		"preloadBackgroundData": false
+		"useCompilerModule": true,
+		"userConfirmedUseCompilerModuleSwitch": false
 	},
 	"compileType": "miniprogram",
-	"libVersion": "2.10.3",
+	"libVersion": "2.11.0",
 	"appid": "wx6fb9fed8d1dd41aa",
 	"projectname": "IT黑企",
 	"cloudfunctionTemplateRoot": "./functions",

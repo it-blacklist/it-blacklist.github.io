@@ -19,7 +19,7 @@ export function SearchApi (data: { name: string }): Promise<any> {/*黑名单搜
   }).get()
 }
 
-export function addBlackApi (data: { name: string; info: string; time: string; checked: boolean }): Promise<any> {/*增加黑名单*/
+export function addBlackApi (data: { name: string; info: string; time: number; checked: boolean }): Promise<any> {/*增加黑名单*/
   return cloud.callFunction({ name: 'addBlack', data })
 }
 

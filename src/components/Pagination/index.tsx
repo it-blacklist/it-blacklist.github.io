@@ -14,7 +14,6 @@ interface PaginationProps {
 
 export default ({ pagination: { current, total, pageSize }, onPageChange }: PaginationProps) => {
   const totalPage = Math.ceil(total / pageSize)
-  
   const multiArray: Array<Array<string>> = [[], []]
   const multiIndex = [0, 0]
   for (let i = 0; i < Math.ceil(totalPage / 10); i++) {
@@ -33,14 +32,17 @@ export default ({ pagination: { current, total, pageSize }, onPageChange }: Pagi
   const pickerConfirm = (e: { detail: { value: number[] } }) => {
     onPageChange(e.detail.value[0] * 10 + e.detail.value[1] + 1)
   }
-  
   return (
     <View style={{ margin: '20px 0', display: 'flex' }}>
       <Button type='primary' size='mini' onClick={() => onPageChange(--current)}
               disabled={current === 1}>上一页
       </Button>
-      <Picker mode="multiSelector" onChange={e => pickerConfirm(e)} onColumnChange={e => pickerChange(e)}
-              value={multiIndex} range={multiArray}>
+      <Picker
+        mode="multiSelector"
+        onChange={e => pickerConfirm(e)}
+        onColumnChange={e => pickerChange(e)}
+        value={multiIndex}
+        range={[["1-10页"],["第1页","第2页","第3页","第4页","第5页","第6页","第7页","第8页","第9页","第10页"]]}>
         <View className="picker">
           <Text style={{ color: '#1989fa', lineHeight: '30px' }}>{current}</Text>/{totalPage}
         </View>
