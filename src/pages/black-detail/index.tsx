@@ -43,7 +43,8 @@ export default () => {
       }).then((r) => {
         if (r.confirm) {
           setSubmitLoading(true)
-          submitRateApi({ father: detail._id, content: rateVal, checked: true, name: detail.name })
+          const time = format().valueOf()
+          submitRateApi({ father: detail._id, content: rateVal, checked: true, name: detail.name,time })
             .then((res: SubmitResTypes) => {
               setSubmitLoading(false)
               if (res.result.errMsg === 'collection.add:ok') {
@@ -101,7 +102,7 @@ export default () => {
           <View className="weui-cells weui-cells_after-title">
             <View className="weui-cell">
               <View className="weui-cell__bd">
-                <Textarea value={rateVal} onInput={e => setRateVal(e.detail.value)} className="weui-textarea"
+                <Textarea value={rateVal} onInput={e => setRateVal(e.detail.value)} maxlength={1000} className="weui-textarea"
                           placeholder="我要留言..." style={{ height: '3.3em' }}/>
               </View>
             </View>

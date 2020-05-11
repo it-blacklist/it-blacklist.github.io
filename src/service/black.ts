@@ -23,7 +23,7 @@ export function addBlackApi (data: { name: string; info: string; time: number; c
   return cloud.callFunction({ name: 'addBlack', data })
 }
 
-export function submitRateApi (data: { father: string; name: string; checked: boolean; content: string }): Promise<any> {/*增加黑名单评论*/
+export function submitRateApi (data: { father: string; name: string; checked: boolean; time: number; content: string }): Promise<any> {/*增加黑名单评论*/
   return cloud.callFunction({ name: 'updateRate', data })
 }
 

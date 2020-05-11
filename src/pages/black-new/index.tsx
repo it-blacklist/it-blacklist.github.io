@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { View, Button, navigateBack, showToast, showModal, Input, Textarea } from 'remax/wechat'
 import { SpecialTip } from '@/components'
 import { addBlackApi } from '@/service/black'
@@ -11,6 +11,7 @@ import Msg from "weui-miniprogram/miniprogram_dist/msg/msg"
 import { GlobalContext, GlobalContextTypes } from '@/app'
 import format from 'dayjs'
 
+let timer: NodeJS.Timeout | undefined = undefined
 export default () => {
   const { globalShow }: GlobalContextTypes = useContext(GlobalContext)
   const [name, setName] = useState<string>('')
@@ -34,7 +35,7 @@ export default () => {
               setLoading(false)
               if (res.result.errMsg === 'collection.add:ok') {
                 showToast({ icon: 'success', title: '提交成功', mask: true })
-                  .then(() => {setTimeout(() => {navigateBack()}, 1500)})
+                timer = setTimeout(() => {navigateBack()}, 1500)
               } else if (res.result.errCode === 87014) {
                 showToast({ icon: 'none', title: '内容含有违法违规内容' })
               } else {
@@ -45,6 +46,9 @@ export default () => {
       })
     }
   }
+  useEffect(()=>{
+    return ()=> clearTimeout(timer as NodeJS.Timeout)
+  },[])
   return (<>{globalShow ? <FormPage title="贡献一条名单">
     <Form>
       <Cells>
@@ -56,7 +60,7 @@ export default () => {
       <View className="weui-cells weui-cells_after-title">
         <View className="weui-cell">
           <View className="weui-cell__bd">
-            <Textarea value={info} onInput={e => setInfo(e.detail.value)} className="weui-textarea"
+            <Textarea value={info} onInput={e => setInfo(e.detail.value)} maxlength={1000} className="weui-textarea"
                       placeholder="该公司不合理的地方..." style={{ height: '3.3em' }}/>
           </View>
         </View>

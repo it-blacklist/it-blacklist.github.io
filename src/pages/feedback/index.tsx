@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { View, Button, Textarea, navigateBack, showToast, showModal } from 'remax/wechat'
 import { SpecialTip } from '@/components'
 import { feedbackApi } from '@/service/black'
@@ -6,6 +6,7 @@ import { SubmitResTypes } from '@/pages/black-detail/data'
 import FormPage from 'weui-miniprogram/miniprogram_dist/form-page/form-page'
 import Form from 'weui-miniprogram/miniprogram_dist/form/form'
 
+let timer: NodeJS.Timeout | undefined = undefined
 export default () => {
   const [feedback, setFeedback] = useState<string>('')
   const [loading, setLoading] = useState<boolean>(false)
@@ -26,7 +27,7 @@ export default () => {
               if (res.errMsg === 'collection.add:ok') {
                 setLoading(false)
                 showToast({ icon: 'success', title: '提交成功', mask: true })
-                  .then(() => {setTimeout(() => {navigateBack()}, 1500)})
+                timer = setTimeout(() => {navigateBack()}, 1500)
               } else {
                 showToast({ icon: 'none', title: '系统异常' })
               }
@@ -35,12 +36,15 @@ export default () => {
       })
     }
   }
+  useEffect(()=>{
+    return ()=> clearTimeout(timer as NodeJS.Timeout)
+  },[])
   return (<FormPage title="意见反馈">
       <Form>
         <View className="weui-cells weui-cells_after-title">
           <View className="weui-cell">
             <View className="weui-cell__bd">
-              <Textarea value={feedback} onInput={e => setFeedback(e.detail.value)} className="weui-textarea"
+              <Textarea value={feedback} onInput={e => setFeedback(e.detail.value)} maxlength={1000} className="weui-textarea"
                         placeholder="我要留言..." style={{ height: '3.3em' }}/>
             </View>
           </View>
