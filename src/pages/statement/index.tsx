@@ -2,7 +2,7 @@ import React from 'react'
 import { OpenData, View } from 'remax/wechat'
 
 export default () => (
-  <View className="page__bd">
+  <View className="page__bd" data-weui-theme="light">
     <View className="weui-article">
       <View className="weui-article__h1">特别声明</View>
       <View className="weui-article__section">

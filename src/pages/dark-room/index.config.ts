@@ -1,7 +1,7 @@
 import { PageConfig } from 'remax/wechat'
 
 const config: PageConfig = {
-  navigationBarTitleText: '小黑屋'
+  navigationBarTitleText: '授权'
 }
 
 export default config

@@ -12,14 +12,14 @@
     "build": "cross-env NODE_ENV=production remax build -t wechat"
   },
   "dependencies": {
-    "dayjs": "^1.8.26",
+    "dayjs": "^1.8.27",
     "react": "^16.13.0",
-    "remax": "^2.0.2",
-    "weui-miniprogram": "^0.2.2"
+    "remax": "^2.1.0",
+    "weui-miniprogram": "^1.0.2"
   },
   "devDependencies": {
     "@types/react": "^16.9.22",
     "cross-env": "^6.0.3",
-    "typescript": "^3.8.2"
+    "typescript": "^3.9.3"
   }
 }

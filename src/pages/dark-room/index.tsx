@@ -2,22 +2,23 @@ import React, { useEffect } from 'react'
 import { View, Button, showToast, hideHomeButton } from 'remax/wechat'
 import Msg from 'weui-miniprogram/miniprogram_dist/msg/msg'
 
+const bindGetUserInfo = () => {
+  showToast({
+    icon: 'success',
+    title: '授权成功！'
+  })
+}
+
 export default () => {
   useEffect(() => {
     hideHomeButton()
   }, [])
-  const bindGetUserInfo = () => {
-    showToast({
-      icon: 'success',
-      title: '申诉成功！'
-    })
-  }
-  return (<Msg type="warn" title="小黑屋">
-    <View slot="desc">您可能因滥用小程序被加入了黑名单，如有误封，请点击下方按钮申诉！
-      <Button style={{ marginTop: 40 }} open-type="getUserInfo" onGetUserInfo={bindGetUserInfo}>申诉</Button>
+  return (<View data-weui-theme="light"><Msg type="warn" title="授权">
+    <View slot="desc">请先授权小程序使用您的个人信息，以继续使用。
+      <Button type='primary' style={{ marginTop: 40 }} open-type="getUserInfo" onGetUserInfo={()=>bindGetUserInfo()}>授权</Button>
     </View>
     <View slot="footer">
       <View className="weui-footer__text">Copyright © liujiayii@foxmail.com</View>
     </View>
-  </Msg>)
+  </Msg></View>)
 }

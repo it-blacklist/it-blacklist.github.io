@@ -17,7 +17,7 @@ export default () => {
   const [name, setName] = useState<string>('')
   const [info, setInfo] = useState<string>('')
   const [loading, setLoading] = useState<boolean>(false)
-  const [isAgree, setIsAgree] = useState(false)
+  const [isAgree, setIsAgree] = useState(true)
   const submit = () => {
     if (!name || !info) {
       showToast({ icon: 'none', title: '请补全信息后再提交!' })
@@ -49,7 +49,7 @@ export default () => {
   useEffect(()=>{
     return ()=> clearTimeout(timer as NodeJS.Timeout)
   },[])
-  return (<>{globalShow ? <FormPage title="贡献一条名单">
+  return (<View data-weui-theme="light">{globalShow ? <FormPage title="贡献一条名单">
     <Form>
       <Cells>
         <Cell title="公司名称">
@@ -78,5 +78,5 @@ export default () => {
       <View className="weui-footer__text">Copyright © liujiayii@foxmail.com</View>
     </View>
   </Msg>
-  }</>)
+  }</View>)
 }

@@ -1,8 +1,8 @@
 import React, { createContext, useEffect, useState } from 'react'
-import { setStorage, getStorage, redirectTo } from 'remax/wechat'
+import { setStorage, getStorage, redirectTo ,getUpdateManager,showModal} from 'remax/wechat'
 import { useAppEvent } from 'remax/macro'
 import './app.css'
-import 'weui-miniprogram/miniprogram_dist/weui-wxss/dist/style/weui.css'
+import 'weui-miniprogram/miniprogram_dist/weui-wxss/dist/style/weui.wxss'
 import { fetchNodeApi, userInfoApi, checkUserStateApi } from '@/service/black'
 export const GlobalContext = createContext({})
 
@@ -12,6 +12,18 @@ export interface GlobalContextTypes {
 
 const App: React.FC = ({ children }) => {
   const [globalShow, setGlobalShow] = useState<boolean>(false)
+  const updateManager = getUpdateManager()
+  updateManager.onUpdateReady(function () {
+    showModal({
+      title: '更新提示',
+      content: '新版本已经准备好，是否重启应用？',
+      success:  (res) =>{
+        if (res.confirm) {
+          updateManager.applyUpdate()
+        }
+      }
+    })
+  })
   const checkUserState = (openid: string) => {
     checkUserStateApi({ openid }).then(res => {
       if (res.data && res.data.length) {

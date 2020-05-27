@@ -23,7 +23,7 @@ export default () => {
   const [submitLoading, setSubmitLoading] = useState<boolean>(false)
   const [rateList, setRateList] = useState<Array<RateListTypes>>([])
   const [rateVal, setRateVal] = useState<string>('')
-  const [isAgree, setIsAgree] = useState(false)
+  const [isAgree, setIsAgree] = useState(true)
   const fetchRate = (detail: DetailTypes) => {
     setLoading(true)
     getRateListApi({ _id: detail._id })
@@ -74,7 +74,7 @@ export default () => {
     }
   })
   return (
-    <View>
+    <View data-weui-theme="light">
       <view className="page__hd">
         <view className="page__title">{detail.name}</view>
         <view className="page__desc">{format(detail.time).format('YYYY/MM/DD')}</view>

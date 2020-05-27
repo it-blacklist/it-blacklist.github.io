@@ -30,7 +30,7 @@ const handleOpen = () => {
 
 export default () => {
   return (
-    <View style={{ background: '#ededed' }}>
+    <View style={{ background: '#ededed' }} data-weui-theme="light">
       <Cells>
         <Cell value="如果你觉得小程序还不错，分享给你身边的IT从业者，或者请作者喝杯茶。">
           <View slot="title" style={{ width: '60px', height: '60px', marginRight: '10px' }}>
