@@ -25,9 +25,7 @@
   width: 20px;
   height: 20px;
 }
-.cells__group,.weui-cells__title{
-  margin-top: 0!important;
-}
+
 button {
   border-radius: 0 !important;
 }
