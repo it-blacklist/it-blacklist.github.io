@@ -19,6 +19,7 @@
   },
   "devDependencies": {
     "@types/react": "^16.9.22",
+    "@umijs/fabric": "^2.0.8",
     "cross-env": "^6.0.3",
     "typescript": "^3.9.3"
   }
