@@ -32,9 +32,9 @@
 	"libVersion": "2.11.0",
 	"appid": "wx6fb9fed8d1dd41aa",
 	"projectname": "IT%E9%BB%91%E4%BC%81",
-	"cloudfunctionTemplateRoot": "./functions",
-	"cloudfunctionRoot": "src/cloud/",
 	"miniprogramRoot": "dist/",
+	"cloudfunctionRoot": "src/cloud/",
+	"cloudfunctionTemplateRoot": "./functions",
 	"watchOptions": {
 		"ignore": []
 	},
