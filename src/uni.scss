@@ -1,4 +1,19 @@
 @import 'uview-ui/theme.scss';
+.agreement {
+    display: flex;
+    align-items: center;
+    margin: 40rpx 0;
+
+    .agreement-text {
+      display: flex;
+      padding-left: 8rpx;
+      color: $u-tips-color;
+
+      navigator {
+        color: $u-type-primary;
+      }
+    }
+  }
 /**
  * 这里是uni-app内置的常用样式变量
  *

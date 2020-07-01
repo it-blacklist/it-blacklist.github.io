@@ -23,7 +23,7 @@
   </view>
 </template>
 
-<script lang="ts">
+<script>
   export default {
     data() {
       return {
@@ -145,20 +145,6 @@
   };
 </script>
 
-<style scoped lang="scss">
-  .agreement {
-    display: flex;
-    align-items: center;
-    margin: 40rpx 0;
-
-    .agreement-text {
-      display: flex;
-      padding-left: 8rpx;
-      color: $u-tips-color;
-
-      navigator {
-        color: $u-type-primary;
-      }
-    }
-  }
+<style >
+  
 </style>
