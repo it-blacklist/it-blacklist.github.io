@@ -1,29 +1,68 @@
 <template>
-  <view class="u-padding-30">
-    <u-form :model="model" :rules="rules" ref="uForm" :errorType="['toast']">
-      <u-form-item label="公司名称" label-width="130" prop="companyName">
-        <u-input border placeholder="公司名称" v-model="model.companyName" />
-      </u-form-item>
-      <u-form-item label="所在城市" label-width="130" prop="cityName">
-        <u-input type="select" :select-open="selectShow" v-model="model.cityName" placeholder="请选择所在城市" @click="selectShow = true"></u-input>
-        <u-select v-model="selectShow" mode="mutil-column-auto" :list="cityList" @confirm="selectConfirm"></u-select>
-      </u-form-item>
-      <u-form-item label-width="0" prop="content">
-        <u-input type="textarea" border placeholder="该公司不合理的地方…" v-model="model.content" />
-      </u-form-item>
-    </u-form>
-    <view class="agreement">
-      <u-checkbox v-model="check" @change="checkboxChange"></u-checkbox>
-      <view class="agreement-text">
-        勾选代表已阅读并同意
-        <navigator url="../statement/index">相关条款</navigator>
-      </view>
+  <view class="">
+    <view v-show="!globalData.system.show" class="u-padding-40">
+      <u-empty text="该功能目前已下线" mode="permission"></u-empty>
     </view>
-    <u-button :loading="loading" @click="submit">提交</u-button>
+    <view v-show="globalData.system.show" class="u-padding-30">
+      <u-form :model="model" :rules="rules" ref="uForm" :errorType="['toast']">
+        <u-form-item label="公司名称" label-width="130" prop="companyName">
+          <u-input border placeholder="公司名称" v-model="model.companyName" />
+        </u-form-item>
+        <u-form-item label="所在城市" label-width="130" prop="cityName">
+          <u-input type="select" :select-open="selectShow" v-model="model.cityName" placeholder="请选择所在城市" @click="selectShow = true"></u-input>
+          <u-select v-model="selectShow" mode="mutil-column-auto" :list="cityList" @confirm="selectConfirm"></u-select>
+        </u-form-item>
+        <u-form-item label-width="0" prop="content">
+          <u-input type="textarea" border placeholder="该公司不合理的地方…" v-model="model.content" />
+        </u-form-item>
+      </u-form>
+      <view class="agreement">
+        <u-checkbox v-model="check" @change="checkboxChange"></u-checkbox>
+        <view class="agreement-text">
+          勾选代表已阅读并同意
+          <navigator url="../statement/index">相关条款</navigator>
+        </view>
+      </view>
+      <u-button :loading="loading" @click="submit">提交</u-button>
+    </view>
   </view>
 </template>
 
 <script>
+  const rules = {
+    companyName: [{
+      required: true,
+      message: '请输入公司名称',
+      trigger: 'blur',
+    }],
+    cityName: [{
+      required: true,
+      message: '请选择城市',
+      trigger: 'blur',
+    }],
+    content: [{
+      required: true,
+      message: '请输入内容',
+      trigger: 'blur',
+    }],
+  }
+  const cityList = [{
+      value: '河北省',
+      label: '河北省',
+      children: [{
+          value: '石家庄',
+          label: '石家庄市'
+        }]
+    },
+    {
+      value: '北京市',
+      label: '北京市',
+      children: [{
+        value: '北京',
+        label: '市辖区'
+      }]
+    }
+  ]
   export default {
     data() {
       return {
@@ -32,56 +71,16 @@
           content: '',
           cityName: '',
         },
-        rules: {
-          companyName: [{
-            required: true,
-            message: '请输入公司名称',
-            trigger: 'blur',
-          }],
-          cityName: [{
-            required: true,
-            message: '请选择城市',
-            trigger: 'blur',
-          }],
-          content: [{
-            required: true,
-            message: '请输入内容',
-            trigger: 'blur',
-          }],
-        },
+        rules,
         check: false,
         loading: false,
         selectShow: false,
-        cityList: [{
-            value: '河北省',
-            label: '河北省',
-            children: [{
-                value: '石家庄',
-                label: '石家庄市'
-              },
-              {
-                value: '保定',
-                label: '保定市'
-              },
-              {
-                value: '邯郸',
-                label: '邯郸市'
-              }
-            ]
-          },
-          {
-            value: '北京市',
-            label: '北京市',
-            children: [{
-              value: '北京',
-              label: '市辖区'
-            }]
-          }
-        ]
+        cityList,
+        globalData: {}
       };
     },
     onLoad() {
-
+      this.globalData = getApp().globalData
     },
     onReady() {
       this.$refs.uForm.setRules(this.rules);
@@ -145,6 +144,6 @@
   };
 </script>
 
-<style >
-  
+<style>
+
 </style>

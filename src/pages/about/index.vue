@@ -5,7 +5,6 @@
         <open-data type="userAvatarUrl"></open-data>
       </view>
       <view class="u-flex-1">
-        <!-- <view class="u-font-18 u-p-b-20">IT民工</view> -->
         <view class="u-font-14 u-tips-color">如果你觉得小程序还不错，分享给你身边的IT从业者，或者请作者喝杯茶。</view>
       </view>
     </view>
@@ -38,7 +37,7 @@
         uni.showModal({
           title: 'https://github.com/liujiayii/',
           content: '点击确认按钮复制链接到浏览器中查看',
-          showCancel:false,
+          showCancel: false,
           success: (r) => {
             if (r.confirm) {
               uni.setClipboardData({
@@ -48,10 +47,11 @@
           }
         })
       },
-      clickImg  ()  {
+      clickImg() {
         uni.previewImage({
-          urls: ['https://6974-itblacklist-1257941888.tcb.qcloud.la/qrcode.jpg?sign=a8a70c8edfa00f789149be669dce239f&t=1576917029',
-            'https://6974-itblacklist-1257941888.tcb.qcloud.la/wx.jpg?sign=00f84fae613588571776b4a3570f63f1&t=1576917059']
+          urls: ['https://6974-it-blacklist-a6de4b-1302530662.tcb.qcloud.la/reward/wechat.jpg',
+            'https://6974-it-blacklist-a6de4b-1302530662.tcb.qcloud.la/reward/alipay.jpg'
+          ]
         })
       }
     }

@@ -17,19 +17,20 @@
 </template>
 
 <script>
+  const rules = {
+    content: [{
+      required: true,
+      message: '请输入内容',
+      trigger: 'blur',
+    }],
+  }
   export default {
     data() {
       return {
         model: {
           content: ''
         },
-        rules: {
-          content: [{
-            required: true,
-            message: '请输入内容',
-            trigger: 'blur',
-          }],
-        },
+        rules,
         check: false,
         loading: false
       };
@@ -94,5 +95,5 @@
 </script>
 
 <style>
-  
+
 </style>

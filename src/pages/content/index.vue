@@ -14,7 +14,7 @@
         </view>
       </view>
     </u-card>
-    <view class="u-padding-30">
+    <view v-show="globalData.system.show" class="u-padding-30">
       <u-form :model="model" :rules="rules" ref="uForm" :errorType="['toast']">
         <u-form-item label-width="0" prop="content">
           <u-input type="textarea" border placeholder="我要评论…" v-model="model.content" />
@@ -33,6 +33,13 @@
 </template>
 
 <script>
+  const rules = {
+    content: [{
+      required: true,
+      message: '请输入内容',
+      trigger: 'blur',
+    }],
+  }
   export default {
     data() {
       return {
@@ -41,15 +48,10 @@
         model: {
           content: ''
         },
-        rules: {
-          content: [{
-            required: true,
-            message: '请输入内容',
-            trigger: 'blur',
-          }],
-        },
+        rules,
         check: false,
-        loading: false
+        loading: false,
+        globalData: {}
       };
     },
     onReady() {
@@ -82,6 +84,13 @@
           })
         })
       }
+      this.globalData = getApp().globalData
+    },
+    onShareAppMessage() {
+      return {
+        title: this.content.companyName,
+        path: `/pages/content/index?content=${JSON.stringify(this.content)}`
+      }
     },
     methods: {
       submit() {
@@ -108,7 +117,7 @@
                 data: { ...this.model,
                   companyName: this.content.companyName,
                   createTime: new Date().getTime(),
-                  checked: true
+                  checked: false
                 }
               }).then((res) => {
                 uni.hideLoading()

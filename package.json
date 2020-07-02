@@ -62,12 +62,10 @@
     "regenerator-runtime": "^0.12.1",
     "uview-ui": "^1.4.1",
     "vue": "^2.6.11",
-    "vue-class-component": "^6.3.2",
     "vue-property-decorator": "^8.0.0",
     "vuex": "^3.2.0"
   },
   "devDependencies": {
-    "@babel/plugin-syntax-typescript": "^7.2.0",
     "@dcloudio/types": "*",
     "@dcloudio/uni-automator": "^2.0.0-27920200618002",
     "@dcloudio/uni-cli-shared": "^2.0.0-27920200618002",
@@ -79,7 +77,6 @@
     "@dcloudio/webpack-uni-mp-loader": "^2.0.0-27920200618002",
     "@dcloudio/webpack-uni-pages-loader": "^2.0.0-27920200618002",
     "@vue/cli-plugin-babel": "~4.4.0",
-    "@vue/cli-plugin-typescript": "*",
     "@vue/cli-service": "~4.4.0",
     "babel-plugin-import": "^1.11.0",
     "cross-env": "^7.0.2",
@@ -89,7 +86,6 @@
     "node-sass": "^4.14.1",
     "postcss-comment": "^2.0.0",
     "sass-loader": "^8.0.2",
-    "typescript": "^3.0.0",
     "vue-template-compiler": "^2.6.11"
   },
   "browserslist": [
