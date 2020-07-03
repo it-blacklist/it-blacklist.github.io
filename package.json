@@ -14,7 +14,7 @@
   "dependencies": {
     "dayjs": "^1.8.27",
     "react": "^16.13.0",
-    "remax": "^2.5.3",
+    "remax": "^2.6.0",
     "weui-miniprogram": "^1.0.2"
   },
   "devDependencies": {
