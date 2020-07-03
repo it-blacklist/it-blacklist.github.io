@@ -1,9 +1,9 @@
 <template>
   <view class="">
-    <view v-show="!globalData.system.show" class="u-padding-40">
+    <view v-show="!system.show" class="u-padding-40">
       <u-empty text="该功能目前已下线" mode="permission"></u-empty>
     </view>
-    <view v-show="globalData.system.show" class="u-padding-30">
+    <view v-show="system.show" class="u-padding-30">
       <u-form :model="model" :rules="rules" ref="uForm" :errorType="['toast']">
         <u-form-item label="公司名称" label-width="130" prop="companyName">
           <u-input border placeholder="公司名称" v-model="model.companyName" />
@@ -50,9 +50,9 @@
       value: '河北省',
       label: '河北省',
       children: [{
-          value: '石家庄',
-          label: '石家庄市'
-        }]
+        value: '石家庄',
+        label: '石家庄市'
+      }]
     },
     {
       value: '北京市',
@@ -76,11 +76,11 @@
         loading: false,
         selectShow: false,
         cityList,
-        globalData: {}
+        system: {}
       };
     },
     onLoad() {
-      this.globalData = getApp().globalData
+      this.system = getApp().globalData.system
     },
     onReady() {
       this.$refs.uForm.setRules(this.rules);

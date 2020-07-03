@@ -93,7 +93,8 @@
         "usingComponents" : true,
         "uniStatistics" : {
             "enable" : true
-        }
+        },
+        "appid" : "1110579853"
     },
     "uniStatistics" : {
         "enable" : true
@@ -101,6 +102,11 @@
     "h5" : {
         "uniStatistics" : {
             "enable" : true
-        }
+        },
+        "router" : {
+            "base" : "/sjz_it_blacklist/",
+            "mode" : "hash"
+        },
+        "domain" : "https://liujiayii.github.io"
     }
 }

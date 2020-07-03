@@ -7,7 +7,7 @@
     <u-cell-group>
       <navigator v-for="(item) of list" :key="item._id" :url="`../content/index?content=${JSON.stringify(item)}`">
         <u-cell-item :title="item.companyName" use-label-slot>
-          <view class="u-line-2" slot="label">
+          <view v-show="system.show" class="u-line-2" slot="label">
             {{item.content}}
           </view>
         </u-cell-item>
@@ -36,14 +36,16 @@
           </view>
         </view>
         <u-cell-group class="u-m-t-20">
-          <navigator url="../create/index">
-            <u-cell-item icon="edit-pen-fill" title="贡献一条黑名单"></u-cell-item>
-          </navigator>
+          <view v-show="system.show">
+            <navigator url="../create/index">
+              <u-cell-item icon="edit-pen-fill" title="贡献一条黑名单"></u-cell-item>
+            </navigator>
+            <navigator url="../statement/index">
+              <u-cell-item icon="info-circle-fill" title="特别声明"></u-cell-item>
+            </navigator>
+          </view>
           <navigator url="../feedback/index">
             <u-cell-item icon="email-fill" title="留言"></u-cell-item>
-          </navigator>
-          <navigator url="../statement/index">
-            <u-cell-item icon="info-circle-fill" title="特别声明"></u-cell-item>
           </navigator>
           <u-cell-item @click="handleOpen()" icon="github-circle-fill" title="GitHub"></u-cell-item>
           <u-cell-item @click="clickImg()" icon="gift-fill" title="打赏"></u-cell-item>
@@ -65,10 +67,22 @@
         scrollTop: 0,
         loadingStatus: 'loadmore',
         popupShow: false,
+        system: {}
       }
     },
     onLoad() {
       this.get()
+      uniCloud.callFunction({
+        name: 'itBlackSystem'
+      }).then((res) => {
+        getApp().globalData.system = res.result.data[0]
+        this.system = res.result.data[0]
+      }).catch((err) => {
+        uni.showModal({
+          content: `查询失败，错误信息为：${err.message}`,
+          showCancel: false
+        })
+      })
     },
     onPullDownRefresh() {
       this.current = 0
@@ -125,7 +139,7 @@
           name: 'itBlackList',
           data: {
             current: ++this.current,
-            pageSize: 10,
+            pageSize: 20,
             cityName: '石家庄'
           }
         }).then((res) => {

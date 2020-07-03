@@ -6,7 +6,7 @@
           <view class="u-body-item-title">{{content.content}}</view>
         </view>
       </view>
-      <view class="" slot="foot">
+      <view class="" slot="foot" v-show="system.show">
         <u-icon name="chat-fill" size="34" label="精选评论"></u-icon>
         <u-empty v-if="!commentList.length" text="暂无评论" mode="news"></u-empty>
         <view v-for="item of commentList" :key="item._id" class="u-body-item u-border-bottom">
@@ -14,7 +14,7 @@
         </view>
       </view>
     </u-card>
-    <view v-show="globalData.system.show" class="u-padding-30">
+    <view v-show="system.show" class="u-padding-30">
       <u-form :model="model" :rules="rules" ref="uForm" :errorType="['toast']">
         <u-form-item label-width="0" prop="content">
           <u-input type="textarea" border placeholder="我要评论…" v-model="model.content" />
@@ -51,7 +51,7 @@
         rules,
         check: false,
         loading: false,
-        globalData: {}
+        system: {}
       };
     },
     onReady() {
@@ -84,7 +84,7 @@
           })
         })
       }
-      this.globalData = getApp().globalData
+      this.system = getApp().globalData.system
     },
     onShareAppMessage() {
       return {
