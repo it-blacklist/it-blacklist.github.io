@@ -103,7 +103,7 @@
             if (r.confirm) {
               this.loading = true
               uni.showLoading({
-                title: '处理中...'
+                title: '提交中...'
               })
               uniCloud.callFunction({
                 name: 'itBlackCreate',
@@ -114,7 +114,7 @@
               }).then((res) => {
                 uni.hideLoading()
                 uni.showModal({
-                  content: `提交成功`,
+                  content: `提交成功！内容安全审核通过后才会展示。`,
                   showCancel: false,
                   success: () => {
                     uni.navigateBack()

@@ -65,7 +65,7 @@
         const cont = JSON.parse(content)
         this.content = cont
         uni.showLoading({
-          title: '处理中...'
+          title: '加载中...'
         })
         this.loadingStatus = 'loading'
         uniCloud.callFunction({
@@ -79,7 +79,7 @@
         }).catch((err) => {
           uni.hideLoading()
           uni.showModal({
-            content: `查询失败，错误信息为：${err.message}`,
+            content: `加载失败，错误信息为：${JSON.stringify(err)}`,
             showCancel: false
           })
         })
@@ -110,7 +110,7 @@
             if (r.confirm) {
               this.loading = true
               uni.showLoading({
-                title: '处理中...'
+                title: '提交中...'
               })
               uniCloud.callFunction({
                 name: 'itBlackCreateComment',
@@ -121,8 +121,9 @@
                 }
               }).then((res) => {
                 uni.hideLoading()
+                this.model.content = ''
                 uni.showModal({
-                  content: `提交成功`,
+                  content: `提交成功！内容安全审核通过后才会展示。`,
                   showCancel: false,
                   success: () => {
                     uni.navigateBack()

@@ -4,16 +4,6 @@
       特别声明
     </view>
     <view class="u-content-color u-margin-top-20">
-      Dear
-      <!-- #ifdef MP-WEIXIN || MP-BAIDU -->
-      <open-data type="userNickName" />
-      <!--#endif -->
-      , 请勿提交任何违反国家法律、法规等内容，网络不是法外之地。
-    </view>
-    <view class="u-content-color u-margin-top-20">
-      所有操作均为匿名，未记录任何个人信息，提交的内容经过安全审核通过后才会发布。
-    </view>
-    <view class="u-content-color u-margin-top-20">
       对小程序有什么意见和建议，可以留言给我~
     </view>
     <view class="u-content-color u-margin-top-20">

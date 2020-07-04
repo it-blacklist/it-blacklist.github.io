@@ -6,7 +6,8 @@ exports.main = async (event, context) => {
       companyName: db.RegExp({
         regexp: event.companyName,
         options: 'i'
-      })
+      }),
+      checked: true
     })
     .get()
   //返回数据给客户端

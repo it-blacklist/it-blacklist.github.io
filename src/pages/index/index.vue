@@ -28,7 +28,7 @@
             <open-data type="userAvatarUrl"></open-data>
             <!--#endif -->
             <!-- #ifndef MP-WEIXIN || MP-BAIDU-->
-            <image src="https://6974-it-blacklist-a6de4b-1302530662.tcb.qcloud.la/logo.jpg" />
+            <image src="https://6974-it-blacklist-a6de4b-1302530662.tcb.qcloud.la/logo.png" />
             <!-- #endif -->
           </view>
           <view class="u-flex-1">
@@ -79,7 +79,7 @@
         this.system = res.result.data[0]
       }).catch((err) => {
         uni.showModal({
-          content: `查询失败，错误信息为：${err.message}`,
+          content: `查询失败，错误信息为：${JSON.stringify(err)}`,
           showCancel: false
         })
       })
@@ -104,7 +104,7 @@
         this.current = 0
         if (this.searchKey) {
           uni.showLoading({
-            title: '处理中...'
+            title: '加载中...'
           })
           this.loadingStatus = 'loading'
           uniCloud.callFunction({
@@ -121,7 +121,7 @@
           }).catch((err) => {
             uni.hideLoading()
             uni.showModal({
-              content: `查询失败，错误信息为：${err.message}`,
+              content: `查询失败，错误信息为：${JSON.stringify(err)}`,
               showCancel: false
             })
           })
@@ -132,7 +132,7 @@
       },
       get() {
         uni.showLoading({
-          title: '处理中...'
+          title: '加载中...'
         })
         this.loadingStatus = 'loading'
         uniCloud.callFunction({
@@ -154,7 +154,7 @@
         }).catch((err) => {
           uni.hideLoading()
           uni.showModal({
-            content: `查询失败，错误信息为：${err.message}`,
+            content: `查询失败，错误信息为：${JSON.stringify(err)}`,
             showCancel: false
           })
         })

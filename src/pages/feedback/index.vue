@@ -59,7 +59,7 @@
             if (r.confirm) {
               this.loading = true
               uni.showLoading({
-                title: '处理中...'
+                title: '提交中...'
               })
               uniCloud.callFunction({
                 name: 'feedback',

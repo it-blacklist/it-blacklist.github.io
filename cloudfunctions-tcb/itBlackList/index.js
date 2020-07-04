@@ -4,7 +4,8 @@ exports.main = async (event, context) => {
   const list = await db.collection('black-list')
     .orderBy('createTime', 'desc')
     .where({
-      cityName: event.cityName
+      cityName: event.cityName,
+      checked: true
     })
     .skip((event.current - 1) * event.pageSize)
     .limit(event.pageSize)
