@@ -107,19 +107,25 @@
               })
               uniCloud.callFunction({
                 name: 'itBlackCreate',
-                data: { ...this.model,
-                  createTime: new Date().getTime(),
-                  checked: false
-                }
+                data: this.model
               }).then((res) => {
                 uni.hideLoading()
-                uni.showModal({
-                  content: `提交成功！内容安全审核通过后才会展示。`,
-                  showCancel: false,
-                  success: () => {
-                    uni.navigateBack()
-                  }
-                })
+                this.loading = false
+                console.log(res)
+                if (!res.result) {
+                  uni.showToast({
+                    icon: 'none',
+                    title: '内容可能含有违法违规内容'
+                  })
+                } else {
+                  uni.showModal({
+                    content: '提交成功',
+                    showCancel: false,
+                    success: () => {
+                      uni.navigateBack()
+                    }
+                  })
+                }
               }).catch((err) => {
                 uni.hideLoading()
                 uni.showModal({
