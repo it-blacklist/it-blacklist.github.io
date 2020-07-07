@@ -60,7 +60,7 @@
     "@dcloudio/uni-stat": "^2.0.0-27920200618002",
     "core-js": "^3.6.5",
     "flyio": "^0.6.2",
-    "regenerator-runtime": "^0.12.1",
+    "regenerator-runtime": "^0.13.5",
     "uview-ui": "^1.4.1",
     "vue": "^2.6.11",
     "vue-property-decorator": "^8.0.0",
