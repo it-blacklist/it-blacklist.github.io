@@ -22,7 +22,7 @@
     </view>
     <u-popup v-model="popupShow" width="550" border-radius="30" mode="bottom">
       <view>
-        <u-alert-tips type="info" description="截至目前系统已收录253条公司信息"></u-alert-tips>
+        <u-alert-tips type="info" :description="`截至目前系统已收录${total}条公司信息`"></u-alert-tips>
         <view class="u-flex user-box u-p-30">
           <view class="u-m-r-10 user-avatar">
             <!-- #ifdef MP-WEIXIN || MP-BAIDU -->
@@ -65,6 +65,7 @@
         searchKey: '',
         current: 0,
         list: [],
+        total: 0,
         scrollTop: 0,
         loadingStatus: 'loadmore',
         popupShow: false,
@@ -78,6 +79,16 @@
       }).then((res) => {
         getApp().globalData.system = res.result.data[0]
         this.system = res.result.data[0]
+      }).catch((err) => {
+        uni.showModal({
+          content: `查询失败，错误信息为：${JSON.stringify(err)}`,
+          showCancel: false
+        })
+      })
+      uniCloud.callFunction({
+        name: 'itBlackListCount'
+      }).then((res) => {
+        this.total = res.result.total
       }).catch((err) => {
         uni.showModal({
           content: `查询失败，错误信息为：${JSON.stringify(err)}`,
