@@ -22,6 +22,7 @@
     </view>
     <u-popup v-model="popupShow" width="550" border-radius="30" mode="bottom">
       <view>
+        <u-alert-tips type="info" description="截至目前系统已收录253条公司信息"></u-alert-tips>
         <view class="u-flex user-box u-p-30">
           <view class="u-m-r-10 user-avatar">
             <!-- #ifdef MP-WEIXIN || MP-BAIDU -->

@@ -13,7 +13,7 @@
           <u-select v-model="selectShow" mode="mutil-column-auto" :list="cityList" @confirm="selectConfirm"></u-select>
         </u-form-item>
         <u-form-item label-width="0" prop="content">
-          <u-input type="textarea" border placeholder="该公司不合理的地方…" v-model="model.content" />
+          <u-input type="textarea" maxlength="5000" border placeholder="该公司不合理的地方…" v-model="model.content" />
         </u-form-item>
       </u-form>
       <view class="agreement">

@@ -43,10 +43,10 @@ $ yarn run build
 ## 打赏
 
 先放一个吧!
-
+<div>
 <img src="https://6974-it-blacklist-a6de4b-1302530662.tcb.qcloud.la/reward/wechat.jpg" width="200" alt="微信" style="float: left">
 <img src="https://6974-it-blacklist-a6de4b-1302530662.tcb.qcloud.la/reward/alipay.jpg" width="200" alt="支付宝" style="float: left">
-
+</div>
 ## 链接
 
 * [Remax:使用真正的 React 构建小程序](https://remaxjs.org/)

@@ -2,7 +2,7 @@
   <view class="u-padding-30">
     <u-form :model="model" :rules="rules" ref="uForm" :errorType="['toast']">
       <u-form-item label-width="0" prop="content">
-        <u-input type="textarea" border placeholder="我要留言…" v-model="model.content" />
+        <u-input type="textarea" maxlength="2000" border placeholder="我要留言…" v-model="model.content" />
       </u-form-item>
     </u-form>
     <view class="agreement">

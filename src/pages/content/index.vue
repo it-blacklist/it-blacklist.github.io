@@ -9,7 +9,7 @@
       <view class="" slot="foot" v-show="system.show">
         <u-icon name="chat-fill" size="34" label="精选评论"></u-icon>
         <u-empty v-if="!commentList.length" text="暂无评论" mode="news"></u-empty>
-        <view v-for="item of commentList" :key="item._id" class="u-body-item u-border-bottom">
+        <view v-for="(item,index) of commentList" :key="item._id" :class="[{'u-border-bottom':(index+1)!==commentList.length},'u-body-item']">
           <view class="u-body-item-title">{{item.content}}</view>
         </view>
       </view>
@@ -17,7 +17,7 @@
     <view v-show="system.show" class="u-padding-30">
       <u-form :model="model" :rules="rules" ref="uForm" :errorType="['toast']">
         <u-form-item label-width="0" prop="content">
-          <u-input type="textarea" border placeholder="我要评论…" v-model="model.content" />
+          <u-input type="textarea" maxlength="2000" border placeholder="我要评论…" v-model="model.content" />
         </u-form-item>
       </u-form>
       <view class="agreement">
