@@ -872,10 +872,10 @@
   resolved "https://registry.npm.taobao.org/@dcloudio/types/download/@dcloudio/types-1.1.0.tgz#8ed112f1cf513f183856a540ca4d22c707fac963"
   integrity sha1-jtES8c9RPxg4VqVAyk0ixwf6yWM=
 
-"@dcloudio/uni-app-plus@^2.0.0-27920200618002":
-  version "2.0.0-27920200618002"
-  resolved "https://registry.npm.taobao.org/@dcloudio/uni-app-plus/download/@dcloudio/uni-app-plus-2.0.0-27920200618002.tgz#4813aa054ea8336097a16f0de80b0312b2d640d7"
-  integrity sha1-SBOqBU6oM2CXoW8N6AsDErLWQNc=
+"@dcloudio/uni-app-plus@^2.0.0-28320200727001":
+  version "2.0.0-28320200727001"
+  resolved "https://registry.yarnpkg.com/@dcloudio/uni-app-plus/-/uni-app-plus-2.0.0-28320200727001.tgz#89c217873a55ed6f5b80951c1bf0ff7db065de54"
+  integrity sha512-xFTCXvIXmCNIXNK/SGBsFi+f7Qy+sHDsp4LjrKamT6vd2mLOSUHXwri3ONH/6TcPKfZoAcqIKW08b0JuM+vreQ==
 
 "@dcloudio/uni-automator@^2.0.0-27920200618002":
   version "2.0.0-27920200618002"
