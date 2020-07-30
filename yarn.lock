@@ -891,10 +891,10 @@
     qrcode-terminal "^0.12.0"
     ws "^7.2.3"
 
-"@dcloudio/uni-cli-shared@^2.0.0-27920200618002":
-  version "2.0.0-27920200618002"
-  resolved "https://registry.npm.taobao.org/@dcloudio/uni-cli-shared/download/@dcloudio/uni-cli-shared-2.0.0-27920200618002.tgz#dfd62e293a7b418508d3aa4aaf92a722bd3084a7"
-  integrity sha1-39YuKTp7QYUI06pKr5KnIr0whKc=
+"@dcloudio/uni-cli-shared@^2.0.0-28320200727001":
+  version "2.0.0-28320200727001"
+  resolved "https://registry.yarnpkg.com/@dcloudio/uni-cli-shared/-/uni-cli-shared-2.0.0-28320200727001.tgz#098b411d0869fdbd79069fbbf51c3604ff20f722"
+  integrity sha512-fwvjCwAtjUgwKSit+HAAHCmqygFWMNRKejxvCU1ACoJF94eU+1T+vYA3Q76sRqRxrE6QT4vanVmiQejzqHy9mw==
   dependencies:
     hash-sum "^1.0.2"
     postcss-urlrewrite "^0.2.2"
