@@ -900,10 +900,10 @@
     postcss-urlrewrite "^0.2.2"
     strip-json-comments "^2.0.1"
 
-"@dcloudio/uni-h5@^2.0.0-27920200618002":
-  version "2.0.0-27920200618002"
-  resolved "https://registry.npm.taobao.org/@dcloudio/uni-h5/download/@dcloudio/uni-h5-2.0.0-27920200618002.tgz#3aa736325721ab564dc6b8113d858003fb09bc28"
-  integrity sha1-Oqc2Mlchq1ZNxrgRPYWAA/sJvCg=
+"@dcloudio/uni-h5@^2.0.0-28320200727001":
+  version "2.0.0-28320200727001"
+  resolved "https://registry.yarnpkg.com/@dcloudio/uni-h5/-/uni-h5-2.0.0-28320200727001.tgz#1a8c16597b4a69d67109b01efccca75be06c9c1d"
+  integrity sha512-T7jdT8j+PBGFuzRBhK0AQ34OAU/c1zwhSiuKQI/7gv6xrKXtZY9HGFqMJmbm/S+c+8HLknLDcFvz9DiYaD6Mig==
   dependencies:
     base64-arraybuffer "^0.2.0"
     intersection-observer "^0.7.0"
