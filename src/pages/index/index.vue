@@ -25,10 +25,10 @@
         <u-alert-tips type="info" :description="`截至目前系统已收录${total}条公司信息`"></u-alert-tips>
         <view class="u-flex user-box u-p-30">
           <view class="u-m-r-10 user-avatar">
-            <!-- #ifdef MP-WEIXIN || MP-BAIDU -->
+            <!-- #ifdef MP-WEIXIN ||MP-QQ -->
             <open-data type="userAvatarUrl"></open-data>
             <!--#endif -->
-            <!-- #ifndef MP-WEIXIN || MP-BAIDU-->
+            <!-- #ifndef MP-WEIXIN ||MP-QQ -->
             <image src="https://6974-it-blacklist-a6de4b-1302530662.tcb.qcloud.la/logo.png" />
             <!-- #endif -->
           </view>
@@ -74,17 +74,18 @@
     },
     onLoad() {
       this.get()
-      uniCloud.callFunction({
-        name: 'itBlackSystem'
-      }).then((res) => {
-        getApp().globalData.system = res.result.data[0]
-        this.system = res.result.data[0]
-      }).catch((err) => {
-        uni.showModal({
-          content: `查询失败，错误信息为：${JSON.stringify(err)}`,
-          showCancel: false
-        })
-      })
+      // #ifdef APP-PLUS || H5
+      this.checkSystem('app')
+      // #endif
+      // #ifdef MP-WEIXIN 
+      this.checkSystem('weixin')
+      // #endif
+      // #ifdef MP-TOUTIAO
+      this.checkSystem('toutiao')
+      // #endif
+      // #ifdef MP-QQ
+      this.checkSystem('qq')
+      // #endif
       uniCloud.callFunction({
         name: 'itBlackListCount'
       }).then((res) => {
@@ -191,6 +192,30 @@
             'https://6974-it-blacklist-a6de4b-1302530662.tcb.qcloud.la/reward/alipay.jpg'
           ]
         })
+      },
+      checkSystem(plat) {
+        if (plat === 'app') {
+          const system = {
+            show: true
+          }
+          getApp().globalData.system = system
+          this.system = system
+        } else {
+          uniCloud.callFunction({
+            name: 'itBlackSystem'
+          }).then((res) => {
+            const system = {
+              show: res.result.data[0][plat]
+            }
+            getApp().globalData.system = system
+            this.system = system
+          }).catch((err) => {
+            uni.showModal({
+              content: `查询失败，错误信息为：${JSON.stringify(err)}`,
+              showCancel: false
+            })
+          })
+        }
       }
     },
     onPageScroll(e) {

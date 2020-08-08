@@ -60,7 +60,9 @@
     onLoad({
       content
     }) {
-      if (content) {
+      const system = getApp().globalData.system
+      this.system = system
+      if (content && system.show) {
         console.log(content)
         const cont = JSON.parse(content)
         this.content = cont
@@ -84,7 +86,6 @@
           })
         })
       }
-      this.system = getApp().globalData.system
     },
     onShareAppMessage() {
       return {
