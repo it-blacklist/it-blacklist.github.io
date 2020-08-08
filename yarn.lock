@@ -939,10 +939,10 @@
   resolved "https://registry.npm.taobao.org/@dcloudio/uni-mp-baidu/download/@dcloudio/uni-mp-baidu-2.0.0-27920200618002.tgz#3045aa836c3752206920b05795a0e6964273f9ce"
   integrity sha1-MEWqg2w3UiBpILBXlaDmlkJz+c4=
 
-"@dcloudio/uni-mp-qq@^2.0.0-27920200618002":
-  version "2.0.0-27920200618002"
-  resolved "https://registry.npm.taobao.org/@dcloudio/uni-mp-qq/download/@dcloudio/uni-mp-qq-2.0.0-27920200618002.tgz#a8a84db03fd9c95fa15976096f83bc4de5cbe10b"
-  integrity sha1-qKhNsD/ZyV+hWXYJb4O8TeXL4Qs=
+"@dcloudio/uni-mp-qq@^2.0.0-28320200727001":
+  version "2.0.0-28320200727001"
+  resolved "https://registry.yarnpkg.com/@dcloudio/uni-mp-qq/-/uni-mp-qq-2.0.0-28320200727001.tgz#595441f57c91aa7bdfdadfa2210d908aa703ecb7"
+  integrity sha512-twCK7z8rb41FIxu0aUKtivnVGBJjjVU06rUjv2Ae3a8jUZIgMfrvTVJhRgtYw2m4+HN4k12ZI8EmOyox+GsxQw==
 
 "@dcloudio/uni-mp-toutiao@^2.0.0-27920200618002":
   version "2.0.0-27920200618002"
