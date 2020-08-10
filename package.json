@@ -76,7 +76,7 @@
     "@dcloudio/vue-cli-plugin-uni-optimize": "^2.0.0-27920200618002",
     "@dcloudio/webpack-uni-mp-loader": "^2.0.0-27920200618002",
     "@dcloudio/webpack-uni-pages-loader": "^2.0.0-27920200618002",
-    "@vue/cli-plugin-babel": "~4.4.0",
+    "@vue/cli-plugin-babel": "~4.5.2",
     "@vue/cli-service": "~4.4.0",
     "babel-plugin-import": "^1.11.0",
     "cross-env": "^7.0.2",
