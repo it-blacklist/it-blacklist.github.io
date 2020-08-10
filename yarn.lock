@@ -7101,9 +7101,9 @@ mini-css-extract-plugin@^0.9.0:
     webpack-sources "^1.1.0"
 
 mini-types@*:
-  version "0.1.3"
-  resolved "https://registry.yarnpkg.com/mini-types/-/mini-types-0.1.3.tgz#a4db1c18878d0c23fd87b4dad476de0b1d390a4f"
-  integrity sha512-e8NJ8Ii48bFKSlNhX/GrhKFuTSDArLAbduUU5J6dIqS2YORQLwtI0SQ6mQ8KqJ7QNbYc2WOTBoj2hzNxU6FxgA==
+  version "0.1.4"
+  resolved "https://registry.yarnpkg.com/mini-types/-/mini-types-0.1.4.tgz#47712c66069119395228b8b2d483a11ee7cf9fb1"
+  integrity sha512-9zFwuKnbfSgChQonCwSa2CATInEynTLnn5uKYmJLqkNT29VdHPGDpd76GYxcGO0P4RXXLz8J8U1ULAhybg6hnw==
 
 minimalistic-assert@^1.0.0, minimalistic-assert@^1.0.1:
   version "1.0.1"
