@@ -67,7 +67,7 @@
   },
   "devDependencies": {
     "@dcloudio/types": "*",
-    "@dcloudio/uni-automator": "^2.0.0-27920200618002",
+    "@dcloudio/uni-automator": "^2.0.0-28520200811001",
     "@dcloudio/uni-cli-shared": "^2.0.0-28320200727001",
     "@dcloudio/uni-migration": "^2.0.0-27920200618002",
     "@dcloudio/uni-template-compiler": "^2.0.0-27920200618002",
