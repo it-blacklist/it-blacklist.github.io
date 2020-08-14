@@ -1762,10 +1762,10 @@
     wrap-loader "^0.2.0"
     xregexp "4.0.0"
 
-"@dcloudio/webpack-uni-mp-loader@^2.0.0-27920200618002":
-  version "2.0.0-28320200727001"
-  resolved "https://registry.npm.taobao.org/@dcloudio/webpack-uni-mp-loader/download/@dcloudio/webpack-uni-mp-loader-2.0.0-28320200727001.tgz#636cc4a5d9bbd033964d3704c7596ead223d4752"
-  integrity sha1-Y2zEpdm70DOWTTcEx1lurSI9R1I=
+"@dcloudio/webpack-uni-mp-loader@^2.0.0-28620200814002":
+  version "2.0.0-28620200814002"
+  resolved "https://registry.yarnpkg.com/@dcloudio/webpack-uni-mp-loader/-/webpack-uni-mp-loader-2.0.0-28620200814002.tgz#c9dc587592b80310c622732442d5a9c02ce9396b"
+  integrity sha512-TYMf8KMFNxHqm7/hHJUBHPaxzz+5yaZObIlBwKeCu9Qq2Hls52nBKssQRMrCghDGfHd645y8IwxY6a234DawCw==
 
 "@dcloudio/webpack-uni-pages-loader@^2.0.0-27920200618002":
   version "2.0.0-28320200727001"
