@@ -1732,10 +1732,10 @@
     css "~2.2.1"
     escodegen "^1.8.1"
 
-"@dcloudio/vue-cli-plugin-uni-optimize@^2.0.0-27920200618002":
-  version "2.0.0-28320200727001"
-  resolved "https://registry.npm.taobao.org/@dcloudio/vue-cli-plugin-uni-optimize/download/@dcloudio/vue-cli-plugin-uni-optimize-2.0.0-28320200727001.tgz#ea909eef0605846c2ba1144eae070831261685bf"
-  integrity sha1-6pCe7wYFhGwroRROrgcIMSYWhb8=
+"@dcloudio/vue-cli-plugin-uni-optimize@^2.0.0-28720200819001":
+  version "2.0.0-28720200819001"
+  resolved "https://registry.yarnpkg.com/@dcloudio/vue-cli-plugin-uni-optimize/-/vue-cli-plugin-uni-optimize-2.0.0-28720200819001.tgz#525e894e8cb19bac86a9608fe0ab497ea1e7ce81"
+  integrity sha512-Ucj8ANX8PTuRYCykxoo2fUMr5VRUKrHYPHys40Sp1TaJ7PJnEsASZWRvurm84TYwDum2XzWZsKc8wOjO5w08DQ==
 
 "@dcloudio/vue-cli-plugin-uni@^2.0.0-27920200618002":
   version "2.0.0-28320200727001"
