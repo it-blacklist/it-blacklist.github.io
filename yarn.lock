@@ -1708,10 +1708,10 @@
   resolved "https://registry.npm.taobao.org/@dcloudio/uni-quickapp-webview/download/@dcloudio/uni-quickapp-webview-2.0.0-28320200727001.tgz#ecd03d83237ba9786a920bf5eacdbfe6937e99e3"
   integrity sha1-7NA9gyN7qXhqkgv16s2/5pN+meM=
 
-"@dcloudio/uni-stat@^2.0.0-27920200618002", "@dcloudio/uni-stat@^2.0.0-28320200727001":
-  version "2.0.0-28320200727001"
-  resolved "https://registry.npm.taobao.org/@dcloudio/uni-stat/download/@dcloudio/uni-stat-2.0.0-28320200727001.tgz#1758c35abbba9a3c3951d5b4815491d064048a3b"
-  integrity sha1-F1jDWru6mjw5UdW0gVSR0GQEijs=
+"@dcloudio/uni-stat@^2.0.0-27920200618002", "@dcloudio/uni-stat@^2.0.0-28820200820001":
+  version "2.0.0-28820200820001"
+  resolved "https://registry.yarnpkg.com/@dcloudio/uni-stat/-/uni-stat-2.0.0-28820200820001.tgz#f033ebb407b7a8aefc4b19b49eb154a826350149"
+  integrity sha512-8KiE+2a8+V4BZR1YK4+ztMOVG4khWf+E5BAZjWA4BqMKTji99CtgbB/x1saGfOM+oK6UHgDLm8YlcL26uK2ZNw==
 
 "@dcloudio/uni-template-compiler@^2.0.0-27920200618002":
   version "2.0.0-28320200727001"
@@ -1737,12 +1737,12 @@
   resolved "https://registry.npm.taobao.org/@dcloudio/vue-cli-plugin-uni-optimize/download/@dcloudio/vue-cli-plugin-uni-optimize-2.0.0-28320200727001.tgz#ea909eef0605846c2ba1144eae070831261685bf"
   integrity sha1-6pCe7wYFhGwroRROrgcIMSYWhb8=
 
-"@dcloudio/vue-cli-plugin-uni@^2.0.0-27920200618002":
-  version "2.0.0-28320200727001"
-  resolved "https://registry.npm.taobao.org/@dcloudio/vue-cli-plugin-uni/download/@dcloudio/vue-cli-plugin-uni-2.0.0-28320200727001.tgz#fb211df83bb9dfb9f7a1c2bb0e11c08ca0db2cd2"
-  integrity sha1-+yEd+Du537n3ocK7DhHAjKDbLNI=
+"@dcloudio/vue-cli-plugin-uni@^2.0.0-28820200820001":
+  version "2.0.0-28820200820001"
+  resolved "https://registry.yarnpkg.com/@dcloudio/vue-cli-plugin-uni/-/vue-cli-plugin-uni-2.0.0-28820200820001.tgz#1ca6c48b553d466974747599fcb356411aea8f03"
+  integrity sha512-O3eo4leOen09k7fsbr2a9E+nI3N4rmEVw2Ms8+42J0lp5cOT+2UQFRZzM6vzq7oop1hKBPhz1PRuuzaAINb4dQ==
   dependencies:
-    "@dcloudio/uni-stat" "^2.0.0-28320200727001"
+    "@dcloudio/uni-stat" "^2.0.0-28820200820001"
     buffer-json "^2.0.0"
     copy-webpack-plugin "^5.1.1"
     cross-env "^5.2.0"
