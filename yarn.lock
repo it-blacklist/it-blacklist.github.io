@@ -1723,10 +1723,10 @@
     "@babel/types" "^7.3.3"
     vue-template-compiler "^2.6.10"
 
-"@dcloudio/vue-cli-plugin-hbuilderx@^2.0.0-27920200618002":
-  version "2.0.0-28320200727001"
-  resolved "https://registry.npm.taobao.org/@dcloudio/vue-cli-plugin-hbuilderx/download/@dcloudio/vue-cli-plugin-hbuilderx-2.0.0-28320200727001.tgz#5329d159535a30a55d04d0d9ec2668dd408a21bc"
-  integrity sha1-UynRWVNaMKVdBNDZ7CZo3UCKIbw=
+"@dcloudio/vue-cli-plugin-hbuilderx@^2.0.0-28920200907001":
+  version "2.0.0-28920200907001"
+  resolved "https://registry.yarnpkg.com/@dcloudio/vue-cli-plugin-hbuilderx/-/vue-cli-plugin-hbuilderx-2.0.0-28920200907001.tgz#81d5ee7f4bd13216dae3da715074cea4f4c70c8e"
+  integrity sha512-AYgElRouTS8Or2lOLE6rZnGgH7WTdO4ZQzQgcxYp7LHWLjUpeuaSZZO5Bm/fe8qnqWfaeSK16Sxfjuup3FoYag==
   dependencies:
     acorn "^5.2.1"
     css "~2.2.1"
