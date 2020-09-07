@@ -1614,10 +1614,10 @@
   resolved "https://registry.yarnpkg.com/@dcloudio/uni-app-plus/-/uni-app-plus-2.0.0-28320200727001.tgz#89c217873a55ed6f5b80951c1bf0ff7db065de54"
   integrity sha512-xFTCXvIXmCNIXNK/SGBsFi+f7Qy+sHDsp4LjrKamT6vd2mLOSUHXwri3ONH/6TcPKfZoAcqIKW08b0JuM+vreQ==
 
-"@dcloudio/uni-automator@^2.0.0-27920200618002":
-  version "2.0.0-28320200727001"
-  resolved "https://registry.npm.taobao.org/@dcloudio/uni-automator/download/@dcloudio/uni-automator-2.0.0-28320200727001.tgz#81989cafbd946d433085677da8378820b23c8ff4"
-  integrity sha1-gZicr72UbUMwhWd9qDeIILI8j/Q=
+"@dcloudio/uni-automator@^2.0.0-28920200907001":
+  version "2.0.0-28920200907001"
+  resolved "https://registry.yarnpkg.com/@dcloudio/uni-automator/-/uni-automator-2.0.0-28920200907001.tgz#40fe3a430611abc78595b6fb54807f2be8a7161e"
+  integrity sha512-N+c+0THfIKtLIsavtpM+4dvg2kxApjPPZk1H6socdDw/SQuFDbxSFlhoIiyCSYHX1opBt8amRECpPv3p9utfGg==
   dependencies:
     address "^1.1.2"
     debug "^4.1.1"
@@ -11768,12 +11768,7 @@ ws@^6.0.0, ws@^6.2.1:
   dependencies:
     async-limiter "~1.0.0"
 
-ws@^7.0.0, ws@^7.1.2:
-  version "7.3.0"
-  resolved "https://registry.npm.taobao.org/ws/download/ws-7.3.0.tgz#4b2f7f219b3d3737bc1a2fbf145d825b94d38ffd"
-  integrity sha1-Sy9/IZs9Nze8Gi+/FF2CW5TTj/0=
-
-ws@^7.2.3:
+ws@^7.0.0, ws@^7.1.2, ws@^7.2.3:
   version "7.3.1"
   resolved "https://registry.npm.taobao.org/ws/download/ws-7.3.1.tgz?cache=0&sync_timestamp=1593925601875&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fws%2Fdownload%2Fws-7.3.1.tgz#d0547bf67f7ce4f12a72dfe31262c68d7dc551c8"
   integrity sha1-0FR79n985PEqct/jEmLGjX3FUcg=
