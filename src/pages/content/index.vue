@@ -57,40 +57,33 @@
     onReady() {
       this.$refs.uForm.setRules(this.rules);
     },
-    onLoad({
-      content
-    }) {
-      const system = getApp().globalData.system
+    async onLoad(props) {
+      uni.showLoading({
+        title: '加载中...'
+      })
+      const system = await getApp().getConfig()
       this.system = system
-      if (content && system.show) {
-        console.log(content)
-        const cont = JSON.parse(content)
-        this.content = cont
-        uni.showLoading({
-          title: '加载中...'
-        })
-        this.loadingStatus = 'loading'
-        uniCloud.callFunction({
-          name: 'itBlackListComment',
-          data: {
-            companyName: cont.companyName
-          }
-        }).then((res) => {
+      uniCloud.callFunction({
+        name: 'itBlackGetById',
+        data: props
+      }).then((res) => {
+        if (res.result.data[0]) this.content = res.result.data[0]
+        if (system.show) {
+          this.getCommentList(res.result.data[0].companyName)
+        } else {
           uni.hideLoading()
-          this.commentList = res.result.data
-        }).catch((err) => {
-          uni.hideLoading()
-          uni.showModal({
-            content: `加载失败，错误信息为：${JSON.stringify(err)}`,
-            showCancel: false
-          })
+        }
+      }).catch((err) => {
+        uni.showModal({
+          content: `加载失败，错误信息为：${JSON.stringify(err)}`,
+          showCancel: false
         })
-      }
+      })
     },
     onShareAppMessage() {
       return {
         title: this.content.companyName,
-        path: `/pages/content/index?content=${JSON.stringify(this.content)}`
+        path: `/pages/content/index?_id=${this.content._id}`
       }
     },
     methods: {
@@ -150,6 +143,24 @@
       checkboxChange(e) {
         this.check = e.value;
       },
+      getCommentList(companyName) {
+        this.loadingStatus = 'loading'
+        uniCloud.callFunction({
+          name: 'itBlackListComment',
+          data: {
+            companyName
+          }
+        }).then((res) => {
+          uni.hideLoading()
+          this.commentList = res.result.data
+        }).catch((err) => {
+          uni.hideLoading()
+          uni.showModal({
+            content: `加载失败，错误信息为：${JSON.stringify(err)}`,
+            showCancel: false
+          })
+        })
+      }
     }
   }
 </script>

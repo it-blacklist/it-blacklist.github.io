@@ -1,11 +1,21 @@
 <template>
   <view>
+    <u-navbar :is-back="false" title="IT黑企">
+      <view class="top-bar">
+        <u-icon name="map"></u-icon>
+        <view type="select" @click="selectShow = true">{{cityName}}</view>
+        <u-select v-model="selectShow" mode="mutil-column-auto" :list="cityList" @confirm="cityConfirm"></u-select>
+      </view>
+    </u-navbar>
+    <navigator v-if="system.show" url="/pages/statement/index" hoverClass="none">
+      <u-notice-bar :list="['置顶公告']" more-icon mode="vertical"></u-notice-bar>
+    </navigator>
     <view class="u-padding-20">
       <u-search placeholder="输入公司名称搜索…" input-align="center" shape="round" clearabled v-model="searchKey" @search="confirmSearch"
         @custom="confirmSearch"></u-search>
     </view>
     <u-cell-group>
-      <navigator v-for="(item) of list" :key="item._id" :url="`../content/index?content=${JSON.stringify(item)}`">
+      <navigator v-for="(item) of list" :key="item._id" :url="`../content/index?_id=${item._id}`">
         <u-cell-item :title="item.companyName" use-label-slot>
           <view v-show="system.show" class="u-line-2" slot="label">
             {{item.content}}
@@ -33,22 +43,16 @@
             <!-- #endif -->
           </view>
           <view class="u-flex-1">
-            <view class="u-font-14 u-tips-color">如果你觉得小程序还不错，分享给你身边的IT从业者，或者请作者喝杯茶。</view>
+            <view class="u-font-14 u-tips-color">如果您觉得小程序还不错，分享给您身边的IT从业者，或者点击下方的打赏，请作者喝杯肥宅快乐水。</view>
           </view>
         </view>
         <u-cell-group class="u-m-t-20">
-          <view v-show="system.show">
-            <navigator url="../create/index">
-              <u-cell-item icon="edit-pen-fill" title="贡献一条黑名单"></u-cell-item>
-            </navigator>
-            <navigator url="../statement/index">
-              <u-cell-item icon="info-circle-fill" title="特别声明"></u-cell-item>
-            </navigator>
-          </view>
+          <navigator v-show="system.show" url="../create/index">
+            <u-cell-item icon="edit-pen-fill" title="贡献一条黑名单"></u-cell-item>
+          </navigator>
           <navigator url="../feedback/index">
             <u-cell-item icon="email-fill" title="留言"></u-cell-item>
           </navigator>
-          <u-cell-item @click="handleOpen()" icon="github-circle-fill" title="GitHub"></u-cell-item>
           <u-cell-item @click="clickImg()" icon="gift-fill" title="打赏"></u-cell-item>
         </u-cell-group>
       </view>
@@ -58,7 +62,9 @@
 
 <script>
   import Vue from 'vue';
-
+  import {
+    cityList
+  } from '@/static/utils.js'
   export default Vue.extend({
     data() {
       return {
@@ -69,23 +75,17 @@
         scrollTop: 0,
         loadingStatus: 'loadmore',
         popupShow: false,
-        system: {}
+        system: {},
+        cityList,
+        selectShow: false,
+        cityName: '石家庄'
       }
     },
     onLoad() {
       this.get()
-      // #ifdef APP-PLUS || H5
-      this.checkSystem('app')
-      // #endif
-      // #ifdef MP-WEIXIN 
-      this.checkSystem('weixin')
-      // #endif
-      // #ifdef MP-TOUTIAO
-      this.checkSystem('toutiao')
-      // #endif
-      // #ifdef MP-QQ
-      this.checkSystem('qq')
-      // #endif
+      getApp().getConfig().then(r => {
+        this.system = r
+      })
       uniCloud.callFunction({
         name: 'itBlackListCount'
       }).then((res) => {
@@ -98,19 +98,16 @@
       })
     },
     onPullDownRefresh() {
-      this.current = 0
-      this.list = []
-      this.searchKey = ''
-      this.loadingStatus = 'loadmore'
+      Object.assign(this.$data, { ...this.$options.data(),
+        system: getApp().globalData.system,
+        cityName: this.$data.cityName
+      })
       this.get()
       uni.stopPullDownRefresh()
     },
     onReachBottom() {
       console.log('到底了')
       this.loadingStatus !== 'nomore' && this.get()
-    },
-    onShareAppMessage() {
-
     },
     methods: {
       confirmSearch() {
@@ -124,7 +121,7 @@
             name: 'itBlackListSearch',
             data: {
               companyName: this.searchKey,
-              cityName: '石家庄'
+              cityName: this.cityName
             }
           }).then((res) => {
             console.log(res)
@@ -143,7 +140,7 @@
           this.list = []
         }
       },
-      get() {
+      get(cityName = this.cityName) {
         uni.showLoading({
           title: '加载中...'
         })
@@ -153,7 +150,7 @@
           data: {
             current: ++this.current,
             pageSize: 20,
-            cityName: '石家庄'
+            cityName
           }
         }).then((res) => {
           console.log(res)
@@ -172,20 +169,6 @@
           })
         })
       },
-      handleOpen() {
-        uni.showModal({
-          title: 'https://github.com/liujiayii/',
-          content: '点击确认按钮复制链接到浏览器中查看',
-          showCancel: false,
-          success: (r) => {
-            if (r.confirm) {
-              uni.setClipboardData({
-                data: 'https://github.com/liujiayii/'
-              })
-            }
-          }
-        })
-      },
       clickImg() {
         uni.previewImage({
           urls: ['https://6974-it-blacklist-a6de4b-1302530662.tcb.qcloud.la/reward/wechat.jpg',
@@ -193,38 +176,28 @@
           ]
         })
       },
-      checkSystem(plat) {
-        if (plat === 'app') {
-          const system = {
-            show: true
-          }
-          getApp().globalData.system = system
-          this.system = system
-        } else {
-          uniCloud.callFunction({
-            name: 'itBlackSystem'
-          }).then((res) => {
-            const system = {
-              show: res.result.data[0][plat]
-            }
-            getApp().globalData.system = system
-            this.system = system
-          }).catch((err) => {
-            uni.showModal({
-              content: `查询失败，错误信息为：${JSON.stringify(err)}`,
-              showCancel: false
-            })
-          })
-        }
+      cityConfirm(e) {
+        Object.assign(this.$data, { ...this.$options.data(),
+          cityName: e[1].value
+        })
+        this.get(e[1].value)
       }
     },
     onPageScroll(e) {
       this.scrollTop = e.scrollTop;
-    }
+    },
+    onShareAppMessage(){},
   });
 </script>
 
 <style lang="scss">
+  .top-bar {
+    font-size: 32rpx;
+    display: flex;
+    padding: 20rpx;
+    color: $u-type-primary;
+  }
+
   .content {
     text-align: center;
     height: 400upx;
@@ -256,7 +229,7 @@
 
   .menu-icon {
     position: fixed;
-    top: 120rpx;
+    top: 300rpx;
     left: 40rpx;
     z-index: 99;
     background: rgba(225, 225, 225, .7);
