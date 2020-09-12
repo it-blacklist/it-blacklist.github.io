@@ -100,7 +100,8 @@
     onPullDownRefresh() {
       Object.assign(this.$data, { ...this.$options.data(),
         system: getApp().globalData.system,
-        cityName: this.$data.cityName
+        cityName: this.$data.cityName,
+        total: this.$data.total,
       })
       this.get()
       uni.stopPullDownRefresh()
@@ -178,7 +179,9 @@
       },
       cityConfirm(e) {
         Object.assign(this.$data, { ...this.$options.data(),
-          cityName: e[1].value
+          cityName: e[1].value,
+          system: getApp().globalData.system,
+          total: this.$data.total,
         })
         this.get(e[1].value)
       }
@@ -186,7 +189,7 @@
     onPageScroll(e) {
       this.scrollTop = e.scrollTop;
     },
-    onShareAppMessage(){},
+    onShareAppMessage() {},
   });
 </script>
 
