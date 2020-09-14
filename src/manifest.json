@@ -91,7 +91,7 @@
         "appid" : "wx6fb9fed8d1dd41aa",
         "setting" : {
             "urlCheck" : true,
-            "postcss" : true,
+            "postcss" : false,
             "minified" : true,
             "es6" : false
         },
@@ -123,7 +123,10 @@
         "uniStatistics" : {
             "enable" : true
         },
-        "appid" : "1110579853"
+        "appid" : "1110579853",
+        "setting" : {
+            "minified" : true
+        }
     },
     "uniStatistics" : {
         "enable" : true

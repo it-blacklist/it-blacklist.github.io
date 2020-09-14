@@ -17,7 +17,7 @@
         </u-form-item>
       </u-form>
       <view class="agreement">
-        <u-checkbox v-model="check" @change="checkboxChange"></u-checkbox>
+        <u-checkbox v-model="check"></u-checkbox>
         <view class="agreement-text">
           勾选代表已阅读并同意
           <navigator url="../statement/index">相关条款</navigator>
@@ -126,9 +126,6 @@
         if (e && e.length) {
           this.model.cityName = e[e.length - 1].value
         }
-      },
-      checkboxChange(e) {
-        this.check = e.value;
       },
     }
   };
