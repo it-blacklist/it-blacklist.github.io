@@ -978,10 +978,10 @@
   resolved "https://registry.npm.taobao.org/@dcloudio/uni-mp-qq/download/@dcloudio/uni-mp-qq-2.0.0-28920200907001.tgz?cache=0&sync_timestamp=1599479373965&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40dcloudio%2Funi-mp-qq%2Fdownload%2F%40dcloudio%2Funi-mp-qq-2.0.0-28920200907001.tgz#e49ef201542da027a87b98b8a6b289d915928828"
   integrity sha1-5J7yAVQtoCeoe5i4prKJ2RWSiCg=
 
-"@dcloudio/uni-mp-toutiao@^2.0.0-27920200618002":
-  version "2.0.0-28920200907001"
-  resolved "https://registry.npm.taobao.org/@dcloudio/uni-mp-toutiao/download/@dcloudio/uni-mp-toutiao-2.0.0-28920200907001.tgz?cache=0&sync_timestamp=1599479373071&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40dcloudio%2Funi-mp-toutiao%2Fdownload%2F%40dcloudio%2Funi-mp-toutiao-2.0.0-28920200907001.tgz#c18624fd88e3d177723ec07de9335ea7c3a55bd5"
-  integrity sha1-wYYk/Yjj0XdyPsB96TNep8OlW9U=
+"@dcloudio/uni-mp-toutiao@^2.0.0-28920200923001":
+  version "2.0.0-28920200923001"
+  resolved "https://registry.yarnpkg.com/@dcloudio/uni-mp-toutiao/-/uni-mp-toutiao-2.0.0-28920200923001.tgz#10510abc5f7d790dba66e74d222771d7fc8134fe"
+  integrity sha512-PP5opFWTX4WOlOWvXTEEHi4XrmOO/BJI86B3eNaUgtzKQxSHPVyTJv+kCjE6Vwww1rFMwtevqIYPfKaxdEdKiA==
 
 "@dcloudio/uni-mp-weixin@^2.0.0-27920200618002":
   version "2.0.0-28920200907001"
