@@ -924,10 +924,10 @@
     qrcode-terminal "^0.12.0"
     ws "^7.2.3"
 
-"@dcloudio/uni-cli-shared@^2.0.0-28320200727001":
-  version "2.0.0-28920200907001"
-  resolved "https://registry.npm.taobao.org/@dcloudio/uni-cli-shared/download/@dcloudio/uni-cli-shared-2.0.0-28920200907001.tgz?cache=0&sync_timestamp=1599479369616&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40dcloudio%2Funi-cli-shared%2Fdownload%2F%40dcloudio%2Funi-cli-shared-2.0.0-28920200907001.tgz#5cb85279e06d68792b75a36fe2a3f744a1b44c57"
-  integrity sha1-XLhSeeBtaHkrdaNv4qP3RKG0TFc=
+"@dcloudio/uni-cli-shared@^2.0.0-28920200923001":
+  version "2.0.0-28920200923001"
+  resolved "https://registry.yarnpkg.com/@dcloudio/uni-cli-shared/-/uni-cli-shared-2.0.0-28920200923001.tgz#a7f2f9ccd30ad1f495b8cdb9887860ffad8b3c98"
+  integrity sha512-AmURBi6nKllVQw2662m0+EO/zoOOnk7ZFeoV2ZMw983c78u47XjaGiENtJFv4GEzvvZ0af19lH6EZ8tcRBgj3Q==
   dependencies:
     hash-sum "^1.0.2"
     postcss-urlrewrite "^0.2.2"
