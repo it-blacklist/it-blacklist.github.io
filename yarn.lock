@@ -958,10 +958,10 @@
     recast "*"
     stricter-htmlparser2 "^3.9.6"
 
-"@dcloudio/uni-mp-360@^2.0.0-27920200618002":
-  version "2.0.0-28920200907001"
-  resolved "https://registry.npm.taobao.org/@dcloudio/uni-mp-360/download/@dcloudio/uni-mp-360-2.0.0-28920200907001.tgz#05d6fbc28700a92ad82bfcbb86938a9e8539ee57"
-  integrity sha1-Bdb7wocAqSrYK/y7hpOKnoU57lc=
+"@dcloudio/uni-mp-360@^2.0.0-28920200923001":
+  version "2.0.0-28920200923001"
+  resolved "https://registry.yarnpkg.com/@dcloudio/uni-mp-360/-/uni-mp-360-2.0.0-28920200923001.tgz#9094f4d676b9d5cd17586b1f82ac76a6ced3f2ef"
+  integrity sha512-RxCQTt891Dk+uO7B3SMQl9owsOQzCGkZ9+L1PPKavzcCTSBnFpnjHrp+FhVD7UJimJNO+XJa0QkYc9idRFyYBg==
 
 "@dcloudio/uni-mp-alipay@^2.0.0-27920200618002":
   version "2.0.0-28920200907001"
