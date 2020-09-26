@@ -1,6 +1,6 @@
 ## 介绍
 
-+ 诞生于石家庄的IT黑企小程序，记录有不良行为的黑心企业，目前黑名单数据仅限于石家庄。
++ 诞生于石家庄的IT黑企小程序，记录有不良行为的黑心企业。
 + 小程序主要使用的技术有：uni-app uni-cloud。
 + 跨端开发是否是一个伪命题？滴滴(chameleon)、蚂蚁金服(remax)、京东(taro)、阿里(rax)、Dcloud(uni-app)等……开源了自己不同的解决方案，目前看来缺陷还是不少，希望能有一个大一统的完美方案出现！
 
@@ -12,7 +12,6 @@
 <img src="https://6974-it-blacklist-a6de4b-1302530662.tcb.qcloud.la/qrcode/wechat.jpg" width="200" alt="微信小程序" style="float: left">
 <img src="https://6974-it-blacklist-a6de4b-1302530662.tcb.qcloud.la/qrcode/qq.png" width="200" alt="QQ小程序" style="float: left">
 <img src="https://6974-it-blacklist-a6de4b-1302530662.tcb.qcloud.la/qrcode/H5.png" width="200" alt="H5网站" style="float: left">
-<img src="https://6974-it-blacklist-a6de4b-1302530662.tcb.qcloud.la/qrcode/android.png" width="200" alt="安卓App" style="float: left">
 </div> 
 
 ## 开始开发
