@@ -62,9 +62,6 @@
 
 <script>
   import Vue from 'vue';
-  import {
-    cityList
-  } from '@/static/utils.js'
   export default Vue.extend({
     data() {
       return {
@@ -76,7 +73,7 @@
         loadingStatus: 'loadmore',
         popupShow: false,
         system: {},
-        cityList,
+        cityList:[],
         selectShow: false,
         cityName: '石家庄'
       }
@@ -95,6 +92,14 @@
           content: `查询失败，错误信息为：${JSON.stringify(err)}`,
           showCancel: false
         })
+      })
+      uni.request({
+        url:'https://6974-it-blacklist-a6de4b-1302530662.tcb.qcloud.la/cityList.json',
+        success:(res)=> {
+          if(res.statusCode===200){
+            this.cityList = res.data
+          }
+        }
       })
     },
     onPullDownRefresh() {

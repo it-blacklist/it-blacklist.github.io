@@ -29,7 +29,6 @@
 </template>
 
 <script>
-  import {cityList} from '@/static/utils.js'
   const rules = {
     companyName: [{
       required: true,
@@ -59,12 +58,20 @@
         check: false,
         loading: false,
         selectShow: false,
-        cityList,
+        cityList:[],
         system: {}
       };
     },
     onLoad() {
       this.system = getApp().globalData.system
+      uni.request({
+        url:'https://6974-it-blacklist-a6de4b-1302530662.tcb.qcloud.la/cityList.json',
+        success:(res)=> {
+          if(res.statusCode===200){
+            this.cityList = res.data
+          }
+        }
+      })
     },
     onReady() {
       this.$refs.uForm.setRules(this.rules);
