@@ -1003,10 +1003,10 @@
   resolved "https://registry.npm.taobao.org/@dcloudio/uni-quickapp-webview/download/@dcloudio/uni-quickapp-webview-2.0.0-28920200923001.tgz#e9ac4d45a57972154982a8c73e1f9a992bb6937b"
   integrity sha1-6axNRaV5chVJgqjHPh+amSu2k3s=
 
-"@dcloudio/uni-stat@^2.0.0-27920200618002", "@dcloudio/uni-stat@^2.0.0-28920200923001":
-  version "2.0.0-28920200923001"
-  resolved "https://registry.npm.taobao.org/@dcloudio/uni-stat/download/@dcloudio/uni-stat-2.0.0-28920200923001.tgz#a40d5775c6635b8fcc14f2218b67c9471b6625f2"
-  integrity sha1-pA1XdcZjW4/MFPIhi2fJRxtmJfI=
+"@dcloudio/uni-stat@^2.0.0-27920200618002", "@dcloudio/uni-stat@^2.0.0-28920200927001":
+  version "2.0.0-28920200927001"
+  resolved "https://registry.yarnpkg.com/@dcloudio/uni-stat/-/uni-stat-2.0.0-28920200927001.tgz#7c0c84c28eaeea493c17acb9d8bb42e17c2aed75"
+  integrity sha512-hla7KJPQKkywbUC+5pHOfQvjcUcZ0gxLMNpnMcm3LPsZU5O8BC4ku0Atl6k9XBhRni4zfETcBH/lNxqePo3bcg==
 
 "@dcloudio/uni-template-compiler@^2.0.0-27920200618002":
   version "2.0.0-28920200923001"
@@ -1032,12 +1032,12 @@
   resolved "https://registry.npm.taobao.org/@dcloudio/vue-cli-plugin-uni-optimize/download/@dcloudio/vue-cli-plugin-uni-optimize-2.0.0-28920200923001.tgz#858c873af53e22e509cc118df566af16ef29198f"
   integrity sha1-hYyHOvU+IuUJzBGN9WavFu8pGY8=
 
-"@dcloudio/vue-cli-plugin-uni@^2.0.0-27920200618002":
-  version "2.0.0-28920200923001"
-  resolved "https://registry.npm.taobao.org/@dcloudio/vue-cli-plugin-uni/download/@dcloudio/vue-cli-plugin-uni-2.0.0-28920200923001.tgz#837f7c41e6c8c22ba1541ce95c485bf1a9742aca"
-  integrity sha1-g398QebIwiuhVBzpXEhb8al0Kso=
+"@dcloudio/vue-cli-plugin-uni@^2.0.0-28920200927001":
+  version "2.0.0-28920200927001"
+  resolved "https://registry.yarnpkg.com/@dcloudio/vue-cli-plugin-uni/-/vue-cli-plugin-uni-2.0.0-28920200927001.tgz#5fdb909ada8b182d9748a85c31aabe3eb0e574d2"
+  integrity sha512-80gJlMakH4LA70JLt0+R+w15oCNHq5fn5sRlXQwjqO0zqBcyksY6OCSY2AX+uUQBAcVHR7crEtc/CF//HKIz4g==
   dependencies:
-    "@dcloudio/uni-stat" "^2.0.0-28920200923001"
+    "@dcloudio/uni-stat" "^2.0.0-28920200927001"
     buffer-json "^2.0.0"
     copy-webpack-plugin "^5.1.1"
     cross-env "^5.2.0"
@@ -8555,16 +8555,7 @@ postcss-selector-parser@^5.0.0:
     indexes-of "^1.0.1"
     uniq "^1.0.1"
 
-postcss-selector-parser@^6.0.0:
-  version "6.0.2"
-  resolved "https://registry.npm.taobao.org/postcss-selector-parser/download/postcss-selector-parser-6.0.2.tgz#934cf799d016c83411859e09dcecade01286ec5c"
-  integrity sha1-k0z3mdAWyDQRhZ4J3Oyt4BKG7Fw=
-  dependencies:
-    cssesc "^3.0.0"
-    indexes-of "^1.0.1"
-    uniq "^1.0.1"
-
-postcss-selector-parser@^6.0.2:
+postcss-selector-parser@^6.0.0, postcss-selector-parser@^6.0.2:
   version "6.0.4"
   resolved "https://registry.npm.taobao.org/postcss-selector-parser/download/postcss-selector-parser-6.0.4.tgz?cache=0&sync_timestamp=1601045467133&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fpostcss-selector-parser%2Fdownload%2Fpostcss-selector-parser-6.0.4.tgz#56075a1380a04604c38b063ea7767a129af5c2b3"
   integrity sha1-VgdaE4CgRgTDiwY+p3Z6Epr1wrM=
@@ -8619,16 +8610,7 @@ postcss@^6.0.0:
     source-map "^0.6.1"
     supports-color "^5.4.0"
 
-postcss@^7.0.0, postcss@^7.0.14, postcss@^7.0.27, postcss@^7.0.32, postcss@^7.0.5, postcss@^7.0.6:
-  version "7.0.32"
-  resolved "https://registry.npm.taobao.org/postcss/download/postcss-7.0.32.tgz#4310d6ee347053da3433db2be492883d62cec59d"
-  integrity sha1-QxDW7jRwU9o0M9sr5JKIPWLOxZ0=
-  dependencies:
-    chalk "^2.4.2"
-    source-map "^0.6.1"
-    supports-color "^6.1.0"
-
-postcss@^7.0.1, postcss@^7.0.7:
+postcss@^7.0.0, postcss@^7.0.1, postcss@^7.0.14, postcss@^7.0.27, postcss@^7.0.32, postcss@^7.0.5, postcss@^7.0.6, postcss@^7.0.7:
   version "7.0.34"
   resolved "https://registry.npm.taobao.org/postcss/download/postcss-7.0.34.tgz?cache=0&sync_timestamp=1600879264755&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fpostcss%2Fdownload%2Fpostcss-7.0.34.tgz#f2baf57c36010df7de4009940f21532c16d65c20"
   integrity sha1-8rr1fDYBDffeQAmUDyFTLBbWXCA=
