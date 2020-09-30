@@ -1003,10 +1003,10 @@
   resolved "https://registry.npm.taobao.org/@dcloudio/uni-quickapp-webview/download/@dcloudio/uni-quickapp-webview-2.0.0-28920200923001.tgz#e9ac4d45a57972154982a8c73e1f9a992bb6937b"
   integrity sha1-6axNRaV5chVJgqjHPh+amSu2k3s=
 
-"@dcloudio/uni-stat@^2.0.0-27920200618002", "@dcloudio/uni-stat@^2.0.0-28920200923001":
-  version "2.0.0-28920200923001"
-  resolved "https://registry.npm.taobao.org/@dcloudio/uni-stat/download/@dcloudio/uni-stat-2.0.0-28920200923001.tgz#a40d5775c6635b8fcc14f2218b67c9471b6625f2"
-  integrity sha1-pA1XdcZjW4/MFPIhi2fJRxtmJfI=
+"@dcloudio/uni-stat@^2.0.0-28920200923001", "@dcloudio/uni-stat@^2.0.0-28920200927001":
+  version "2.0.0-28920200927001"
+  resolved "https://registry.yarnpkg.com/@dcloudio/uni-stat/-/uni-stat-2.0.0-28920200927001.tgz#7c0c84c28eaeea493c17acb9d8bb42e17c2aed75"
+  integrity sha512-hla7KJPQKkywbUC+5pHOfQvjcUcZ0gxLMNpnMcm3LPsZU5O8BC4ku0Atl6k9XBhRni4zfETcBH/lNxqePo3bcg==
 
 "@dcloudio/uni-template-compiler@^2.0.0-27920200618002":
   version "2.0.0-28920200923001"
