@@ -86,7 +86,7 @@
     "miniprogram-api-typings": "*",
     "node-sass": "^4.14.1",
     "postcss-comment": "^2.0.0",
-    "sass-loader": "^9.0.3",
+    "sass-loader": "^10.0.3",
     "vue-template-compiler": "^2.6.11"
   },
   "browserslist": [
