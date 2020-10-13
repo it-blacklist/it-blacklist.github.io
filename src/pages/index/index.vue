@@ -7,13 +7,16 @@
         <u-select v-model="selectShow" mode="mutil-column-auto" :list="cityList" @confirm="cityConfirm"></u-select>
       </view>
     </u-navbar>
-    <navigator v-if="system.show" url="/pages/statement/index" hoverClass="none">
-      <u-notice-bar :list="['置顶公告']" more-icon mode="vertical"></u-notice-bar>
+    <navigator v-if="system.ad" url="/pages/ad/index" hoverClass="none">
+      <u-notice-bar :list="['小程序福利（点我！！！）']" more-icon mode="vertical" type="error"></u-notice-bar>
     </navigator>
     <view class="u-padding-20">
       <u-search placeholder="输入公司名称搜索…" input-align="center" shape="round" clearabled v-model="searchKey" @search="confirmSearch"
         @custom="confirmSearch"></u-search>
     </view>
+    <navigator v-if="system.show" url="/pages/statement/index" hoverClass="none">
+      <u-notice-bar :list="['置顶公告']" more-icon mode="vertical"></u-notice-bar>
+    </navigator>
     <u-cell-group>
       <navigator v-for="(item) of list" :key="item._id" :url="`../content/index?_id=${item._id}`">
         <u-cell-item :title="item.companyName" use-label-slot>
@@ -43,7 +46,7 @@
             <!-- #endif -->
           </view>
           <view class="u-flex-1">
-            <view class="u-font-14 u-tips-color">如果您觉得小程序还不错，分享给您身边的IT从业者，或者点击下方的打赏，请作者喝杯肥宅快乐水。</view>
+            <view class="u-font-14 u-tips-color">如果您觉得小程序还不错，分享给您身边的IT从业者，或者点击下方的打赏，请作者喝杯茶。</view>
           </view>
         </view>
         <u-cell-group class="u-m-t-20">

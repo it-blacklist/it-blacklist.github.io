@@ -25,31 +25,21 @@
       },
       getConfig() {
         return new Promise((resolve, reject) => {
-          // #ifdef APP-PLUS || H5
-          const plat = 'app'
-          // #endif
           // #ifdef MP-WEIXIN 
           const plat = 'weixin'
-          // #endif
-          // #ifdef MP-TOUTIAO
-          const plat = 'toutiao'
           // #endif
           // #ifdef MP-QQ
           const plat = 'qq'
           // #endif
           if(typeof this.globalData.system.show === 'boolean'){
             resolve(this.globalData.system)
-          }else if (plat === 'app') {
-            const system = {
-              show: true
-            }
-            resolve(system)
-          } else {
+          }else {
             uniCloud.callFunction({
               name: 'itBlackSystem'
             }).then((res) => {
               const system = {
-                show: res.result.data[0][plat]
+                show: res.result.data[0][plat],
+                ad:res.result.data[0].ad
               }
               this.globalData.system = system
               resolve(system)

@@ -19,6 +19,9 @@
     }, {
       "path": "pages/content/index",
       "style": {}
+    }, {
+      "path": "pages/ad/index",
+      "style": {}
     }
   ],
   "globalStyle": {
