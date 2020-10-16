@@ -1062,10 +1062,10 @@
   resolved "https://registry.npm.taobao.org/@dcloudio/webpack-uni-mp-loader/download/@dcloudio/webpack-uni-mp-loader-2.0.0-28920200927001.tgz#bef579778fe354b167dc7106b873637d41fcdfb7"
   integrity sha1-vvV5d4/jVLFn3HEGuHNjfUH837c=
 
-"@dcloudio/webpack-uni-pages-loader@^2.0.0-27920200618002":
-  version "2.0.0-28920200927001"
-  resolved "https://registry.npm.taobao.org/@dcloudio/webpack-uni-pages-loader/download/@dcloudio/webpack-uni-pages-loader-2.0.0-28920200927001.tgz#c94e47a2d77c432a5ec0fb019d1e5d71660d4b4f"
-  integrity sha1-yU5Hotd8QypewPsBnR5dcWYNS08=
+"@dcloudio/webpack-uni-pages-loader@^2.0.0-29320201014001":
+  version "2.0.0-29320201014001"
+  resolved "https://registry.yarnpkg.com/@dcloudio/webpack-uni-pages-loader/-/webpack-uni-pages-loader-2.0.0-29320201014001.tgz#68175571548b5bdadbbd13fc77f4f8dd9eca0f21"
+  integrity sha512-K9RlgexXcVeexJLYyHgM4gV4W+TlX+aIZAcF2JxfVbtyxLequjgPgeTmtmHdh2N+2XRJ9EQiYqeTxsjaYTq2VQ==
   dependencies:
     merge "^1.2.1"
     strip-json-comments "^2.0.1"
