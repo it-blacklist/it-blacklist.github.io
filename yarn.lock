@@ -1008,10 +1008,10 @@
   resolved "https://registry.npm.taobao.org/@dcloudio/uni-stat/download/@dcloudio/uni-stat-2.0.0-28920200927001.tgz?cache=0&sync_timestamp=1601462838820&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40dcloudio%2Funi-stat%2Fdownload%2F%40dcloudio%2Funi-stat-2.0.0-28920200927001.tgz#7c0c84c28eaeea493c17acb9d8bb42e17c2aed75"
   integrity sha1-fAyEwo6u6kk8F6y52LtC4Xwq7XU=
 
-"@dcloudio/uni-template-compiler@^2.0.0-27920200618002":
-  version "2.0.0-28920200927001"
-  resolved "https://registry.npm.taobao.org/@dcloudio/uni-template-compiler/download/@dcloudio/uni-template-compiler-2.0.0-28920200927001.tgz#2c764306e5522acbe3b78918570096896a46a957"
-  integrity sha1-LHZDBuVSKsvjt4kYVwCWiWpGqVc=
+"@dcloudio/uni-template-compiler@^2.0.0-29320201014001":
+  version "2.0.0-29320201014001"
+  resolved "https://registry.yarnpkg.com/@dcloudio/uni-template-compiler/-/uni-template-compiler-2.0.0-29320201014001.tgz#f9182c1dc323b8316e49a17135519143f741a32d"
+  integrity sha512-yusn+HskIYFsntYvryIFX3uNrSZukBhNoQMrCnMjBY3XMpZeT+6scGL4Rc7xtpgFNjBHgGbzBT8/k0mOeI7uXg==
   dependencies:
     "@babel/parser" "^7.3.3"
     "@babel/traverse" "^7.3.3"
