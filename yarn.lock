@@ -900,9 +900,9 @@
     minimist "^1.2.0"
 
 "@dcloudio/types@*":
-  version "2.0.8"
-  resolved "https://registry.npm.taobao.org/@dcloudio/types/download/@dcloudio/types-2.0.8.tgz#5caa5ae4b808e4ff8a422e3c692807e417a888e1"
-  integrity sha1-XKpa5LgI5P+KQi48aSgH5BeoiOE=
+  version "2.0.17"
+  resolved "https://registry.yarnpkg.com/@dcloudio/types/-/types-2.0.17.tgz#8a8bd1332d1bd93fffef04945a47a83da80ea1f3"
+  integrity sha512-qbEGCQCnx0B+hfHtY2T0LKAP4pyJPrX65xkq6jdEDw2zOttyoKySQxUErF49G0SS9/xOrJSkIir+mfQDelnOmA==
 
 "@dcloudio/uni-app-plus@^2.0.0-28320200727001":
   version "2.0.0-28920200927001"
