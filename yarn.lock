@@ -933,10 +933,10 @@
     postcss-urlrewrite "^0.2.2"
     strip-json-comments "^2.0.1"
 
-"@dcloudio/uni-h5@^2.0.0-28320200727001":
-  version "2.0.0-28920200927001"
-  resolved "https://registry.npm.taobao.org/@dcloudio/uni-h5/download/@dcloudio/uni-h5-2.0.0-28920200927001.tgz#86ba932f019a8c2f8f3707b614a893a573c03f2f"
-  integrity sha1-hrqTLwGajC+PNwe2FKiTpXPAPy8=
+"@dcloudio/uni-h5@^2.0.0-29820201110001":
+  version "2.0.0-29820201110001"
+  resolved "https://registry.yarnpkg.com/@dcloudio/uni-h5/-/uni-h5-2.0.0-29820201110001.tgz#50cf14d5078c7fe7fed5755e0ebebf73154ebfc8"
+  integrity sha512-fRpPfFIekrD8+aC/hYAzaAuNIm3SSt1FJKaQp07rItFKRh9Iq7e9/BUPtoCsH6o7G+MustYbLOr/9YXiotNyaw==
   dependencies:
     base64-arraybuffer "^0.2.0"
     intersection-observer "^0.7.0"
