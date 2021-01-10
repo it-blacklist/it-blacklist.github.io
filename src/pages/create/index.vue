@@ -4,7 +4,7 @@
       <u-empty text="该功能目前已下线" mode="permission"></u-empty>
     </view>
     <view v-show="system.show" class="u-padding-30">
-      <u-form :model="model" :rules="rules" ref="uForm" :errorType="['toast']">
+      <u-form :model="model" ref="uForm" :errorType="['toast']">
         <u-form-item label="公司名称" label-width="130" prop="companyName">
           <u-input border placeholder="公司名称" v-model="model.companyName" />
         </u-form-item>
@@ -54,7 +54,6 @@
           content: '',
           cityName: '',
         },
-        rules,
         check: false,
         loading: false,
         selectShow: false,
@@ -74,7 +73,7 @@
       })
     },
     onReady() {
-      this.$refs.uForm.setRules(this.rules);
+      this.$refs.uForm.setRules(rules);
     },
     methods: {
       submit() {

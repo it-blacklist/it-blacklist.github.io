@@ -1,6 +1,6 @@
 <template>
   <view class="u-padding-30">
-    <u-form :model="model" :rules="rules" ref="uForm" :errorType="['toast']">
+    <u-form :model="model" ref="uForm" :errorType="['toast']">
       <u-form-item label-width="0" prop="content">
         <u-input type="textarea" maxlength="2000" border placeholder="我要留言…" v-model="model.content" />
       </u-form-item>
@@ -30,7 +30,6 @@
         model: {
           content: ''
         },
-        rules,
         check: false,
         loading: false
       };
@@ -39,7 +38,7 @@
 
     },
     onReady() {
-      this.$refs.uForm.setRules(this.rules);
+      this.$refs.uForm.setRules(rules);
     },
     methods: {
       submit() {
