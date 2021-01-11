@@ -71,7 +71,7 @@
     "@dcloudio/uni-cli-shared": "^2.0.0-30420201231001",
     "@dcloudio/uni-migration": "^2.0.0-30420201231001",
     "@dcloudio/uni-template-compiler": "^2.0.0-30420201231001",
-    "@dcloudio/vue-cli-plugin-hbuilderx": "^2.0.0-30420201231001",
+    "@dcloudio/vue-cli-plugin-hbuilderx": "^2.0.0-30520210106003",
     "@dcloudio/vue-cli-plugin-uni": "^2.0.0-30420201231001",
     "@dcloudio/vue-cli-plugin-uni-optimize": "^2.0.0-30420201231001",
     "@dcloudio/webpack-uni-mp-loader": "^2.0.0-30420201231001",
