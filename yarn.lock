@@ -985,11 +985,12 @@
     postcss-urlrewrite "^0.2.2"
     strip-json-comments "^2.0.1"
 
-"@dcloudio/uni-h5@^2.0.0-30420201231001":
-  version "2.0.0-30420201231001"
-  resolved "https://registry.npm.taobao.org/@dcloudio/uni-h5/download/@dcloudio/uni-h5-2.0.0-30420201231001.tgz#f8741b8d3736ed1c9675a23e6703820dc28532dd"
-  integrity sha1-+HQbjTc27RyWdaI+ZwOCDcKFMt0=
+"@dcloudio/uni-h5@^2.0.0-31620210325001":
+  version "2.0.0-31620210325001"
+  resolved "https://registry.yarnpkg.com/@dcloudio/uni-h5/-/uni-h5-2.0.0-31620210325001.tgz#c6de60457b22bd6a9276891192b2847075ef2baa"
+  integrity sha512-cTr4nVEKPm7J0oHmGQbmu7VWQWi5t6mjkrNfQTpnnTqkudzoVZkvOzUrTGBR+dj+65Ww9Hj3dz3SX5ym+Hn0GA==
   dependencies:
+    "@dcloudio/uni-i18n" "^0.0.5"
     base64-arraybuffer "^0.2.0"
     intersection-observer "^0.7.0"
     pako "^1.0.11"
@@ -999,6 +1000,11 @@
   version "1.0.9"
   resolved "https://registry.npm.taobao.org/@dcloudio/uni-helper-json/download/@dcloudio/uni-helper-json-1.0.9.tgz#f64c6b56b670406285c74922fd8158480bd8ebe9"
   integrity sha1-9kxrVrZwQGKFx0ki/YFYSAvY6+k=
+
+"@dcloudio/uni-i18n@^0.0.5":
+  version "0.0.5"
+  resolved "https://registry.yarnpkg.com/@dcloudio/uni-i18n/-/uni-i18n-0.0.5.tgz#13588a7bb561f4cd47fe14cc3551f459cadd3819"
+  integrity sha512-SY3Ou9LUoTImARDjqLrNEBvrLgoWQgZ7FLWox8NwgLGHwg/cPcwvr47eud/vP9EWsLXd3gM+3aIY87IMg/c7qQ==
 
 "@dcloudio/uni-migration@^2.0.0-30420201231001":
   version "2.0.0-30420201231001"
