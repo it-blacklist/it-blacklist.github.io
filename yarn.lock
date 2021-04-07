@@ -1056,10 +1056,10 @@
   resolved "https://registry.npm.taobao.org/@dcloudio/uni-quickapp-webview/download/@dcloudio/uni-quickapp-webview-2.0.0-30420201231001.tgz#cb8f45b94428c3da83423b0556b08d61d630361e"
   integrity sha1-y49FuUQow9qDQjsFVrCNYdYwNh4=
 
-"@dcloudio/uni-stat@^2.0.0-30420201231001":
-  version "2.0.0-30420201231001"
-  resolved "https://registry.npm.taobao.org/@dcloudio/uni-stat/download/@dcloudio/uni-stat-2.0.0-30420201231001.tgz#5e7de462d64c104b3050187fcfdc126b58e0cf2f"
-  integrity sha1-Xn3kYtZMEEswUBh/z9wSa1jgzy8=
+"@dcloudio/uni-stat@^2.0.0-30420201231001", "@dcloudio/uni-stat@^2.0.0-31820210406002":
+  version "2.0.0-31820210406002"
+  resolved "https://registry.yarnpkg.com/@dcloudio/uni-stat/-/uni-stat-2.0.0-31820210406002.tgz#9a1c2b264c302b8e8eee3d961da3649b729600db"
+  integrity sha512-MlnXQ2xQX/gfSyresa4N2dmCf9pY4+0qSle9iqzkENOWkY/ZrnMNgZ1Jd+fuesLM8wOsfnAWexml+cBwtYhdrA==
 
 "@dcloudio/uni-template-compiler@^2.0.0-30420201231001":
   version "2.0.0-30420201231001"
@@ -1085,12 +1085,12 @@
   resolved "https://registry.npm.taobao.org/@dcloudio/vue-cli-plugin-uni-optimize/download/@dcloudio/vue-cli-plugin-uni-optimize-2.0.0-30420201231001.tgz#47caef2447773ed0107acf69bfa34085f5d3ebf9"
   integrity sha1-R8rvJEd3PtAQes9pv6NAhfXT6/k=
 
-"@dcloudio/vue-cli-plugin-uni@^2.0.0-30420201231001":
-  version "2.0.0-30420201231001"
-  resolved "https://registry.npm.taobao.org/@dcloudio/vue-cli-plugin-uni/download/@dcloudio/vue-cli-plugin-uni-2.0.0-30420201231001.tgz#c0e40eca919a830b570c334698206d642ad965bb"
-  integrity sha1-wOQOypGagwtXDDNGmCBtZCrZZbs=
+"@dcloudio/vue-cli-plugin-uni@^2.0.0-31820210406002":
+  version "2.0.0-31820210406002"
+  resolved "https://registry.yarnpkg.com/@dcloudio/vue-cli-plugin-uni/-/vue-cli-plugin-uni-2.0.0-31820210406002.tgz#bb313de50420222b36d15fc154bbea8059958228"
+  integrity sha512-Cb/UHhK1QIZ26JpezlLOPbT6eas/07AdCKtVcTe5dUF9sjjfoXXtP0f/ldjZ/lBoTCT0Bm2Hf8Fq3UEBD8v2XA==
   dependencies:
-    "@dcloudio/uni-stat" "^2.0.0-30420201231001"
+    "@dcloudio/uni-stat" "^2.0.0-31820210406002"
     buffer-json "^2.0.0"
     copy-webpack-plugin "^5.1.1"
     cross-env "^5.2.0"
