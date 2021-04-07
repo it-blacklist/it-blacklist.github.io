@@ -956,10 +956,10 @@
   resolved "https://registry.npm.taobao.org/@dcloudio/types/download/@dcloudio/types-2.0.20.tgz?cache=0&sync_timestamp=1608092430839&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40dcloudio%2Ftypes%2Fdownload%2F%40dcloudio%2Ftypes-2.0.20.tgz#2b1129a398b65b07b7da75d9f331056c55557256"
   integrity sha1-KxEpo5i2Wwe32nXZ8zEFbFVVclY=
 
-"@dcloudio/uni-app-plus@^2.0.0-30420201231001":
-  version "2.0.0-30420201231001"
-  resolved "https://registry.npm.taobao.org/@dcloudio/uni-app-plus/download/@dcloudio/uni-app-plus-2.0.0-30420201231001.tgz#5eb762e68bb4e90517c3586f868ffa7bd165f067"
-  integrity sha1-Xrdi5ou06QUXw1hvho/6e9Fl8Gc=
+"@dcloudio/uni-app-plus@^2.0.0-31820210406002":
+  version "2.0.0-31820210406002"
+  resolved "https://registry.yarnpkg.com/@dcloudio/uni-app-plus/-/uni-app-plus-2.0.0-31820210406002.tgz#2512d31e94c4aa1cec497f02ed6efdbae42ae3cb"
+  integrity sha512-8g8vOD4hYZNVDjSA31VKqFqnYhj/p8PfjVdDmisyEwfb2VeXY70P4ulJJ0Do+lT2k1JLeyGm+jY+MwlcErPwvw==
 
 "@dcloudio/uni-automator@^2.0.0-30420201231001":
   version "2.0.0-30420201231001"
