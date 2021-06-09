@@ -50,7 +50,7 @@
     "@dcloudio/uni-h5": "^2.0.0-30420201231001",
     "@dcloudio/uni-helper-json": "*",
     "@dcloudio/uni-mp-360": "^2.0.0-30420201231001",
-    "@dcloudio/uni-mp-alipay": "^2.0.0-30420201231001",
+    "@dcloudio/uni-mp-alipay": "^2.0.0-31920210607001",
     "@dcloudio/uni-mp-baidu": "^2.0.0-30420201231001",
     "@dcloudio/uni-mp-qq": "^2.0.0-30420201231001",
     "@dcloudio/uni-mp-toutiao": "^2.0.0-30420201231001",
