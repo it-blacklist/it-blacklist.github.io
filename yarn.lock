@@ -1016,10 +1016,10 @@
   resolved "https://registry.npm.taobao.org/@dcloudio/uni-mp-360/download/@dcloudio/uni-mp-360-2.0.0-30420201231001.tgz#1ca19871e1488253be0220cfad3a533005c68144"
   integrity sha1-HKGYceFIglO+AiDPrTpTMAXGgUQ=
 
-"@dcloudio/uni-mp-alipay@^2.0.0-30420201231001":
-  version "2.0.0-30420201231001"
-  resolved "https://registry.npm.taobao.org/@dcloudio/uni-mp-alipay/download/@dcloudio/uni-mp-alipay-2.0.0-30420201231001.tgz#3048af2a6484a50c6116d4fbfc84395d0b60246b"
-  integrity sha1-MEivKmSEpQxhFtT7/IQ5XQtgJGs=
+"@dcloudio/uni-mp-alipay@^2.0.0-31920210609001":
+  version "2.0.0-31920210609001"
+  resolved "https://registry.yarnpkg.com/@dcloudio/uni-mp-alipay/-/uni-mp-alipay-2.0.0-31920210609001.tgz#6c250370723e202ddd40b0c5994e45dd5a867339"
+  integrity sha512-3N1bONvfdHqDnCjRyEvhwCTFRvJMxpBEfkp3HIL4B2VZR5L8PFLeXo/PKHE6wEupu276ahk0L5GUZxzjIbTuqg==
 
 "@dcloudio/uni-mp-baidu@^2.0.0-30420201231001":
   version "2.0.0-30420201231001"
