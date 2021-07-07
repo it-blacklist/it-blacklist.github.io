@@ -7313,10 +7313,10 @@ minipass@^3.1.1:
   dependencies:
     yallist "^4.0.0"
 
-miniprogram-api-typings@3.3.2:
-  version "3.3.2"
-  resolved "https://registry.nlark.com/miniprogram-api-typings/download/miniprogram-api-typings-3.3.2.tgz#1e6aa65817e6534850141cd2af23eeff6ba61b4e"
-  integrity sha1-HmqmWBfmU0hQFBzSryPu/2umG04=
+miniprogram-api-typings@3.4.1:
+  version "3.4.1"
+  resolved "https://registry.yarnpkg.com/miniprogram-api-typings/-/miniprogram-api-typings-3.4.1.tgz#17cef4c184d32b2e12e2deb5559d1c01c84fa891"
+  integrity sha512-kGUJ4zLgwzGyhtCOR2DTz8LTPkKJVek9OqspzGoMVcrmAKV76WqJ6sEOwJoQ1kO/VlTuXEKCu9+ZXB7hFKLcmw==
 
 mississippi@^3.0.0:
   version "3.0.0"
