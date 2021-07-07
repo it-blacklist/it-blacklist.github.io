@@ -951,10 +951,10 @@
     exec-sh "^0.3.2"
     minimist "^1.2.0"
 
-"@dcloudio/types@2.2.16":
-  version "2.2.16"
-  resolved "https://registry.nlark.com/@dcloudio/types/download/@dcloudio/types-2.2.16.tgz#ee1d43ac29223ced094ee3b05a983f8aeacd1c0c"
-  integrity sha1-7h1DrCkiPO0JTuOwWpg/iurNHAw=
+"@dcloudio/types@2.2.19":
+  version "2.2.19"
+  resolved "https://registry.yarnpkg.com/@dcloudio/types/-/types-2.2.19.tgz#5cde92885aa1dd2383cf64fd38916be1c9f32d50"
+  integrity sha512-OO0SUMfMumUlelJ/jhtL2W1Rr27auqfbzSRF20Uxfrrqn8M7YRmmR0G3V5GepnVo51MfnZZNpJrnxkw0EVISkQ==
 
 "@dcloudio/uni-app-plus@^2.0.0-31920210609001":
   version "2.0.0-31920210609001"
