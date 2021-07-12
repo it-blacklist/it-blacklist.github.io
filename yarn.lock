@@ -1027,10 +1027,10 @@
   resolved "https://registry.nlark.com/@dcloudio/uni-mp-alipay/download/@dcloudio/uni-mp-alipay-2.0.0-31920210609001.tgz#6c250370723e202ddd40b0c5994e45dd5a867339"
   integrity sha1-bCUDcHI+IC3dQLDFmU5F3VqGczk=
 
-"@dcloudio/uni-mp-baidu@^2.0.0-31920210609001":
-  version "2.0.0-31920210609001"
-  resolved "https://registry.nlark.com/@dcloudio/uni-mp-baidu/download/@dcloudio/uni-mp-baidu-2.0.0-31920210609001.tgz#529616297a2854e91b7b07928c4b477376f7b125"
-  integrity sha1-UpYWKXooVOkbeweSjEtHc3b3sSU=
+"@dcloudio/uni-mp-baidu@^2.0.0-31920210709003":
+  version "2.0.0-31920210709003"
+  resolved "https://registry.yarnpkg.com/@dcloudio/uni-mp-baidu/-/uni-mp-baidu-2.0.0-31920210709003.tgz#faaa0feba855da6d560d8ab1673b483bd58d5676"
+  integrity sha512-sedSRm4j6yjBIievg6XQSdXmP0eOCKx5Eyf8kFUteJPG0YKCN3aQAe7CQkND2bF/PfJN2z0QfQPbsLKbb+2pEQ==
 
 "@dcloudio/uni-mp-qq@^2.0.0-31920210609001":
   version "2.0.0-31920210609001"
