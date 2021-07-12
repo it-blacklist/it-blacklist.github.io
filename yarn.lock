@@ -1032,10 +1032,10 @@
   resolved "https://registry.nlark.com/@dcloudio/uni-mp-baidu/download/@dcloudio/uni-mp-baidu-2.0.0-31920210609001.tgz#529616297a2854e91b7b07928c4b477376f7b125"
   integrity sha1-UpYWKXooVOkbeweSjEtHc3b3sSU=
 
-"@dcloudio/uni-mp-qq@^2.0.0-31920210609001":
-  version "2.0.0-31920210609001"
-  resolved "https://registry.nlark.com/@dcloudio/uni-mp-qq/download/@dcloudio/uni-mp-qq-2.0.0-31920210609001.tgz#79e588f1c5d6e3ee80486009d1efb1b4b04ce42c"
-  integrity sha1-eeWI8cXW4+6ASGAJ0e+xtLBM5Cw=
+"@dcloudio/uni-mp-qq@^2.0.0-31920210709003":
+  version "2.0.0-31920210709003"
+  resolved "https://registry.yarnpkg.com/@dcloudio/uni-mp-qq/-/uni-mp-qq-2.0.0-31920210709003.tgz#82c52782a49169609e56c1643fb0c7d3b4358b1d"
+  integrity sha512-T6K4QNEcKOMWaGs8H2oIa9g8ST6a3Bz8BlB2vnLv3EURpvDzTU+GfxBeEDw4uZhxrgVIO5AiOM0pqlBtfMOH2A==
 
 "@dcloudio/uni-mp-toutiao@^2.0.0-31920210609001":
   version "2.0.0-31920210609001"
