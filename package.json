@@ -69,7 +69,7 @@
     "@dcloudio/types": "2.2.16",
     "@dcloudio/uni-automator": "^2.0.0-31920210609001",
     "@dcloudio/uni-cli-shared": "^2.0.0-31920210609001",
-    "@dcloudio/uni-migration": "^2.0.0-31920210609001",
+    "@dcloudio/uni-migration": "^2.0.0-31920210709003",
     "@dcloudio/uni-template-compiler": "^2.0.0-31920210609001",
     "@dcloudio/vue-cli-plugin-hbuilderx": "^2.0.0-31920210609001",
     "@dcloudio/vue-cli-plugin-uni": "^2.0.0-31920210609001",

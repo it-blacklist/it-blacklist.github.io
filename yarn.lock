@@ -1006,10 +1006,10 @@
   resolved "https://registry.nlark.com/@dcloudio/uni-i18n/download/@dcloudio/uni-i18n-0.0.3.tgz#c7ff6ea6a4ea5cd5ef8dc3d674afa2e64502c151"
   integrity sha1-x/9upqTqXNXvjcPWdK+i5kUCwVE=
 
-"@dcloudio/uni-migration@^2.0.0-31920210609001":
-  version "2.0.0-31920210609001"
-  resolved "https://registry.nlark.com/@dcloudio/uni-migration/download/@dcloudio/uni-migration-2.0.0-31920210609001.tgz#770e2efe49fa03a88e5130133cb3bf968aae1230"
-  integrity sha1-dw4u/kn6A6iOUTATPLO/loquEjA=
+"@dcloudio/uni-migration@^2.0.0-31920210709003":
+  version "2.0.0-31920210709003"
+  resolved "https://registry.yarnpkg.com/@dcloudio/uni-migration/-/uni-migration-2.0.0-31920210709003.tgz#aa8e982aea2c718a8fdce3e009410d6b9d92b0cb"
+  integrity sha512-WADP2Frkw7TnZeWRX/WP5hNuoDPjCgL7heVYalz2KyQXf7HoprLWGslSBN9e/3cew4gOJDdJWciiWPE2tNXZpw==
   dependencies:
     commander "^4.0.1"
     fs-extra "^8.1.0"
