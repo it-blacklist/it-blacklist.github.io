@@ -16,7 +16,7 @@
 
 ## 开始开发
 
-小程序主要使用的技术有：uni-app uni-cloud。
+小程序主要使用的技术有：Remax。
 ```bash
 $ git clone https://github.com/liujiayii/sjz_it_blacklist.git
 # 可能clone的项目不能正常运行，需要有一定解决问题的能力，或者直接问我
