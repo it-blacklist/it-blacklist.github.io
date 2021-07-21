@@ -84,7 +84,7 @@
     "jest": "^25.4.0",
     "mini-types": "0.1.7",
     "miniprogram-api-typings": "3.4.1",
-    "node-sass": "^4.14.1",
+    "node-sass": "^6.0.1",
     "postcss-comment": "^2.0.0",
     "sass-loader": "^9.0.3",
     "vue-template-compiler": "^2.6.14"
