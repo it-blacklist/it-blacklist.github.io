@@ -1,22 +1,35 @@
-import * as React from 'react';
-import { View, Text, Image } from 'remax/one';
-import { Button } from 'annar'
-import styles from './index.scss';
+import { reactive, h,defineComponent } from 'vue';
+import {View} from '@tarojs/components'
+import {Button } from '@nutui/nutui-taro'
+import './index.scss'
 
-export default () => {
-  return (
-    <View className={styles.app}>
-      <View className={styles.header}>
-        <Image
-          src="https://gw.alipayobjects.com/mdn/rms_b5fcc5/afts/img/A*OGyZSI087zkAAAAAAAAAAABkARQnAQ"
-          className={styles.logo}
-        />
-        <View className={styles.text}>
-          编辑 <Text className={styles.path}>src/pages/index/index.js</Text>{' '}
-          开始
+export default defineComponent({
+  name: 'Index',
+  setup () {
+    const state = reactive({
+      msg: 'hello world',
+      msg2: '你成功了～',
+      type: 'text',
+      show: false,
+      cover: false,
+    });
+
+    const handleClick = (type: string, msg: string, cover: boolean = false) => {
+      console.log('handleClick')
+      state.show = true;
+      state.msg2 = msg;
+      state.type = type;
+      state.cover = cover;
+    };
+    return () => (
+      <View>
+        <View class="index">
+          {state.msg}
+          <View class="btn">
+            <Button type="primary" onClick={() => handleClick('text', state.msg2, true)}>点我</Button>
+          </View>
         </View>
-        <Button type="primary" size="large">开始</Button>
       </View>
-    </View>
-  );
-};
+    )
+  }
+})

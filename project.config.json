@@ -1,12 +1,12 @@
 {
-  "miniprogramRoot": "dist/wechat/",
+  "miniprogramRoot": "dist/",
   "setting": {
-    "urlCheck": false,
+    "urlCheck": true,
     "es6": false,
-    "enhance": true,
-    "postcss": true,
+    "enhance": false,
+    "postcss": false,
     "preloadBackgroundData": false,
-    "minified": true,
+    "minified": false,
     "newFeature": true,
     "coverView": true,
     "nodeModules": false,
@@ -19,8 +19,8 @@
     "uploadWithSourceMap": true,
     "compileHotReLoad": false,
     "lazyloadPlaceholderEnable": false,
-    "useMultiFrameRuntime": false,
-    "useApiHook": false,
+    "useMultiFrameRuntime": true,
+    "useApiHook": true,
     "useApiHostProcess": false,
     "babelSetting": {
       "ignore": [],
@@ -32,7 +32,7 @@
     "userConfirmedBundleSwitch": false,
     "packNpmManually": false,
     "packNpmRelationList": [],
-    "minifyWXSS": true,
+    "minifyWXSS": false,
     "showES6CompileOption": false
   },
   "compileType": "miniprogram",

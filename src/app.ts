@@ -1,6 +1,15 @@
-import * as React from 'react';
-import './app.scss';
+import { createApp } from 'vue'
+import { Button, Toast } from '@nutui/nutui-taro';
+import '@nutui/nutui-taro/dist/style.css';
+import './app.scss'
 
-const App: React.FC = props => props.children as React.ReactElement;
+const App = createApp({
+  onShow (options) {
+    console.log('options',options);
+  },
+  // 入口组件不需要实现 render 方法，即使实现了也会被 taro 所覆盖
+})
 
-export default App;
+App.use(Button).use(Toast)
+
+export default App
