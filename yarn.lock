@@ -1206,7 +1206,6 @@
   resolved "https://registry.nlark.com/@nodelib/fs.stat/download/@nodelib/fs.stat-2.0.5.tgz?cache=0&sync_timestamp=1622792705142&other_urls=https%3A%2F%2Fregistry.nlark.com%2F%40nodelib%2Ffs.stat%2Fdownload%2F%40nodelib%2Ffs.stat-2.0.5.tgz#5bd262af94e9d25bd1e71b05deed44876a222e8b"
   integrity sha1-W9Jir5Tp0lvR5xsF3u1Eh2oiLos=
 
-
 "@nodelib/fs.stat@^1.1.2":
   version "1.1.3"
   resolved "https://registry.nlark.com/@nodelib/fs.stat/download/@nodelib/fs.stat-1.1.3.tgz?cache=0&sync_timestamp=1622792705142&other_urls=https%3A%2F%2Fregistry.nlark.com%2F%40nodelib%2Ffs.stat%2Fdownload%2F%40nodelib%2Ffs.stat-1.1.3.tgz#2b5a3ab3f918cca48a8c754c08168e3f03eba61b"
@@ -5513,15 +5512,15 @@ eslint-plugin-vue@^6.2.2:
     semver "^5.6.0"
     vue-eslint-parser "^7.0.0"
 
-eslint-plugin-vue@^7.0.0:
-  version "7.14.0"
-  resolved "https://registry.nlark.com/eslint-plugin-vue/download/eslint-plugin-vue-7.14.0.tgz?cache=0&other_urls=https%3A%2F%2Fregistry.nlark.com%2Feslint-plugin-vue%2Fdownload%2Feslint-plugin-vue-7.14.0.tgz#8c00f211064bd2708fc1aa4abd0592538fbb2cb1"
-  integrity sha1-jADyEQZL0nCPwapKvQWSU4+7LLE=
+eslint-plugin-vue@^7.15.0:
+  version "7.15.0"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-vue/-/eslint-plugin-vue-7.15.0.tgz#272318b4aac789ea92e6cd28ef14698e9715ceab"
+  integrity sha512-br58VTAT8JB4Qe7XJVN7fNBqQgclE+hcsievoyQyGtCZsYprFMQYu+c9yHX9XkP55cMnSVZpW5fRgy3n/wZskA==
   dependencies:
     eslint-utils "^2.1.0"
     natural-compare "^1.4.0"
     semver "^6.3.0"
-    vue-eslint-parser "^7.9.0"
+    vue-eslint-parser "^7.10.0"
 
 eslint-scope@3.7.1:
   version "3.7.1"
@@ -13232,7 +13231,7 @@ typedarray@^0.0.6:
   resolved "https://registry.npm.taobao.org/typedarray/download/typedarray-0.0.6.tgz#867ac74e3864187b1d3d47d996a78ec5c8830777"
   integrity sha1-hnrHTjhkGHsdPUfZlqeOxciDB3c=
 
-typescript@^3.0.0, typescript@^3.2.2:
+typescript@^3.2.2, typescript@^3.9.10:
   version "3.9.10"
   resolved "https://registry.nlark.com/typescript/download/typescript-3.9.10.tgz?cache=0&sync_timestamp=1627024802882&other_urls=https%3A%2F%2Fregistry.nlark.com%2Ftypescript%2Fdownload%2Ftypescript-3.9.10.tgz#70f3910ac7a51ed6bef79da7800690b19bf778b8"
   integrity sha1-cPORCselHta+952ngAaQsZv3eLg=
@@ -13741,10 +13740,10 @@ vm2@^3.8.4:
   resolved "https://registry.npm.taobao.org/vm2/download/vm2-3.9.3.tgz#29917f6cc081cc43a3f580c26c5b553fd3c91f40"
   integrity sha1-KZF/bMCBzEOj9YDCbFtVP9PJH0A=
 
-vue-eslint-parser@^7.0.0, vue-eslint-parser@^7.9.0:
-  version "7.9.0"
-  resolved "https://registry.nlark.com/vue-eslint-parser/download/vue-eslint-parser-7.9.0.tgz#5eeedc71f22ebc7b18b957d1ab171acf29a41e64"
-  integrity sha1-Xu7ccfIuvHsYuVfRqxcazymkHmQ=
+vue-eslint-parser@^7.0.0, vue-eslint-parser@^7.10.0:
+  version "7.10.0"
+  resolved "https://registry.yarnpkg.com/vue-eslint-parser/-/vue-eslint-parser-7.10.0.tgz#ea4e4b10fd10aa35c8a79ac783488d8abcd29be8"
+  integrity sha512-7tc/ewS9Vq9Bn741pvpg8op2fWJPH3k32aL+jcIcWGCTzh/zXSdh7pZ5FV3W2aJancP9+ftPAv292zY5T5IPCg==
   dependencies:
     debug "^4.1.1"
     eslint-scope "^5.1.1"
