@@ -1206,7 +1206,6 @@
   resolved "https://registry.nlark.com/@nodelib/fs.stat/download/@nodelib/fs.stat-2.0.5.tgz?cache=0&sync_timestamp=1622792705142&other_urls=https%3A%2F%2Fregistry.nlark.com%2F%40nodelib%2Ffs.stat%2Fdownload%2F%40nodelib%2Ffs.stat-2.0.5.tgz#5bd262af94e9d25bd1e71b05deed44876a222e8b"
   integrity sha1-W9Jir5Tp0lvR5xsF3u1Eh2oiLos=
 
-
 "@nodelib/fs.stat@^1.1.2":
   version "1.1.3"
   resolved "https://registry.nlark.com/@nodelib/fs.stat/download/@nodelib/fs.stat-1.1.3.tgz?cache=0&sync_timestamp=1622792705142&other_urls=https%3A%2F%2Fregistry.nlark.com%2F%40nodelib%2Ffs.stat%2Fdownload%2F%40nodelib%2Ffs.stat-1.1.3.tgz#2b5a3ab3f918cca48a8c754c08168e3f03eba61b"
@@ -1570,6 +1569,16 @@
     lodash-es "4.17.15"
     reflect-metadata "^0.1.13"
 
+"@tarojs/runtime@3.3.2":
+  version "3.3.2"
+  resolved "https://registry.yarnpkg.com/@tarojs/runtime/-/runtime-3.3.2.tgz#6631fa8ef0b77e9ec16826367544dacba0e01ec3"
+  integrity sha512-3slxRfyywjs39ZIcYRq+YwjrRLLTTXxIrWyO7GYymW2Pc2jnC2tHBhuIDwT2/vHOfgIEPbjxES6Rs/TTZrI0NQ==
+  dependencies:
+    "@tarojs/shared" "3.3.2"
+    inversify "5.1.1"
+    lodash-es "4.17.15"
+    reflect-metadata "^0.1.13"
+
 "@tarojs/service@3.3.1":
   version "3.3.1"
   resolved "https://registry.nlark.com/@tarojs/service/download/@tarojs/service-3.3.1.tgz?cache=0&sync_timestamp=1626924705917&other_urls=https%3A%2F%2Fregistry.nlark.com%2F%40tarojs%2Fservice%2Fdownload%2F%40tarojs%2Fservice-3.3.1.tgz#bd2a838520dd004fcccd358b6c1b2c1ad7216cb9"
@@ -1588,6 +1597,11 @@
   version "3.3.1"
   resolved "https://registry.nlark.com/@tarojs/shared/download/@tarojs/shared-3.3.1.tgz?cache=0&sync_timestamp=1626923918194&other_urls=https%3A%2F%2Fregistry.nlark.com%2F%40tarojs%2Fshared%2Fdownload%2F%40tarojs%2Fshared-3.3.1.tgz#71b3eea051c19964c4952ad9f8dab068222c765c"
   integrity sha1-cbPuoFHBmWTElSrZ+NqwaCIsdlw=
+
+"@tarojs/shared@3.3.2":
+  version "3.3.2"
+  resolved "https://registry.yarnpkg.com/@tarojs/shared/-/shared-3.3.2.tgz#23d0460ecc081b047ea397a269eb11c7555688d0"
+  integrity sha512-TLBY6wE4Zt9O7tZ9NsjjM28oPCcTEFo5oQwtzSyzUNt2P4DhqbPX674hkeLGDMZiKobiEQNFa+f9Bz3ru+k9qg==
 
 "@tarojs/taro-h5@3.3.1":
   version "3.3.1"
@@ -13232,7 +13246,7 @@ typedarray@^0.0.6:
   resolved "https://registry.npm.taobao.org/typedarray/download/typedarray-0.0.6.tgz#867ac74e3864187b1d3d47d996a78ec5c8830777"
   integrity sha1-hnrHTjhkGHsdPUfZlqeOxciDB3c=
 
-typescript@^3.0.0, typescript@^3.2.2:
+typescript@^3.2.2, typescript@^3.9.10:
   version "3.9.10"
   resolved "https://registry.nlark.com/typescript/download/typescript-3.9.10.tgz?cache=0&sync_timestamp=1627024802882&other_urls=https%3A%2F%2Fregistry.nlark.com%2Ftypescript%2Fdownload%2Ftypescript-3.9.10.tgz#70f3910ac7a51ed6bef79da7800690b19bf778b8"
   integrity sha1-cPORCselHta+952ngAaQsZv3eLg=
