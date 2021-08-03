@@ -29,7 +29,7 @@
   "dependencies": {
     "@babel/runtime": "^7.7.7",
     "@nutui/nutui-taro": "^3.0.3",
-    "@tarojs/components": "3.3.1",
+    "@tarojs/components": "3.3.2",
     "@tarojs/plugin-html": "3.3.1",
     "@tarojs/runtime": "3.3.1",
     "@tarojs/taro": "3.3.1",
