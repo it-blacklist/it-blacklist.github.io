@@ -32,7 +32,7 @@
     "@tarojs/components": "3.3.1",
     "@tarojs/plugin-html": "3.3.1",
     "@tarojs/runtime": "3.3.1",
-    "@tarojs/taro": "3.3.1",
+    "@tarojs/taro": "3.3.2",
     "vue": "^3.0.0"
   },
   "devDependencies": {
