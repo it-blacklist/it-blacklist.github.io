@@ -1,8 +1,16 @@
 import Vue from 'vue'
 import App from './App.vue'
 import uView from "uview-ui";
+import httpInterceptor from '@/utils/http.interceptor.js'
 
-Vue.use(uView);
 Vue.config.productionTip = false
 
-new App().$mount()
+Vue.use(uView);
+
+const app = new App({
+  ...App
+})
+
+Vue.use(httpInterceptor, app)
+
+app.$mount();

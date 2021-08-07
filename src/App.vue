@@ -3,7 +3,7 @@
   export default Vue.extend({
     mpType: 'app',
     globalData: {
-      system: {}
+      system: null
     },
     onLaunch() {
       this.updateVersion()
@@ -25,30 +25,65 @@
       },
       getConfig() {
         return new Promise((resolve, reject) => {
-          // #ifdef MP-WEIXIN 
-          const plat = 'weixin'
-          // #endif
-          // #ifdef MP-QQ
-          const plat = 'qq'
-          // #endif
-          if(typeof this.globalData.system.show === 'boolean'){
+          if (typeof this.globalData.system?.show === 'boolean') {
             resolve(this.globalData.system)
-          }else {
-            uniCloud.callFunction({
-              name: 'itBlackSystem'
-            }).then((res) => {
+          } else {
+            Vue.prototype.$u.post('system/get').then(res => {
+              const plat = process.env.VUE_APP_PLATFORM
               const system = {
-                show: res.result.data[0][plat],
-                ad:res.result.data[0].ad
+                show: res[0][plat],
+                notice: res[0].notice
               }
               this.globalData.system = system
               resolve(system)
-            }).catch((err) => {
-              uni.showModal({
-                content: `查询失败，错误信息为：${JSON.stringify(err)}`,
-                showCancel: false
-              })
+            });
+          }
+        })
+      },
+      getUserInfo(need = false) {
+        return new Promise(async (resolve, reject) => {
+          const userInfo = uni.getStorageSync('userInfo');
+          if (userInfo || need) {
+            resolve(userInfo)
+          } else {
+            uni.showModal({
+              title: '温馨提示',
+              content: '请先授权以体验小程序完整功能',
+              success: (r) => {
+                if (r.confirm) {
+                  uni.getUserProfile({
+                    desc: '用于完善会员资料',
+                    success: (res) => {
+                      uni.setStorage({
+                        key: 'userInfo',
+                        data: res.userInfo
+                      })
+                      resolve(res.userInfo)
+                    }
+                  })
+                } else {
+                  resolve(null)
+                }
+              }
             })
+          }
+        })
+      },
+      getCityList() {
+        return new Promise(async (resolve, reject) => {
+          const cityList = uni.getStorageSync('cityList');
+          if (cityList) {
+            resolve(cityList)
+          } else {
+            Vue.prototype.$u.http.get('https://6974-it-blacklist-a6de4b-1302530662.tcb.qcloud.la/cityList.json').then(
+              r => {
+                this.cityList = r
+                uni.setStorage({
+                  key: 'cityList',
+                  data: r
+                })
+                resolve(r)
+              })
           }
         })
       }

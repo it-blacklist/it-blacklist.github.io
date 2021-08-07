@@ -12,7 +12,7 @@
         <navigator url="../statement/index">相关条款</navigator>
       </view>
     </view>
-    <u-button :loading="loading" @click="submit">提交</u-button>
+    <u-button type="primary" :loading="loading" @click="submit">提交</u-button>
   </view>
 </template>
 
@@ -34,9 +34,6 @@
         loading: false
       };
     },
-    onLoad() {
-
-    },
     onReady() {
       this.$refs.uForm.setRules(rules);
     },
@@ -45,51 +42,38 @@
         this.$refs.uForm.validate(valid => {
           if (valid) {
             if (!this.check) return this.$u.toast('请勾选协议');
-            this.confirmSubmit()
+            uni.showModal({
+              content: '是否确认提交',
+              success: (r) => {
+                if (r.confirm) {
+                  this.confirmSubmit()
+                }
+              }
+            })
           } else {
             console.log('验证失败');
           }
         });
       },
-      confirmSubmit() {
-        uni.showModal({
-          content: '是否确认提交',
-          success: (r) => {
-            if (r.confirm) {
-              this.loading = true
-              uni.showLoading({
-                title: '提交中...'
-              })
-              uniCloud.callFunction({
-                name: 'feedback',
-                data: { ...this.model,
-                  createTime: new Date().getTime()
-                }
-              }).then((res) => {
-                uni.hideLoading()
-                uni.showModal({
-                  content: `提交成功`,
-                  showCancel: false,
-                  success: () => {
-                    uni.navigateBack()
-                  }
-                })
-              }).catch((err) => {
-                uni.hideLoading()
-                uni.showModal({
-                  content: `提交失败`,
-                  showCancel: false
-                })
-                this.loading = false
-              })
-            }
-          }
-        })
+      async confirmSubmit() {
+        const userInfo = await getApp().getUserInfo()
+        if (userInfo) {
+          this.loading = true
+          this.$u.http.post('feedback/update', {
+            ...this.model,
+            createTime: +new Date(),
+            userInfo
+          }).then(() => {
+            uni.showModal({
+              content: `提交成功`,
+              showCancel: false,
+              success: () => {
+                uni.navigateBack()
+              }
+            })
+          })
+        }
       }
     }
   };
 </script>
-
-<style>
-
-</style>

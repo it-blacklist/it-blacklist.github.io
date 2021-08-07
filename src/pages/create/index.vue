@@ -5,11 +5,12 @@
     </view>
     <view v-show="system.show" class="u-padding-30">
       <u-form :model="model" ref="uForm" :errorType="['toast']">
-        <u-form-item label="公司名称" label-width="130" prop="companyName">
-          <u-input border placeholder="公司名称" v-model="model.companyName" />
+        <u-form-item label="公司名称" label-width="130" prop="company">
+          <u-input border placeholder="公司名称" v-model="model.company" />
         </u-form-item>
-        <u-form-item label="所在城市" label-width="130" prop="cityName">
-          <u-input type="select" :select-open="selectShow" v-model="model.cityName" placeholder="请选择所在城市" @click="selectShow = true"></u-input>
+        <u-form-item label="所在城市" label-width="130" prop="city">
+          <u-input type="select" :select-open="selectShow" v-model="model.city" placeholder="请选择所在城市"
+            @click="selectShow = true"></u-input>
           <u-select v-model="selectShow" mode="mutil-column-auto" :list="cityList" @confirm="selectConfirm"></u-select>
         </u-form-item>
         <u-form-item label-width="0" prop="content">
@@ -23,19 +24,19 @@
           <navigator url="../statement/index">相关条款</navigator>
         </view>
       </view>
-      <u-button :loading="loading" @click="submit">提交</u-button>
+      <u-button type="primary" :loading="loading" @click="submit">提交</u-button>
     </view>
   </view>
 </template>
 
 <script>
   const rules = {
-    companyName: [{
+    company: [{
       required: true,
       message: '请输入公司名称',
       trigger: 'blur',
     }],
-    cityName: [{
+    city: [{
       required: true,
       message: '请选择城市',
       trigger: 'blur',
@@ -50,26 +51,21 @@
     data() {
       return {
         model: {
-          companyName: '',
+          company: '',
           content: '',
-          cityName: '',
+          city: '',
         },
         check: false,
         loading: false,
         selectShow: false,
-        cityList:[],
+        cityList: [],
         system: {}
       };
     },
-    onLoad() {
-      this.system = getApp().globalData.system
-      uni.request({
-        url:'https://6974-it-blacklist-a6de4b-1302530662.tcb.qcloud.la/cityList.json',
-        success:(res)=> {
-          if(res.statusCode===200){
-            this.cityList = res.data
-          }
-        }
+    async onLoad() {
+      this.system = await getApp().getConfig()
+      getApp().getCityList().then(r => {
+        this.cityList = r
       })
     },
     onReady() {
@@ -80,63 +76,56 @@
         this.$refs.uForm.validate(valid => {
           if (valid) {
             if (!this.check) return this.$u.toast('请勾选协议');
-            this.confirmSubmit()
+            uni.showModal({
+              content: '是否确认提交',
+              success: (r) => {
+                if (r.confirm) {
+                  this.confirmSubmit()
+                }
+              }
+            })
           } else {
             console.log('验证失败');
           }
         });
       },
-      confirmSubmit() {
-        uni.showModal({
-          content: '是否确认提交',
-          success: (r) => {
-            if (r.confirm) {
-              this.loading = true
-              uni.showLoading({
-                title: '提交中...'
+      async confirmSubmit() {
+        const userInfo = await getApp().getUserInfo()
+        if (userInfo) {
+          this.loading = true
+          this.$u.http.post('list/update', {
+            ...this.model,
+            userInfo
+          }).then(res => {
+            console.log(res)
+            if (res.errcode) {
+              uni.showToast({
+                icon: 'none',
+                title: '内容可能含有违法违规内容'
               })
-              uniCloud.callFunction({
-                name: 'itBlackCreate',
-                data: this.model
-              }).then((res) => {
-                uni.hideLoading()
-                this.loading = false
-                console.log(res)
-                if (!res.result) {
-                  uni.showToast({
-                    icon: 'none',
-                    title: '内容可能含有违法违规内容'
-                  })
-                } else {
-                  uni.showModal({
-                    content: '提交成功',
-                    showCancel: false,
-                    success: () => {
-                      uni.navigateBack()
-                    }
-                  })
+            } else {
+              uni.showModal({
+                content: '提交成功',
+                showCancel: false,
+                success: () => {
+                  uni.navigateBack()
                 }
-              }).catch((err) => {
-                uni.hideLoading()
-                uni.showModal({
-                  content: `提交失败`,
-                  showCancel: false
-                })
-                this.loading = false
               })
             }
-          }
-        })
+          }).finally(() => {
+            this.loading = false
+          })
+        }
       },
       selectConfirm(e) {
         if (e && e.length) {
-          this.model.cityName = e[e.length - 1].value
+          this.model.city = e[e.length - 1].value
         }
       },
     }
   };
 </script>
 
-<style>
-
+<style lang="scss">
+  @import './style.scss'
 </style>

@@ -1,16 +1,30 @@
 <template>
   <view class="">
-    <u-card :title="content.companyName" :sub-title="$u.timeFormat(content.createTime, 'yyyy/mm/dd hh:MM')" full>
-      <view class="" slot="body">
+    <u-card :title="content.company" :sub-title="$u.timeFormat(content.createTime, 'yyyy/mm/dd hh:MM')" full>
+      <view class="content" slot="body">
         <view class="u-body-item">
           <view class="u-body-item-title">{{content.content}}</view>
+          <view class="appeal-wrap"><text @click="appeal">我要纠错</text></view>
         </view>
       </view>
       <view class="" slot="foot" v-show="system.show">
+        <view class="rate-wrap">
+          <u-button :type="rateUpConf.type" shape="circle" size="medium" @click="updateRate(rateUpConf.rate)"
+            style="width:119px">
+            <u-icon v-show="rateUpConf.iconShow" name="thumb-up-fill" size="32"></u-icon>
+            <text>{{rateUpConf.text}}</text>
+          </u-button>
+          <u-button :type="rateDownConf.type" shape="circle" size="medium" @click="updateRate(rateDownConf.rate)"
+            style="width:238rpx">
+            <u-icon v-show="rateDownConf.iconShow" name="thumb-down-fill" size="32"></u-icon>
+            <text>{{rateDownConf.text}}</text>
+          </u-button>
+        </view>
         <u-icon name="chat-fill" size="34" label="精选评论"></u-icon>
-        <u-empty v-if="!commentList.length" text="暂无评论" mode="news"></u-empty>
-        <view v-for="(item,index) of commentList" :key="item._id" :class="[{'u-border-bottom':(index+1)!==commentList.length},'u-body-item']">
-          <view class="u-body-item-title">{{item.content}}</view>
+        <u-empty v-if="!discussList.length" text="暂无评论" mode="news"></u-empty>
+        <view v-for="(item,index) of discussList" :key="item._id"
+          :class="[{'u-border-bottom':(index+1)!==discussList.length},'u-body-item']" style="margin-top: 8px;">
+          <view class="u-body-item-title" @click="showTime(item.createTime)">{{item.content}}</view>
         </view>
       </view>
     </u-card>
@@ -27,7 +41,7 @@
           <navigator url="../statement/index">相关条款</navigator>
         </view>
       </view>
-      <u-button :loading="loading" @click="submit">提交</u-button>
+      <u-button :loading="loading" type="primary" @click="submit">提交</u-button>
     </view>
   </view>
 </template>
@@ -44,132 +58,171 @@
     data() {
       return {
         content: {},
-        commentList: [],
+        discussList: [],
         model: {
           content: ''
         },
         check: false,
         loading: false,
-        system: {}
+        system: {},
+        userInfo: {}
       };
     },
     onReady() {
       this.$refs.uForm.setRules(rules);
     },
     async onLoad(props) {
-      uni.showLoading({
-        title: '加载中...'
-      })
       const system = await getApp().getConfig()
+      const userInfo = await getApp().getUserInfo(true)
+      if (userInfo) {
+        this.userInfo = userInfo
+      }
       this.system = system
-      uniCloud.callFunction({
-        name: 'itBlackGetById',
-        data: props
-      }).then((res) => {
-        if (res.result.data[0]) this.content = res.result.data[0]
+      this.$u.http.post('list/get', props).then(res => {
+        this.content = res[0]
         if (system.show) {
-          this.getCommentList(res.result.data[0].companyName)
-        } else {
-          uni.hideLoading()
+          this.getDiscussList(res[0].company)
         }
-      }).catch((err) => {
-        uni.showModal({
-          content: `加载失败，错误信息为：${JSON.stringify(err)}`,
-          showCancel: false
-        })
       })
     },
     onShareAppMessage() {
       return {
-        title: this.content.companyName,
+        title: this.content.company,
         path: `/pages/content/index?_id=${this.content._id}`
       }
     },
     methods: {
+      showTime(time) {
+        uni.showToast({
+          icon: 'none',
+          title: `发表时间:${this.$u.timeFormat(time, 'yyyy/mm/dd hh:MM:ss')}`
+        })
+      },
       submit() {
         this.$refs.uForm.validate(valid => {
           if (valid) {
             if (!this.check) return this.$u.toast('请勾选协议');
-            this.confirmSubmit()
+            uni.showModal({
+              content: '是否确认提交',
+              success: (r) => {
+                if (r.confirm) {
+                  this.confirmSubmit()
+                }
+              }
+            })
           } else {
             console.log('验证失败');
           }
         });
       },
-      confirmSubmit() {
+      async confirmSubmit() {
+        const userInfo = await getApp().getUserInfo()
+        if (userInfo) {
+          this.userInfo = userInfo
+          this.loading = true
+          this.$u.http.post('discuss/update', {
+            ...this.model,
+            company: this.content.company,
+            userInfo
+          }).then(res => {
+            console.log(res)
+            if (res.errcode) {
+              uni.showToast({
+                icon: 'none',
+                title: '内容可能含有违法违规内容'
+              })
+            } else {
+              uni.showModal({
+                content: '提交成功',
+                showCancel: false,
+                success: () => {
+                  uni.navigateBack()
+                }
+              })
+            }
+          }).finally(() => {
+            this.loading = false
+          })
+        }
+      },
+      getDiscussList(company) {
+        this.loadingStatus = 'loading'
+        this.$u.http.post('discuss/get', {
+            company,
+            current: 1,
+            pageSize: 100
+          })
+          .then(res => {
+            this.discussList = res
+          })
+      },
+      async updateRate(type) {
+        const userInfo = await getApp().getUserInfo()
+        if (userInfo) {
+          this.userInfo = userInfo
+          this.$u.http.post('list/update', {
+            _id: this.content._id,
+            rate: {
+              type,
+              userInfo
+            }
+          }).then(res => {
+            this.$u.http.post('list/get', {
+              _id: this.content._id
+            }).then(res => {
+              this.content = res[0]
+              uni.showToast({
+                icon: 'success',
+                title: '打分成功！',
+                duration: 2000
+              })
+            })
+          })
+        }
+      },
+      appeal() {
         uni.showModal({
-          content: '是否确认提交',
+          title: '温馨提示',
+          content: '如果内容有误，可以点此纠错',
           success: (r) => {
             if (r.confirm) {
-              this.loading = true
-              uni.showLoading({
-                title: '提交中...'
-              })
-              uniCloud.callFunction({
-                name: 'itBlackCreateComment',
-                data: { ...this.model,
-                  companyName: this.content.companyName
-                }
-              }).then((res) => {
-                uni.hideLoading()
-                this.loading = false
-                if (!res.result) {
-                  uni.showToast({
-                    icon: 'none',
-                    title: '内容可能含有违法违规内容'
-                  })
-                } else {
-                  uni.showModal({
-                    content: '提交成功',
-                    showCancel: false,
-                    success: () => {
-                      uni.navigateBack()
-                    }
-                  })
-                }
-              }).catch((err) => {
-                uni.hideLoading()
-                uni.showModal({
-                  content: `提交失败`,
-                  showCancel: false
-                })
-                this.loading = false
+              uni.navigateTo({
+                url: '../feedback/index'
               })
             }
           }
         })
+      }
+    },
+    computed: {
+      rateUpConf() {
+        const nickName = this.userInfo.nickName || ''
+        const rate = this.content.rate || []
+        const rateUp = rate.filter(item => item.type === 1)
+        const isRate = rateUp.findIndex(item => item.userInfo.nickName === nickName) !== -1
+        return {
+          type: isRate ? 'success' : 'default',
+          rate: isRate ? 0 : 1,
+          text: isRate ? rateUp.length : '有价值',
+          iconShow: isRate ? true : false
+        }
       },
-      getCommentList(companyName) {
-        this.loadingStatus = 'loading'
-        uniCloud.callFunction({
-          name: 'itBlackListComment',
-          data: {
-            companyName
-          }
-        }).then((res) => {
-          uni.hideLoading()
-          this.commentList = res.result.data
-        }).catch((err) => {
-          uni.hideLoading()
-          uni.showModal({
-            content: `加载失败，错误信息为：${JSON.stringify(err)}`,
-            showCancel: false
-          })
-        })
+      rateDownConf() {
+        const nickName = this.userInfo.nickName || ''
+        const rate = this.content.rate || []
+        const rateDown = rate.filter(item => item.type === -1)
+        const isRate = rateDown.findIndex(item => item.userInfo.nickName === nickName) !== -1
+        return {
+          type: isRate ? 'error' : 'default',
+          rate: isRate ? 0 : -1,
+          text: isRate ? rateDown.length : '无价值',
+          iconShow: isRate ? true : false
+        }
       }
     }
   }
 </script>
 
-<style scoped>
-  .u-card-wrap {
-    background-color: $u-bg-color;
-    padding: 1px;
-  }
-
-  .u-body-item {
-    font-size: 32rpx;
-    color: #333;
-    padding: 20rpx 10rpx;
-  }
+<style lang="scss">
+  @import './style.scss'
 </style>
