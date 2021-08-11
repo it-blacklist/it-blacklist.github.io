@@ -31,11 +31,15 @@
           content: ''
         },
         check: false,
-        loading: false
+        loading: false,
+        props: null,
       };
     },
     onReady() {
       this.$refs.uForm.setRules(rules);
+    },
+    onLoad(props) {
+      this.props = props
     },
     methods: {
       submit() {
@@ -62,7 +66,8 @@
           this.$u.http.post('feedback/update', {
             ...this.model,
             createTime: +new Date(),
-            userInfo
+            userInfo,
+            props: this.props
           }).then(() => {
             uni.showModal({
               content: `提交成功`,

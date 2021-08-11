@@ -7,6 +7,22 @@
     },
     onLaunch() {
       this.updateVersion()
+      uni.login({
+        success: (r) => {
+          if (r.code) {
+            Vue.prototype.$u.post('login', r).then(res => {
+              const userInfo = uni.getStorageSync('userInfo');
+              uni.setStorage({
+                key: 'userInfo',
+                data: {
+                  ...userInfo,
+                  ...res
+                }
+              })
+            });
+          }
+        }
+      })
     },
     methods: {
       updateVersion() {
@@ -43,7 +59,7 @@
       getUserInfo(need = false) {
         return new Promise(async (resolve, reject) => {
           const userInfo = uni.getStorageSync('userInfo');
-          if (userInfo || need) {
+          if (userInfo.nickName || need) {
             resolve(userInfo)
           } else {
             uni.showModal({
@@ -56,9 +72,15 @@
                     success: (res) => {
                       uni.setStorage({
                         key: 'userInfo',
-                        data: res.userInfo
+                        data: {
+                          ...userInfo,
+                          ...res.userInfo,
+                        }
                       })
-                      resolve(res.userInfo)
+                      resolve({
+                        ...userInfo,
+                        ...res.userInfo,
+                      })
                     }
                   })
                 } else {
@@ -75,7 +97,8 @@
           if (cityList) {
             resolve(cityList)
           } else {
-            Vue.prototype.$u.http.get('https://6974-it-blacklist-a6de4b-1302530662.tcb.qcloud.la/cityList.json').then(
+            Vue.prototype.$u.http.get(
+              'https://6974-it-blacklist-a6de4b-1302530662.tcb.qcloud.la/cityList.json').then(
               r => {
                 this.cityList = r
                 uni.setStorage({

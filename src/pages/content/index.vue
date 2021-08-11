@@ -9,15 +9,15 @@
       </view>
       <view class="" slot="foot" v-show="system.show">
         <view class="rate-wrap">
-          <u-button :type="rateUpConf.type" shape="circle" size="medium" @click="updateRate(rateUpConf.rate)"
+          <u-button :type="rateConf.up.type" shape="circle" size="medium" @click="updateRate(rateConf.up.rate)"
             style="width:119px">
-            <u-icon v-show="rateUpConf.iconShow" name="thumb-up-fill" size="32"></u-icon>
-            <text>{{rateUpConf.text}}</text>
+            <u-icon v-show="rateConf.up.iconShow" name="thumb-up-fill" size="32"></u-icon>
+            <text>{{rateConf.up.text}}</text>
           </u-button>
-          <u-button :type="rateDownConf.type" shape="circle" size="medium" @click="updateRate(rateDownConf.rate)"
-            style="width:238rpx">
-            <u-icon v-show="rateDownConf.iconShow" name="thumb-down-fill" size="32"></u-icon>
-            <text>{{rateDownConf.text}}</text>
+          <u-button :type="rateConf.down.type" shape="circle" size="medium" @click="updateRate(rateConf.down.rate)"
+            style="width:119px">
+            <u-icon v-show="rateConf.down.iconShow" name="thumb-down-fill" size="32"></u-icon>
+            <text>{{rateConf.down.text}}</text>
           </u-button>
         </view>
         <u-icon name="chat-fill" size="34" label="精选评论"></u-icon>
@@ -183,11 +183,11 @@
       appeal() {
         uni.showModal({
           title: '温馨提示',
-          content: '如果内容有误，可以点此纠错',
+          content: '如果内容有误，可以点此纠错，请具体到哪家公司、哪条评论',
           success: (r) => {
             if (r.confirm) {
               uni.navigateTo({
-                url: '../feedback/index'
+                url: `../feedback/index?id=${this.content._id}&company=${this.content.company}`
               })
             }
           }
@@ -195,28 +195,25 @@
       }
     },
     computed: {
-      rateUpConf() {
-        const nickName = this.userInfo.nickName || ''
+      rateConf() {
+        const openid = this.userInfo.openid || ''
         const rate = this.content.rate || []
         const rateUp = rate.filter(item => item.type === 1)
-        const isRate = rateUp.findIndex(item => item.userInfo.nickName === nickName) !== -1
-        return {
-          type: isRate ? 'success' : 'default',
-          rate: isRate ? 0 : 1,
-          text: isRate ? rateUp.length : '有价值',
-          iconShow: isRate ? true : false
-        }
-      },
-      rateDownConf() {
-        const nickName = this.userInfo.nickName || ''
-        const rate = this.content.rate || []
         const rateDown = rate.filter(item => item.type === -1)
-        const isRate = rateDown.findIndex(item => item.userInfo.nickName === nickName) !== -1
+        const isRate = [...rateUp, ...rateDown].findIndex(item => item.userInfo.openid === openid) !== -1
         return {
-          type: isRate ? 'error' : 'default',
-          rate: isRate ? 0 : -1,
-          text: isRate ? rateDown.length : '无价值',
-          iconShow: isRate ? true : false
+          up: {
+            type: isRate ? 'success' : 'default',
+            rate: isRate ? 0 : 1,
+            text: isRate ? rateUp.length : '有价值',
+            iconShow: isRate ? true : false
+          },
+          down: {
+            type: isRate ? 'error' : 'default',
+            rate: isRate ? 0 : -1,
+            text: isRate ? rateDown.length : '无价值',
+            iconShow: isRate ? true : false
+          }
         }
       }
     }

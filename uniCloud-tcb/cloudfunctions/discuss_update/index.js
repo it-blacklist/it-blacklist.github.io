@@ -5,6 +5,7 @@ exports.main = async (event, context) => {
   if (event.isBase64Encoded) {
     body = Buffer.from(body)
   }
+  console.log(body)
   //安全验证
   const list = await db.collection('system').doc('79550af260f83242286a017e23bd8ffc').get()
   const access_token = list.data[0].access_token
@@ -18,6 +19,7 @@ exports.main = async (event, context) => {
     })
   const success = JSON.parse(r.data.toString('ascii'))
 
+  console.log(success)
   if (success.errcode !== 0) {
     return success
   } else {

@@ -10,19 +10,20 @@ exports.main = async (event, context) => {
   if (params._id && params.rate) {
     const count = await db.collection('black_list').where({
       _id: params._id,
-      'rate.userInfo.nickName': params.rate.userInfo.nickName
+      'rate.userInfo.openid': params.rate.userInfo.openid
     }).count()
     if (count.total) {
       const res = await db.collection('black_list').where({
         _id: params._id,
-        'rate.userInfo.nickName': params.rate.userInfo.nickName
+        'rate.userInfo.openid': params.rate.userInfo.openid
       }).update({
         'rate.$': params.rate
       })
       return res
     }
     const res = await db.collection('black_list').where({
-      _id: params._id
+      _id: params._id,
+      //'rate.userInfo.nickName': params.rate.userInfo.nickName
     }).update({
       'rate': db.command.push(params.rate)
     })
