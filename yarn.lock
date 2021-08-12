@@ -992,9 +992,9 @@
     minimist "^1.2.0"
 
 "@dcloudio/types@*":
-  version "2.4.5"
-  resolved "https://registry.nlark.com/@dcloudio/types/download/@dcloudio/types-2.4.5.tgz?cache=0&sync_timestamp=1627996049197&other_urls=https%3A%2F%2Fregistry.nlark.com%2F%40dcloudio%2Ftypes%2Fdownload%2F%40dcloudio%2Ftypes-2.4.5.tgz#3ead18599a6da0052afb814b522bc007043d814c"
-  integrity sha1-Pq0YWZptoAUq+4FLUivABwQ9gUw=
+  version "2.4.6"
+  resolved "https://registry.yarnpkg.com/@dcloudio/types/-/types-2.4.6.tgz#cf4492885b292648e8d3e51c268e5e35376cd9f6"
+  integrity sha512-wNyfOBEGfAklzDe0BjWDGTZNgI+RIRL+9VfKbYcXNUHJwPfo8B70BHnuP+GwNxppjoDodI3v31eU8xpJEFqeQw==
 
 "@dcloudio/uni-app-plus@^2.0.0-31920210709003":
   version "2.0.0-31920210709003"
