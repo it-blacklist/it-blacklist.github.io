@@ -7602,9 +7602,9 @@ minipass@^3.1.1:
     yallist "^4.0.0"
 
 miniprogram-api-typings@*:
-  version "3.4.2"
-  resolved "https://registry.nlark.com/miniprogram-api-typings/download/miniprogram-api-typings-3.4.2.tgz?cache=0&sync_timestamp=1627890255536&other_urls=https%3A%2F%2Fregistry.nlark.com%2Fminiprogram-api-typings%2Fdownload%2Fminiprogram-api-typings-3.4.2.tgz#625460c4bde4a4c60162cc04dc05636cab6487b4"
-  integrity sha1-YlRgxL3kpMYBYswE3AVjbKtkh7Q=
+  version "3.4.3"
+  resolved "https://registry.yarnpkg.com/miniprogram-api-typings/-/miniprogram-api-typings-3.4.3.tgz#c88cc624973322d990353d94ae765db90938d132"
+  integrity sha512-wdBZG2IImFjkTFv66r225455J+//gn4c7Ja99aC3mVV0AqTRl45FwAFA7ur9KZd2j+ORGtyK1ldBT49rXpVE2w==
 
 mississippi@^3.0.0:
   version "3.0.0"
