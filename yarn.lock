@@ -2120,10 +2120,10 @@
   resolved "https://registry.npm.taobao.org/@vue/preload-webpack-plugin/download/@vue/preload-webpack-plugin-1.1.2.tgz#ceb924b4ecb3b9c43871c7a429a02f8423e621ab"
   integrity sha1-zrkktOyzucQ4ccekKaAvhCPmIas=
 
-"@vue/shared@^3.0.0":
-  version "3.1.5"
-  resolved "https://registry.nlark.com/@vue/shared/download/@vue/shared-3.1.5.tgz?cache=0&sync_timestamp=1627579657091&other_urls=https%3A%2F%2Fregistry.nlark.com%2F%40vue%2Fshared%2Fdownload%2F%40vue%2Fshared-3.1.5.tgz#74ee3aad995d0a3996a6bb9533d4d280514ede03"
-  integrity sha1-dO46rZldCjmWpruVM9TSgFFO3gM=
+"@vue/shared@^3.2.10":
+  version "3.2.10"
+  resolved "https://registry.yarnpkg.com/@vue/shared/-/shared-3.2.10.tgz#76ffa503019e52463367e25275656d1d299dc91c"
+  integrity sha512-Z5hbCx5jqAK0kscWcsVBpEeS0LfuSjgnkCBewQfsdBRyvHdJWKRUnCAJ7GqJO/iJtjSZHBFJYNoYyP7a/goh2A==
 
 "@vue/web-component-wrapper@^1.2.0":
   version "1.2.0"
