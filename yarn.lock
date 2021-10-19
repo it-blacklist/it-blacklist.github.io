@@ -1032,10 +1032,10 @@
   resolved "https://registry.yarnpkg.com/@dcloudio/uni-mp-360/-/uni-mp-360-2.0.0-32920210927002.tgz#46f3a94c18ff1c1881f1ddf22fbf840bc9637bf4"
   integrity sha512-Sh+8ipNTcjc83jKE+ZCIE/T2LKjafOPgU65n8qLb3jYyLHPQc8R/4KWnPbbnzi7rNgcZWAHShQljZOW9vRHOYA==
 
-"@dcloudio/uni-mp-alipay@^2.0.0-31920210709003":
-  version "2.0.0-31920210709003"
-  resolved "https://registry.nlark.com/@dcloudio/uni-mp-alipay/download/@dcloudio/uni-mp-alipay-2.0.0-31920210709003.tgz#813bf74e70894d21ef907a468f085c32f9387c31"
-  integrity sha1-gTv3TnCJTSHvkHpGjwhcMvk4fDE=
+"@dcloudio/uni-mp-alipay@^2.0.0-32920210927002":
+  version "2.0.0-32920210927002"
+  resolved "https://registry.yarnpkg.com/@dcloudio/uni-mp-alipay/-/uni-mp-alipay-2.0.0-32920210927002.tgz#f21df432f40478311cd3c9dec2b48be084209ec7"
+  integrity sha512-Zpk0dWIg0rU/J1aNYa0xlf6vPgK9k8sVgYL4gZaHFpb73JRl4k3a7Kydmymuo45V19Z2PID2chNwE3EfxgocgA==
 
 "@dcloudio/uni-mp-baidu@^2.0.0-32920210927002":
   version "2.0.0-32920210927002"
@@ -1067,10 +1067,10 @@
   resolved "https://registry.yarnpkg.com/@dcloudio/uni-mp-weixin/-/uni-mp-weixin-2.0.0-32920210927002.tgz#82bd14b36a87ba0c6594b10c3a8ef4226d93eaa6"
   integrity sha512-qALwYH8ESlTA+AahBACE+Erv8DvRkEhOJyvbFTmrMI4hOftxLtxpV0TPK6DM0cfPKXN1plBgkWXG3qGhE/cgbA==
 
-"@dcloudio/uni-quickapp-native@^2.0.0-31920210709003":
-  version "2.0.0-31920210709003"
-  resolved "https://registry.nlark.com/@dcloudio/uni-quickapp-native/download/@dcloudio/uni-quickapp-native-2.0.0-31920210709003.tgz#e50f154fba5b7c2c4ff96d3f9ba1078cbb5b3283"
-  integrity sha1-5Q8VT7pbfCxP+W0/m6EHjLtbMoM=
+"@dcloudio/uni-quickapp-native@^2.0.0-32920210927002":
+  version "2.0.0-32920210927002"
+  resolved "https://registry.yarnpkg.com/@dcloudio/uni-quickapp-native/-/uni-quickapp-native-2.0.0-32920210927002.tgz#6704e86f7f8e4bea77a94913e3afbf934ad7d306"
+  integrity sha512-EQ+RPWL0k8oLyq9gsx4yPRfgxSIOhn6uX154ZS8t9FSHQvppL+lHf1RzOr3fHtcUPvWjiqUUeNOnwGAS8G7UiQ==
   dependencies:
     "@hap-toolkit/dsl-vue" "0.6.13"
     "@hap-toolkit/packager" "0.6.13"
@@ -1967,12 +1967,12 @@
     "@vue/cli-shared-utils" "^4.5.13"
 
 "@vue/cli-plugin-typescript@*":
-  version "4.5.13"
-  resolved "https://registry.nlark.com/@vue/cli-plugin-typescript/download/@vue/cli-plugin-typescript-4.5.13.tgz?cache=0&sync_timestamp=1623216929374&other_urls=https%3A%2F%2Fregistry.nlark.com%2F%40vue%2Fcli-plugin-typescript%2Fdownload%2F%40vue%2Fcli-plugin-typescript-4.5.13.tgz#f514f661e16f9096a89a9ca6e69a2d762c6d8464"
-  integrity sha1-9RT2YeFvkJaompym5potdixthGQ=
+  version "4.5.14"
+  resolved "https://registry.yarnpkg.com/@vue/cli-plugin-typescript/-/cli-plugin-typescript-4.5.14.tgz#f7aaf290ed6eb6ccdc882cc488493919800ab187"
+  integrity sha512-V38wA/xYaxUwYexnWQ1KVEEYaB5lMdpeAsOAe5OxQrp0+J2wwl9+ocx57JGfdqszDSQzZqoHFcCcwG1AXziDew==
   dependencies:
     "@types/webpack-env" "^1.15.2"
-    "@vue/cli-shared-utils" "^4.5.13"
+    "@vue/cli-shared-utils" "^4.5.14"
     cache-loader "^4.1.0"
     fork-ts-checker-webpack-plugin "^3.1.1"
     globby "^9.2.0"
