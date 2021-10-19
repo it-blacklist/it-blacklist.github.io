@@ -1082,10 +1082,10 @@
   resolved "https://registry.nlark.com/@dcloudio/uni-quickapp-webview/download/@dcloudio/uni-quickapp-webview-2.0.0-31920210709003.tgz#25ebf926fc51f1a52e51ced54fbc272e018b0907"
   integrity sha1-Jev5JvxR8aUuUc7VT7wnLgGLCQc=
 
-"@dcloudio/uni-stat@^2.0.0-31920210709003":
-  version "2.0.0-31920210709003"
-  resolved "https://registry.nlark.com/@dcloudio/uni-stat/download/@dcloudio/uni-stat-2.0.0-31920210709003.tgz#c3f911aa143697ed7524c0c37f15332b739fc15d"
-  integrity sha1-w/kRqhQ2l+11JMDDfxUzK3OfwV0=
+"@dcloudio/uni-stat@^2.0.0-31920210709003", "@dcloudio/uni-stat@^2.0.0-32920210927002":
+  version "2.0.0-32920210927002"
+  resolved "https://registry.yarnpkg.com/@dcloudio/uni-stat/-/uni-stat-2.0.0-32920210927002.tgz#586c87d63d05427dd7d505fe74d22a417e276050"
+  integrity sha512-bY9aUcDftg8zBmKqFbAXOMAUgzZcQbstTVDfO9qyh5EN5hmP60HdLEhZzrgnrAyOk7fjwwdMt52ft+y0OKS22A==
 
 "@dcloudio/uni-template-compiler@^2.0.0-31920210709003":
   version "2.0.0-31920210709003"
