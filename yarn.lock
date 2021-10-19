@@ -1091,10 +1091,10 @@
   resolved "https://registry.nlark.com/@dcloudio/uni-mp-vue/download/@dcloudio/uni-mp-vue-2.0.0-31920210709003.tgz#475dd3bdf17187a52670d6953200397e8fac328e"
   integrity sha1-R13TvfFxh6UmcNaVMgA5fo+sMo4=
 
-"@dcloudio/uni-mp-weixin@^2.0.0-31920210709003":
-  version "2.0.0-31920210709003"
-  resolved "https://registry.nlark.com/@dcloudio/uni-mp-weixin/download/@dcloudio/uni-mp-weixin-2.0.0-31920210709003.tgz#597a48e858dc08f38671d0f826b3d23120f9fbcb"
-  integrity sha1-WXpI6FjcCPOGcdD4JrPSMSD5+8s=
+"@dcloudio/uni-mp-weixin@^2.0.0-32920210927002":
+  version "2.0.0-32920210927002"
+  resolved "https://registry.yarnpkg.com/@dcloudio/uni-mp-weixin/-/uni-mp-weixin-2.0.0-32920210927002.tgz#82bd14b36a87ba0c6594b10c3a8ef4226d93eaa6"
+  integrity sha512-qALwYH8ESlTA+AahBACE+Erv8DvRkEhOJyvbFTmrMI4hOftxLtxpV0TPK6DM0cfPKXN1plBgkWXG3qGhE/cgbA==
 
 "@dcloudio/uni-quickapp-native@^2.0.0-31920210709003":
   version "2.0.0-31920210709003"
@@ -2120,10 +2120,10 @@
   resolved "https://registry.npm.taobao.org/@vue/preload-webpack-plugin/download/@vue/preload-webpack-plugin-1.1.2.tgz#ceb924b4ecb3b9c43871c7a429a02f8423e621ab"
   integrity sha1-zrkktOyzucQ4ccekKaAvhCPmIas=
 
-"@vue/shared@^3.0.0":
-  version "3.1.5"
-  resolved "https://registry.nlark.com/@vue/shared/download/@vue/shared-3.1.5.tgz?cache=0&sync_timestamp=1627579657091&other_urls=https%3A%2F%2Fregistry.nlark.com%2F%40vue%2Fshared%2Fdownload%2F%40vue%2Fshared-3.1.5.tgz#74ee3aad995d0a3996a6bb9533d4d280514ede03"
-  integrity sha1-dO46rZldCjmWpruVM9TSgFFO3gM=
+"@vue/shared@^3.2.20":
+  version "3.2.20"
+  resolved "https://registry.yarnpkg.com/@vue/shared/-/shared-3.2.20.tgz#53746961f731a8ea666e3316271e944238dc31db"
+  integrity sha512-FbpX+hD5BvXCQerEYO7jtAGHlhAkhTQ4KIV73kmLWNlawWhTiVuQxizgVb0BOkX5oG9cIRZ42EG++d/k/Efp0w==
 
 "@vue/web-component-wrapper@^1.2.0":
   version "1.2.0"
