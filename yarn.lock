@@ -989,10 +989,10 @@
   resolved "https://registry.nlark.com/@dcloudio/types/download/@dcloudio/types-2.4.5.tgz?cache=0&sync_timestamp=1627996049197&other_urls=https%3A%2F%2Fregistry.nlark.com%2F%40dcloudio%2Ftypes%2Fdownload%2F%40dcloudio%2Ftypes-2.4.5.tgz#3ead18599a6da0052afb814b522bc007043d814c"
   integrity sha1-Pq0YWZptoAUq+4FLUivABwQ9gUw=
 
-"@dcloudio/uni-app-plus@^2.0.0-31920210709003":
-  version "2.0.0-31920210709003"
-  resolved "https://registry.nlark.com/@dcloudio/uni-app-plus/download/@dcloudio/uni-app-plus-2.0.0-31920210709003.tgz#bad1b8a98326fe5fc202e46d7758c96d55e90ad6"
-  integrity sha1-utG4qYMm/l/CAuRtd1jJbVXpCtY=
+"@dcloudio/uni-app-plus@^2.0.0-32920210927002":
+  version "2.0.0-32920210927002"
+  resolved "https://registry.yarnpkg.com/@dcloudio/uni-app-plus/-/uni-app-plus-2.0.0-32920210927002.tgz#d57e425facda0e4fe01e40ef4ca23b17581efba9"
+  integrity sha512-3+3oPMYaqx6UI0mA7gRLKbGAqNDLp2JrZUGL+jpamUmpqdjSj5KYSRJq69uQXIMwXxGxhWTUDr/MDF7xr1JCMQ==
 
 "@dcloudio/uni-automator@^2.0.0-31920210709003":
   version "2.0.0-31920210709003"
