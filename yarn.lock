@@ -1141,10 +1141,10 @@
   resolved "https://registry.nlark.com/@dcloudio/webpack-uni-mp-loader/download/@dcloudio/webpack-uni-mp-loader-2.0.0-31920210709003.tgz#904524ec4e8fdb62f21ceae4dab7a89a3bd3052d"
   integrity sha1-kEUk7E6P22LyHOrk2reomjvTBS0=
 
-"@dcloudio/webpack-uni-pages-loader@^2.0.0-31920210709003":
-  version "2.0.0-31920210709003"
-  resolved "https://registry.nlark.com/@dcloudio/webpack-uni-pages-loader/download/@dcloudio/webpack-uni-pages-loader-2.0.0-31920210709003.tgz#8153baa5d17d0f99f39b0eed25a45a46699b4783"
-  integrity sha1-gVO6pdF9D5nzmw7tJaRaRmmbR4M=
+"@dcloudio/webpack-uni-pages-loader@^2.0.0-32920210927002":
+  version "2.0.0-32920210927002"
+  resolved "https://registry.yarnpkg.com/@dcloudio/webpack-uni-pages-loader/-/webpack-uni-pages-loader-2.0.0-32920210927002.tgz#a0f9ca49dc32fe8f10e678382771a316d3f760bb"
+  integrity sha512-2B60FTpnkDTo/4QJpRvs0LT1cUxhwoo3EhkHQVPKCXRz0iuCob8rSygEm9pYx4P6vwiDoT9/oeBT1hieK25fxg==
   dependencies:
     merge "^1.2.1"
     strip-json-comments "^2.0.1"
@@ -2052,7 +2052,7 @@
   optionalDependencies:
     vue-loader-v16 "npm:vue-loader@^16.1.0"
 
-"@vue/cli-shared-utils@^4.5.13", "@vue/cli-shared-utils@^4.5.14":
+"@vue/cli-shared-utils@^4.5.14":
   version "4.5.14"
   resolved "https://registry.yarnpkg.com/@vue/cli-shared-utils/-/cli-shared-utils-4.5.14.tgz#4cdc98544205795144fa1a712966a33450d9a4c7"
   integrity sha512-OJeabPep8yvQ7n2lgbsw6lzBXmjaBHlCt7k9wnsPiXKtNAnHsv40ejARRnj4HTOuMaW6i1QQ17X3WaozI0zaMw==
