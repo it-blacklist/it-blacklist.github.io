@@ -1037,10 +1037,10 @@
   resolved "https://registry.nlark.com/@dcloudio/uni-mp-alipay/download/@dcloudio/uni-mp-alipay-2.0.0-31920210709003.tgz#813bf74e70894d21ef907a468f085c32f9387c31"
   integrity sha1-gTv3TnCJTSHvkHpGjwhcMvk4fDE=
 
-"@dcloudio/uni-mp-baidu@^2.0.0-31920210709003":
-  version "2.0.0-31920210709003"
-  resolved "https://registry.nlark.com/@dcloudio/uni-mp-baidu/download/@dcloudio/uni-mp-baidu-2.0.0-31920210709003.tgz#faaa0feba855da6d560d8ab1673b483bd58d5676"
-  integrity sha1-+qoP66hV2m1WDYqxZztIO9WNVnY=
+"@dcloudio/uni-mp-baidu@^2.0.0-32920210927002":
+  version "2.0.0-32920210927002"
+  resolved "https://registry.yarnpkg.com/@dcloudio/uni-mp-baidu/-/uni-mp-baidu-2.0.0-32920210927002.tgz#78b3718a4a19d1b92e46408e4e5f701dd667fc73"
+  integrity sha512-Coj6W98VwJGMrXf116UnWK/g5/y96KQdMBHila8h/MYSH1ZeYbpFEreZJsi5+q+PkdiePWgKDpOn8CZmPEJWCg==
 
 "@dcloudio/uni-mp-kuaishou@^2.0.0-31920210709003":
   version "2.0.0-31920210709003"
@@ -1082,7 +1082,7 @@
   resolved "https://registry.nlark.com/@dcloudio/uni-quickapp-webview/download/@dcloudio/uni-quickapp-webview-2.0.0-31920210709003.tgz#25ebf926fc51f1a52e51ced54fbc272e018b0907"
   integrity sha1-Jev5JvxR8aUuUc7VT7wnLgGLCQc=
 
-"@dcloudio/uni-stat@^2.0.0-31920210709003", "@dcloudio/uni-stat@^2.0.0-32920210927002":
+"@dcloudio/uni-stat@^2.0.0-32920210927002":
   version "2.0.0-32920210927002"
   resolved "https://registry.yarnpkg.com/@dcloudio/uni-stat/-/uni-stat-2.0.0-32920210927002.tgz#586c87d63d05427dd7d505fe74d22a417e276050"
   integrity sha512-bY9aUcDftg8zBmKqFbAXOMAUgzZcQbstTVDfO9qyh5EN5hmP60HdLEhZzrgnrAyOk7fjwwdMt52ft+y0OKS22A==
