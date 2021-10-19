@@ -58,7 +58,7 @@
     "@dcloudio/uni-mp-kuaishou": "^2.0.0-31920210709003",
     "@dcloudio/uni-mp-qq": "^2.0.0-31920210709003",
     "@dcloudio/uni-mp-toutiao": "^2.0.0-31920210709003",
-    "@dcloudio/uni-mp-vue": "^2.0.0-31920210709003",
+    "@dcloudio/uni-mp-vue": "^2.0.0-32920210927002",
     "@dcloudio/uni-mp-weixin": "^2.0.0-32920210927002",
     "@dcloudio/uni-quickapp-native": "^2.0.0-32920210927002",
     "@dcloudio/uni-quickapp-webview": "^2.0.0-32920210927002",
