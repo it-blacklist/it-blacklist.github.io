@@ -1011,10 +1011,10 @@
   resolved "https://registry.nlark.com/@dcloudio/uni-helper-json/download/@dcloudio/uni-helper-json-1.0.13.tgz#4e8aa062daaefb30d98973c035a7b0ab628329c7"
   integrity sha1-ToqgYtqu+zDZiXPANaewq2KDKcc=
 
-"@dcloudio/uni-i18n@^2.0.0-31920210709003":
-  version "2.0.0-31920210709003"
-  resolved "https://registry.nlark.com/@dcloudio/uni-i18n/download/@dcloudio/uni-i18n-2.0.0-31920210709003.tgz#aa6cbd30bd070386df6009fb678f904826edcd71"
-  integrity sha1-qmy9ML0HA4bfYAn7Z4+QSCbtzXE=
+"@dcloudio/uni-i18n@^2.0.0-32920210927002":
+  version "2.0.0-32920210927002"
+  resolved "https://registry.yarnpkg.com/@dcloudio/uni-i18n/-/uni-i18n-2.0.0-32920210927002.tgz#07a1204a071bbe33426e5ff5742a9e6a4e797bb1"
+  integrity sha512-pRCUPFr7NUN9n5iqmJVA8PyNZOhrypUziJSze+q2cRDe+7pC9jkmWtl1ZceMdXWbKn0+xkh0SL70jwf2kLuDHQ==
 
 "@dcloudio/uni-migration@^2.0.0-32920210927002":
   version "2.0.0-32920210927002"
