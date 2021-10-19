@@ -996,10 +996,10 @@
     postcss-urlrewrite "^0.2.2"
     strip-json-comments "^2.0.1"
 
-"@dcloudio/uni-h5@^2.0.0-31920210709003":
-  version "2.0.0-31920210709003"
-  resolved "https://registry.nlark.com/@dcloudio/uni-h5/download/@dcloudio/uni-h5-2.0.0-31920210709003.tgz#c7a219532c555358adf14252e9d07013a953e00e"
-  integrity sha1-x6IZUyxVU1it8UJS6dBwE6lT4A4=
+"@dcloudio/uni-h5@^2.0.0-32920210927002":
+  version "2.0.0-32920210927002"
+  resolved "https://registry.yarnpkg.com/@dcloudio/uni-h5/-/uni-h5-2.0.0-32920210927002.tgz#e9054d397571bdb0c47b4d39161bb1729f6d982c"
+  integrity sha512-/T4deZdwTXVxfmApAb57RfIax8p1HTbDv3lpCPVnMgtt3W77z1d4zLefPUjokcSRzHITaVbAOvwqSl+inawRKw==
   dependencies:
     base64-arraybuffer "^0.2.0"
     intersection-observer "^0.7.0"
