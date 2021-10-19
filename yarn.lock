@@ -1082,10 +1082,10 @@
   resolved "https://registry.nlark.com/@dcloudio/uni-quickapp-webview/download/@dcloudio/uni-quickapp-webview-2.0.0-31920210709003.tgz#25ebf926fc51f1a52e51ced54fbc272e018b0907"
   integrity sha1-Jev5JvxR8aUuUc7VT7wnLgGLCQc=
 
-"@dcloudio/uni-stat@^2.0.0-31920210709003":
-  version "2.0.0-31920210709003"
-  resolved "https://registry.nlark.com/@dcloudio/uni-stat/download/@dcloudio/uni-stat-2.0.0-31920210709003.tgz#c3f911aa143697ed7524c0c37f15332b739fc15d"
-  integrity sha1-w/kRqhQ2l+11JMDDfxUzK3OfwV0=
+"@dcloudio/uni-stat@^2.0.0-31920210709003", "@dcloudio/uni-stat@^2.0.0-32920210927002":
+  version "2.0.0-32920210927002"
+  resolved "https://registry.yarnpkg.com/@dcloudio/uni-stat/-/uni-stat-2.0.0-32920210927002.tgz#586c87d63d05427dd7d505fe74d22a417e276050"
+  integrity sha512-bY9aUcDftg8zBmKqFbAXOMAUgzZcQbstTVDfO9qyh5EN5hmP60HdLEhZzrgnrAyOk7fjwwdMt52ft+y0OKS22A==
 
 "@dcloudio/uni-template-compiler@^2.0.0-31920210709003":
   version "2.0.0-31920210709003"
@@ -1111,12 +1111,12 @@
   resolved "https://registry.yarnpkg.com/@dcloudio/vue-cli-plugin-uni-optimize/-/vue-cli-plugin-uni-optimize-2.0.0-32920210927002.tgz#073e463c163c5ccc9c4c4eefcb2d1a0ec8ec99af"
   integrity sha512-VQI0TkedFsnDWmcTINYbnkzINgiWQiR3plOlqfF32zTd20vt/MoGND2lcJmm0Qp2vlNsS0ISIxChvPOnFw8VyQ==
 
-"@dcloudio/vue-cli-plugin-uni@^2.0.0-31920210709003":
-  version "2.0.0-31920210709003"
-  resolved "https://registry.nlark.com/@dcloudio/vue-cli-plugin-uni/download/@dcloudio/vue-cli-plugin-uni-2.0.0-31920210709003.tgz#69d68ea0370266e116e1a7dda6f71361f961e975"
-  integrity sha1-adaOoDcCZuEW4afdpvcTYflh6XU=
+"@dcloudio/vue-cli-plugin-uni@^2.0.0-32920210927002":
+  version "2.0.0-32920210927002"
+  resolved "https://registry.yarnpkg.com/@dcloudio/vue-cli-plugin-uni/-/vue-cli-plugin-uni-2.0.0-32920210927002.tgz#586e3a1cfe79376cc21a4d53991cab3878e7fcb5"
+  integrity sha512-JNy4nog3BFMkH2BAmH/Qyxr8fdWeQPKPeiYz85XIIfjdVWRgmp/ola5VCEYiNPZl0fKL2hYWmDihi3kmzA0zpQ==
   dependencies:
-    "@dcloudio/uni-stat" "^2.0.0-31920210709003"
+    "@dcloudio/uni-stat" "^2.0.0-32920210927002"
     buffer-json "^2.0.0"
     copy-webpack-plugin "^5.1.1"
     cross-env "^5.2.0"
@@ -8816,17 +8816,7 @@ postcss-selector-parser@^5.0.0:
     indexes-of "^1.0.1"
     uniq "^1.0.1"
 
-postcss-selector-parser@^6.0.0:
-  version "6.0.4"
-  resolved "https://registry.npm.taobao.org/postcss-selector-parser/download/postcss-selector-parser-6.0.4.tgz#56075a1380a04604c38b063ea7767a129af5c2b3"
-  integrity sha1-VgdaE4CgRgTDiwY+p3Z6Epr1wrM=
-  dependencies:
-    cssesc "^3.0.0"
-    indexes-of "^1.0.1"
-    uniq "^1.0.1"
-    util-deprecate "^1.0.2"
-
-postcss-selector-parser@^6.0.2:
+postcss-selector-parser@^6.0.0, postcss-selector-parser@^6.0.2:
   version "6.0.6"
   resolved "https://registry.yarnpkg.com/postcss-selector-parser/-/postcss-selector-parser-6.0.6.tgz#2c5bba8174ac2f6981ab631a42ab0ee54af332ea"
   integrity sha512-9LXrvaaX3+mcv5xkg5kFwqSzSH1JIObIx51PrndZwlmznwXRfxMddDvo9gve3gVR8ZTKgoFDdWkbRFmEhT4PMg==
@@ -8879,16 +8869,7 @@ postcss@^6.0.0:
     source-map "^0.6.1"
     supports-color "^5.4.0"
 
-postcss@^7.0.0, postcss@^7.0.1, postcss@^7.0.14, postcss@^7.0.27, postcss@^7.0.32, postcss@^7.0.5, postcss@^7.0.6, postcss@^7.0.7:
-  version "7.0.35"
-  resolved "https://registry.npm.taobao.org/postcss/download/postcss-7.0.35.tgz?cache=0&sync_timestamp=1610186222439&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fpostcss%2Fdownload%2Fpostcss-7.0.35.tgz#d2be00b998f7f211d8a276974079f2e92b970e24"
-  integrity sha1-0r4AuZj38hHYonaXQHny6SuXDiQ=
-  dependencies:
-    chalk "^2.4.2"
-    source-map "^0.6.1"
-    supports-color "^6.1.0"
-
-postcss@^7.0.36:
+postcss@^7.0.0, postcss@^7.0.1, postcss@^7.0.14, postcss@^7.0.27, postcss@^7.0.32, postcss@^7.0.36, postcss@^7.0.5, postcss@^7.0.6, postcss@^7.0.7:
   version "7.0.36"
   resolved "https://registry.yarnpkg.com/postcss/-/postcss-7.0.36.tgz#056f8cffa939662a8f5905950c07d5285644dfcb"
   integrity sha512-BebJSIUMwJHRH0HAQoxN4u1CN86glsrwsW0q7T+/m44eXOUAxSNdHRkNZPYz5vVUbg17hFgOQDE7fZk7li3pZw==
