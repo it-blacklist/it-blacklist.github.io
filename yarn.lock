@@ -963,9 +963,9 @@
     minimist "^1.2.0"
 
 "@dcloudio/types@*":
-  version "2.5.11"
-  resolved "https://registry.yarnpkg.com/@dcloudio/types/-/types-2.5.11.tgz#12bacd800807965e3d0002022efebba38c243b71"
-  integrity sha512-dgAI1fNAhOhQumxO3P901VOYlfnXGJCDljFsZ3EqGGKitf5FB0HSZEutnam2O1zrHwqmHkSSJ+5jiYOED0B8kA==
+  version "2.5.12"
+  resolved "https://registry.yarnpkg.com/@dcloudio/types/-/types-2.5.12.tgz#e731f45f92ded64f9823fef8699ffddf2b7998de"
+  integrity sha512-BIO2fZTW+L2MybVDsIIYuk3Z7EHB5bi7V4AQw8WzjkdDBzHZuiCCTrwPpVDhDWEKDvaWYMZNCJx9w7Z357x//w==
 
 "@dcloudio/uni-app-plus@^2.0.0-32920210927002":
   version "2.0.0-32920210927002"
@@ -2052,7 +2052,7 @@
   optionalDependencies:
     vue-loader-v16 "npm:vue-loader@^16.1.0"
 
-"@vue/cli-shared-utils@^4.5.13", "@vue/cli-shared-utils@^4.5.14":
+"@vue/cli-shared-utils@^4.5.14":
   version "4.5.14"
   resolved "https://registry.yarnpkg.com/@vue/cli-shared-utils/-/cli-shared-utils-4.5.14.tgz#4cdc98544205795144fa1a712966a33450d9a4c7"
   integrity sha512-OJeabPep8yvQ7n2lgbsw6lzBXmjaBHlCt7k9wnsPiXKtNAnHsv40ejARRnj4HTOuMaW6i1QQ17X3WaozI0zaMw==
