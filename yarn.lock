@@ -1057,10 +1057,10 @@
   resolved "https://registry.nlark.com/@dcloudio/uni-mp-toutiao/download/@dcloudio/uni-mp-toutiao-2.0.0-31920210709003.tgz#7c13e091c9c7fb1e61f15dc9bde28ac110543e27"
   integrity sha1-fBPgkcnH+x5h8V3JveKKwRBUPic=
 
-"@dcloudio/uni-mp-vue@^2.0.0-31920210709003":
-  version "2.0.0-31920210709003"
-  resolved "https://registry.nlark.com/@dcloudio/uni-mp-vue/download/@dcloudio/uni-mp-vue-2.0.0-31920210709003.tgz#475dd3bdf17187a52670d6953200397e8fac328e"
-  integrity sha1-R13TvfFxh6UmcNaVMgA5fo+sMo4=
+"@dcloudio/uni-mp-vue@^2.0.0-32920211122002":
+  version "2.0.0-32920211122002"
+  resolved "https://registry.yarnpkg.com/@dcloudio/uni-mp-vue/-/uni-mp-vue-2.0.0-32920211122002.tgz#702e0048ddf70f4389460c8640ff2b916c8e867f"
+  integrity sha512-mjMDXJXNKYZF3qRm9YJ+6/5eAXBoVU1/98Tco9kSNghEHdRoiETYS3B9qsk4spMj96U52nF7jPz6hdRG2Cozow==
 
 "@dcloudio/uni-mp-weixin@^2.0.0-32920210927002":
   version "2.0.0-32920210927002"
