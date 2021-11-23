@@ -1141,10 +1141,10 @@
   resolved "https://registry.nlark.com/@dcloudio/webpack-uni-mp-loader/download/@dcloudio/webpack-uni-mp-loader-2.0.0-31920210709003.tgz#904524ec4e8fdb62f21ceae4dab7a89a3bd3052d"
   integrity sha1-kEUk7E6P22LyHOrk2reomjvTBS0=
 
-"@dcloudio/webpack-uni-pages-loader@^2.0.0-31920210709003":
-  version "2.0.0-31920210709003"
-  resolved "https://registry.nlark.com/@dcloudio/webpack-uni-pages-loader/download/@dcloudio/webpack-uni-pages-loader-2.0.0-31920210709003.tgz#8153baa5d17d0f99f39b0eed25a45a46699b4783"
-  integrity sha1-gVO6pdF9D5nzmw7tJaRaRmmbR4M=
+"@dcloudio/webpack-uni-pages-loader@^2.0.0-32920211122002":
+  version "2.0.0-32920211122002"
+  resolved "https://registry.yarnpkg.com/@dcloudio/webpack-uni-pages-loader/-/webpack-uni-pages-loader-2.0.0-32920211122002.tgz#ac7a6de0423cf94fe06435a5bedaa2c59d2ad03c"
+  integrity sha512-g7R/jpM8dZfwQVzV+/xFMjWcqJ02f1tqwXILGyoGqyEzvA47OTJmzi9Te/6df00di/voGe2IZryLCQqLPJRsvg==
   dependencies:
     merge "^1.2.1"
     strip-json-comments "^2.0.1"
