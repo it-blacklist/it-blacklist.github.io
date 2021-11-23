@@ -1042,10 +1042,10 @@
   resolved "https://registry.yarnpkg.com/@dcloudio/uni-mp-baidu/-/uni-mp-baidu-2.0.0-32920210927002.tgz#78b3718a4a19d1b92e46408e4e5f701dd667fc73"
   integrity sha512-Coj6W98VwJGMrXf116UnWK/g5/y96KQdMBHila8h/MYSH1ZeYbpFEreZJsi5+q+PkdiePWgKDpOn8CZmPEJWCg==
 
-"@dcloudio/uni-mp-kuaishou@^2.0.0-31920210709003":
-  version "2.0.0-31920210709003"
-  resolved "https://registry.nlark.com/@dcloudio/uni-mp-kuaishou/download/@dcloudio/uni-mp-kuaishou-2.0.0-31920210709003.tgz#772ebae0f105df2b0668b701c9236f10a731ff2f"
-  integrity sha1-dy664PEF3ysGaLcBySNvEKcx/y8=
+"@dcloudio/uni-mp-kuaishou@^2.0.0-32920211122002":
+  version "2.0.0-32920211122002"
+  resolved "https://registry.yarnpkg.com/@dcloudio/uni-mp-kuaishou/-/uni-mp-kuaishou-2.0.0-32920211122002.tgz#4805d67828fd85b990099dc08d892a92d3e937a6"
+  integrity sha512-k3yX1y7g9Tpjh96UADHM+Xv0+EDawhjMwfx2t1febT8XlokMtspHYBm5knK0ul4+Vi9qqOO65QotPlr+Uvi4CA==
 
 "@dcloudio/uni-mp-qq@^2.0.0-31920210709003":
   version "2.0.0-31920210709003"
