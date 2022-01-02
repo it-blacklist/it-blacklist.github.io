@@ -67,7 +67,7 @@
     "core-js": "^3.18.3",
     "flyio": "^0.6.2",
     "regenerator-runtime": "^0.12.1",
-    "uview-ui": "^1.8.4",
+    "uview-ui": "^2.0.19",
     "vue": "^2.6.11",
     "vue-class-component": "^6.3.2",
     "vue-property-decorator": "^8.0.0",
