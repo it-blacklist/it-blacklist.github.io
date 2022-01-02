@@ -1047,10 +1047,10 @@
   resolved "https://registry.nlark.com/@dcloudio/uni-mp-kuaishou/download/@dcloudio/uni-mp-kuaishou-2.0.0-31920210709003.tgz#772ebae0f105df2b0668b701c9236f10a731ff2f"
   integrity sha1-dy664PEF3ysGaLcBySNvEKcx/y8=
 
-"@dcloudio/uni-mp-qq@^2.0.0-31920210709003":
-  version "2.0.0-31920210709003"
-  resolved "https://registry.nlark.com/@dcloudio/uni-mp-qq/download/@dcloudio/uni-mp-qq-2.0.0-31920210709003.tgz#82c52782a49169609e56c1643fb0c7d3b4358b1d"
-  integrity sha1-gsUngqSRaWCeVsFkP7DH07Q1ix0=
+"@dcloudio/uni-mp-qq@^2.0.0-261120200409001":
+  version "2.0.0-261120200409001"
+  resolved "https://registry.yarnpkg.com/@dcloudio/uni-mp-qq/-/uni-mp-qq-2.0.0-261120200409001.tgz#eeb8c75a4e6e478f59caa1f34701693c027e9233"
+  integrity sha512-vKQMOUoQl8nnUU+4mDgueTzEY7CYdOEZY6CFY54ESh3Mq9VaQik41XD7Il6sAQv9h2FTtIrOpWc4mWQF6k9YPg==
 
 "@dcloudio/uni-mp-toutiao@^2.0.0-31920210709003":
   version "2.0.0-31920210709003"
