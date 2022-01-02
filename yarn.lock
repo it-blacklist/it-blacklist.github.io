@@ -1062,10 +1062,10 @@
   resolved "https://registry.nlark.com/@dcloudio/uni-mp-vue/download/@dcloudio/uni-mp-vue-2.0.0-31920210709003.tgz#475dd3bdf17187a52670d6953200397e8fac328e"
   integrity sha1-R13TvfFxh6UmcNaVMgA5fo+sMo4=
 
-"@dcloudio/uni-mp-weixin@^2.0.0-32920210927002":
-  version "2.0.0-32920210927002"
-  resolved "https://registry.yarnpkg.com/@dcloudio/uni-mp-weixin/-/uni-mp-weixin-2.0.0-32920210927002.tgz#82bd14b36a87ba0c6594b10c3a8ef4226d93eaa6"
-  integrity sha512-qALwYH8ESlTA+AahBACE+Erv8DvRkEhOJyvbFTmrMI4hOftxLtxpV0TPK6DM0cfPKXN1plBgkWXG3qGhE/cgbA==
+"@dcloudio/uni-mp-weixin@^2.0.0-261120200409001":
+  version "2.0.0-261120200409001"
+  resolved "https://registry.yarnpkg.com/@dcloudio/uni-mp-weixin/-/uni-mp-weixin-2.0.0-261120200409001.tgz#6533c25f84ef2462559096974cd8449019dc43e5"
+  integrity sha512-V3PigkZrj3U2C48u2QVcNQ7BVVLGD+p+IallpCuDUTTuFEorsgTOZY9dz/GHqmc4XVQj9p4i9S4r/tHKePBGvQ==
 
 "@dcloudio/uni-quickapp-native@^2.0.0-32920210927002":
   version "2.0.0-32920210927002"
