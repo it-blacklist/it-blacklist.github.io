@@ -29,7 +29,7 @@
     "@umijs/fabric": "^2.9.0",
     "craco-less": "^2.0.0",
     "gh-pages": "^3.2.3",
-    "react-scripts": "5.0.0",
+    "react-scripts": "^5.0.0",
     "serve": "^13.0.2",
     "typescript": "^4.5.4",
     "web-vitals": "^2.1.2"
