@@ -5,8 +5,9 @@
   "scripts": {
     "start": "craco start",
     "build": "craco build",
+    "local": "serve -s build",
     "test": "craco test",
-    "gh-pages": "../node_modules/.bin/gh-pages -d build"
+    "gh-pages": "node_modules/.bin/gh-pages -d build"
   },
   "dependencies": {
     "antd-mobile": "^5.0.0-rc.12",
@@ -29,6 +30,7 @@
     "craco-less": "^2.0.0",
     "gh-pages": "^3.2.3",
     "react-scripts": "5.0.0",
+    "serve": "^13.0.2",
     "typescript": "^4.5.4",
     "web-vitals": "^2.1.2"
   },

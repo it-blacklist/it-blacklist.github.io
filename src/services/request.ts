@@ -1,11 +1,7 @@
 import axios from 'axios'
 
-//let BASE_URL = 'https://it-blacklist-a6de4b.service.tcloudbase.com/'
-
-const BASE_URL = '/api'
-
 const request = axios.create({
-  baseURL: BASE_URL,
+  baseURL: process.env.REACT_APP_BASE_URL,
   timeout: 20000,
   validateStatus: function (status) {
     return status >= 200 && status < 300
