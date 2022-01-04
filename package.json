@@ -28,7 +28,7 @@
     "@types/node": "^16.11.17",
     "@types/react": "^17.0.38",
     "@types/react-dom": "^17.0.11",
-    "@umijs/fabric": "^2.9.0",
+    "@umijs/fabric": "^2.10.0",
     "craco-less": "^2.0.0",
     "gh-pages": "^3.2.3",
     "react-scripts": "^5.0.0",
