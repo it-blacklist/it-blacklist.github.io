@@ -9,7 +9,7 @@ const Content: React.FC = () => {
   const navigate = useNavigate()
   const [detail, setDetail] = useState<any>({})
   useEffect(() => {
-    const params = qs.parse(location.search)
+    const params = qs.parse(location.search) as {_id: string}
     getListApi(params).then((res: any) => {
       setDetail(res[0])
     })

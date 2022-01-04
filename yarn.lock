@@ -1994,6 +1994,11 @@
   resolved "https://registry.npmmirror.com/@types/unist/download/@types/unist-2.0.6.tgz?cache=0&sync_timestamp=1637270401708&other_urls=https%3A%2F%2Fregistry.npmmirror.com%2F%40types%2Funist%2Fdownload%2F%40types%2Funist-2.0.6.tgz#250a7b16c3b91f672a24552ec64678eeb1d3a08d"
   integrity sha1-JQp7FsO5H2cqJFUuxkZ47rHToI0=
 
+"@types/uuid@^8.3.3":
+  version "8.3.3"
+  resolved "https://registry.npmmirror.com/@types/uuid/download/@types/uuid-8.3.3.tgz?cache=0&sync_timestamp=1637271160270&other_urls=https%3A%2F%2Fregistry.npmmirror.com%2F%40types%2Fuuid%2Fdownload%2F%40types%2Fuuid-8.3.3.tgz#c6a60686d953dbd1b1d45e66f4ecdbd5d471b4d0"
+  integrity sha512-0LbEEx1zxrYB3pgpd1M5lEhLcXjKJnYghvhTRgaBeUivLHMDM1TzF3IJ6hXU2+8uA4Xz+5BA63mtZo5DjVT8iA==
+
 "@types/ws@^8.2.2":
   version "8.2.2"
   resolved "https://registry.npmmirror.com/@types/ws/download/@types/ws-8.2.2.tgz#7c5be4decb19500ae6b3d563043cd407bf366c21"
@@ -8557,7 +8562,7 @@ react-router@6.2.1:
   dependencies:
     history "^5.2.0"
 
-react-scripts@5.0.0:
+react-scripts@^5.0.0:
   version "5.0.0"
   resolved "https://registry.npmmirror.com/react-scripts/download/react-scripts-5.0.0.tgz#6547a6d7f8b64364ef95273767466cc577cb4b60"
   integrity sha512-3i0L2CyIlROz7mxETEdfif6Sfhh9Lfpzi10CtcGs1emDQStmZfWjJbAIMtRD0opVUjQuFWqHZyRZ9PPzKCFxWg==
