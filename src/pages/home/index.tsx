@@ -12,9 +12,9 @@ import {
   ImageViewer,
   Modal,
   Empty,
-  Toast,
+  NoticeBar
 } from 'antd-mobile'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate ,Link} from 'react-router-dom'
 import {
   AppstoreOutline,
   ChatAddOutline,
@@ -73,6 +73,10 @@ const Home: React.FC = () => {
   }
   return (
     <>
+      <Link to="/statement">
+        <NoticeBar content="置顶公告" color='alert'/>
+      </Link>
+
       <div className={styles.header}>
         <div className={styles.left}>
           <SearchBar value={searchVal} onChange={(e) => setSearchVal(e)}
@@ -150,14 +154,10 @@ const Home: React.FC = () => {
             '--border-top': 'none',
           }}
         >
-          <List.Item prefix={<EditSOutline/>} onClick={() => Toast.show({
-            content: '正在开发中~',
-          })}>
+          <List.Item prefix={<EditSOutline/>} onClick={() => navigate('/create')}>
             贡献一条黑名单
           </List.Item>
-          <List.Item prefix={<ChatAddOutline/>} onClick={() => Toast.show({
-            content: '正在开发中~',
-          })}>
+          <List.Item prefix={<ChatAddOutline/>} onClick={() =>navigate('/feedback')}>
             留言
           </List.Item>
           <List.Item prefix={<HandPayCircleOutline/>}

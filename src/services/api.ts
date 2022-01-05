@@ -29,3 +29,11 @@ export async function getListApi (data: IListParams) {
     data,
   })
 }
+
+export async function updateListApi (data: IListParams) {
+  return request({
+    method: 'post',
+    url: 'list/update',
+    data,
+  })
+}

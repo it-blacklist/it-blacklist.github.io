@@ -14,10 +14,7 @@ request.interceptors.request.use((config) => {
 
 request.interceptors.response.use((response) => {
   const res = response.data
-  if (!res.requestId && !res.data) {
-    console.log('异常')
-  }
-  return res.data
+  return res.data ?? res
 })
 
 export default request

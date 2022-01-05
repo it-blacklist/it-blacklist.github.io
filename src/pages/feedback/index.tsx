@@ -1,8 +1,8 @@
 import React from 'react'
-import { Button } from 'antd-mobile'
+import { ErrorBlock } from 'antd-mobile'
 
-const Home: React.FC = () => {
-  return <Button color="primary">home</Button>
+const Feedback: React.FC = () => {
+  return <ErrorBlock status="empty"/>
 }
 
-export default Home
+export default Feedback
