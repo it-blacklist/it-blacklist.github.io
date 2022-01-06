@@ -1,68 +1,36 @@
-import React, { createContext, useEffect, useReducer } from 'react'
-import { BrowserRouter, Route, Routes } from 'react-router-dom'
-import './app.less'
-import Home from './pages/home'
-import Content from './pages/content'
-import Statement from './pages/statement'
-import Create from './pages/create'
-import Feedback from './pages/feedback'
+import React, {
+  useEffect,
+  useReducer,
+  Suspense,
+} from 'react'
+import { HashRouter, Route, Routes } from 'react-router-dom'
+import { WaterMark } from 'antd-mobile'
 import { v4 as createUUID } from 'uuid'
 
-const initState = {
-  userInfo: null,
-  cityList: [
-    {
-      value: '河北省',
-      label: '河北省',
-      children: [
-        { value: '石家庄', label: '石家庄市' },
-      ],
-    },
-    {
-      value: '北京市',
-      label: '北京市',
-      children: [
-        { value: '北京', label: '市辖区' },
-      ],
-    },
-  ],
-}
-const stateReducer = (state: any, action: any) => {
-  switch (action.type) {
-    case 'userInfo/update':
-      console.log(action, state)
-      localStorage.setItem('$it-blacklist', JSON.stringify(action.payload))
-      return {
-        ...state,
-        userInfo: action.payload,
-      }
-    default:
-      return state
-  }
-}
-
-// @ts-ignore
-export const GlobalState = createContext()
+import { systemGetApi } from './services/api'
+import './app.less'
+import routes from './routes'
+import {GlobalState,stateReducer,initState} from './store'
 
 const App: React.FC = () => {
   const [state, dispatch] = useReducer(stateReducer, initState)
   useEffect(() => {
     const userInfo = localStorage.getItem('$it-blacklist')
-    const payload = userInfo ? JSON.parse(userInfo) : { userId: createUUID() }
+    const payload = userInfo ? JSON.parse(userInfo) : { openid: createUUID() }
     dispatch({ type: 'userInfo/update', payload })
+    systemGetApi().then((res: any) => {
+      dispatch({ type: 'noticeBar/update', payload: res[0].notice })
+    })
   }, [])
   return (
     <div className="app">
+      <WaterMark content="IT BLACKLIST"/>
       <GlobalState.Provider value={{ state, dispatch }}>
-        <BrowserRouter>
+        <HashRouter>
           <Routes>
-            <Route path="/" element={<Home/>} key="home"/>
-            <Route path="/content" element={<Content/>} key="content"/>
-            <Route path="/statement" element={<Statement/>} key="statement"/>
-            <Route path="/create" element={<Create/>} key="create"/>
-            <Route path="/feedback" element={<Feedback/>} key="feedback"/>
+            {routes.map(item => <Route path={item.path} element={<Suspense fallback={<>...</>}>{<item.component/>}</Suspense>} key={item.key}/>)}
           </Routes>
-        </BrowserRouter>
+        </HashRouter>
       </GlobalState.Provider>
     </div>
   )

@@ -7,7 +7,7 @@ import {
   CascadePicker,
   Modal, Dialog,Checkbox
 } from 'antd-mobile'
-import { GlobalState } from '../../App'
+import { GlobalState } from '../../store'
 import { updateListApi } from '../../services/api'
 import { useNavigate,Link } from 'react-router-dom'
 

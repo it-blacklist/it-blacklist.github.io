@@ -22,7 +22,7 @@ import {
 } from 'antd-mobile-icons'
 
 import styles from './index.module.less'
-import { getListApi } from '../../services/api'
+import { getListApi,listCountApi } from '../../services/api'
 
 const Home: React.FC = () => {
   const navigate = useNavigate()
@@ -31,9 +31,14 @@ const Home: React.FC = () => {
   const [current, setCurrent] = useState(1)
   const [searchVal, setSearchVal] = useState('')
   const [modalVisible, setModalVisible] = useState(false)
+  const [totalCount,setTotalCount] = useState(0)
 
   useEffect(() => {
     doSearch()
+    listCountApi().then((res: any)=>{
+      setTotalCount(res.total)
+      console.log(res)
+    })
   }, [])
 
   async function loadMore (isSearch?: boolean, searchValue?: string) {
@@ -135,11 +140,12 @@ const Home: React.FC = () => {
           overflow: 'hidden',
         }}
       >
+        <div><NoticeBar content={`截至目前系统已收录${totalCount}条公司信息`} color='alert' icon={null}/></div>
         <List>
           <List.Item
             prefix={
               <Image
-                src={'https://images.unsplash.com/photo-1493666438817-866a91353ca9?ixlib=rb-0.3.5&q=80&fm=jpg&crop=faces&fit=crop&h=200&w=200&s=b616b2c5b373a80ffc9636ba24f7a4a9'}
+                src={'https://imgsa.baidu.com/forum/pic/item/562c11dfa9ec8a13424f9c95fc03918fa0ecc06a.jpg'}
                 style={{ borderRadius: 20 }}
                 fit="cover"
                 width={40}

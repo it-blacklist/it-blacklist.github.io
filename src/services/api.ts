@@ -13,6 +13,7 @@ interface IListParams {
   pageSize?: number
   city?: string
   company?: string
+  rate?: any
 }
 
 export interface IList {
@@ -35,5 +36,43 @@ export async function updateListApi (data: IListParams) {
     method: 'post',
     url: 'list/update',
     data,
+  })
+}
+
+export async function listCountApi () {
+  return request({
+    method: 'post',
+    url: 'list/count',
+  })
+}
+
+export async function getDiscussApi (data: IListParams) {
+  return request({
+    method: 'post',
+    url: 'discuss/get',
+    data,
+  })
+}
+export async function updateDiscussApi (data: IListParams) {
+  return request({
+    method: 'post',
+    url: 'discuss/update',
+    data,
+  })
+}
+
+
+export async function updateFeedbackApi (data: IListParams) {
+  return request({
+    method: 'post',
+    url: 'feedback/update',
+    data,
+  })
+}
+
+export async function systemGetApi () {
+  return request({
+    method: 'post',
+    url: 'system/get',
   })
 }
