@@ -10,7 +10,7 @@
     "gh-pages": "node_modules/.bin/gh-pages -d build"
   },
   "dependencies": {
-    "antd-mobile": "^5.0.0-rc.12",
+    "antd-mobile": "^5.0.0-rc.15",
     "axios": "^0.24.0",
     "dayjs": "^1.10.7",
     "query-string": "^7.0.1",
