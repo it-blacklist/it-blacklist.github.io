@@ -6,6 +6,7 @@ import React, {
 import { HashRouter, Route, Routes } from 'react-router-dom'
 import { WaterMark } from 'antd-mobile'
 import { v4 as createUUID } from 'uuid'
+import { AliveScope } from 'react-activation'
 
 import { systemGetApi } from './services/api'
 import './app.less'
@@ -27,9 +28,11 @@ const App: React.FC = () => {
       <WaterMark content="IT BLACKLIST"/>
       <GlobalState.Provider value={{ state, dispatch }}>
         <HashRouter>
-          <Routes>
-            {routes.map(item => <Route path={item.path} element={<Suspense fallback={<>...</>}>{<item.component/>}</Suspense>} key={item.key}/>)}
-          </Routes>
+          <AliveScope>
+            <Routes>
+              {routes.map(item => <Route path={item.path} element={<Suspense fallback={<>...</>}>{<item.component/>}</Suspense>} key={item.key}/>)}
+            </Routes>
+          </AliveScope>
         </HashRouter>
       </GlobalState.Provider>
     </div>
