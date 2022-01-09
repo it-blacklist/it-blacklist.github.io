@@ -25,7 +25,7 @@ const App: React.FC = () => {
   }, [])
   return (
     <div className="app">
-      <WaterMark content="IT BLACKLIST"/>
+      <WaterMark content="IT BLACKLIST" gapX={96} gapY={96}/>
       <GlobalState.Provider value={{ state, dispatch }}>
         <HashRouter>
           <AliveScope>
