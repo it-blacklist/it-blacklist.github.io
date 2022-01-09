@@ -7,7 +7,7 @@
     "build": "craco build",
     "local": "serve -s build",
     "test": "craco test",
-    "gh-pages": "node_modules/.bin/gh-pages -d build"
+    "gh-pages": "gh-pages -d build"
   },
   "dependencies": {
     "antd-mobile": "^5.0.0-rc.12",
