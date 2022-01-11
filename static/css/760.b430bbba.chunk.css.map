@@ -1,1 +1,0 @@
-{"version":3,"file":"static/css/760.b430bbba.chunk.css","mappings":"AAAA,2CAEI,cAAe,CACf,eAAJ","sources":["pages/statement/index.module.less"],"sourcesContent":[".page_statement{\n  .discuss_title{\n    font-size: 16px;\n    padding: 4px 8px;\n  }\n}"],"names":[],"sourceRoot":""}

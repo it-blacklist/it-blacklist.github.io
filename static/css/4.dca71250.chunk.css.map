@@ -1,0 +1,1 @@
+{"version":3,"sources":["webpack://src/pages/statement/index.module.less"],"names":[],"mappings":"AAAA,2CAEI,cAAA,CACA,eAAJ","file":"4.dca71250.chunk.css","sourcesContent":[".page_statement{\n  .discuss_title{\n    font-size: 16px;\n    padding: 4px 8px;\n  }\n}"]}
