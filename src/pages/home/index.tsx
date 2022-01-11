@@ -10,7 +10,6 @@ import {
   Popup,
   Image,
   ImageViewer,
-  Modal,
   Empty,
   NoticeBar,
 } from 'antd-mobile'
@@ -24,6 +23,16 @@ import KeepAlive from 'react-activation'
 
 import styles from './index.module.less'
 import { getListApi, listCountApi } from '../../services/api'
+
+
+const handleShowImage = ()=>{
+  ImageViewer.Multi.show({
+    images: [
+      'https://6974-it-blacklist-a6de4b-1302530662.tcb.qcloud.la/reward/wechat.jpg',
+      'https://6974-it-blacklist-a6de4b-1302530662.tcb.qcloud.la/reward/alipay.jpg',
+    ],
+  })
+}
 
 const Home: React.FC = () => {
   const navigate = useNavigate()
@@ -163,28 +172,20 @@ const Home: React.FC = () => {
             }}
           >
             <List.Item prefix={<EditSOutline/>}
-                       onClick={() => navigate('/create')}>
+                       onClick={() =>{
+                         setModalVisible(false)
+                         navigate('/create')
+                       } }>
               贡献一条黑名单
             </List.Item>
             <List.Item prefix={<ChatAddOutline/>}
-                       onClick={() => navigate('/feedback')}>
+                       onClick={() => {
+                         setModalVisible(false)
+                         navigate('/feedback')
+                       }}>
               留言
             </List.Item>
-            <List.Item prefix={<HandPayCircleOutline/>}
-                       onClick={() => Modal.confirm({
-                         content: '打赏是自愿的，不打赏也可以使用所有功能~',
-                         confirmText: '继续',
-                         cancelText: '关闭',
-                         onConfirm: () => {
-                           ImageViewer.Multi.show({
-                             images: [
-                               'https://6974-it-blacklist-a6de4b-1302530662.tcb.qcloud.la/reward/wechat.jpg',
-                               'https://6974-it-blacklist-a6de4b-1302530662.tcb.qcloud.la/reward/alipay.jpg',
-                             ],
-                           })
-                         },
-                       })
-                       }>
+            <List.Item prefix={<HandPayCircleOutline/>} onClick={() =>{handleShowImage()}}>
               打赏
             </List.Item>
           </List>
