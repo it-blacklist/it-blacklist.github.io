@@ -89,6 +89,7 @@ const Content: React.FC = () => {
   }
   useEffect(() => {
     getList(true)
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
   const back = () => {
     navigate('/')

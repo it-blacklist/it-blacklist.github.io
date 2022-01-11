@@ -49,6 +49,7 @@ const Home: React.FC = () => {
       setTotalCount(res.total)
       console.log(res)
     })
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   async function loadMore (isSearch?: boolean, searchValue?: string) {
