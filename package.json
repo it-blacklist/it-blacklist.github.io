@@ -3,13 +3,14 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "start": "craco start",
-    "build": "craco build",
-    "local": "serve -s build",
+    "start": "vite",
+    "build": "tsc && vite build",
+    "local": "vite preview",
     "test": "craco test",
     "gh-pages": "gh-pages -d build"
   },
   "dependencies": {
+    "@vitejs/plugin-react": "^1.1.4",
     "antd-mobile": "^5.0.0-rc.12",
     "axios": "^0.24.0",
     "dayjs": "^1.10.7",
@@ -19,7 +20,8 @@
     "react-activation": "^0.9.7",
     "react-dom": "^17.0.2",
     "react-router-dom": "^6.2.1",
-    "uuid": "^8.3.2"
+    "uuid": "^8.3.2",
+    "vite": "^2.7.12"
   },
   "devDependencies": {
     "@craco/craco": "^6.4.3",

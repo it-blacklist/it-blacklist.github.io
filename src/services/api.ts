@@ -3,7 +3,7 @@ import request from './request'
 export async function getConfigApi () {
   return request({
     method: 'post',
-    url: 'system/get',
+    url: '/api/system/get',
   })
 }
 
@@ -26,7 +26,7 @@ export interface IList {
 export async function getListApi (data: IListParams) {
   return request({
     method: 'post',
-    url: 'list/get',
+    url: '/api/list/get',
     data,
   })
 }
@@ -34,7 +34,7 @@ export async function getListApi (data: IListParams) {
 export async function updateListApi (data: IListParams) {
   return request({
     method: 'post',
-    url: 'list/update',
+    url: '/api/list/update',
     data,
   })
 }
@@ -42,21 +42,21 @@ export async function updateListApi (data: IListParams) {
 export async function listCountApi () {
   return request({
     method: 'post',
-    url: 'list/count',
+    url: '/api/list/count',
   })
 }
 
 export async function getDiscussApi (data: IListParams) {
   return request({
     method: 'post',
-    url: 'discuss/get',
+    url: '/api/discuss/get',
     data,
   })
 }
 export async function updateDiscussApi (data: IListParams) {
   return request({
     method: 'post',
-    url: 'discuss/update',
+    url: '/api/discuss/update',
     data,
   })
 }
@@ -65,7 +65,7 @@ export async function updateDiscussApi (data: IListParams) {
 export async function updateFeedbackApi (data: IListParams) {
   return request({
     method: 'post',
-    url: 'feedback/update',
+    url: '/api/feedback/update',
     data,
   })
 }
@@ -73,6 +73,6 @@ export async function updateFeedbackApi (data: IListParams) {
 export async function systemGetApi () {
   return request({
     method: 'post',
-    url: 'system/get',
+    url: '/api/system/get',
   })
 }

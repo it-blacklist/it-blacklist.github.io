@@ -3,7 +3,7 @@ import {
   Button,
   Form,
   TextArea,
-  Modal, Dialog, Checkbox,
+  Modal, Dialog, Checkbox,NavBar
 } from 'antd-mobile'
 import { GlobalState } from '../../store'
 import { updateFeedbackApi } from '../../services/api'
@@ -15,6 +15,9 @@ const Feedback: React.FC = () => {
   const [checked, setChecked] = useState(false)
   const navigate = useNavigate()
   const location = useLocation()
+  const back = () => {
+    navigate(-1)
+  }
   const handleSubmit = (params: any) => {
     if (!checked) {
       Dialog.alert({
@@ -45,7 +48,10 @@ const Feedback: React.FC = () => {
       },
     })
   }
-  return <Form
+  return <>
+  
+  <NavBar onBack={back} />
+  <Form
     layout="horizontal"
     footer={
       <>
@@ -74,6 +80,8 @@ const Feedback: React.FC = () => {
       <TextArea placeholder="我要留言…" maxLength={2000} rows={4}/>
     </Form.Item>
   </Form>
+  </> 
+  
 }
 
 export default Feedback

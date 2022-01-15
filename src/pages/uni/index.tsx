@@ -10,10 +10,11 @@ import {
   NoticeBar
 } from 'antd-mobile'
 import { useNavigate, Link } from 'react-router-dom'
-import { KeepAlive } from 'react-activation'
 import HomeMenu from '../../components/HomeMenu'
+import { KeepAlive } from 'react-activation'
+
 import styles from './index.module.less'
-import { getListApi } from '../../services/github'
+import { getListApi } from '../../services/api'
 
 const Home: React.FC = () => {
   const navigate = useNavigate()
@@ -21,7 +22,6 @@ const Home: React.FC = () => {
   const [hasMore, setHasMore] = useState(true)
   const [current, setCurrent] = useState(1)
   const [searchVal, setSearchVal] = useState('')
-
   useEffect(() => {
     doSearch()
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -64,14 +64,13 @@ const Home: React.FC = () => {
       <Link to="/statement">
         <NoticeBar content="置顶公告" color="alert" />
       </Link>
-
+      <HomeMenu />
       <div className={styles.header}>
         <div className={styles.left}>
           <SearchBar value={searchVal} onChange={(e) => setSearchVal(e)}
-            onSearch={doSearch} placeholder="这里还不能用~" />
+            onSearch={doSearch} placeholder="输入公司名称搜索~" />
         </div>
       </div>
-      <HomeMenu />
       <PullToRefresh
         /* @ts-ignore*/
         onRefresh={() => {
@@ -84,12 +83,12 @@ const Home: React.FC = () => {
             <List>
               {list.map((item: any) => (
                 <List.Item
-                  key={item.id}
+                  key={item._id}
                   description={<Ellipsis direction={'end'} rows={2}
-                    content={item.body} />}
-                  onClick={() => navigate(`/content?id=${item.number}`)}
+                    content={item.content} />}
+                  onClick={() => navigate(`/uni-content?_id=${item._id}&type="uni"`)}
                 >
-                  {item.title}
+                  {item.company}
                 </List.Item>
               ))}
             </List>
