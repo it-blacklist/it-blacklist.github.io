@@ -15,7 +15,7 @@ const Create: React.FC = () => {
     const params = qs.parse(location.search) as { id: string }
     console.log(params)
     const id = params?.id || 'new'
-    window.open(BaseUrl + id)
+    window.open(BaseUrl + id + (id === 'new' ? '?labels=石家庄' : ''))
   }
   return <>
     <NavBar onBack={back} />
