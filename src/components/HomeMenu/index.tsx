@@ -1,11 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React, {  useState } from "react";
 import {
   List,
   FloatingBubble,
   Popup,
   Image,
   ImageViewer,
-  NoticeBar
 } from 'antd-mobile'
 import { useNavigate, } from 'react-router-dom'
 import {
@@ -13,7 +12,6 @@ import {
   ChatAddOutline,
   HandPayCircleOutline, EditSOutline,
 } from 'antd-mobile-icons'
-import { listCountApi } from '../../services/api'
 
 const handleShowImage = () => {
   ImageViewer.Multi.show({
@@ -27,16 +25,9 @@ const handleShowImage = () => {
 const HomeMenu: React.FC = () => {
   const navigate = useNavigate()
   const [modalVisible, setModalVisible] = useState(false)
-  const [totalCount, setTotalCount] = useState(0)
   const onClick = () => {
     setModalVisible(true)
   }
-  useEffect(() => {
-    listCountApi().then((res: any) => {
-      setTotalCount(res.total)
-      console.log(res)
-    })
-  }, [])
   const onClose = (url: string) => {
     setModalVisible(false)
     navigate(url)
@@ -63,8 +54,6 @@ const HomeMenu: React.FC = () => {
           overflow: 'hidden',
         }}
       >
-        <div><NoticeBar content={`截至目前系统已收录${totalCount}条公司信息`} color="alert"
-          icon={null} /></div>
         <List>
           <List.Item
             prefix={

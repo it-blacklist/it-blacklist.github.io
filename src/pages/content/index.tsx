@@ -5,7 +5,7 @@ import {
   Button,
   List,
   Toast,
-  Modal,
+  Modal, Image,
 } from 'antd-mobile'
 import { MessageFill } from 'antd-mobile-icons'
 import { useLocation, useNavigate } from 'react-router-dom'
@@ -45,24 +45,34 @@ const Content: React.FC = () => {
     })
   }
   return <div className={styles.page_content}>
-    <NavBar onBack={back} />
+    <NavBar onBack={back}/>
     <Card title={detail.title}
-      extra={`${dayjs(detail.created_at).format('YYYY-MM-DD HH:mm')}`}
-      bodyStyle={{ fontSize: 18, paddingBottom: 40 }}>
+          extra={`${dayjs(detail.created_at).format('YYYY-MM-DD HH:mm')}`}
+          bodyStyle={{ fontSize: 18, paddingBottom: 40 }}>
       {detail.body}
       <Button color="primary" fill="none" style={{ float: 'right' }}
-        onClick={() => appeal()}>
+              onClick={() => appeal()}>
         我要纠错
       </Button>
     </Card>
-    <div className={styles.discuss_title}><MessageFill />精选评论</div>
+    <div className={styles.discuss_title}><MessageFill/>精选评论</div>
     <List>
-      {discussList.map((item: any) => <List.Item key={item.id}>
+      {discussList.map((item: any) => <List.Item key={item.id}
+                                                 prefix={
+                                                   <Image
+                                                     src={item.user.avatar_url}
+                                                     style={{ borderRadius: 20 }}
+                                                     fit="cover"
+                                                     width={40}
+                                                     height={40}
+                                                   />
+                                                 } description={item.body}
+      >
         <div onClick={() => Toast.show(`发表时间:${dayjs(item.created_at).
-          format('YYYY-MM-DD HH:mm:ss')}`)}>{item.body}</div>
+          format('YYYY-MM-DD HH:mm:ss')}`)}>{item.user.login}</div>
       </List.Item>)}
       <Button color="primary" fill="none" style={{ float: 'right' }}
-        onClick={() => navigate(`/go-github?id=${detail.number}`)}>
+              onClick={() => navigate(`/go-github?id=${detail.number}`)}>
         我要评论
       </Button>
     </List>

@@ -6,6 +6,7 @@ import {
   List,
   Toast,
   Modal,
+  Dialog
 } from 'antd-mobile'
 import { MessageFill } from 'antd-mobile-icons'
 import { useLocation, useNavigate } from 'react-router-dom'
@@ -74,6 +75,10 @@ const Content: React.FC = () => {
         <div onClick={() => Toast.show(`发表时间:${dayjs(item.createTime).
           format('YYYY-MM-DD HH:mm:ss')}`)}>{item.content}</div>
       </List.Item>)}
+      <Button color="primary" fill="none" style={{ float: 'right' }}
+              onClick={() => Dialog.alert({content: '旧数据不再支持评论'})}>
+        我要评论
+      </Button>
     </List>
   </div>
 }

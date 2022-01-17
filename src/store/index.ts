@@ -22,13 +22,6 @@ export const initState = {
 }
 export const stateReducer = (state: any, action: any) => {
   switch (action.type) {
-    case 'userInfo/update':
-      console.log(action, state)
-      localStorage.setItem('$it-blacklist', JSON.stringify(action.payload))
-      return {
-        ...state,
-        userInfo: action.payload,
-      }
     case 'noticeBar/update':
       console.log(action, state)
       return {

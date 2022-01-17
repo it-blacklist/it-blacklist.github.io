@@ -5,9 +5,8 @@ import React, {
   useState,
 } from 'react'
 import { HashRouter, Route, Routes, useNavigate, useLocation } from 'react-router-dom'
-import { WaterMark, TabBar } from 'antd-mobile'
+import { TabBar } from 'antd-mobile'
 import { ContentOutline } from 'antd-mobile-icons'
-import { v4 as createUUID } from 'uuid'
 import { AliveScope } from 'react-activation'
 
 import { systemGetApi } from './services/api'
@@ -26,9 +25,9 @@ const Bottom = () => {
     return null
   }
   return (
-    <TabBar activeKey={active} onChange={(key) => navigate(key)}>
+    <TabBar activeKey={active} onChange={(key) => navigate(key, { replace:true })}>
       <TabBar.Item key={"/"} icon={<ContentOutline />} />
-      <TabBar.Item key={"/uni"} icon={<ContentOutline />} />
+      <TabBar.Item key={"/uni"} icon={<ContentOutline />} badge="99+"/>
     </TabBar>
   )
 }
@@ -36,9 +35,6 @@ const Bottom = () => {
 const App: React.FC = () => {
   const [state, dispatch] = useReducer(stateReducer, initState)
   useEffect(() => {
-    const userInfo = localStorage.getItem('$it-blacklist')
-    const payload = userInfo ? JSON.parse(userInfo) : { openid: createUUID() }
-    dispatch({ type: 'userInfo/update', payload })
     systemGetApi().then((res: any) => {
       dispatch({ type: 'noticeBar/update', payload: res[0].notice })
     })

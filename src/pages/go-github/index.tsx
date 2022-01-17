@@ -22,7 +22,7 @@ const Create: React.FC = () => {
     <Result
       status='warning'
       title='警告提示'
-      description='本站的所有数据源会从GitHub的issue读取，如果打不开请尝试用手机流量打开，或者自备上网工具。'
+      description='本站的所有数据源会从GitHub的issue读取，登录账户为GitHub账户（没有的自己注册一个~）。如果打不开请尝试用手机流量打开，或者自备上网工具！如果打不开请尝试用手机流量打开，或者自备上网工具！如果打不开请尝试用手机流量打开，或者自备上网工具！'
     />
     <Button color="primary" block onClick={() => goGitHub()}>继续</Button>
   </>

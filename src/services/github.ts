@@ -19,7 +19,8 @@ export async function getListApi(data: IListParams) {
       page: data.current,
       per_page: data.pageSize,
       labels: data.city,
-      title: data.company
+      title: data.company,
+      //q: 'test'
     }
   })
 }

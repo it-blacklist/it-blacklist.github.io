@@ -9,7 +9,7 @@ export default defineConfig({
       '/api': {
         target: 'https://it-blacklist-a6de4b.service.tcloudbase.com/',
         changeOrigin: true,
-        rewrite: (path) => path.replace(/^\/api/, '')
+        //rewrite: (path) => path.replace(/^\/api/, '')
       },
     },
   },
