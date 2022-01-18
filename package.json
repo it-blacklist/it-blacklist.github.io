@@ -11,7 +11,7 @@
   "dependencies": {
     "@vitejs/plugin-react": "^1.1.4",
     "antd-mobile": "^5.0.0-rc.12",
-    "axios": "^0.24.0",
+    "axios": "^0.25.0",
     "dayjs": "^1.10.7",
     "element-plus-react": "^0.0.1-alpha.0",
     "query-string": "^7.0.1",
