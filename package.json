@@ -13,7 +13,7 @@
     "antd-mobile": "^5.0.0-rc.12",
     "axios": "^0.24.0",
     "dayjs": "^1.10.7",
-    "element-plus-react": "^0.0.1-alpha.0",
+    "element-plus-react": "^0.0.3",
     "query-string": "^7.0.1",
     "react": "^17.0.2",
     "react-activation": "^0.9.7",
