@@ -16,7 +16,7 @@
     "element-plus-react": "^0.0.3",
     "query-string": "^7.0.1",
     "react": "^17.0.2",
-    "react-activation": "^0.9.12",
+    "react-activation": "^0.11.1",
     "react-dom": "^17.0.2",
     "react-router-dom": "^6.3.0",
     "vite": "^2.9.1"
