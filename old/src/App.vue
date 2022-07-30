@@ -1,12 +1,16 @@
-<script lang="ts">
-  export default {
+<script>
+  import Vue from 'vue';
+  export default Vue.extend({
+    mpType: 'app',
+    globalData: {
+      system: null
+    },
     onLaunch() {
-      console.log("App Launch")
       this.updateVersion()
       uni.login({
         success: (r) => {
           if (r.code) {
-            this.$app.config.globalProperties.$u.post('/login', r).then(res => {
+            Vue.prototype.$u.post('login', r).then(res => {
               const userInfo = uni.getStorageSync('userInfo');
               uni.setStorage({
                 key: 'userInfo',
@@ -19,15 +23,6 @@
           }
         }
       })
-    },
-    onShow() {
-      console.log("App Show", this)
-    },
-    onHide() {
-      console.log("App Hide");
-    },
-    globalData: {
-      system: null
     },
     methods: {
       updateVersion() {
@@ -42,15 +37,14 @@
               }
             }
           })
-        })
+        });
       },
-
       getConfig() {
         return new Promise((resolve, reject) => {
           if (typeof this.globalData.system?.show === 'boolean') {
             resolve(this.globalData.system)
           } else {
-             this.$vm.$app.config.globalProperties.$u.post('system/get').then(res => {
+            Vue.prototype.$u.post('system/get').then(res => {
               const plat = process.env.VUE_APP_PLATFORM
               const system = {
                 show: res[0][plat],
@@ -62,7 +56,6 @@
           }
         })
       },
-
       getUserInfo(need = false) {
         return new Promise(async (resolve, reject) => {
           const userInfo = uni.getStorageSync('userInfo');
@@ -98,44 +91,30 @@
           }
         })
       },
-
       getCityList() {
         return new Promise(async (resolve, reject) => {
           const cityList = uni.getStorageSync('cityList');
           if (cityList) {
             resolve(cityList)
           } else {
-            this.$vm.$app.config.globalProperties.$u.http.get('https://6974-it-blacklist-a6de4b-1302530662.tcb.qcloud.la/cityList.json')
-              .then(
-                r => {
-                  this.cityList = r
-                  uni.setStorage({
-                    key: 'cityList',
-                    data: r
-                  })
-                  resolve(r)
+            Vue.prototype.$u.http.get(
+              'https://6974-it-blacklist-a6de4b-1302530662.tcb.qcloud.la/cityList.json').then(
+              r => {
+                this.cityList = r
+                uni.setStorage({
+                  key: 'cityList',
+                  data: r
                 })
+                resolve(r)
+              })
           }
         })
       }
     }
-  }
+  });
 </script>
+
 <style lang="scss">
-  @import "uview-ui/theme.scss";
   @import "uview-ui/index.scss";
-  .agreement {
-      display: flex;
-      align-items: center;
-      margin: 40rpx 0;
-  
-      .agreement-text {
-        display: flex;
-        color: $u-tips-color;
-  
-        navigator {
-          color: $u-type-primary;
-        }
-      }
-    }
+  /*每个页面公共css */
 </style>

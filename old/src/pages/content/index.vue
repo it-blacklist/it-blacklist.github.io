@@ -1,37 +1,32 @@
 <template>
   <view class="">
     <u-card :title="content.company" :sub-title="$u.timeFormat(content.createTime, 'yyyy/mm/dd hh:MM')" full>
-      <template v-slot:body>
-        <view class="content">
-          <view class="u-body-item">
-            <view class="u-body-item-title">{{content.content}}</view>
-            <view class="appeal-wrap"><text @click="appeal">我要纠错</text></view>
-          </view>
+      <view class="content" slot="body">
+        <view class="u-body-item">
+          <view class="u-body-item-title">{{content.content}}</view>
+          <view class="appeal-wrap"><text @click="appeal">我要纠错</text></view>
         </view>
-      </template>
-      <template v-slot:foot>
-        <view class="" v-show="system.show">
-          <!-- <view class="rate-wrap">
-            <u-button :type="rateConf.up.type" shape="circle" size="medium" @click="updateRate(rateConf.up.rate)"
-              style="width:119px">
-              <u-icon v-show="rateConf.up.iconShow" name="thumb-up-fill" size="32"></u-icon>
-              <text>{{rateConf.up.text}}</text>
-            </u-button>
-            <u-button :type="rateConf.down.type" shape="circle" size="medium" @click="updateRate(rateConf.down.rate)"
-              style="width:119px">
-              <u-icon v-show="rateConf.down.iconShow" name="thumb-down-fill" size="32"></u-icon>
-              <text>{{rateConf.down.text}}</text>
-            </u-button>
-          </view> -->
-          <u-icon name="chat-fill" size="34" label="精选评论"></u-icon>
-          <u-empty v-if="!discussList.length" text="暂无评论" mode="news"></u-empty>
-          <view v-for="(item,index) of discussList" :key="item._id"
-            :class="[{'u-border-bottom':(index+1)!==discussList.length},'u-body-item']" style="margin-top: 8px;">
-            <view class="u-body-item-title" @click="showTime(item.createTime)">{{item.content}}</view>
-          </view>
+      </view>
+      <view class="" slot="foot" v-show="system.show">
+        <view class="rate-wrap">
+          <u-button :type="rateConf.up.type" shape="circle" size="medium" @click="updateRate(rateConf.up.rate)"
+            style="width:119px">
+            <u-icon v-show="rateConf.up.iconShow" name="thumb-up-fill" size="32"></u-icon>
+            <text>{{rateConf.up.text}}</text>
+          </u-button>
+          <u-button :type="rateConf.down.type" shape="circle" size="medium" @click="updateRate(rateConf.down.rate)"
+            style="width:119px">
+            <u-icon v-show="rateConf.down.iconShow" name="thumb-down-fill" size="32"></u-icon>
+            <text>{{rateConf.down.text}}</text>
+          </u-button>
         </view>
-      </template>
-
+        <u-icon name="chat-fill" size="34" label="精选评论"></u-icon>
+        <u-empty v-if="!discussList.length" text="暂无评论" mode="news"></u-empty>
+        <view v-for="(item,index) of discussList" :key="item._id"
+          :class="[{'u-border-bottom':(index+1)!==discussList.length},'u-body-item']" style="margin-top: 8px;">
+          <view class="u-body-item-title" @click="showTime(item.createTime)">{{item.content}}</view>
+        </view>
+      </view>
     </u-card>
     <view v-show="system.show" class="u-padding-30">
       <u-form :model="model" ref="uForm" :errorType="['toast']">

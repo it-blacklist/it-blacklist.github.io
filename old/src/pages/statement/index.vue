@@ -2,14 +2,14 @@
   <view v-show="system.show">
     <view class="u-padding-40">
       <view class="u-main-color u-font-19">
-        {{(system.notice||{}).title}}
+        {{system.notice.title}}
       </view>
-      <view v-for="(item,index) of (system.notice||{}).content" :key="index" class="u-content-color u-margin-top-20">
+      <view v-for="(item,index) of system.notice.content" :key="index" class="u-content-color u-margin-top-20">
         {{item}}
       </view>
       <view class="u-body-item">
         <u-empty v-if="!discussList.length" text="暂无评论" mode="news"></u-empty>
-        <view v-for="(item,index) of discussList" :key="item._id" :class="[{'u-border-bottom':(index+1)!==item.length},'u-body-item']">
+        <view v-for="(item,index) of discussList" :key="item._id" :class="[{'u-border-bottom':(index+1)!==commentList.length},'u-body-item']">
           <view class="u-body-item-title" @click="showTime(item.createTime)">{{item.content}}</view>
         </view>
       </view>
@@ -104,18 +104,13 @@
         this.loadingStatus = 'loading'
         this.$u.http.post('discuss/get',{company,current:1,pageSize:100})
         .then(res=>{
-      
-            this.discussList = res
-       
-          console.log(res,this.discussList)
-          
+          this.discussList = res
         })
       }
     },
     async onLoad(props) {
       const system = await getApp().getConfig()
       this.system = system
-      console.log(system)
       if(system.show){
         this.getCommentList('置顶公告')
       }

@@ -17,11 +17,9 @@
     <u-cell-group>
       <navigator v-for="(item) of list" :key="item._id" :url="`../content/index?_id=${item._id}`">
         <u-cell-item :title="item.company" use-label-slot>
-          <template v-slot:label>
-            <view v-show="system.show" class="u-line-2">
-              {{item.content}}
-            </view>
-          </template>
+          <view v-show="system.show" class="u-line-2" slot="label">
+            {{item.content}}
+          </view>
         </u-cell-item>
       </navigator>
     </u-cell-group>
@@ -54,13 +52,12 @@
         </u-cell-group>
       </view>
     </u-popup>
-    <u-modal v-model="tipsShow" content="请先去查看公告哟" show-cancel-button confirm-text="立即查看" cancel-text="不再提示"
-      @confirm="tipsConfirm" @cancel="tipsCancel"></u-modal>
   </view>
 </template>
 
 <script>
-  export default {
+  import Vue from 'vue';
+  export default Vue.extend({
     data() {
       return {
         searchKey: '',
@@ -73,8 +70,7 @@
         system: {},
         cityList: [],
         selectShow: false,
-        city: '石家庄',
-        tipsShow: false
+        city: '石家庄'
       }
     },
     onLoad() {
@@ -87,16 +83,6 @@
       })
       getApp().getCityList().then(r => {
         this.cityList = r
-      })
-      uni.getStorage({
-        key: 'tipsShow',
-        complete: (res) => {
-          if (res.data !== false) {
-            this.tipsShow = true
-          }
-
-          console.log(res)
-        }
       })
     },
     onPullDownRefresh() {
@@ -115,7 +101,7 @@
       },
       getList(city = this.city, company = this.searchKey) {
         this.loadingStatus = 'loading'
-        this.$u.http.post('/list/get', {
+        this.$u.http.post('list/get', {
           current: ++this.current,
           pageSize: 20,
           city,
@@ -151,24 +137,13 @@
           city: this.$data.city,
           ...params,
         })
-      },
-      tipsConfirm() {
-        uni.navigateTo({
-          url: '/pages/statement/index'
-        })
-      },
-      tipsCancel() {
-        uni.setStorage({
-          key: 'tipsShow',
-          data: false
-        })
       }
     },
     onPageScroll(e) {
       this.scrollTop = e.scrollTop;
     },
     onShareAppMessage() {},
-  }
+  });
 </script>
 
 <style lang="scss">
