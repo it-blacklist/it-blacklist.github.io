@@ -7,7 +7,7 @@
 扫描下方二维码，开始体验吧！
 
 <div>
-<img src="https://6974-it-blacklist-a6de4b-1302530662.tcb.qcloud.la/qrcode/H5.png" width="200" alt="H5网站" style="float: left">
+<img src="https://6974-it-blacklist-a6de4b-1302530662.tcb.qcloud.la/qrcode/wechat.jpg" width="200" alt="H5网站" style="float: left">
 </div> 
 
 ## 开始开发
