@@ -671,28 +671,29 @@
     "@dcloudio/uni-shared" "3.0.0-alpha-3050320220729002"
     debug "^4.3.3"
 
-"@dcloudio/vite-plugin-uni@3.0.0-alpha-3040820220424001":
-  version "3.0.0-alpha-3040820220424001"
-  resolved "https://registry.npmmirror.com/@dcloudio/vite-plugin-uni/-/vite-plugin-uni-3.0.0-alpha-3040820220424001.tgz#bc012f1454da81deacc17ef5fe3aed1ab3604602"
-  integrity sha512-ksXzUTHkjOYJ/XqJmTSR25edamCSPXOPUkaTeZ138MECuNongJUDksxPXvDzYEFwtv+7Nm4Y93EmpBcNPvs3Zw==
+"@dcloudio/vite-plugin-uni@3.0.0-alpha-3050320220729002":
+  version "3.0.0-alpha-3050320220729002"
+  resolved "https://registry.npmmirror.com/@dcloudio/vite-plugin-uni/-/vite-plugin-uni-3.0.0-alpha-3050320220729002.tgz#f783032dd966691fc81621ee041511773f37a012"
+  integrity sha512-1dMEJSl+hYeymrh8YnG8D/KoAaoJP3Vmxthci0LnjJ8nTX7ASU4kijmi6WD2kk1b89i5TK5I6KS72vZ3erBF6Q==
   dependencies:
     "@babel/core" "^7.17.9"
     "@babel/plugin-syntax-import-meta" "^7.10.4"
     "@babel/plugin-transform-typescript" "^7.16.8"
-    "@dcloudio/uni-cli-shared" "3.0.0-alpha-3040820220424001"
-    "@dcloudio/uni-shared" "3.0.0-alpha-3040820220424001"
+    "@dcloudio/uni-cli-shared" "3.0.0-alpha-3050320220729002"
+    "@dcloudio/uni-shared" "3.0.0-alpha-3050320220729002"
     "@rollup/pluginutils" "^4.2.0"
-    "@vitejs/plugin-legacy" "^1.8.1"
-    "@vitejs/plugin-vue" "^2.3.1"
+    "@vitejs/plugin-legacy" "^1.8.2"
+    "@vitejs/plugin-vue" "^2.3.3"
     "@vitejs/plugin-vue-jsx" "^1.3.10"
-    "@vue/compiler-core" "3.2.33"
-    "@vue/compiler-dom" "3.2.33"
-    "@vue/compiler-sfc" "3.2.33"
-    "@vue/shared" "3.2.33"
+    "@vue/compiler-core" "3.2.37"
+    "@vue/compiler-dom" "3.2.37"
+    "@vue/compiler-sfc" "3.2.37"
+    "@vue/shared" "3.2.37"
     cac "6.7.9"
     debug "^4.3.3"
     estree-walker "^2.0.2"
     express "^4.17.1"
+    fast-glob "^3.2.11"
     fs-extra "^10.0.0"
     hash-sum "^2.0.0"
     jsonc-parser "^3.0.0"
@@ -879,7 +880,7 @@
     estree-walker "^2.0.1"
     picomatch "^2.2.2"
 
-"@vitejs/plugin-legacy@^1.8.1":
+"@vitejs/plugin-legacy@^1.8.2":
   version "1.8.2"
   resolved "https://registry.npmmirror.com/@vitejs/plugin-legacy/-/plugin-legacy-1.8.2.tgz#2f315bcb6685b12719813fb9412851445cca636f"
   integrity sha512-NCOKU+pU+cxLMR9P9RTolEuOK+h+zYBXlknj+zGcKSj/NXBZYgA1GAH1FnO4zijoWRiTaiOm2ha9LQrELE7XHg==
@@ -902,7 +903,7 @@
     "@vue/babel-plugin-jsx" "^1.1.1"
     hash-sum "^2.0.0"
 
-"@vitejs/plugin-vue@^2.3.1":
+"@vitejs/plugin-vue@^2.3.1", "@vitejs/plugin-vue@^2.3.3":
   version "2.3.3"
   resolved "https://registry.npmmirror.com/@vitejs/plugin-vue/-/plugin-vue-2.3.3.tgz#fbf80cc039b82ac21a1acb0f0478de8f61fbf600"
   integrity sha512-SmQLDyhz+6lGJhPELsBdzXGc+AcaT8stgkbiTFGpXPe8Tl1tJaBw1A6pxDqDuRsVkD8uscrkx3hA7QDOoKYtyw==
