@@ -1,7 +1,7 @@
 const install = (vm) => {
   const http = vm.config.globalProperties.$u.http
   http.setConfig({
-    baseUrl: 'https://it-blacklist-a6de4b.service.tcloudbase.com/api',
+    baseUrl: 'https://8d65ef68-cb72-4177-bf11-412930bdf7ee.bspapp.com/api',
     loadingText: '努力加载中~',
     showLoading: true,
     method: 'POST',

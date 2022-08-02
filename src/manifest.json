@@ -44,6 +44,9 @@
             "ios" : {},
             /* SDK配置 */
             "sdkConfigs" : {}
+        },
+        "uniStatistics" : {
+            "enable" : true
         }
     },
     /* 快应用特有相关 */
@@ -59,21 +62,59 @@
             "enable" : true
         }
     },
+    "uniStatistics" : {
+        "enable" : true,
+        "version" : "1"
+    },
+    "vueVersion" : "3",
+    "h5" : {
+        "uniStatistics" : {
+            "enable" : true
+        }
+    },
     "mp-alipay" : {
-        "usingComponents" : true,
         "uniStatistics" : {
             "enable" : true
         }
     },
     "mp-baidu" : {
-        "usingComponents" : true
+        "uniStatistics" : {
+            "enable" : true
+        }
+    },
+    "mp-jd" : {
+        "uniStatistics" : {
+            "enable" : true
+        }
+    },
+    "mp-kuaishou" : {
+        "uniStatistics" : {
+            "enable" : true
+        }
+    },
+    "mp-lark" : {
+        "uniStatistics" : {
+            "enable" : true
+        }
+    },
+    "mp-qq" : {
+        "uniStatistics" : {
+            "enable" : true
+        }
     },
     "mp-toutiao" : {
-        "usingComponents" : true
+        "uniStatistics" : {
+            "enable" : true
+        }
     },
-    "uniStatistics" : {
-        "enable" : false,
-        "version" : "1"
+    "quickapp-webview-huawei" : {
+        "uniStatistics" : {
+            "enable" : true
+        }
     },
-    "vueVersion" : "3"
+    "quickapp-webview-union" : {
+        "uniStatistics" : {
+            "enable" : true
+        }
+    }
 }

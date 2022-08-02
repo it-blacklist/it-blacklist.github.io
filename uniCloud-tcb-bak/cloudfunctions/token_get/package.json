@@ -1,0 +1,9 @@
+{
+    "cloudfunction-config": {
+        "memorySize": 256,
+        "timeout": 10,
+        "triggers": [],
+        "path": "",
+        "runtime": "Nodejs8"
+    }
+}

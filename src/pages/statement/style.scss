@@ -1,0 +1,15 @@
+  page {
+    min-height: 100vh;
+    position: relative;
+
+    .footer {
+      position: absolute;
+      bottom: 40rpx;
+    }
+  }
+
+  .u-body-item {
+    font-size: 32rpx;
+    color: #333;
+    padding: 20rpx 10rpx;
+  }

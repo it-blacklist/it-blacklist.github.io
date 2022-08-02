@@ -1,0 +1,8 @@
+{
+    "cloudfunction-config": {
+        "memorySize": 512,
+        "timeout": 5,
+        "triggers": [],
+        "path": "/api/list/get"
+    }
+}
