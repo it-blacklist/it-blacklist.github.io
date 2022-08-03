@@ -657,19 +657,6 @@
     "@vue/shared" "3.2.33"
     fs-extra "^10.0.0"
 
-"@dcloudio/uni-mp-toutiao@3.0.0-alpha-3040820220424001":
-  version "3.0.0-alpha-3040820220424001"
-  resolved "https://registry.npmmirror.com/@dcloudio/uni-mp-toutiao/-/uni-mp-toutiao-3.0.0-alpha-3040820220424001.tgz#3674bba3a6422d4880326c594da0db8afcbcd8f2"
-  integrity sha512-gwBOBry5L1xNcAbKG/gDfPuLGebZCd7pWef9z28R+kiKOqR2SOuASwclarVARRDjQpaIOsQ+eL2E9b/szKmdTg==
-  dependencies:
-    "@dcloudio/uni-cli-shared" "3.0.0-alpha-3040820220424001"
-    "@dcloudio/uni-mp-compiler" "3.0.0-alpha-3040820220424001"
-    "@dcloudio/uni-mp-vite" "3.0.0-alpha-3040820220424001"
-    "@dcloudio/uni-mp-vue" "3.0.0-alpha-3040820220424001"
-    "@dcloudio/uni-shared" "3.0.0-alpha-3040820220424001"
-    "@vue/compiler-core" "3.2.33"
-    "@vue/shared" "3.2.33"
-
 "@dcloudio/uni-mp-toutiao@3.0.0-alpha-3050320220729002":
   version "3.0.0-alpha-3050320220729002"
   resolved "https://registry.npmmirror.com/@dcloudio/uni-mp-toutiao/-/uni-mp-toutiao-3.0.0-alpha-3050320220729002.tgz#35f5c0fa0d980234fd902633541c0c2422b7df57"
@@ -680,6 +667,19 @@
     "@dcloudio/uni-mp-vite" "3.0.0-alpha-3050320220729002"
     "@dcloudio/uni-mp-vue" "3.0.0-alpha-3050320220729002"
     "@dcloudio/uni-shared" "3.0.0-alpha-3050320220729002"
+    "@vue/compiler-core" "3.2.37"
+    "@vue/shared" "3.2.37"
+
+"@dcloudio/uni-mp-toutiao@3.0.0-alpha-3050420220803001":
+  version "3.0.0-alpha-3050420220803001"
+  resolved "https://registry.npmmirror.com/@dcloudio/uni-mp-toutiao/-/uni-mp-toutiao-3.0.0-alpha-3050420220803001.tgz#7096b56dd5e7071e9ab64eb8e789d8c573c9e61f"
+  integrity sha512-2arRp57TdVyd+ibDWxlPPdZCQOlWYB5zfgtBgED+IixEcodzoSzp85U29DBTtQvgZP2aUz96JRFQxXMDoC5IpQ==
+  dependencies:
+    "@dcloudio/uni-cli-shared" "3.0.0-alpha-3050420220803001"
+    "@dcloudio/uni-mp-compiler" "3.0.0-alpha-3050420220803001"
+    "@dcloudio/uni-mp-vite" "3.0.0-alpha-3050420220803001"
+    "@dcloudio/uni-mp-vue" "3.0.0-alpha-3050420220803001"
+    "@dcloudio/uni-shared" "3.0.0-alpha-3050420220803001"
     "@vue/compiler-core" "3.2.37"
     "@vue/shared" "3.2.37"
 
