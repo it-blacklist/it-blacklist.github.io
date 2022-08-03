@@ -790,16 +790,16 @@
   dependencies:
     "@dcloudio/uni-cli-shared" "3.0.0-alpha-3050320220729002"
 
-"@dcloudio/uni-quickapp-webview@3.0.0-alpha-3040820220424001":
-  version "3.0.0-alpha-3040820220424001"
-  resolved "https://registry.npmmirror.com/@dcloudio/uni-quickapp-webview/-/uni-quickapp-webview-3.0.0-alpha-3040820220424001.tgz#9ed2d96c687a84d0460c38bb7d372370ecc6b2af"
-  integrity sha512-d28HguwbkvsLP4q7aaUR8xJUWlxgsHySAXipIInVo1WtWGvISkmvcde8um5fkfIJBrRupVICFxfBwKJh0HGm6A==
+"@dcloudio/uni-quickapp-webview@3.0.0-alpha-3050420220803001":
+  version "3.0.0-alpha-3050420220803001"
+  resolved "https://registry.npmmirror.com/@dcloudio/uni-quickapp-webview/-/uni-quickapp-webview-3.0.0-alpha-3050420220803001.tgz#5fbeb84f1150bfd34a9d30b03b4b750d81d1da7b"
+  integrity sha512-cplcieS3Aw3qtHvkikbm7l7FDFCnsJqG+F0sk5qEKpJF4QLAIHilv6CCTMhV8bK+IuByGD+8+EfCMmhKXfZnyw==
   dependencies:
-    "@dcloudio/uni-cli-shared" "3.0.0-alpha-3040820220424001"
-    "@dcloudio/uni-mp-vite" "3.0.0-alpha-3040820220424001"
-    "@dcloudio/uni-mp-vue" "3.0.0-alpha-3040820220424001"
-    "@dcloudio/uni-shared" "3.0.0-alpha-3040820220424001"
-    "@vue/shared" "3.2.33"
+    "@dcloudio/uni-cli-shared" "3.0.0-alpha-3050420220803001"
+    "@dcloudio/uni-mp-vite" "3.0.0-alpha-3050420220803001"
+    "@dcloudio/uni-mp-vue" "3.0.0-alpha-3050420220803001"
+    "@dcloudio/uni-shared" "3.0.0-alpha-3050420220803001"
+    "@vue/shared" "3.2.37"
 
 "@dcloudio/uni-shared@3.0.0-alpha-3040820220424001":
   version "3.0.0-alpha-3040820220424001"
