@@ -317,12 +317,12 @@
     "@dcloudio/uni-stat" "3.0.0-alpha-3050320220729002"
     "@vue/shared" "3.2.37"
 
-"@dcloudio/uni-automator@3.0.0-alpha-3040820220424001":
-  version "3.0.0-alpha-3040820220424001"
-  resolved "https://registry.npmmirror.com/@dcloudio/uni-automator/-/uni-automator-3.0.0-alpha-3040820220424001.tgz#387341340953a13ca87c51be206b0e5d4b029e3e"
-  integrity sha512-xB4KFZfIa9qLA6KPTAw3iFvdglcA4ZF4P9w7h+iLlN9trI1GIzaNCI9lX2WUh0au+XrPOR6ijf+X5jRhEL/vAQ==
+"@dcloudio/uni-automator@3.0.0-alpha-3050420220803001":
+  version "3.0.0-alpha-3050420220803001"
+  resolved "https://registry.npmmirror.com/@dcloudio/uni-automator/-/uni-automator-3.0.0-alpha-3050420220803001.tgz#fc8438c9531bea4ed2611c404ddcb7ac0d1b15f9"
+  integrity sha512-av//98K7qfEVjkGSA/rbe7/XPFMvvVgry99CYTEg63W6oHRLY6HtXdMqY1bW1PDm8Oz+Fn4kMekEjz1iVLN7fQ==
   dependencies:
-    "@dcloudio/uni-cli-shared" "3.0.0-alpha-3040820220424001"
+    "@dcloudio/uni-cli-shared" "3.0.0-alpha-3050420220803001"
     address "^1.1.2"
     cross-env "^7.0.3"
     debug "^4.3.3"
