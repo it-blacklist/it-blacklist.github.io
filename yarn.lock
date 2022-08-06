@@ -306,17 +306,17 @@
   resolved "https://registry.npmmirror.com/@dcloudio/uni-app-vue/-/uni-app-vue-3.0.0-alpha-3050420220804003.tgz#3e883e82c0daa786a52acb40a03b3c1865b1131c"
   integrity sha512-tfhGlIhRlycUZ6enI5jwKfFY+C24W508tG4bmoFJWs9EWu/BxiJnoU9n4+kWv6QWmcnjnOCw0YgusKYpLpa9hA==
 
-"@dcloudio/uni-app@3.0.0-alpha-3050420220803001":
-  version "3.0.0-alpha-3050420220803001"
-  resolved "https://registry.npmmirror.com/@dcloudio/uni-app/-/uni-app-3.0.0-alpha-3050420220803001.tgz#96e5e1122080f743028eebee59e1f1b18c11598c"
-  integrity sha512-LPyVE8EJb/65ksLSuRQpvfE5Hek18zDVF1dz9ruKyP7LO/9gKylLbOnOFeu0qN0KW1ogXQWfYk4m0xBzXRDp1A==
+"@dcloudio/uni-app@3.0.0-alpha-3050420220804003":
+  version "3.0.0-alpha-3050420220804003"
+  resolved "https://registry.npmmirror.com/@dcloudio/uni-app/-/uni-app-3.0.0-alpha-3050420220804003.tgz#377b0a6febbff0f3bbd2cead7ac7d4792af07608"
+  integrity sha512-XG3IOyhCDQDcA96KOOQrjAhAdpFcEy1ZfIWo4RVi7OSt4q6IKN3/ygLv1QMZhi2bZZ9nsnl9DAB4uUH7dMg54A==
   dependencies:
-    "@dcloudio/uni-cloud" "3.0.0-alpha-3050420220803001"
-    "@dcloudio/uni-components" "3.0.0-alpha-3050420220803001"
-    "@dcloudio/uni-i18n" "3.0.0-alpha-3050420220803001"
-    "@dcloudio/uni-push" "3.0.0-alpha-3050420220803001"
-    "@dcloudio/uni-shared" "3.0.0-alpha-3050420220803001"
-    "@dcloudio/uni-stat" "3.0.0-alpha-3050420220803001"
+    "@dcloudio/uni-cloud" "3.0.0-alpha-3050420220804003"
+    "@dcloudio/uni-components" "3.0.0-alpha-3050420220804003"
+    "@dcloudio/uni-i18n" "3.0.0-alpha-3050420220804003"
+    "@dcloudio/uni-push" "3.0.0-alpha-3050420220804003"
+    "@dcloudio/uni-shared" "3.0.0-alpha-3050420220804003"
+    "@dcloudio/uni-stat" "3.0.0-alpha-3050420220804003"
     "@vue/shared" "3.2.37"
 
 "@dcloudio/uni-automator@3.0.0-alpha-3050420220804003":
@@ -428,14 +428,14 @@
     tapable "^2.2.0"
     xregexp "3.1.0"
 
-"@dcloudio/uni-cloud@3.0.0-alpha-3050420220803001":
-  version "3.0.0-alpha-3050420220803001"
-  resolved "https://registry.npmmirror.com/@dcloudio/uni-cloud/-/uni-cloud-3.0.0-alpha-3050420220803001.tgz#5b6f8643174c5162fdb9b76c908868e6a1a68f1c"
-  integrity sha512-qYcPUT8cHGjH9VJelMxUydrUffYFIKdiED4Sm9XLsKcINuIVANjs9K3YVJgbK/wFHZ1yTF4XXQEpmS+bDYanow==
+"@dcloudio/uni-cloud@3.0.0-alpha-3050420220804003":
+  version "3.0.0-alpha-3050420220804003"
+  resolved "https://registry.npmmirror.com/@dcloudio/uni-cloud/-/uni-cloud-3.0.0-alpha-3050420220804003.tgz#aa8509eb3e064d7779d80266a89d2eab88f04aa7"
+  integrity sha512-0x4b+mrYSIkcMOkC2sEQ0Ekt26F97tc8uros44Dlh8WEIZexlGpHxkJLsDpsDQTuxh2sfJzGTXyzHoFoE6dOPA==
   dependencies:
-    "@dcloudio/uni-cli-shared" "3.0.0-alpha-3050420220803001"
-    "@dcloudio/uni-i18n" "3.0.0-alpha-3050420220803001"
-    "@dcloudio/uni-shared" "3.0.0-alpha-3050420220803001"
+    "@dcloudio/uni-cli-shared" "3.0.0-alpha-3050420220804003"
+    "@dcloudio/uni-i18n" "3.0.0-alpha-3050420220804003"
+    "@dcloudio/uni-shared" "3.0.0-alpha-3050420220804003"
     "@vue/shared" "3.2.37"
     fast-glob "^3.2.11"
 
@@ -443,6 +443,11 @@
   version "3.0.0-alpha-3050420220803001"
   resolved "https://registry.npmmirror.com/@dcloudio/uni-components/-/uni-components-3.0.0-alpha-3050420220803001.tgz#286de6fc99f2a7cc697c30e39045e112296c01a5"
   integrity sha512-whA5LeDZQObja4NojXIEX8iHLtFBuETkr51N8PWcgNUswoZJBFSd4PZT3ZXj7COCQRjZ8RQC4eJyCFVXYT9/zQ==
+
+"@dcloudio/uni-components@3.0.0-alpha-3050420220804003":
+  version "3.0.0-alpha-3050420220804003"
+  resolved "https://registry.npmmirror.com/@dcloudio/uni-components/-/uni-components-3.0.0-alpha-3050420220804003.tgz#0ebdfba2d81fd92d8829d9b5e5652ec4141cc150"
+  integrity sha512-FYg0JoeZCb4Y00Sj7+BBD6cGeN1mLW6a1KPX3nIePH+wgcy9DgseITq65Lnh69sJE+MMFG6PNqE6CToUOocxow==
 
 "@dcloudio/uni-h5-vite@3.0.0-alpha-3050420220803001":
   version "3.0.0-alpha-3050420220803001"
@@ -693,12 +698,12 @@
     parse-css-font "^4.0.0"
     postcss "^8.4.13"
 
-"@dcloudio/uni-push@3.0.0-alpha-3050420220803001":
-  version "3.0.0-alpha-3050420220803001"
-  resolved "https://registry.npmmirror.com/@dcloudio/uni-push/-/uni-push-3.0.0-alpha-3050420220803001.tgz#cf874158d1c3b75764c7be770149baf62cec18ac"
-  integrity sha512-WOUE1xlnufBuU2iUmzkyrASYYkWoOqKRrJQ6HasnGeumad/rwRnk3vOEkYt4+E3jsAGBno2Vixb5GCpuCM0Jrw==
+"@dcloudio/uni-push@3.0.0-alpha-3050420220804003":
+  version "3.0.0-alpha-3050420220804003"
+  resolved "https://registry.npmmirror.com/@dcloudio/uni-push/-/uni-push-3.0.0-alpha-3050420220804003.tgz#2f69e17d894fa3050fbe1729f3474dbb13d5b795"
+  integrity sha512-V9OOFCn6wdFqzuyd0tZXs87Lj6oHYeqqU16Spi6Gv2gCwkof1uDSxRKmuSEmAC5x5ntO66YAQe+DKcQ2gQgRKQ==
   dependencies:
-    "@dcloudio/uni-cli-shared" "3.0.0-alpha-3050420220803001"
+    "@dcloudio/uni-cli-shared" "3.0.0-alpha-3050420220804003"
 
 "@dcloudio/uni-quickapp-webview@3.0.0-alpha-3050420220804003":
   version "3.0.0-alpha-3050420220804003"
@@ -725,13 +730,13 @@
   dependencies:
     "@vue/shared" "3.2.37"
 
-"@dcloudio/uni-stat@3.0.0-alpha-3050420220803001":
-  version "3.0.0-alpha-3050420220803001"
-  resolved "https://registry.npmmirror.com/@dcloudio/uni-stat/-/uni-stat-3.0.0-alpha-3050420220803001.tgz#7931a3465a9c3e4728c82470f8669f31f9332050"
-  integrity sha512-RVM5SKWU+oERZ9S+qENd9gOhkVDubwQwFkAkEPFJuRPZ+kXVhuKy97Dql2Lo8Ub8Scd75ZzHW7dlKCXZtu5ukQ==
+"@dcloudio/uni-stat@3.0.0-alpha-3050420220804003":
+  version "3.0.0-alpha-3050420220804003"
+  resolved "https://registry.npmmirror.com/@dcloudio/uni-stat/-/uni-stat-3.0.0-alpha-3050420220804003.tgz#59150f69d810c32e42f3b82130b5049f78b2696c"
+  integrity sha512-R3N7DgjP3dmCrwSdrroVsen66SdDTjK42qPTRJth7q1ec2dwdZtXV3lsvQztvIehXcEr4Fa4Odg8uRAKroXEuQ==
   dependencies:
-    "@dcloudio/uni-cli-shared" "3.0.0-alpha-3050420220803001"
-    "@dcloudio/uni-shared" "3.0.0-alpha-3050420220803001"
+    "@dcloudio/uni-cli-shared" "3.0.0-alpha-3050420220804003"
+    "@dcloudio/uni-shared" "3.0.0-alpha-3050420220804003"
     debug "^4.3.3"
 
 "@dcloudio/uni-uts-vite@3.0.0-alpha-3050420220804003":
