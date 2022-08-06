@@ -37,15 +37,17 @@ exports.main = async (event, context) => {
     `https://api.weixin.qq.com/wxa/msg_sec_check?access_token=${access_token}`, {
       method: 'POST',
       data: JSON.stringify({
-        content: body.toString('ascii')
+        version: 2,
+        scene: 2,
+        openid: params.userInfo.openid,
+        content: params.company + params.content
       })
     })
   const success = JSON.parse(r.data.toString('ascii'))
 
-  if (success.errcode !== 0) {
-    return success
+  if (success.result.suggest !== 'pass') {
+    return { errcode: -1}
   } else {
-    //const params = JSON.parse(body)
     const res = await db.collection('black_list').add({
       ...params,
       createTime: new Date().getTime(),

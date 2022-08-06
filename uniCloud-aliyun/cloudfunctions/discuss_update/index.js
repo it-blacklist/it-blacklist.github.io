@@ -5,6 +5,7 @@ exports.main = async (event, context) => {
   if (event.isBase64Encoded) {
     body = Buffer.from(body)
   }
+  body = JSON.parse(body)
   console.log(body)
   //安全验证
   const list = await db.collection('system').doc('79550af260f83242286a017e23bd8ffc').get()
@@ -14,16 +15,19 @@ exports.main = async (event, context) => {
     `https://api.weixin.qq.com/wxa/msg_sec_check?access_token=${access_token}`, {
       method: 'POST',
       data: JSON.stringify({
-        content: body.toString('ascii')
+        version: 2,
+        scene: 2,
+        openid: body.userInfo.openid,
+        content: body.content
       })
     })
   const success = JSON.parse(r.data.toString('ascii'))
 
   console.log(success)
-  if (success.errcode !== 0) {
-    return success
+  if (success.result.suggest !== 'pass') {
+    return { errcode: -1}
   } else {
-    const params = JSON.parse(body)
+    const params = body
     const res = await db.collection('discuss').add({
       ...params,
       createTime: new Date().getTime(),
