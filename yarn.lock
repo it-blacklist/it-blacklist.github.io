@@ -494,15 +494,15 @@
   resolved "https://registry.npmmirror.com/@dcloudio/uni-i18n/-/uni-i18n-3.0.0-alpha-3050420220804003.tgz#37f0d3a338cd3ce2901ee75d0d888a4f292e10b5"
   integrity sha512-EfFxb1zhERub+rFpsTYK/DR1djXhRu/kzZcQiMTAI94oVzj4bBHBLfBtBUbxRJ9hkE9+3MRD+r44g9yp41CdAQ==
 
-"@dcloudio/uni-mp-alipay@3.0.0-alpha-3050420220803001":
-  version "3.0.0-alpha-3050420220803001"
-  resolved "https://registry.npmmirror.com/@dcloudio/uni-mp-alipay/-/uni-mp-alipay-3.0.0-alpha-3050420220803001.tgz#a4afe7246d16c547f278ee47710a2777644d4936"
-  integrity sha512-bhMJ5D15NnEgaVyrLbf47YNJf6P06GUTR3zcEKgeGgUgaQeabjq0a52eOG0I54U+CAF3chHWA1R6e9AX8UreNw==
+"@dcloudio/uni-mp-alipay@3.0.0-alpha-3050420220804003":
+  version "3.0.0-alpha-3050420220804003"
+  resolved "https://registry.npmmirror.com/@dcloudio/uni-mp-alipay/-/uni-mp-alipay-3.0.0-alpha-3050420220804003.tgz#e162b7510469bd26197a8d696c3e1ee2b7d3c3da"
+  integrity sha512-VrLyLSzNsKhYBXvn8YeMJLAEtf7uIa1PMsZ0vJCFxFbpgqEKUG4Ho5xm1Z1HjCf1Ohss8WsogX9KvAd5ulnmgA==
   dependencies:
-    "@dcloudio/uni-cli-shared" "3.0.0-alpha-3050420220803001"
-    "@dcloudio/uni-mp-vite" "3.0.0-alpha-3050420220803001"
-    "@dcloudio/uni-mp-vue" "3.0.0-alpha-3050420220803001"
-    "@dcloudio/uni-shared" "3.0.0-alpha-3050420220803001"
+    "@dcloudio/uni-cli-shared" "3.0.0-alpha-3050420220804003"
+    "@dcloudio/uni-mp-vite" "3.0.0-alpha-3050420220804003"
+    "@dcloudio/uni-mp-vue" "3.0.0-alpha-3050420220804003"
+    "@dcloudio/uni-shared" "3.0.0-alpha-3050420220804003"
     "@vue/compiler-core" "3.2.37"
     "@vue/shared" "3.2.37"
 
