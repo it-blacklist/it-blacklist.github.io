@@ -13,10 +13,7 @@ exports.main = async (event, context) => {
   const list = await db.collection('black_list')
     .orderBy('createTime', 'desc')
     .where({
-      company: params.company ? db.RegExp({
-        regexp: params.company,
-        options: 'i'
-      }) : undefined,
+      company: params.company ? new RegExp('.*'+params.company+ '.*', 'i') : undefined,
       city: params.city,
       checked: true
     })

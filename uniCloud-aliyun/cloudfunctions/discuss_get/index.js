@@ -9,10 +9,7 @@ exports.main = async (event, context) => {
   const list = await db.collection('discuss')
     .orderBy('createTime', 'desc')
     .where({
-      company: db.RegExp({
-        regexp: params.company,
-        options: 'i'
-      }),
+      company: new RegExp('.*'+params.company+ '.*', 'i'),
       checked: true
     })
     .skip((params.current - 1) * params.pageSize)
