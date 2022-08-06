@@ -444,6 +444,11 @@
   resolved "https://registry.npmmirror.com/@dcloudio/uni-components/-/uni-components-3.0.0-alpha-3050420220803001.tgz#286de6fc99f2a7cc697c30e39045e112296c01a5"
   integrity sha512-whA5LeDZQObja4NojXIEX8iHLtFBuETkr51N8PWcgNUswoZJBFSd4PZT3ZXj7COCQRjZ8RQC4eJyCFVXYT9/zQ==
 
+"@dcloudio/uni-components@3.0.0-alpha-3050420220804003":
+  version "3.0.0-alpha-3050420220804003"
+  resolved "https://registry.npmmirror.com/@dcloudio/uni-components/-/uni-components-3.0.0-alpha-3050420220804003.tgz#0ebdfba2d81fd92d8829d9b5e5652ec4141cc150"
+  integrity sha512-FYg0JoeZCb4Y00Sj7+BBD6cGeN1mLW6a1KPX3nIePH+wgcy9DgseITq65Lnh69sJE+MMFG6PNqE6CToUOocxow==
+
 "@dcloudio/uni-h5-vite@3.0.0-alpha-3050420220803001":
   version "3.0.0-alpha-3050420220803001"
   resolved "https://registry.npmmirror.com/@dcloudio/uni-h5-vite/-/uni-h5-vite-3.0.0-alpha-3050420220803001.tgz#ad035be28157a38f97c76c372820fec0bd8066b8"
