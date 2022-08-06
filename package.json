@@ -54,7 +54,7 @@
     "@dcloudio/uni-automator": "3.0.0-alpha-3050420220803001",
     "@dcloudio/uni-cli-shared": "3.0.0-alpha-3050420220803001",
     "@dcloudio/vite-plugin-uni": "3.0.0-alpha-3050420220804003",
-    "sass": "^1.54.1",
+    "sass": "^1.54.3",
     "typescript": "^4.7.4",
     "vite": "^2.9.14"
   }
