@@ -506,17 +506,17 @@
     "@vue/compiler-core" "3.2.37"
     "@vue/shared" "3.2.37"
 
-"@dcloudio/uni-mp-baidu@3.0.0-alpha-3050420220803001":
-  version "3.0.0-alpha-3050420220803001"
-  resolved "https://registry.npmmirror.com/@dcloudio/uni-mp-baidu/-/uni-mp-baidu-3.0.0-alpha-3050420220803001.tgz#afc36ca1ea3bd89f5d3509d220fa3fa88f187019"
-  integrity sha512-pua2sakb0VJ9VkE/VS+Z5rDjewvv96LYf2ZUp/kCpuoUVN/7sBa2EvqkRsAbLBrUkA2QlgQUARMCilQh7D6y4g==
+"@dcloudio/uni-mp-baidu@3.0.0-alpha-3050420220804003":
+  version "3.0.0-alpha-3050420220804003"
+  resolved "https://registry.npmmirror.com/@dcloudio/uni-mp-baidu/-/uni-mp-baidu-3.0.0-alpha-3050420220804003.tgz#9f9a89a01dccdc19b4a41baed8713b7883f684e5"
+  integrity sha512-Fzin4xJ6VODgfL1JHzagVDtKQQOnNAKdVvA/ZzbdaVTlq2Pq//1UcvPYGkje4tC7X8ywAhML4Cef9YKVX61ieg==
   dependencies:
-    "@dcloudio/uni-cli-shared" "3.0.0-alpha-3050420220803001"
-    "@dcloudio/uni-mp-compiler" "3.0.0-alpha-3050420220803001"
-    "@dcloudio/uni-mp-vite" "3.0.0-alpha-3050420220803001"
-    "@dcloudio/uni-mp-vue" "3.0.0-alpha-3050420220803001"
-    "@dcloudio/uni-mp-weixin" "3.0.0-alpha-3050420220803001"
-    "@dcloudio/uni-shared" "3.0.0-alpha-3050420220803001"
+    "@dcloudio/uni-cli-shared" "3.0.0-alpha-3050420220804003"
+    "@dcloudio/uni-mp-compiler" "3.0.0-alpha-3050420220804003"
+    "@dcloudio/uni-mp-vite" "3.0.0-alpha-3050420220804003"
+    "@dcloudio/uni-mp-vue" "3.0.0-alpha-3050420220804003"
+    "@dcloudio/uni-mp-weixin" "3.0.0-alpha-3050420220804003"
+    "@dcloudio/uni-shared" "3.0.0-alpha-3050420220804003"
     "@vue/compiler-core" "3.2.37"
     "@vue/shared" "3.2.37"
 
@@ -671,6 +671,17 @@
     "@dcloudio/uni-mp-vite" "3.0.0-alpha-3050420220803001"
     "@dcloudio/uni-mp-vue" "3.0.0-alpha-3050420220803001"
     "@dcloudio/uni-shared" "3.0.0-alpha-3050420220803001"
+    "@vue/shared" "3.2.37"
+
+"@dcloudio/uni-mp-weixin@3.0.0-alpha-3050420220804003":
+  version "3.0.0-alpha-3050420220804003"
+  resolved "https://registry.npmmirror.com/@dcloudio/uni-mp-weixin/-/uni-mp-weixin-3.0.0-alpha-3050420220804003.tgz#fd0bb763d0ff067bfbfc7de06a6af19ca6b7820a"
+  integrity sha512-VsQEX0s2dOTmU3yLfDq6bNqTr2uPVgxbDiYPFgf/7fHebB0ZqNLMU4AaztZhFA1MmYzquujVni5pHRClF3MhaQ==
+  dependencies:
+    "@dcloudio/uni-cli-shared" "3.0.0-alpha-3050420220804003"
+    "@dcloudio/uni-mp-vite" "3.0.0-alpha-3050420220804003"
+    "@dcloudio/uni-mp-vue" "3.0.0-alpha-3050420220804003"
+    "@dcloudio/uni-shared" "3.0.0-alpha-3050420220804003"
     "@vue/shared" "3.2.37"
 
 "@dcloudio/uni-nvue-styler@3.0.0-alpha-3050420220803001":
