@@ -1,5 +1,5 @@
 {
-  "name": "uni-preset-vue",
+  "name": "it-blacklist",
   "version": "0.0.0",
   "scripts": {
     "dev:app": "uni -p app",
