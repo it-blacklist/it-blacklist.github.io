@@ -286,12 +286,12 @@
     "@dcloudio/uni-stat" "3.0.0-alpha-3050420220804003"
     "@vue/shared" "3.2.37"
 
-"@dcloudio/uni-automator@3.0.0-alpha-3050420220804003":
-  version "3.0.0-alpha-3050420220804003"
-  resolved "https://registry.npmmirror.com/@dcloudio/uni-automator/-/uni-automator-3.0.0-alpha-3050420220804003.tgz#8b35d581e1f8a007b6cf9e7060017fe74cdcd95e"
-  integrity sha512-y57bQKRZaBjEqaxoP0VvZe2Bku8EfPZrmA4ivBJ/3KI8di4nPWohsH+CDzthTMleiFaXvQpTrRyqBC4D5wt8Bg==
+"@dcloudio/uni-automator@3.0.0-alpha-3050420220804008":
+  version "3.0.0-alpha-3050420220804008"
+  resolved "https://registry.npmmirror.com/@dcloudio/uni-automator/-/uni-automator-3.0.0-alpha-3050420220804008.tgz#1220c66502c3933a60bf00d72a8a70ffc1d58ce8"
+  integrity sha512-Ihb5TtL2CWXRtjD9hFuqAuYP3BOs/WbDbzJuEbGKcbt9PUmLHiUWzw64zIxqzDWa6szz1FQRW70e6O90sFxoMQ==
   dependencies:
-    "@dcloudio/uni-cli-shared" "3.0.0-alpha-3050420220804003"
+    "@dcloudio/uni-cli-shared" "3.0.0-alpha-3050420220804008"
     address "^1.1.2"
     cross-env "^7.0.3"
     debug "^4.3.3"
@@ -349,6 +349,52 @@
     tapable "^2.2.0"
     xregexp "3.1.0"
 
+"@dcloudio/uni-cli-shared@3.0.0-alpha-3050420220804008":
+  version "3.0.0-alpha-3050420220804008"
+  resolved "https://registry.npmmirror.com/@dcloudio/uni-cli-shared/-/uni-cli-shared-3.0.0-alpha-3050420220804008.tgz#b828226c7d58ea1bcccd52576adc25f6b14efcfc"
+  integrity sha512-WoumtK3mHGMKsJZEZtgINKNXRd3NQQPLiQ50JDULLlwza+aj9eqw9FdWyzE8B0vd6uM3frFRRTn+sO1D0k9v+w==
+  dependencies:
+    "@ampproject/remapping" "^2.1.2"
+    "@babel/core" "^7.17.9"
+    "@babel/parser" "^7.17.9"
+    "@babel/types" "^7.17.0"
+    "@dcloudio/uni-i18n" "3.0.0-alpha-3050420220804008"
+    "@dcloudio/uni-shared" "3.0.0-alpha-3050420220804008"
+    "@intlify/core-base" "9.1.9"
+    "@intlify/shared" "9.1.9"
+    "@intlify/vue-devtools" "9.1.9"
+    "@rollup/pluginutils" "^4.2.0"
+    "@vue/compiler-core" "3.2.37"
+    "@vue/compiler-dom" "3.2.37"
+    "@vue/compiler-sfc" "3.2.37"
+    "@vue/server-renderer" "3.2.37"
+    "@vue/shared" "3.2.37"
+    autoprefixer "^10.4.7"
+    base64url "^3.0.1"
+    chokidar "^3.5.3"
+    compare-versions "^3.6.0"
+    debug "^4.3.3"
+    es-module-lexer "^0.9.3"
+    esbuild "^0.14.27"
+    estree-walker "^2.0.2"
+    fast-glob "^3.2.11"
+    fs-extra "^10.0.0"
+    hash-sum "^2.0.0"
+    jsonc-parser "^3.0.0"
+    magic-string "^0.26.1"
+    merge "^2.1.1"
+    mime "^3.0.0"
+    module-alias "^2.2.2"
+    os-locale-s-fix "^1.0.8-fix-1"
+    picocolors "^1.0.0"
+    postcss-import "^14.0.2"
+    postcss-load-config "^3.1.1"
+    postcss-modules "^4.3.0"
+    postcss-selector-parser "^6.0.6"
+    resolve "^1.22.0"
+    tapable "^2.2.0"
+    xregexp "3.1.0"
+
 "@dcloudio/uni-cloud@3.0.0-alpha-3050420220804003":
   version "3.0.0-alpha-3050420220804003"
   resolved "https://registry.npmmirror.com/@dcloudio/uni-cloud/-/uni-cloud-3.0.0-alpha-3050420220804003.tgz#aa8509eb3e064d7779d80266a89d2eab88f04aa7"
@@ -369,6 +415,11 @@
   version "3.0.0-alpha-3050420220804003"
   resolved "https://registry.npmmirror.com/@dcloudio/uni-i18n/-/uni-i18n-3.0.0-alpha-3050420220804003.tgz#37f0d3a338cd3ce2901ee75d0d888a4f292e10b5"
   integrity sha512-EfFxb1zhERub+rFpsTYK/DR1djXhRu/kzZcQiMTAI94oVzj4bBHBLfBtBUbxRJ9hkE9+3MRD+r44g9yp41CdAQ==
+
+"@dcloudio/uni-i18n@3.0.0-alpha-3050420220804008":
+  version "3.0.0-alpha-3050420220804008"
+  resolved "https://registry.npmmirror.com/@dcloudio/uni-i18n/-/uni-i18n-3.0.0-alpha-3050420220804008.tgz#8bf308e5179e2e03df8d5af8ed51a80ce41a88c3"
+  integrity sha512-VqVE90XIXbV5os1ZLviPQTk7IS1hlrNUfsWmr0T4YP0BnvDXKLfJygPnLo8kZlOJRanuW3ZT2KAhGGFjJakGiQ==
 
 "@dcloudio/uni-mp-compiler@3.0.0-alpha-3050420220804003":
   version "3.0.0-alpha-3050420220804003"
@@ -430,6 +481,13 @@
   version "3.0.0-alpha-3050420220804003"
   resolved "https://registry.npmmirror.com/@dcloudio/uni-shared/-/uni-shared-3.0.0-alpha-3050420220804003.tgz#341b36d942f75a647c74a77cedeb0ab6b4e54fda"
   integrity sha512-gou6A7qWyeROVIEPq+rR3heihxoI2fTlTGZfBNxk6SiqxlnXhGuH4BA6BJTtaF/5e52Z8uVnTYqF96tgK1iGPQ==
+  dependencies:
+    "@vue/shared" "3.2.37"
+
+"@dcloudio/uni-shared@3.0.0-alpha-3050420220804008":
+  version "3.0.0-alpha-3050420220804008"
+  resolved "https://registry.npmmirror.com/@dcloudio/uni-shared/-/uni-shared-3.0.0-alpha-3050420220804008.tgz#de606ecb9916f66e33b7136d45b3a87381d2af66"
+  integrity sha512-ezOVle/3hl+8frWrursibP415s+5u0P+R3JUKNEPS5E3XiTC4kTEdSQOvDo3ktaNTZQjRxfRdt1VfCKEZZ+QiQ==
   dependencies:
     "@vue/shared" "3.2.37"
 
