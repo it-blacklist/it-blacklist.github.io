@@ -349,6 +349,52 @@
     tapable "^2.2.0"
     xregexp "3.1.0"
 
+"@dcloudio/uni-cli-shared@3.0.0-alpha-3060120220907002":
+  version "3.0.0-alpha-3060120220907002"
+  resolved "https://registry.npmmirror.com/@dcloudio/uni-cli-shared/-/uni-cli-shared-3.0.0-alpha-3060120220907002.tgz#13c2a3871e8b0676f2fef3e4bff74771d5c8aa8d"
+  integrity sha512-jxviAXh5uKZFQUJbQrBfowdoGm28sxIZ+ftqwUGw8TWRt8Lsm3/cNW3ile8Z4N+VEej96tVyexKbkdKfpTF8pA==
+  dependencies:
+    "@ampproject/remapping" "^2.1.2"
+    "@babel/core" "^7.17.9"
+    "@babel/parser" "^7.17.9"
+    "@babel/types" "^7.17.0"
+    "@dcloudio/uni-i18n" "3.0.0-alpha-3060120220907002"
+    "@dcloudio/uni-shared" "3.0.0-alpha-3060120220907002"
+    "@intlify/core-base" "9.1.9"
+    "@intlify/shared" "9.1.9"
+    "@intlify/vue-devtools" "9.1.9"
+    "@rollup/pluginutils" "^4.2.0"
+    "@vue/compiler-core" "3.2.37"
+    "@vue/compiler-dom" "3.2.37"
+    "@vue/compiler-sfc" "3.2.37"
+    "@vue/server-renderer" "3.2.37"
+    "@vue/shared" "3.2.37"
+    autoprefixer "^10.4.8"
+    base64url "^3.0.1"
+    chokidar "^3.5.3"
+    compare-versions "^3.6.0"
+    debug "^4.3.3"
+    es-module-lexer "^0.9.3"
+    esbuild "^0.14.27"
+    estree-walker "^2.0.2"
+    fast-glob "^3.2.11"
+    fs-extra "^10.0.0"
+    hash-sum "^2.0.0"
+    jsonc-parser "^3.0.0"
+    magic-string "^0.26.1"
+    merge "^2.1.1"
+    mime "^3.0.0"
+    module-alias "^2.2.2"
+    os-locale-s-fix "^1.0.8-fix-1"
+    picocolors "^1.0.0"
+    postcss-import "^14.0.2"
+    postcss-load-config "^3.1.1"
+    postcss-modules "^4.3.0"
+    postcss-selector-parser "^6.0.6"
+    resolve "^1.22.0"
+    tapable "^2.2.0"
+    xregexp "3.1.0"
+
 "@dcloudio/uni-cloud@3.0.0-alpha-3050420220804003":
   version "3.0.0-alpha-3050420220804003"
   resolved "https://registry.npmmirror.com/@dcloudio/uni-cloud/-/uni-cloud-3.0.0-alpha-3050420220804003.tgz#aa8509eb3e064d7779d80266a89d2eab88f04aa7"
@@ -369,6 +415,11 @@
   version "3.0.0-alpha-3050420220804003"
   resolved "https://registry.npmmirror.com/@dcloudio/uni-i18n/-/uni-i18n-3.0.0-alpha-3050420220804003.tgz#37f0d3a338cd3ce2901ee75d0d888a4f292e10b5"
   integrity sha512-EfFxb1zhERub+rFpsTYK/DR1djXhRu/kzZcQiMTAI94oVzj4bBHBLfBtBUbxRJ9hkE9+3MRD+r44g9yp41CdAQ==
+
+"@dcloudio/uni-i18n@3.0.0-alpha-3060120220907002":
+  version "3.0.0-alpha-3060120220907002"
+  resolved "https://registry.npmmirror.com/@dcloudio/uni-i18n/-/uni-i18n-3.0.0-alpha-3060120220907002.tgz#a71eeffb7ce5602edbcbf1e703423cd23bd5ed42"
+  integrity sha512-DYtj4rmrwN7yFKSbRdENTHqPasHaYJHIl53aEskcVoYF2PophYiXGgGniCWtdiDdlr8nG8yedODVGwJGRqu3TQ==
 
 "@dcloudio/uni-mp-compiler@3.0.0-alpha-3050420220804003":
   version "3.0.0-alpha-3050420220804003"
@@ -433,6 +484,13 @@
   dependencies:
     "@vue/shared" "3.2.37"
 
+"@dcloudio/uni-shared@3.0.0-alpha-3060120220907002":
+  version "3.0.0-alpha-3060120220907002"
+  resolved "https://registry.npmmirror.com/@dcloudio/uni-shared/-/uni-shared-3.0.0-alpha-3060120220907002.tgz#d3b3dce5f49872862ff938bc08f6cd751d6bd290"
+  integrity sha512-0m2GT7DN248EsnyBjFtYxJTxZQS42VMGn5PTQnvefK3ks3KlTUJFSXsxdhBVtmXyJvvl835DUzhZvQexo1ba/w==
+  dependencies:
+    "@vue/shared" "3.2.37"
+
 "@dcloudio/uni-stat@3.0.0-alpha-3050420220804003":
   version "3.0.0-alpha-3050420220804003"
   resolved "https://registry.npmmirror.com/@dcloudio/uni-stat/-/uni-stat-3.0.0-alpha-3050420220804003.tgz#59150f69d810c32e42f3b82130b5049f78b2696c"
@@ -442,16 +500,16 @@
     "@dcloudio/uni-shared" "3.0.0-alpha-3050420220804003"
     debug "^4.3.3"
 
-"@dcloudio/vite-plugin-uni@3.0.0-alpha-3050420220804003":
-  version "3.0.0-alpha-3050420220804003"
-  resolved "https://registry.npmmirror.com/@dcloudio/vite-plugin-uni/-/vite-plugin-uni-3.0.0-alpha-3050420220804003.tgz#4d9c89ccaedbe9db5878a949a99e4bda07a4ec5d"
-  integrity sha512-+9v9eH3VReXPLwOkgFRDUXSJJowVEHgOj724lEFquSjlhX//QIPBfvE1ngoUSQR6RetPmnrdGWBBGsiNpoBLGw==
+"@dcloudio/vite-plugin-uni@3.0.0-alpha-3060120220907002":
+  version "3.0.0-alpha-3060120220907002"
+  resolved "https://registry.npmmirror.com/@dcloudio/vite-plugin-uni/-/vite-plugin-uni-3.0.0-alpha-3060120220907002.tgz#062541a6596e029a68192d007b48f648770d73cd"
+  integrity sha512-tUs4b7lftcAzV8cbUuj9IevGgrcWUS3fDIEm047eI/sEqzYUxN0Zuxn6KExGGXavPwoj1pVrS1P3j433GMiQmA==
   dependencies:
     "@babel/core" "^7.17.9"
     "@babel/plugin-syntax-import-meta" "^7.10.4"
     "@babel/plugin-transform-typescript" "^7.16.8"
-    "@dcloudio/uni-cli-shared" "3.0.0-alpha-3050420220804003"
-    "@dcloudio/uni-shared" "3.0.0-alpha-3050420220804003"
+    "@dcloudio/uni-cli-shared" "3.0.0-alpha-3060120220907002"
+    "@dcloudio/uni-shared" "3.0.0-alpha-3060120220907002"
     "@rollup/pluginutils" "^4.2.0"
     "@vitejs/plugin-legacy" "^1.8.2"
     "@vitejs/plugin-vue" "^2.3.3"
@@ -814,7 +872,7 @@ array-flatten@1.1.1:
   resolved "https://registry.npmmirror.com/array-flatten/-/array-flatten-1.1.1.tgz#9a5f699051b1e7073328f2a008968b64ea2955d2"
   integrity sha512-PCVAQswWemu6UdxsDFFX/+gVeYqKAod3D3UVm91jHwynguOwAvYPhx8nNlM++NqRcK6CxxpUafjmhIdKiHibqg==
 
-autoprefixer@^10.4.7:
+autoprefixer@^10.4.7, autoprefixer@^10.4.8:
   version "10.4.8"
   resolved "https://registry.npmmirror.com/autoprefixer/-/autoprefixer-10.4.8.tgz#92c7a0199e1cfb2ad5d9427bd585a3d75895b9e5"
   integrity sha512-75Jr6Q/XpTqEf6D2ltS5uMewJIx5irCU1oBYJrWjFenq/m12WRRrz6g15L1EIoYvPLXTbEry7rDOwrcYNj77xw==
