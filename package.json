@@ -14,7 +14,7 @@
   "dependencies": {
     "@dcloudio/uni-app": "3.0.0-alpha-3050420220804003",
     "@dcloudio/uni-components": "3.0.0-alpha-3050420220804003",
-    "@dcloudio/uni-mp-weixin": "3.0.0-alpha-3050420220804003",
+    "@dcloudio/uni-mp-weixin": "3.0.0-alpha-3060120220907003",
     "uview-ui": "npm:vk-uview-ui@latest",
     "vue": "^3.2.37",
     "vue-i18n": "^9.2.0",
