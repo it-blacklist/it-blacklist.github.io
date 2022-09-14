@@ -349,6 +349,52 @@
     tapable "^2.2.0"
     xregexp "3.1.0"
 
+"@dcloudio/uni-cli-shared@3.0.0-alpha-3060220220914001":
+  version "3.0.0-alpha-3060220220914001"
+  resolved "https://registry.npmmirror.com/@dcloudio/uni-cli-shared/-/uni-cli-shared-3.0.0-alpha-3060220220914001.tgz#afeb78e9ad2db788a141bbbd8874033201573bc9"
+  integrity sha512-fAxY5xjReO8jRgZs7ChDFJUDRucf+N3ET7C0+CX1G89FG9sPBdyq8lf8llu7yvtdeAHG/oL8SUxmxb9J5nCKsA==
+  dependencies:
+    "@ampproject/remapping" "^2.1.2"
+    "@babel/core" "^7.17.9"
+    "@babel/parser" "^7.17.9"
+    "@babel/types" "^7.17.0"
+    "@dcloudio/uni-i18n" "3.0.0-alpha-3060220220914001"
+    "@dcloudio/uni-shared" "3.0.0-alpha-3060220220914001"
+    "@intlify/core-base" "9.1.9"
+    "@intlify/shared" "9.1.9"
+    "@intlify/vue-devtools" "9.1.9"
+    "@rollup/pluginutils" "^4.2.0"
+    "@vue/compiler-core" "3.2.37"
+    "@vue/compiler-dom" "3.2.37"
+    "@vue/compiler-sfc" "3.2.37"
+    "@vue/server-renderer" "3.2.37"
+    "@vue/shared" "3.2.37"
+    autoprefixer "^10.4.8"
+    base64url "^3.0.1"
+    chokidar "^3.5.3"
+    compare-versions "^3.6.0"
+    debug "^4.3.3"
+    es-module-lexer "^0.9.3"
+    esbuild "^0.14.27"
+    estree-walker "^2.0.2"
+    fast-glob "^3.2.11"
+    fs-extra "^10.0.0"
+    hash-sum "^2.0.0"
+    jsonc-parser "^3.0.0"
+    magic-string "^0.26.1"
+    merge "^2.1.1"
+    mime "^3.0.0"
+    module-alias "^2.2.2"
+    os-locale-s-fix "^1.0.8-fix-1"
+    picocolors "^1.0.0"
+    postcss-import "^14.0.2"
+    postcss-load-config "^3.1.1"
+    postcss-modules "^4.3.0"
+    postcss-selector-parser "^6.0.6"
+    resolve "^1.22.0"
+    tapable "^2.2.0"
+    xregexp "3.1.0"
+
 "@dcloudio/uni-cloud@3.0.0-alpha-3050420220804003":
   version "3.0.0-alpha-3050420220804003"
   resolved "https://registry.npmmirror.com/@dcloudio/uni-cloud/-/uni-cloud-3.0.0-alpha-3050420220804003.tgz#aa8509eb3e064d7779d80266a89d2eab88f04aa7"
@@ -369,6 +415,11 @@
   version "3.0.0-alpha-3050420220804003"
   resolved "https://registry.npmmirror.com/@dcloudio/uni-i18n/-/uni-i18n-3.0.0-alpha-3050420220804003.tgz#37f0d3a338cd3ce2901ee75d0d888a4f292e10b5"
   integrity sha512-EfFxb1zhERub+rFpsTYK/DR1djXhRu/kzZcQiMTAI94oVzj4bBHBLfBtBUbxRJ9hkE9+3MRD+r44g9yp41CdAQ==
+
+"@dcloudio/uni-i18n@3.0.0-alpha-3060220220914001":
+  version "3.0.0-alpha-3060220220914001"
+  resolved "https://registry.npmmirror.com/@dcloudio/uni-i18n/-/uni-i18n-3.0.0-alpha-3060220220914001.tgz#3bdc135f090d4d625660470ed3af10ae51b39b05"
+  integrity sha512-ywvF8NZKBY82mMQ//45HKZBiO0vWx2xtbmQwLJ+woylxCI8Uldy5E7+W8kb9hrJO3bqMqH9i6HDF4eyNLLTlCg==
 
 "@dcloudio/uni-mp-compiler@3.0.0-alpha-3050420220804003":
   version "3.0.0-alpha-3050420220804003"
@@ -433,6 +484,13 @@
   dependencies:
     "@vue/shared" "3.2.37"
 
+"@dcloudio/uni-shared@3.0.0-alpha-3060220220914001":
+  version "3.0.0-alpha-3060220220914001"
+  resolved "https://registry.npmmirror.com/@dcloudio/uni-shared/-/uni-shared-3.0.0-alpha-3060220220914001.tgz#b9022be386fa67818d9dad89149001238d13d9b0"
+  integrity sha512-F36J9CjATXpVYVnQqHUmIz9kX8Z+yzMw82BWy3tztfnHkhMsJ42q+Udu/aV9uvBT41F4laF8MFYlDDay0aeXSA==
+  dependencies:
+    "@vue/shared" "3.2.37"
+
 "@dcloudio/uni-stat@3.0.0-alpha-3050420220804003":
   version "3.0.0-alpha-3050420220804003"
   resolved "https://registry.npmmirror.com/@dcloudio/uni-stat/-/uni-stat-3.0.0-alpha-3050420220804003.tgz#59150f69d810c32e42f3b82130b5049f78b2696c"
@@ -442,16 +500,16 @@
     "@dcloudio/uni-shared" "3.0.0-alpha-3050420220804003"
     debug "^4.3.3"
 
-"@dcloudio/vite-plugin-uni@3.0.0-alpha-3050420220804003":
-  version "3.0.0-alpha-3050420220804003"
-  resolved "https://registry.npmmirror.com/@dcloudio/vite-plugin-uni/-/vite-plugin-uni-3.0.0-alpha-3050420220804003.tgz#4d9c89ccaedbe9db5878a949a99e4bda07a4ec5d"
-  integrity sha512-+9v9eH3VReXPLwOkgFRDUXSJJowVEHgOj724lEFquSjlhX//QIPBfvE1ngoUSQR6RetPmnrdGWBBGsiNpoBLGw==
+"@dcloudio/vite-plugin-uni@3.0.0-alpha-3060220220914001":
+  version "3.0.0-alpha-3060220220914001"
+  resolved "https://registry.npmmirror.com/@dcloudio/vite-plugin-uni/-/vite-plugin-uni-3.0.0-alpha-3060220220914001.tgz#793152bb53fac91e19a9d06733dcb8e99e780fe8"
+  integrity sha512-7Tj++P2vHII1EsrdvHyQoc9Uizmr/1mrTpKjcP7IigGJHUm8PddCX0iCOfaxnuM4wQKRtuorz73DOVXnP6uasw==
   dependencies:
     "@babel/core" "^7.17.9"
     "@babel/plugin-syntax-import-meta" "^7.10.4"
     "@babel/plugin-transform-typescript" "^7.16.8"
-    "@dcloudio/uni-cli-shared" "3.0.0-alpha-3050420220804003"
-    "@dcloudio/uni-shared" "3.0.0-alpha-3050420220804003"
+    "@dcloudio/uni-cli-shared" "3.0.0-alpha-3060220220914001"
+    "@dcloudio/uni-shared" "3.0.0-alpha-3060220220914001"
     "@rollup/pluginutils" "^4.2.0"
     "@vitejs/plugin-legacy" "^1.8.2"
     "@vitejs/plugin-vue" "^2.3.3"
@@ -826,6 +884,18 @@ autoprefixer@^10.4.7:
     picocolors "^1.0.0"
     postcss-value-parser "^4.2.0"
 
+autoprefixer@^10.4.8:
+  version "10.4.11"
+  resolved "https://registry.npmmirror.com/autoprefixer/-/autoprefixer-10.4.11.tgz#835136aff1d9cd43640151e0d2dba00f8eac7c1c"
+  integrity sha512-5lHp6DgRodxlBLSkzHOTcufWFflH1ewfy2hvFQyjrblBFlP/0Yh4O/Wrg4ow8WRlN3AAUFFLAQwX8hTptzqVHg==
+  dependencies:
+    browserslist "^4.21.3"
+    caniuse-lite "^1.0.30001399"
+    fraction.js "^4.2.0"
+    normalize-range "^0.1.2"
+    picocolors "^1.0.0"
+    postcss-value-parser "^4.2.0"
+
 base64url@^3.0.1:
   version "3.0.1"
   resolved "https://registry.npmmirror.com/base64url/-/base64url-3.0.1.tgz#6399d572e2bc3f90a9a8b22d5dbb0a32d33f788d"
@@ -898,6 +968,11 @@ caniuse-lite@^1.0.30001370, caniuse-lite@^1.0.30001373:
   version "1.0.30001373"
   resolved "https://registry.npmmirror.com/caniuse-lite/-/caniuse-lite-1.0.30001373.tgz#2dc3bc3bfcb5d5a929bec11300883040d7b4b4be"
   integrity sha512-pJYArGHrPp3TUqQzFYRmP/lwJlj8RCbVe3Gd3eJQkAV8SAC6b19XS9BjMvRdvaS8RMkaTN8ZhoHP6S1y8zzwEQ==
+
+caniuse-lite@^1.0.30001399:
+  version "1.0.30001399"
+  resolved "https://registry.npmmirror.com/caniuse-lite/-/caniuse-lite-1.0.30001399.tgz#1bf994ca375d7f33f8d01ce03b7d5139e8587873"
+  integrity sha512-4vQ90tMKS+FkvuVWS5/QY1+d805ODxZiKFzsU8o/RsVJz49ZSRR8EjykLJbqhzdPgadbX6wB538wOzle3JniRA==
 
 chalk@^2.0.0:
   version "2.4.2"
