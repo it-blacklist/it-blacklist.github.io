@@ -22,7 +22,7 @@
   },
   "devDependencies": {
     "@dcloudio/types": "^3.0.7",
-    "@dcloudio/uni-automator": "3.0.0-alpha-3050420220804003",
+    "@dcloudio/uni-automator": "3.0.0-alpha-3060220220914002",
     "@dcloudio/uni-cli-shared": "3.0.0-alpha-3050420220804003",
     "@dcloudio/vite-plugin-uni": "3.0.0-alpha-3050420220804003",
     "sass": "^1.54.3",
