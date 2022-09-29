@@ -12,7 +12,7 @@
     "build:mp-weixin": "uni build -p mp-weixin"
   },
   "dependencies": {
-    "@dcloudio/uni-app": "3.0.0-alpha-3050420220804003",
+    "@dcloudio/uni-app": "3.0.0-alpha-3060420220922006",
     "@dcloudio/uni-components": "3.0.0-alpha-3050420220804003",
     "@dcloudio/uni-mp-weixin": "3.0.0-alpha-3050420220804003",
     "uview-ui": "npm:vk-uview-ui@latest",
