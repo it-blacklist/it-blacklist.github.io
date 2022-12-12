@@ -268,10 +268,10 @@
     "@babel/helper-validator-identifier" "^7.18.6"
     to-fast-properties "^2.0.0"
 
-"@dcloudio/types@^3.0.7":
-  version "3.0.13"
-  resolved "https://registry.npmmirror.com/@dcloudio/types/-/types-3.0.13.tgz#31642c203b7f9a71e85e427683ec35d933174440"
-  integrity sha512-K8z8DfylWnLjEHUnsc6DsxA6ugCzYZoAmyVIpT57K3cAfMTGx8E6GAW5x8Qy2lbFpw02N3D+sGHX63zO1zDVig==
+"@dcloudio/types@^3.2.3":
+  version "3.2.3"
+  resolved "https://registry.npmmirror.com/@dcloudio/types/-/types-3.2.3.tgz#194e372cabea20354d3ba53dbd894494770e9f54"
+  integrity sha512-XnccbGXE0Lk9N3Vnaqs0Ugmra1dA+B9+7kN4ftgAF48xQMPrk7LdFdNuAHjHn/geh8VloPx8cUMGb/zqnQ0Ejg==
 
 "@dcloudio/uni-app@3.0.0-alpha-3050420220804003":
   version "3.0.0-alpha-3050420220804003"
