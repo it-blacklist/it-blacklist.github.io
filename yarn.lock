@@ -360,6 +360,11 @@
     "@vue/shared" "3.2.37"
     fast-glob "^3.2.11"
 
+"@dcloudio/uni-components@3.0.0-3061520221228001":
+  version "3.0.0-3061520221228001"
+  resolved "https://registry.npmmirror.com/@dcloudio/uni-components/-/uni-components-3.0.0-3061520221228001.tgz#c2938737a45edcf12391a608b71ed49aac89b0f3"
+  integrity sha512-lydGmmGEXJQajCOZudw86ajAeEF0C9KWuzox51gCrMAvStaX2RcosFwZdAr5YPecPMRCUmwO1rXDZwiktDCRng==
+
 "@dcloudio/uni-components@3.0.0-alpha-3050420220804003":
   version "3.0.0-alpha-3050420220804003"
   resolved "https://registry.npmmirror.com/@dcloudio/uni-components/-/uni-components-3.0.0-alpha-3050420220804003.tgz#0ebdfba2d81fd92d8829d9b5e5652ec4141cc150"
