@@ -13,7 +13,7 @@
   },
   "dependencies": {
     "@dcloudio/uni-app": "3.0.0-alpha-3050420220804003",
-    "@dcloudio/uni-components": "3.0.0-alpha-3050420220804003",
+    "@dcloudio/uni-components": "3.0.0-3070320230222002",
     "@dcloudio/uni-mp-weixin": "3.0.0-alpha-3050420220804003",
     "uview-ui": "npm:vk-uview-ui@latest",
     "vue": "^3.2.37",
